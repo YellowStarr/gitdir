@@ -4,3 +4,7 @@ import API
 import CoreAPI
 import userAPI
 import searchAPI
+import mapAPI
+import indexAPI
+import messageAPI
+import shareAPI

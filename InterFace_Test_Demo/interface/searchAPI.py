@@ -7,7 +7,7 @@ class SearchAPI:
         self.baseurl=url
 
     def search_Song(self, keyword, page=1, size=10):
-        u'''创建和上传歌曲和图片的接口
+        u'''
             Method:post
             @param: file:{etag,filename} array,userId:number
             @return:
@@ -16,11 +16,11 @@ class SearchAPI:
         url = self.baseurl+'/api/search/song'
         params={'keyword': keyword, 'page': page, 'size': size}
         r = requests.get(url, params=params)
-        response = r.json()
-        return response
+        # response = r.json()
+        return r
 
     def search_User(self, keyword, page=1, size=10):
-        u'''创建和上传歌曲和图片的接口
+        u'''
             Method:post
             @param: file:{etag,filename} array,userId:number
             @return:
@@ -29,11 +29,11 @@ class SearchAPI:
         url = self.baseurl+'/api/search/user'
         params={'keyword': keyword, 'page': page, 'size': size}
         r = requests.get(url, params=params)
-        response = r.json()
-        return response
+        # response = r.json()
+        return r
 
     def search_Hot(self, page=1, size=10):
-        u'''创建和上传歌曲和图片的接口
+        u'''
             Method:post
             @param: file:{etag,filename} array,userId:number
             @return:
@@ -42,5 +42,5 @@ class SearchAPI:
         url = self.baseurl+'/api/search/hot/keyword'
         params={'page': page, 'size': size}
         r = requests.get(url, params=params)
-        response = r.json()
-        return response
+        # response = r.json()
+        return r

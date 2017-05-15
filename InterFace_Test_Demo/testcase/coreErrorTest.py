@@ -1,13 +1,13 @@
 #coding=utf-8
 
-import sys,random,os,json
+import sys, random
 sys.path.append('./interface')
 import unittest
 from interface.CoreAPI import CoreAPI
 from interface.API import MyAPI
-import data_init,dbManual
+import data_init, dbManual
 
-class coreTest(unittest.TestCase):
+class coreErrorTest(unittest.TestCase):
     def setUp(self):
         self.baseurl = 'http://139.129.208.77:8080'
         self.d = data_init.testData()
@@ -22,33 +22,54 @@ class coreTest(unittest.TestCase):
         self.user = CoreAPI(self.baseurl)
         # self.err=[]
 
-
-    def test_Compose_rap(self):
+    def test_Compose_rap_token_null(self):
         audio = random.choice(self.auList)
         print audio
-        response = self.user.core_Compose(self.data[0]['token'], 'rap', u'接口post',[{"key" :audio[1],
-                              "lyric": audio[4],"duration" : audio[2]}],[],104,30.508,[audio[4]],
-                              100001775)
+        response = self.user.core_Compose(None, 'rap', u'接口post',
+                                   [
+                                       {"key" :"http://user-storage.oss-cn-qingdao.aliyuncs.com/song/20170503171829_100000930_61dc8cb9345ba2c4b1eb04b79ab3a420.mp3",
+                                        "lyric": audio[4],
+                                        "duration" : audio[2]}
+                                   ], [], 104, 30.508, [audio[4]], 100001775)
         r = response.json()
         self.api.writeLog(sys._getframe().f_code.co_name, response.text)
-        self.assertEqual(0, r['status'])
+        self.assertEqual(3, r['status'])
 
-    def test_Compose_complaint(self):
+    def test_Compose_rap_longitude_wrong(self):
         audio = random.choice(self.auList)
         print audio
-        response = self.user.core_Compose(self.data[0]['token'], 'complaint', u'接口post',[{"key" :audio[1],
-                              "lyric": "", "duration": audio[2]}],[], 104, 30.508, [audio[4]], 100001775)
+        response = self.user.core_Compose(self.data[0]['token'], 'rap', u'接口post',[
+            {"key" :"http://user-storage.oss-cn-qingdao.aliyuncs.com/song/20170503171829_100000930_61dc8cb9345ba2c4b1eb04b79ab3a420.mp3",
+            "lyric": audio[4],
+            "duration": audio[2]}], [], 's', 30.508, [audio[4]], 100001775)
         r = response.json()
         self.api.writeLog(sys._getframe().f_code.co_name, response.text)
-        self.assertEqual(0, r['status'])
+        self.assertEqual(112, r['status'])
 
-    def test_RecommendLyric(self):
-        response = self.user.core_RecommendLyrics(100)
+    def test_Compose_rap_id_wrong(self):
+        audio = random.choice(self.auList)
+        print audio
+        response = self.user.core_Compose(self.data[0]['token'], 'rap', u'接口post',
+                                   [
+                                       {"key" :"http://user-storage.oss-cn-qingdao.aliyuncs.com/song/20170503171829_100000930_61dc8cb9345ba2c4b1eb04b79ab3a420.mp3",
+                                        "lyric": audio[4],
+                                        "duration": audio[2]}
+                                   ], [], 's', 30.508, [audio[4]], 100001776)
         r = response.json()
         self.api.writeLog(sys._getframe().f_code.co_name, response.text)
-        self.assertEqual(0, r['status'])
-        num = self.db.getALL('solo_recommend_lyric')
-        self.assertEqual(len(num), len(r['data']['lyrics']))
+        self.assertEqual(999, r['status'])
+
+    def test_RecommendLyric_range_out(self):
+        response = self.user.core_RecommendLyrics(-5)
+        r = response.json()
+        self.api.writeLog(sys._getframe().f_code.co_name, response.text)
+        self.assertEqual(110, r['status'])
+
+    def test_RecommendLyric_type_out(self):
+        response = self.user.core_RecommendLyrics(1.666)
+        r = response.json()
+        self.api.writeLog(sys._getframe().f_code.co_name, response.text)
+        self.assertEqual(116, r['status'])
 
     def test_Listen(self):
         id = random.choice(self.sidList)
@@ -108,7 +129,7 @@ class coreTest(unittest.TestCase):
         if len(uids) > 0:
             for i in range(len(uids)):
                 uidList.append(uids[i][0])
-            response = self.user.core_Praise(self.data[0]['token'], id)
+                response = self.user.core_Praise(self.data[0]['token'], id)
             r = response.json()
             self.api.writeLog(sys._getframe().f_code.co_name, response.text)
             if self.data[0]['id'] not in uidList:
@@ -222,15 +243,17 @@ class coreTest(unittest.TestCase):
         self.api.writeLog(sys._getframe().f_code.co_name, response.text)
         self.assertEqual(0, r['status'])
 
-    """def test_Del_subComment(self):
+    def test_Del_subComment(self):
         token = self.data[0]['token']
-        response = self.user.core_Del_SubComment(token, 240)
+        id = self.data[0]['id']
+        sql = 'SELECT id FROM sub_comment WHERE user_id = %s AND status = 1' % id
+        subids = self.db.getSet(sql)
+        subid = random.choice(subids)
+        response = self.user.core_Del_SubComment(token, subid[0])
         r = response.json()
         # r = self.user.core_Del_Comment(token, 240)
         self.api.writeLog(sys._getframe().f_code.co_name, response.text)
         self.assertEqual(0, r['status'])
-
-    """
 
     def test_Del_Music(self):
         '''删除我的歌曲'''
@@ -277,7 +300,7 @@ class coreTest(unittest.TestCase):
         r = response.json()
         self.api.writeLog(sys._getframe().f_code.co_name, response.text)
         self.assertEqual(0, r['status'])
-        cur_comments = self.user.core_Comment_V1(sid)
+        cur_comments = self.user.core_Comment_V1(sid).json()
         cur_comNum = len(cur_comments['data']['comments'])
         self.assertEqual(comNum+1, cur_comNum)
 

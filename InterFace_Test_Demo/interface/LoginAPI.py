@@ -21,11 +21,11 @@ class LoginAPI:
         r = requests.post(url, json=postdata)
         # print r.text
         # self.assertEqual(200, r.status_code)
-        response = r.json()
+        # r = r.json()
 
-        return response
+        return r
 
-    def forgetpwd_msgCode(self,phoneNumber=''):
+    def forgetpwd_msgCode(self, phoneNumber=''):
         u''' 忘记密码页面短信验证码接口
             Method:get
             Request：
@@ -34,12 +34,12 @@ class LoginAPI:
                 data:{identifyCode},status,msg
         '''
         url = 'http://139.129.208.77:8080/api/getCodeForNewPass'
-        param = {'phoneNumber':phoneNumber}
+        param = {'phoneNumber': phoneNumber}
         r = requests.get(url, params=param)
         # print r.text
         # self.assertEqual(200, r.status_code)
-        response = r.json()
-        return response
+        # r = r.json()
+        return r
 
 
     def register_msgCode(self, phoneNumber=''):
@@ -55,8 +55,8 @@ class LoginAPI:
         r = requests.get(url, params=param)
         # print r.text
         # self.assertEqual(200, r.status_code)
-        response = r.json()
-        return response
+        # r = r.json()
+        return r
 
     def register_Register(self,username='',phoneNumber='',password='',code=''):
         u''' 注册接口
@@ -71,8 +71,8 @@ class LoginAPI:
         url = self.baseurl+'/api/register'
         postdata = {'username':username, 'password': password,'code': code , 'phoneNumber':phoneNumber}
         r = requests.post(url, json=postdata)
-        response = r.json()
-        return response
+        # r = r.json()
+        return r
 
     def login_Login(self,phoneNumber='',password=''):
         u''' 登陆接口
@@ -84,22 +84,22 @@ class LoginAPI:
         '''
         url = self.baseurl+'/api/user/login'
 
-        postdata = {"terminal" : 2,'password': password,'phone':phoneNumber}
+        postdata = {"terminal": 2,'password': password, 'phone': phoneNumber}
         r = requests.post(url, json=postdata)
-        response = r.json()
-        return response
+        # r = r.json()
+        return r
 
-    def login_Update(self):
+    def login_Update(self, type):
         u''' 软件版本更新
             Method:get
                 @return:
                 data{version:{ext,version,url,upgradeContent,platform,minimumSupportVersion,force:0，1 强制更新}},msg,status:0 成功
         '''
-        url = self.baseurl + '/api/clientVersion/andriod'
+        url = self.baseurl + '/api/clientVersion/' + type
         #url = self.baseurl + '/api/clientVersion/'
         r = requests.get(url)
-        response = r.json()
-        return response
+        # r = r.json()
+        return r
 
     def login_InitConfig(self,accessId='ios'):
         u'''获取初始化
@@ -111,5 +111,13 @@ class LoginAPI:
         url = self.baseurl + '/api/config'
         r = requests.get(url,params=params)
         print r.text
-        response = r.json()
-        return response
+        # r = r.json()
+        return r
+
+    def login_ThirdParty(self, token, username, sex, thirdPartyType):
+        url = self.baseurl+'/api/thirdPartyLogin'
+        params = {'userName':username, 'sex':sex, 'thirdPartyType':thirdPartyType, 'token':token}
+        r = requests.post(url, json=params)
+        # r = r.json()
+        return r
+

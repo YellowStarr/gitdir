@@ -1,6 +1,7 @@
 #coding=utf-8
 
-import requests,time
+import requests, time, os
+import json
 
 class MyAPI:
     # def __init__(self):
@@ -39,20 +40,13 @@ class MyAPI:
         repostNum = s['data']['repostCount']
         return repostNum
 
-
-
-    def writeLog(self,func,obj):
-        t=time.strftime("%Y%m%d-%H",time.localtime())
-        funct=time.strftime("%H:%M:%S",time.localtime())
-        logname=r'C:\Users\uncle\PycharmProjects\InterFace_Test_Demo\Log\log%s' % t+'.txt'
+    def writeLog(self, func, obj):
+        t = time.strftime("%Y%m%d-%H", time.localtime())
+        functime = time.strftime("%H:%M:%S", time.localtime())
+        path = os.getcwd()
+        logname = path + '\Log\log%s' % t+'.txt'
         f = open(logname, 'a+')
-        f.write("------------------------------------%s:%s-----------------------------------------------" % (func,funct) + '\n')
-        # f.write(obj.encode('utf-8') + '\n')
-        if isinstance(obj,dict):
-            f.write('msg: %s' % obj['msg'].encode('utf-8') + '\n')
-            f.write('status: %s' % obj['status'] + '\n')
-
-            f.write('data: %s' % obj['data'] + '\n')
-        else:
-            f.write(obj + '\n')
+        f.write("------------------------------------%s:%s-----------------------------------------------"
+                % (func, functime) + '\n')
+        f.write(obj.encode('utf-8') + '\n')
         f.close()

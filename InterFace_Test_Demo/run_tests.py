@@ -3,7 +3,7 @@ import time,sys
 sys.path.append('testcase')
 import HTMLTestRunner
 import unittest
-from testcase import loginTests,userinfoTest,userErrorCheck,coreTest,accompany
+from testcase import *
 
 # test_dir='./testcase'
 # discover=unittest.defaultTestLoader.discover(test_dir,pattern='*_test.py')
@@ -11,20 +11,24 @@ from testcase import loginTests,userinfoTest,userErrorCheck,coreTest,accompany
 if __name__=="__main__":
     print "---------------------------------------start-----------------------------------------"
     caseNames = [
-        # login_test.Login_Test,
-        # subject_test.Subject_Test,
-        # loginTests.GetLoginTest,
-        # userinfoTest.userinfoTest,
-        # userErrorCheck.userErrorCheck,
+        loginTests.LoginTest,
+        userinfoTest.userinfoTest,
+        userErrorCheck.userErrorCheck,
         coreTest.coreTest,
-        # accompany.Accompany,
+        coreErrorTest.coreErrorTest,
+        accompany.Accompany,
+        searchTest.SearchTest,
+        mapTest.MapTest,
+        indexTest.IndexTest,
+        shareTest.SearchTest,
+        messageTest.MessageTest,
+        indexErrorTest.IndexErrorTest,
 
     ]
 
     testunit = unittest.TestSuite()
     for i in range(0, len(caseNames)):
         testunit.addTest(unittest.makeSuite(caseNames[i]))
-
     nowtime = time.strftime("%Y-%m-%d@%H_%M_%S", time.localtime(time.time()))
     filename = 'report\\' + nowtime + "reporter.html"
     fp = file(filename, 'wb')

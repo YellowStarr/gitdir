@@ -14,8 +14,9 @@ class DiscoverAPI:
         '''
         url = self.baseurl + '/api/findAd'
         r = requests.get(url)
-        response = r.json()
-        return response
+        # r = r.json()
+        return r
+
     def discover_Latest(self):
         u'''发现-最新
             Method:get
@@ -39,8 +40,8 @@ class DiscoverAPI:
         url = self.baseurl + '/api/discover'
         r = requests.get(url)
         # print r.text
-        response = r.json()
-        return response
+        # r = r.json()
+        return r
 
     def discover_Followed(self):
         u"""关注列表
@@ -52,9 +53,9 @@ class DiscoverAPI:
                 ]},msg,status
         """
         url = self.baseurl+"/api/user/followed/song"
-        r = requests.get(url,{'size':10,'page':1})
-        response = r.json()
-        return response
+        r = requests.get(url, {'size': 10, 'page': 1})
+        # r = r.json()
+        return r
 
     def discover_Activity(self):
         u"""活动
@@ -67,8 +68,8 @@ class DiscoverAPI:
         """
         url = self.baseurl+"/api/activitys"
         r = requests.get(url)
-        response = r.json()
-        return response
+        # r = r.json()
+        return r
 
     def discover_Join_Activity(self,songId,actId):
         u"""加入活动
@@ -79,10 +80,10 @@ class DiscoverAPI:
         """
         url = self.baseurl+"/api/activitys"
         r = requests.post(url,json={'songId':songId,'activityId':actId})
-        response = r.json()
-        return response
+        # r = r.json()
+        return r
 
-    def discover_Activity_Detail(self,actId):
+    def discover_Activity_Detail_T30(self,actId):
         u"""关注列表
         @Method:get
         @params:page,size,activityId
@@ -95,8 +96,8 @@ class DiscoverAPI:
         url = self.baseurl+"/api/activity/song/hot"
         params={'size':10,'page':1,'activityId':actId}
         r = requests.get(url,params=params)
-        response = r.json()
-        return response
+        # r = r.json()
+        return r
 
     def discover_Activity_Song(self,actId):
         u"""发现-活动-获取用户参加该活动的歌曲和排名
@@ -110,8 +111,8 @@ class DiscoverAPI:
         url = self.baseurl + "/api/activity/user/song"
         params = {'activityId': actId}
         r = requests.get(url, params=params)
-        response = r.json()
-        return response
+        # r = r.json()
+        return r
 
     def discover_Activity_New30(self,actId):
         u"""发现-活动-获取最新参加活动的歌曲
@@ -125,7 +126,7 @@ class DiscoverAPI:
         url = self.baseurl + "/api/activity/song"
         params = {'size':10,'page':1,'activityId':actId}
         r = requests.get(url, params=params)
-        response = r.json()
-        return response
+        # r = r.json()
+        return r
 
     # def discover_New_Complaint(self):
