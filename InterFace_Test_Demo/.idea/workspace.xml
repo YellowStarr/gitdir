@@ -1,45 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="924a44e4-6202-4133-ad61-f7939173c71b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/interface/indexAPI.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/interface/mapAPI.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/interface/messageAPI.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/interface/shareAPI.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/log/log20170515-15.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/log/log20170515-16.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/log/log20170515-17.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/report/2017-05-15@17_10_30reporter.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/report/2017-05-15@17_19_25reporter.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/report/2017-05-15@17_32_14reporter.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcase/coreErrorTest.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcase/discoverTest.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcase/indexErrorTest.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcase/indexTest.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcase/mapTest.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcase/messageTest.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcase/searchTest.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcase/shareTest.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Log/log20170508-19.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/report/2017-05-08@19_28_21reporter.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/interface/API.py" afterPath="$PROJECT_DIR$/interface/API.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/interface/CoreAPI.py" afterPath="$PROJECT_DIR$/interface/CoreAPI.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/interface/DiscoverAPI.py" afterPath="$PROJECT_DIR$/interface/DiscoverAPI.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/interface/LoginAPI.py" afterPath="$PROJECT_DIR$/interface/LoginAPI.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/interface/__init__.py" afterPath="$PROJECT_DIR$/interface/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/interface/searchAPI.py" afterPath="$PROJECT_DIR$/interface/searchAPI.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/interface/userAPI.py" afterPath="$PROJECT_DIR$/interface/userAPI.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/run_tests.py" afterPath="$PROJECT_DIR$/run_tests.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcase/__init__.py" afterPath="$PROJECT_DIR$/testcase/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcase/accompany.py" afterPath="$PROJECT_DIR$/testcase/accompany.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcase/coreTest.py" afterPath="$PROJECT_DIR$/testcase/coreTest.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcase/dbManual.py" afterPath="$PROJECT_DIR$/testcase/dbManual.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcase/loginTests.py" afterPath="$PROJECT_DIR$/testcase/loginTests.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcase/userErrorCheck.py" afterPath="$PROJECT_DIR$/testcase/userErrorCheck.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcase/userinfoTest.py" afterPath="$PROJECT_DIR$/testcase/userinfoTest.py" />
-    </list>
+    <list default="true" id="924a44e4-6202-4133-ad61-f7939173c71b" name="Default" comment="" />
     <ignored path="untitled.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -644,7 +606,7 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1065" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1065" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15572916" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
