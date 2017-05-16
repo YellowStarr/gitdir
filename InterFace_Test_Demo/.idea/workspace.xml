@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="924a44e4-6202-4133-ad61-f7939173c71b" name="Default" comment="" />
+    <list default="true" id="924a44e4-6202-4133-ad61-f7939173c71b" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/2017-05-15@17_10_30reporter.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/2017-05-15@17_19_25reporter.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/2017-05-15@17_32_14reporter.html" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/run_tests.py" afterPath="$PROJECT_DIR$/run_tests.py" />
+    </list>
     <ignored path="untitled.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -14,7 +20,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/untitled$UnnamedrequestsDemo.coverage" NAME="UnnamedrequestsDemo Coverage Results" MODIFIED="1492769309734" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/InterFace_Test_Demo$allTests.coverage" NAME="allTests Coverage Results" MODIFIED="1494840733852" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/InterFace_Test_Demo$allTests.coverage" NAME="allTests Coverage Results" MODIFIED="1494913830543" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/InterFace_Test_Demo$Unittests_in_test.coverage" NAME="Unittests in test Coverage Results" MODIFIED="1493020701129" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
     <SUITE FILE_PATH="coverage/untitled$requestsDemo.coverage" NAME="requestsDemo Coverage Results" MODIFIED="1492592669423" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/InterFace_Test_Demo$UnnamedrequestsDemo.coverage" NAME="requestsDemo Coverage Results" MODIFIED="1493021325903" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -31,7 +37,7 @@
       <file leaf-file-name="coreErrorTest.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testcase/coreErrorTest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
+            <state relative-caret-position="5020">
               <caret line="251" column="16" selection-start-line="251" selection-start-column="8" selection-end-line="251" selection-end-column="16" />
               <folding>
                 <marker date="1494841273375" expanded="true" signature="3329:3379" ph="SELECT liste... song_basic_info" />
@@ -66,8 +72,18 @@
       <file leaf-file-name="run_tests.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/run_tests.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+            <state relative-caret-position="460">
+              <caret line="23" column="34" selection-start-line="13" selection-start-column="10" selection-end-line="23" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mail.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mail.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="17" column="15" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -76,7 +92,7 @@
       <file leaf-file-name="userinfoTest.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testcase/userinfoTest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="470">
+            <state relative-caret-position="2940">
               <caret line="147" column="80" selection-start-line="147" selection-start-column="80" selection-end-line="147" selection-end-column="80" />
               <folding>
                 <marker date="1494839963521" expanded="true" signature="3691:3757" ph="select * fro... user_blacklist" />
@@ -90,7 +106,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="loginTests.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="loginTests.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testcase/loginTests.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="20">
@@ -115,7 +131,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/LoginAPI.py" />
         <option value="$PROJECT_DIR$/LoginAPI.py" />
         <option value="$PROJECT_DIR$/DiscoverAPI.py" />
         <option value="$PROJECT_DIR$/test.py" />
@@ -159,13 +174,14 @@
         <option value="$PROJECT_DIR$/testcase/indexTest.py" />
         <option value="$PROJECT_DIR$/testcase/indexErrorTest.py" />
         <option value="$PROJECT_DIR$/testcase/discoverTest.py" />
-        <option value="$PROJECT_DIR$/run_tests.py" />
         <option value="$PROJECT_DIR$/testcase/userErrorCheck.py" />
         <option value="$PROJECT_DIR$/testcase/coreTest.py" />
         <option value="$PROJECT_DIR$/testcase/userinfoTest.py" />
         <option value="$PROJECT_DIR$/testcase/coreErrorTest.py" />
         <option value="$PROJECT_DIR$/interface/CoreAPI.py" />
         <option value="$PROJECT_DIR$/testcase/loginTests.py" />
+        <option value="$PROJECT_DIR$/run_tests.py" />
+        <option value="$PROJECT_DIR$/mail.py" />
       </list>
     </option>
   </component>
@@ -223,7 +239,6 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -242,64 +257,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="InterFace_Test_Demo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="InterFace_Test_Demo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="testcase" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="InterFace_Test_Demo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="InterFace_Test_Demo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="report" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="InterFace_Test_Demo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="InterFace_Test_Demo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="log" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="InterFace_Test_Demo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="InterFace_Test_Demo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="interface" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -311,6 +271,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="G:\workspace\GitDir\InterFace_Test_Demo" />
       <recent name="C:\Users\uncle\PycharmProjects\InterFace_Test_Demo\interface" />
       <recent name="C:\Users\uncle\PycharmProjects\InterFace_Test_Demo" />
       <recent name="C:\Users\uncle\PycharmProjects\InterFace_Test_Demo\interface\interface" />
@@ -647,7 +608,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Log/log20170505-16.txt" />
     <entry file="file://$PROJECT_DIR$/Log/log20170505-17.txt" />
     <entry file="file://$PROJECT_DIR$/Log/log20170508-15.txt" />
     <entry file="file://$PROJECT_DIR$/Log/log20170508-17.txt" />
@@ -688,54 +648,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/log/log20220512-16.txt" />
-    <entry file="file://$PROJECT_DIR$/log/log20170112-16.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="68" selection-start-line="0" selection-start-column="36" selection-end-line="0" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/report/2017-05-15@09_40_50reporter.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log/log20170512-17.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log/log20170515-09.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="212" column="61" selection-start-line="212" selection-start-column="36" selection-end-line="212" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/report/2017-05-15@14_57_16reporter.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/report/2022-05-12@16_12_08reporter.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/log/log20170112-16.txt" />
+    <entry file="file://$PROJECT_DIR$/report/2017-05-15@09_40_50reporter.html" />
+    <entry file="file://$PROJECT_DIR$/log/log20170512-17.txt" />
+    <entry file="file://$PROJECT_DIR$/log/log20170515-09.txt" />
+    <entry file="file://$PROJECT_DIR$/report/2017-05-15@14_57_16reporter.html" />
+    <entry file="file://$PROJECT_DIR$/report/2022-05-12@16_12_08reporter.html" />
     <entry file="file://C:/Python27/Lib/unittest/case.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="844">
@@ -748,7 +666,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -756,7 +673,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2760">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -764,7 +680,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="539">
           <caret line="62" column="5" selection-start-line="62" selection-start-column="5" selection-end-line="62" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -772,9 +687,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1000">
           <caret line="50" column="43" selection-start-line="50" selection-start-column="43" selection-end-line="50" selection-end-column="43" />
-          <folding>
-            <element signature="e#15#40#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -782,12 +694,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="518">
           <caret line="116" column="31" selection-start-line="116" selection-start-column="23" selection-end-line="116" selection-end-column="31" />
-          <folding>
-            <marker date="1494489901256" expanded="true" signature="2343:2367" ph="insert into table... " />
-            <marker date="1494489901256" expanded="true" signature="2343:2369" ph="insert into table... " />
-            <marker date="1494489901256" expanded="true" signature="2641:2664" ph="insert into table... " />
-            <marker date="1494489901256" expanded="true" signature="2870:2884" ph="select * fro... missing_value" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -795,7 +701,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-119">
           <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -803,7 +708,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="403">
           <caret line="113" column="22" selection-start-line="113" selection-start-column="22" selection-end-line="113" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -811,7 +715,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="22" column="30" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -819,7 +722,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
           <caret line="31" column="29" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -827,7 +729,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="21" column="52" selection-start-line="21" selection-start-column="52" selection-end-line="21" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -835,7 +736,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="582">
           <caret line="58" column="46" selection-start-line="58" selection-start-column="29" selection-end-line="58" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -843,7 +743,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="642">
           <caret line="67" column="71" selection-start-line="67" selection-start-column="71" selection-end-line="67" selection-end-column="71" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -851,17 +750,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-460">
           <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding>
-            <marker date="1494837381638" expanded="true" signature="736:822" ph="SELECT COUNT... song_basic_info" />
-            <marker date="1494837381638" expanded="true" signature="736:824" ph="SELECT COUNT... song_basic_info" />
-            <marker date="1494837381638" expanded="true" signature="736:864" ph="SELECT COUNT... song_basic_info" />
-            <marker date="1494837381638" expanded="true" signature="736:865" ph="SELECT COUNT... song_basic_info" />
-            <marker date="1494837381638" expanded="true" signature="736:871" ph="SELECT COUNT... song_basic_info" />
-            <marker date="1494837381638" expanded="true" signature="736:890" ph="SELECT COUNT... song_basic_info" />
-            <marker date="1494837381638" expanded="true" signature="736:945" ph="SELECT COUNT... song_basic_info" />
-            <marker date="1494837381638" expanded="true" signature="1066:1264" ph="SELECT COUNT... song_basic_info" />
-            <marker date="1494837381638" expanded="true" signature="1397:1595" ph="SELECT COUNT... song_basic_info" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -869,7 +757,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
           <caret line="30" column="26" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -877,13 +764,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="382">
           <caret line="57" column="71" selection-start-line="57" selection-start-column="58" selection-end-line="57" selection-end-column="71" />
-          <folding>
-            <marker date="1494838609193" expanded="true" signature="582:693" ph="SELECT COUNT... song_basic_info" />
-            <marker date="1494838609193" expanded="true" signature="1071:1165" ph="SELECT COUNT... song_basic_info" />
-            <marker date="1494838609193" expanded="true" signature="1545:1640" ph="SELECT COUNT... song_basic_info" />
-            <marker date="1494838609193" expanded="true" signature="2018:2114" ph="SELECT COUNT... user_profile_basic" />
-            <marker date="1494838609193" expanded="true" signature="2501:2581" ph="SELECT COUNT... user_profile_basic" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -891,7 +771,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="700">
           <caret line="59" column="72" selection-start-line="59" selection-start-column="72" selection-end-line="59" selection-end-column="72" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -899,7 +778,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="381" column="72" selection-start-line="381" selection-start-column="72" selection-end-line="381" selection-end-column="72" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -907,7 +785,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
           <caret line="250" column="55" selection-start-line="250" selection-start-column="55" selection-end-line="250" selection-end-column="55" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -915,7 +792,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="543">
           <caret line="36" column="72" selection-start-line="36" selection-start-column="72" selection-end-line="36" selection-end-column="72" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -923,7 +799,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="423">
           <caret line="81" column="72" selection-start-line="81" selection-start-column="72" selection-end-line="81" selection-end-column="72" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -931,20 +806,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="272" column="55" selection-start-line="272" selection-start-column="55" selection-end-line="272" selection-end-column="55" />
-          <folding>
-            <marker date="1494839896008" expanded="true" signature="2088:2138" ph="SELECT liste... song_basic_info" />
-            <marker date="1494839896008" expanded="true" signature="4063:4116" ph="SELECT user_... song_praise_info" />
-            <marker date="1494839896008" expanded="true" signature="4952:5014" ph="SELECT song_... song_praise_info" />
-            <marker date="1494839896008" expanded="true" signature="5262:5316" ph="SELECT count... song_praise_info" />
-            <marker date="1494839896008" expanded="true" signature="5929:5983" ph="SELECT user_... song_collect_info" />
-            <marker date="1494839896008" expanded="true" signature="6629:6683" ph="SELECT song_... song_collect_info" />
-            <marker date="1494839896008" expanded="true" signature="6922:6977" ph="SELECT count... song_collect_info" />
-            <marker date="1494839896008" expanded="true" signature="7807:7925" ph="SELECT count... song_collect_info" />
-            <marker date="1494839896008" expanded="true" signature="9778:9862" ph="SELECT * FRO... song_basic_info" />
-            <marker date="1494839896008" expanded="true" signature="10926:10993" ph="SELECT curr_... medley_song_info" />
-            <marker date="1494839896008" expanded="true" signature="11908:11973" ph="SELECT id FR... song_comment_info" />
-            <marker date="1494839896008" expanded="true" signature="12309:12355" ph="SELECT statu... song_comment_info" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -952,21 +813,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="20" column="46" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/interface/CoreAPI.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="254" column="63" selection-start-line="254" selection-start-column="63" selection-end-line="254" selection-end-column="63" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/testcase/coreErrorTest.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
+        <state relative-caret-position="5020">
           <caret line="251" column="16" selection-start-line="251" selection-start-column="8" selection-end-line="251" selection-end-column="16" />
           <folding>
             <marker date="1494841273375" expanded="true" signature="3329:3379" ph="SELECT liste... song_basic_info" />
@@ -987,17 +839,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/run_tests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testcase/userinfoTest.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
+        <state relative-caret-position="2940">
           <caret line="147" column="80" selection-start-line="147" selection-start-column="80" selection-end-line="147" selection-end-column="80" />
           <folding>
             <marker date="1494839963521" expanded="true" signature="3691:3757" ph="select * fro... user_blacklist" />
@@ -1014,6 +858,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="20">
           <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/CoreAPI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="254" column="63" selection-start-line="254" selection-start-column="63" selection-end-line="254" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run_tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="23" column="34" selection-start-line="13" selection-start-column="10" selection-end-line="23" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mail.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="17" column="15" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
           <folding />
         </state>
       </provider>
