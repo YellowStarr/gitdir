@@ -28,7 +28,8 @@ class testData:
         songIds = self.db.getALL('song_basic_info')
         songidList=[]
         for i in range(len(songIds)):
-            songidList.append(songIds[i][0])
+            if songIds[i][12] == 1:   #获取完成的song
+                songidList.append(songIds[i][0])
         return songidList
 
     def getAudios(self):
@@ -43,7 +44,8 @@ class testData:
         cids = self.db.getALL('song_comment_info')
         cidList = []
         for i in range(len(cids)):
-            cidList.append(cids[i][0])
+            if cids[i][5] == 0:    #获取未删除的评论
+                cidList.append(cids[i][0])
             # print audios[i]
         return cidList
 
