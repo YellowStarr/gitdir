@@ -2,37 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="924a44e4-6202-4133-ad61-f7939173c71b" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/log/log20170515-16.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/log/log20170515-17.txt" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/log/log20170516-13.txt" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/interface/API.py" afterPath="$PROJECT_DIR$/interface/API.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/interface/CoreAPI.py" afterPath="$PROJECT_DIR$/interface/CoreAPI.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/interface/LoginAPI.py" afterPath="$PROJECT_DIR$/interface/LoginAPI.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/interface/indexAPI.py" afterPath="$PROJECT_DIR$/interface/indexAPI.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/interface/mapAPI.py" afterPath="$PROJECT_DIR$/interface/mapAPI.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/interface/messageAPI.py" afterPath="$PROJECT_DIR$/interface/messageAPI.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/interface/shareAPI.py" afterPath="$PROJECT_DIR$/interface/shareAPI.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/interface/userAPI.py" afterPath="$PROJECT_DIR$/interface/userAPI.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mail.py" afterPath="$PROJECT_DIR$/mail.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcase/__init__.py" afterPath="$PROJECT_DIR$/testcase/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcase/accompany.py" afterPath="$PROJECT_DIR$/testcase/accompany.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcase/complexTest.py" afterPath="$PROJECT_DIR$/testcase/complexTest.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcase/coreErrorTest.py" afterPath="$PROJECT_DIR$/testcase/coreErrorTest.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcase/coreTest.py" afterPath="$PROJECT_DIR$/testcase/coreTest.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcase/data_init.py" afterPath="$PROJECT_DIR$/testcase/data_init.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcase/discoverTest.py" afterPath="$PROJECT_DIR$/testcase/discoverTest.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcase/indexErrorTest.py" afterPath="$PROJECT_DIR$/testcase/indexErrorTest.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcase/indexTest.py" afterPath="$PROJECT_DIR$/testcase/indexTest.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcase/loginTests.py" afterPath="$PROJECT_DIR$/testcase/loginTests.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcase/mapTest.py" afterPath="$PROJECT_DIR$/testcase/mapTest.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcase/messageTest.py" afterPath="$PROJECT_DIR$/testcase/messageTest.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcase/searchTest.py" afterPath="$PROJECT_DIR$/testcase/searchTest.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcase/shareTest.py" afterPath="$PROJECT_DIR$/testcase/shareTest.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcase/userErrorCheck.py" afterPath="$PROJECT_DIR$/testcase/userErrorCheck.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcase/userinfoTest.py" afterPath="$PROJECT_DIR$/testcase/userinfoTest.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report/reporter.html" afterPath="$PROJECT_DIR$/report/reporter.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/log/log20170515-15.txt" afterPath="$PROJECT_DIR$/log/log.txt" />
     </list>
     <ignored path="untitled.iws" />
     <ignored path=".idea/workspace.xml" />
