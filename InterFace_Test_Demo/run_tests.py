@@ -1,4 +1,5 @@
-import time,sys
+#coding:utf-8
+import os,sys
 # sys.path.append('./interface')
 sys.path.append('testcase')
 import HTMLTestRunner
@@ -10,30 +11,39 @@ import mail
 
 if __name__=="__main__":
     print "---------------------------------------start-----------------------------------------"
+
     caseNames = [
-        # loginTests.LoginTest,
-        # userinfoTest.userinfoTest,
+        loginTests.LoginTest,
+        userinfoTest.userinfoTest,
         # userErrorCheck.userErrorCheck,
-        # coreTest.coreTest,
+        coreTest.coreTest,
         # coreErrorTest.coreErrorTest,
         # accompany.Accompany,
-        # searchTest.SearchTest,
-        # mapTest.MapTest,
-        # indexTest.IndexTest,
-        # shareTest.SearchTest,
-        # messageTest.MessageTest,
-        indexErrorTest.IndexErrorTest,
+        searchTest.SearchTest,
+        mapTest.MapTest,
+        indexTest.IndexTest,
+        shareTest.ShareTest,
+        messageTest.MessageTest,
+        # indexErrorTest.IndexErrorTest,
+        # complexTest.ComplextTest,
 
     ]
+    # 运行时，先判断Log文件夹中是否已存在log.txt文件，若存在，删除
+    path = os.getcwd()
+    logpth =os.path.join(path, 'Log')
+    logname = os.path.join(logpth, 'log.txt')
+    if os.path.exists(logname):
+        os.remove(logname)
 
     testunit = unittest.TestSuite()
     for i in range(0, len(caseNames)):
         testunit.addTest(unittest.makeSuite(caseNames[i]))
     # nowtime = time.strftime("%Y-%m-%d@%H_%M_%S", time.localtime(time.time()))
-    filename = 'report\\reporter.html'
+    reportpath = os.path.join(path, 'report')
+    filename = os.path.join(reportpath, 'reporter.html')
     fp = file(filename, 'wb')
     runner = HTMLTestRunner.HTMLTestRunner(stream=fp, title='testcase-logintest', description='desc')
 
     runner.run(testunit)
-    m = mail.SendMail()
+    m = mail.SendMail(['1095222570@qq.com', '263697396@qq.com', '358014589@qq.com'])
     m.send()

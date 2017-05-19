@@ -559,6 +559,7 @@ class _TestResult(TestResult):
             sys.stderr = self.stderr0
             self.stdout0 = None
             self.stderr0 = None
+
         return self.outputBuffer.getvalue()
 
 
@@ -625,6 +626,8 @@ class HTMLTestRunner(Template_mixin):
 
         self.startTime = datetime.datetime.now()
 
+        self.complete = 0
+
 
     def run(self, test):
         "Run the given test case or test suite."
@@ -661,7 +664,12 @@ class HTMLTestRunner(Template_mixin):
         status = []
         if result.success_count: status.append(u'通过 %s'    % result.success_count)
         if result.failure_count: status.append(u'失败 %s' % result.failure_count)
-        if result.error_count:   status.append(u'错误 %s'   % result.error_count  )
+        if result.error_count:   status.append(u'错误 %s'   % result.error_count)
+
+        count = result.success_count+result.failure_count+result.error_count
+        failure_percent = round(float(result.failure_count)/float(count), 4) * 100
+        if count: status.append(u'失败率 %.2f%%' % failure_percent)
+
         if status:
             status = ' '.join(status)
         else:
@@ -799,6 +807,7 @@ class HTMLTestRunner(Template_mixin):
             return
 
     def _generate_ending(self):
+        self.complete = 1
         return self.ENDING_TMPL
 
 
