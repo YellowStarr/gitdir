@@ -10,10 +10,10 @@ import data_init,dbManual
 
 class ComplextTest(unittest.TestCase):
     def setUp(self):
-        self.baseurl = 'http://139.129.208.77:8080'
+        self.baseurl = 'http://test.rapself.com:9091'
         self.d = data_init.testData()
-        self.data = self.d.getUserData()
-        self.sidList = self.d.getSongIds()
+        self.data = self.d.getUserData
+        self.sidList = self.d.getSongIds
         self.auList = self.d.getAudios()
         self.cidList = self.d.getComments()
         self.verificationErrors = []
@@ -23,14 +23,14 @@ class ComplextTest(unittest.TestCase):
         self.user = CoreAPI(self.baseurl)
         # self.err=[]
 
-    def test_check_Rank_num(self):   #检查返回的歌曲是否是30首
+    def test_check_Rank_num(self):   # 检查返回的歌曲是否是30首
         rank = IndexAPI(self.baseurl)
         response = rank.index_Rank(1, 40)
         r = response.json()
         self.api.writeLog('ranking json', response.text)
         self.assertEqual(30, len(r['data']['songs']))
 
-    def test_check_Rank_score(self):   #检查返回的歌曲排行是否是按照计算规则排序
+    def test_check_Rank_score(self):   # 检查返回的歌曲排行是否是按照计算规则排序
         rank = IndexAPI(self.baseurl)
         response = rank.index_Rank(1, 10)
         # self.api.writeLog(sys._getframe().f_code.co_name, response.text)
@@ -49,11 +49,11 @@ class ComplextTest(unittest.TestCase):
                 err += 1
         self.assertEqual(0, err)
 
-    def test_Comment(self): #评论
+    def test_Comment(self):     # 评论
         sid = random.choice(self.sidList)
         response = self.user.core_Comment_V1(sid)
         r = response.json()
-        self.api.writeLog(sys._getframe().f_code.co_name+'%s'%sid, response.text)
+        self.api.writeLog(sys._getframe().f_code.co_name+'%s' % sid, response.text)
 
         count = len(r['data']['comments'])
         content = u'这是接口评论'
@@ -64,14 +64,14 @@ class ComplextTest(unittest.TestCase):
         newcount = len(newr['data']['comments'])
         self.assertEqual(newcount, count+1)
 
-    def test_delComment(self): #删除评论
+    def test_delComment(self):     # 删除评论
         err = 0
         sid = random.choice(self.sidList)
         self.user.core_Comment_V1(sid)
         content = u'这是要删除的接口评论'
         response = self.user.core_songComment(self.data[0]['token'], sid, content)
         r = response.json()
-        cid = r['data']['comments']['id']
+        cid = r['data']['id']      # 获取评论id
 
         self.user.core_Del_Comment(self.data[0]['token'], cid)
         newr = self.user.core_Comment_V1(sid)

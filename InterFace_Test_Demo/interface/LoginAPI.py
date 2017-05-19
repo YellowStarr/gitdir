@@ -33,7 +33,7 @@ class LoginAPI:
             @return:
                 data:{identifyCode},status,msg
         '''
-        url = 'http://139.129.208.77:8080/api/getCodeForNewPass'
+        url = self.baseurl+'/api/getCodeForNewPass'
         param = {'phoneNumber': phoneNumber}
         r = requests.get(url, params=param)
         # print r.text
@@ -50,7 +50,7 @@ class LoginAPI:
             @return:
                 data:{identifyCode},status：0 成功 1 失败,msg
         '''
-        url = 'http://139.129.208.77:8080/api/getIdentifyingCode'
+        url = self.baseurl+'/api/getIdentifyingCode'
         param = {'phoneNumber': phoneNumber}
         r = requests.get(url, params=param)
         # print r.text
@@ -58,7 +58,7 @@ class LoginAPI:
         # r = r.json()
         return r
 
-    def register_Register(self,username='',phoneNumber='',password='',code=''):
+    def register_Register(self, username='', phoneNumber='', password='', code=''):
         u''' 注册接口
             Method:post
             @param string username:
@@ -69,12 +69,12 @@ class LoginAPI:
                 msg,status:111 手机号已注册,100 用户创建失败 999 未知错误,data{userId}
         '''
         url = self.baseurl+'/api/register'
-        postdata = {'username':username, 'password': password,'code': code , 'phoneNumber':phoneNumber}
+        postdata = {'username': username, 'password': password, 'code': code, 'phoneNumber': phoneNumber}
         r = requests.post(url, json=postdata)
         # r = r.json()
         return r
 
-    def login_Login(self,phoneNumber='',password=''):
+    def login_Login(self, phoneNumber='', password=''):
         u''' 登陆接口
             Method:post
             @param  phoneNumber:string
@@ -84,7 +84,7 @@ class LoginAPI:
         '''
         url = self.baseurl+'/api/user/login'
 
-        postdata = {"terminal": 2,'password': password, 'phone': phoneNumber}
+        postdata = {"terminal": 2, 'password': password, 'phone': phoneNumber}
         r = requests.post(url, json=postdata)
         # r = r.json()
         return r
@@ -116,7 +116,7 @@ class LoginAPI:
 
     def login_ThirdParty(self, token, username, sex, thirdPartyType):
         url = self.baseurl+'/api/thirdPartyLogin'
-        params = {'userName':username, 'sex':sex, 'thirdPartyType':thirdPartyType, 'token':token}
+        params = {'userName': username, 'sex': sex, 'thirdPartyType': thirdPartyType, 'token': token}
         r = requests.post(url, json=params)
         # r = r.json()
         return r

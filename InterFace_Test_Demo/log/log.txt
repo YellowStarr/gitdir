@@ -1,0 +1,48 @@
+------------------------------------test_forgetpwd_msgCode:15:28:27-----------------------------------------------
+api: http://test.rapself.com:9091/api/getCodeForNewPass?phoneNumber=18782943850
+status_code: 200
+text: {"status":100100,"msg":"参数类型错误, 无效的手机号=18782943850","data":{}}
+------------------------------------test_forgetpwd_msgCode_no_pbone:15:28:27-----------------------------------------------
+api: http://test.rapself.com:9091/api/getCodeForNewPass?phoneNumber=
+status_code: 200
+text: {"status":100100,"msg":"参数类型错误, 无效的手机号=","data":{}}
+------------------------------------test_login_ThirdParty_QQ:15:28:28-----------------------------------------------
+api: http://test.rapself.com:9091/api/thirdPartyLogin
+status_code: 200
+text: {"status":999,"msg":"未知错误","data":{}}
+------------------------------------test_login_ThirdParty_QQ_token_wrong:15:28:28-----------------------------------------------
+api: http://test.rapself.com:9091/api/thirdPartyLogin
+status_code: 200
+text: {"status":0,"msg":"success","data":{"user":{"id":100001809,"userName":"just soso","password":"","email":"","phoneNumber":"","headPortraitUrl":"http://user-storage.oss-cn-qingdao.aliyuncs.com/img/default/user/head.png","personalProfile":"","gender":1,"birthday":1493913600000,"areaId":"","emotionStatus":1,"createTime":1493956045000,"createTerminalMac":null,"thirdpartyLoginId":"","thirdpartyCatg":0,"status":1},"token":"ggo03+TP33qxirzlUYISmw=="}}
+------------------------------------test_login_Update_andriod:15:28:29-----------------------------------------------
+api: http://test.rapself.com:9091/api/clientVersion/andriod
+status_code: 200
+text: {"status":0,"msg":"success","data":{"version":{"ext":null,"minimumSupportVersion":null,"force":0,"upgradeContent":"<html><head><title></title></head><body><ol><li>1, 优化功能流程与细节</li><br/><li> 2, 修改1.0版本bug</li></ol></body></html>","version":"1.1.2","url":"http://user-storage.oss-cn-qingdao.aliyuncs.com/release/apk/app-release-1.1.2.apk","platform":0}}}
+------------------------------------test_login_Update_ios:15:28:29-----------------------------------------------
+api: http://test.rapself.com:9091/api/clientVersion/ios
+status_code: 200
+text: {"status":0,"msg":"success","data":{"version":""}}
+------------------------------------test_login_arguements_wrong:15:28:30-----------------------------------------------
+api: http://test.rapself.com:9091/api/user/login
+status_code: 200
+text: {"status":2,"msg":"缺少参数phone","data":{}}
+------------------------------------test_login_password_wrong:15:28:30-----------------------------------------------
+api: http://test.rapself.com:9091/api/user/login
+status_code: 200
+text: {"status":97,"msg":"密码错误","data":{}}
+------------------------------------test_login_phone_user_not_exist:15:28:30-----------------------------------------------
+api: http://test.rapself.com:9091/api/user/login
+status_code: 200
+text: {"status":98,"msg":"用户不存在.","data":{}}
+------------------------------------test_login_success:15:28:31-----------------------------------------------
+api: http://test.rapself.com:9091/api/user/login
+status_code: 200
+text: {"status":0,"msg":"success","data":{"user":{"id":100001775,"userName":"sleepydog","password":"21218cca77804d2ba1922c33e0151105","email":"","phoneNumber":"18782943850","headPortraitUrl":"http://user-storage.oss-cn-qingdao.aliyuncs.com/img/2017051609180468_100001775.png","personalProfile":"","gender":1,"birthday":652978800000,"areaId":"1","emotionStatus":1,"createTime":1492486940000,"createTerminalMac":null,"thirdpartyLoginId":null,"thirdpartyCatg":999,"status":1},"token":"8qWsDMfVmr/DOlxu8EcfNg=="}}
+------------------------------------test_register:15:28:35-----------------------------------------------
+api: http://test.rapself.com:9091/api/register
+status_code: 200
+text: {"status":100100,"msg":"参数类型错误, 无效的手机号=15350556639","data":{}}
+------------------------------------test_register_phone_exists:15:28:36-----------------------------------------------
+api: http://test.rapself.com:9091/api/getIdentifyingCode?phoneNumber=18109053700
+status_code: 200
+text: {"status":100100,"msg":"参数类型错误, 无效的手机号=18109053700","data":{}}

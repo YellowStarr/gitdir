@@ -9,9 +9,9 @@ import data_init, dbManual
 
 class userErrorCheck(unittest.TestCase):
     def setUp(self):
-        self.baseurl = 'http://139.129.208.77:8080'
+        self.baseurl = 'http://test.rapself.com:9091'
         d = data_init.testData()
-        self.data = d.getUserData()
+        self.data = d.getUserData
         self.verificationErrors = []
         self.accept_next_alert = True
         self.api = MyAPI()
@@ -22,6 +22,7 @@ class userErrorCheck(unittest.TestCase):
         '''token不传'''
         user = UserAPI(self.baseurl)
         response = user.user_FollowedSong(None)
+        self.assertEqual(200, response.status_code, 'status code:%s' % response.status_code)
         r = response.json()
         self.api.writeLog(sys._getframe().f_code.co_name, response.text)
         self.assertEqual(3, r['status'])
@@ -31,6 +32,7 @@ class userErrorCheck(unittest.TestCase):
         '''token不传'''
         user = UserAPI(self.baseurl)
         response = user.user_FollowedSong('')
+
         r = response.json()
         self.api.writeLog(sys._getframe().f_code.co_name, response.text)
         self.assertEqual(4, r['status'])

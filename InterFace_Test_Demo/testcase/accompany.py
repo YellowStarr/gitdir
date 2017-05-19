@@ -6,8 +6,8 @@ from interface.API import MyAPI
 class Accompany(unittest.TestCase):
     def setUp(self):
         self.api=MyAPI()
-        self.baseurl = 'http://139.129.208.77:8080'
-        self.cateIdList = [10000001,10000002,10000003,10000004,10000005,10000006,10000007,1000000,10000009]
+        self.baseurl = 'http://test.rapself.com:9090'
+        self.cateIdList = [10000001, 10000002, 10000003, 10000004, 10000005, 10000006, 10000007, 1000000, 10000009]
 
     def test_accompany_Classify(self):
         url = self.baseurl + '/api/music/type'

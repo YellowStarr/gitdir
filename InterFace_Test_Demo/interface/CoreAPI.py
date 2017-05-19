@@ -19,7 +19,7 @@ class CoreAPI:
         
         return r
 
-    def core_Compose(self,token,type,title,audios,images,latitude,longitude,lyric,userid,description='',isPublic=True):
+    def core_Compose(self,token,type,title,audios,images,latitude,longitude,lyric,userid,description='',isPublic=1):
         u'''创建和上传歌曲和图片的接口
             Method:post
             :param: type:string
@@ -30,7 +30,7 @@ class CoreAPI:
         '''
         headers = {
             "token": token,
-            "Host": "139.129.208.77:8080",
+            "Host": self.baseurl,
             "User-Agent": "HeiPa/1.0.1 (iPhone; iOS 9.3.5; Scale/2.00)",
             "Accept": "*/*",
             "Accept-Language": "zh-Hans-CN;q=1",
@@ -41,12 +41,12 @@ class CoreAPI:
         if type == 'rap':
             url = self.baseurl + '/api/audio/rap/compose'
             jsons = {'title': title, 'audios': audios, 'images': images, 'latitude': latitude, 'longitude': longitude,
-                    'lyric': lyric, 'description': description, 'userId':userid}
+                    'lyric': lyric, 'description': description, 'userId':userid, 'isPublic': isPublic}
 
         elif type == 'complaint':
             url = self.baseurl + '/api/audio/complaint/compose'
             jsons = {'title': title, 'audios': audios, 'images': images, 'latitude': latitude, 'longitude': longitude,
-                    'lyric': lyric, 'userId': userid, 'description':description}
+                    'lyric': lyric, 'userId': userid, 'description': description, 'isPublic': isPublic}
         r = requests.post(url, json=jsons, headers=headers)
         
         return r
@@ -59,12 +59,11 @@ class CoreAPI:
                 data{comments:[{userName,id,userId,commentContent,commentTime,commentStatus 99 已删除 0 正常}]},msg,status
         '''
         url = self.baseurl + '/api/comment/v1'
-        params={'id': id, 'page': page, 'size': size, 'sort':sort}
+        params = {'id': id, 'page': page, 'size': size, 'sort': sort}
         r = requests.get(url, params=params)
-        # r = r.json()
         return r
 
-    def core_RecommendLyrics(self,size=10):
+    def core_RecommendLyrics(self, size=10):
         u'''推荐歌词
             @Method:get
             @return:
@@ -111,7 +110,7 @@ class CoreAPI:
         '''
         headers = {
             "token": token,
-            "Host": "139.129.208.77:8080",
+            "Host": self.baseurl,
             "User-Agent": "HeiPa/1.0.1 (iPhone; iOS 9.3.5; Scale/2.00)",
             "Accept": "*/*",
             "Accept-Language": "zh-Hans-CN;q=1",
@@ -148,7 +147,7 @@ class CoreAPI:
         '''
         headers = {
             "token": token,
-            "Host": "139.129.208.77:8080",
+            "Host": self.baseurl,
             "User-Agent": "HeiPa/1.0.1 (iPhone; iOS 9.3.5; Scale/2.00)",
             "Accept": "*/*",
             "Accept-Language": "zh-Hans-CN;q=1",
@@ -171,7 +170,7 @@ class CoreAPI:
         '''
         headers = {
             "token": token,
-            "Host": "139.129.208.77:8080",
+            "Host": self.baseurl,
             "User-Agent": "HeiPa/1.0.1 (iPhone; iOS 9.3.5; Scale/2.00)",
             "Accept": "*/*",
             "Accept-Language": "zh-Hans-CN;q=1",
@@ -217,7 +216,7 @@ class CoreAPI:
         '''
         headers = {
             "token": token,
-            "Host": "139.129.208.77:8080",
+            "Host": self.baseurl,
             "User-Agent": "HeiPa/1.0.1 (iPhone; iOS 9.3.5; Scale/2.00)",
             "Accept": "*/*",
             "Accept-Language": "zh-Hans-CN;q=1",
@@ -242,7 +241,7 @@ class CoreAPI:
         '''
         headers = {
             "token": token,
-            "Host": "139.129.208.77:8080",
+            "Host": self.baseurl,
             "User-Agent": "HeiPa/1.0.1 (iPhone; iOS 9.3.5; Scale/2.00)",
             "Accept": "*/*",
             "Accept-Language": "zh-Hans-CN;q=1",
@@ -255,18 +254,15 @@ class CoreAPI:
         r = requests.delete(url, params=param, headers=headers)
         return r
 
-
-
-
     def core_Del_Music(self, token, type, id):
-        u'''删除我的歌曲
+        u"""删除我的歌曲
             :type raps|medleys|complaints|battles
             @return
             {data,msg,status}
-        '''
+        """
         headers = {
             "token": token,
-            "Host": "139.129.208.77:8080",
+            "Host": self.baseurl,
             "User-Agent": "HeiPa/1.0.1 (iPhone; iOS 9.3.5; Scale/2.00)",
             "Accept": "*/*",
             "Accept-Language": "zh-Hans-CN;q=1",
@@ -284,7 +280,7 @@ class CoreAPI:
         u'''加入串烧'''
         headers = {
             "token": token,
-            "Host": "139.129.208.77:8080",
+            "Host": self.baseurl,
             "User-Agent": "HeiPa/1.0.1 (iPhone; iOS 9.3.5; Scale/2.00)",
             "Accept": "*/*",
             "Accept-Language": "zh-Hans-CN;q=1",
@@ -321,7 +317,7 @@ class CoreAPI:
         '''
         headers = {
             "token": token,
-            "Host": "139.129.208.77:8080",
+            "Host": self.baseurl,
             "User-Agent": "HeiPa/1.0.1 (iPhone; iOS 9.3.5; Scale/2.00)",
             "Accept": "*/*",
             "Accept-Language": "zh-Hans-CN;q=1",
@@ -344,7 +340,7 @@ class CoreAPI:
         '''
         headers = {
             "token": token,
-            "Host": "139.129.208.77:8080",
+            "Host": self.baseurl,
             "User-Agent": "HeiPa/1.0.1 (iPhone; iOS 9.3.5; Scale/2.00)",
             "Accept": "*/*",
             "Accept-Language": "zh-Hans-CN;q=1",
@@ -365,7 +361,7 @@ class CoreAPI:
         '''
         headers = {
             "token": token,
-            "Host": "139.129.208.77:8080",
+            "Host": self.baseurl,
             "User-Agent": "HeiPa/1.0.1 (iPhone; iOS 9.3.5; Scale/2.00)",
             "Accept": "*/*",
             "Accept-Language": "zh-Hans-CN;q=1",
@@ -386,7 +382,7 @@ class CoreAPI:
         '''
         headers = {
             "token": token,
-            "Host": "139.129.208.77:8080",
+            "Host": self.baseurl,
             "User-Agent": "HeiPa/1.0.1 (iPhone; iOS 9.3.5; Scale/2.00)",
             "Accept": "*/*",
             "Accept-Language": "zh-Hans-CN;q=1",
@@ -407,7 +403,7 @@ class CoreAPI:
         '''
         headers = {
             "token": token,
-            "Host": "139.129.208.77:8080",
+            "Host": self.baseurl,
             "User-Agent": "HeiPa/1.0.1 (iPhone; iOS 9.3.5; Scale/2.00)",
             "Accept": "*/*",
             "Accept-Language": "zh-Hans-CN;q=1",
@@ -428,7 +424,7 @@ class CoreAPI:
         '''
         headers = {
             "token": token,
-            "Host": "139.129.208.77:8080",
+            "Host": self.baseurl,
             "User-Agent": "HeiPa/1.0.1 (iPhone; iOS 9.3.5; Scale/2.00)",
             "Accept": "*/*",
             "Accept-Language": "zh-Hans-CN;q=1",
@@ -449,7 +445,7 @@ class CoreAPI:
         '''
         headers = {
             "token": token,
-            "Host": "139.129.208.77:8080",
+            "Host": self.baseurl,
             "User-Agent": "HeiPa/1.0.1 (iPhone; iOS 9.3.5; Scale/2.00)",
             "Accept": "*/*",
             "Accept-Language": "zh-Hans-CN;q=1",

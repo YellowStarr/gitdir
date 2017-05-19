@@ -9,9 +9,9 @@ import data_init, dbManual
 
 class MapTest(unittest.TestCase):
     def setUp(self):
-        self.baseurl = 'http://139.129.208.77:8080'
+        self.baseurl = 'http://test.rapself.com:9091'
         d = data_init.testData()
-        self.data = d.getUserData()
+        self.data = d.getUserData
         self.verificationErrors = []
         self.accept_next_alert = True
         self.api = MyAPI()
@@ -40,17 +40,24 @@ class MapTest(unittest.TestCase):
         complaintnum = complaint[0][0]
         rapnum = rap[0][0]
         response = self.user.map_Near(latitude, longitude, radius, '')
-        r = response.json()
-        self.api.writeLog(sys._getframe().f_code.co_name, response.text)
-        self.assertEqual(0, r['status'])
-        self.assertEqual(medleynum,len(r['data']['songs']['medleys']))
-        self.assertEqual(complaintnum,len(r['data']['songs']['complaints']))
-        self.assertEqual(rapnum,len(r['data']['songs']['raps']))
-        # self.assertEqual(u"半径=1.0应该在[10, 10000]米范围内", r['msg'])
-        # self.api.writeLog('test_Near_success', json.loads(r))
+        try:
+            self.assertEqual(200, response.status_code)
+            r = response.json()
+            self.api.writeLog(sys._getframe().f_code.co_name, response.text)
+            self.assertEqual(0, r['status'])
+            self.assertEqual(medleynum,len(r['data']['songs']['medleys']))
+            self.assertEqual(complaintnum,len(r['data']['songs']['complaints']))
+            self.assertEqual(rapnum,len(r['data']['songs']['raps']))
+        except:
+            print 'status code:%s' % response.status_code
+            raise
+        finally:
+            self.api.writeLog(sys._getframe().f_code.co_name,
+                             'api: %s\nstatus_code: %s\ntext: %s' % (
+                             response.url, response.status_code, response.text))
 
-    def test_Near_all_null(self):
-        '''所有参数为空'''
+    '''def test_Near_all_null(self):
+        """所有参数为空"""
         response = self.user.map_Near('', '', '', '')
         r = response.json()
         self.api.writeLog(sys._getframe().f_code.co_name, response.text)
@@ -58,16 +65,16 @@ class MapTest(unittest.TestCase):
         self.assertEqual(u"参数longitude不是<type 'float'>.", r['msg'])
 
     def test_Near_type_error(self):
-        '''参数类型错误'''
+        """参数类型错误"""s
         response = self.user.map_Near('a', '104.05446182158', '1', '')
         r = response.json()
         self.assertEqual(116, r['status'])
         self.assertEqual(u"参数latitude不是<type 'float'>.", r['msg'])
 
     def test_Near_radius_error(self):
-        '''半径范围错误'''
+        """半径范围错误"""
 
         response = self.user.map_Near('30.56088604184985', '104.05446182158', '1', '')
         r = response.json()
         self.assertEqual(110, r['status'])
-        self.assertEqual(u"半径=1.0应该在[10, 10000]米范围内", r['msg'])
+        self.assertEqual(u"半径=1.0应该在[10, 10000]米范围内", r['msg'])'''

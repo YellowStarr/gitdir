@@ -9,7 +9,7 @@ import data_init,dbManual
 
 class IndexTest(unittest.TestCase):
     def setUp(self):
-        self.baseurl = 'http://139.129.208.77:8080'
+        self.baseurl = 'http://test.rapself.com:9091'
         self.d = data_init.testData()
         self.verificationErrors = []
         self.accept_next_alert = True
@@ -19,43 +19,106 @@ class IndexTest(unittest.TestCase):
 
     def test_Recommend(self):
         response = self.user.index_Recommend(1, 20)
-        r = response.json()
-        self.api.writeLog(sys._getframe().f_code.co_name, response.text)
-        self.assertEqual(0, r['status'])
+        try:
+            self.assertEqual(200, response.status_code)
+            r = response.json()
+            # self.api.writeLog(sys._getframe().f_code.co_name, response.text)
+            self.assertEqual(0, r['status'])
+        except:
+            print 'status code:%s' % response.status_code
+            raise
+        finally:
+            self.api.writeLog(sys._getframe().f_code.co_name,
+                              'api: %s\nstatus_code: %s\ntext: %s' % (
+                                  response.url, response.status_code, response.text))
 
     def test_Song_State(self):
         token = self.d.login_data[0]['token']
         response = self.user.index_Song_State(token, 1, 20)
-        r = response.json()
-        self.api.writeLog(sys._getframe().f_code.co_name, response.text)
-        self.assertEqual(0, r['status'])
+        try:
+            self.assertEqual(200, response.status_code)
+            r = response.json()
+            # self.api.writeLog(sys._getframe().f_code.co_name, response.text)
+            self.assertEqual(0, r['status'])
+        except:
+            print 'status code:%s' % response.status_code
+            raise
+        finally:
+            self.api.writeLog(sys._getframe().f_code.co_name,
+                              'api: %s\nstatus_code: %s\ntext: %s' % (
+                                  response.url, response.status_code, response.text))
 
     def test_Hot_Rap(self):
         response = self.user.index_Hot_Music('raps')
-        r = response.json()
-        self.api.writeLog(sys._getframe().f_code.co_name, response.text)
-        self.assertEqual(0, r['status'])
+        try:
+            self.assertEqual(200, response.status_code)
+            r = response.json()
+            # self.api.writeLog(sys._getframe().f_code.co_name, response.text)
+            self.assertEqual(0, r['status'])
+        except:
+            print 'status code:%s' % response.status_code
+            raise
+        finally:
+            self.api.writeLog(sys._getframe().f_code.co_name,
+                              'api: %s\nstatus_code: %s\ntext: %s' % (
+                                  response.url, response.status_code, response.text))
 
     def test_Hot_Complaint(self):
         response = self.user.index_Hot_Music('complaints')
-        r = response.json()
-        self.api.writeLog(sys._getframe().f_code.co_name, response.text)
-        self.assertEqual(0, r['status'])
+        try:
+            self.assertEqual(200, response.status_code)
+            r = response.json()
+            # self.api.writeLog(sys._getframe().f_code.co_name, response.text)
+            self.assertEqual(0, r['status'])
+        except:
+            print 'status code:%s' % response.status_code
+            raise
+        finally:
+            self.api.writeLog(sys._getframe().f_code.co_name,
+                              'api: %s\nstatus_code: %s\ntext: %s' % (
+                                  response.url, response.status_code, response.text))
 
     def test_Hot_Medley(self):
         response = self.user.index_Hot_Music('medleys')
-        r = response.json()
-        self.api.writeLog(sys._getframe().f_code.co_name, response.text)
-        self.assertEqual(0, r['status'])
+        try:
+            self.assertEqual(200, response.status_code)
+            r = response.json()
+            # self.api.writeLog(sys._getframe().f_code.co_name, response.text)
+            self.assertEqual(0, r['status'])
+        except:
+            print 'status code:%s' % response.status_code
+            raise
+        finally:
+            self.api.writeLog(sys._getframe().f_code.co_name,
+                              'api: %s\nstatus_code: %s\ntext: %s' % (
+                                  response.url, response.status_code, response.text))
 
     def test_Rank(self):
         response = self.user.index_Rank()
-        r = response.json()
-        self.api.writeLog(sys._getframe().f_code.co_name, response.text)
-        self.assertEqual(0, r['status'])
+        try:
+            self.assertEqual(200, response.status_code)
+            r = response.json()
+            # self.api.writeLog(sys._getframe().f_code.co_name, response.text)
+            self.assertEqual(0, r['status'])
+        except:
+            print 'status code:%s' % response.status_code
+            raise
+        finally:
+            self.api.writeLog(sys._getframe().f_code.co_name,
+                              'api: %s\nstatus_code: %s\ntext: %s' % (
+                                  response.url, response.status_code, response.text))
 
     def test_Homepage(self):
         response = self.user.index_Homepage()
-        r = response.json()
-        self.api.writeLog(sys._getframe().f_code.co_name, response.text)
-        self.assertEqual(0, r['status'])
+        try:
+            self.assertEqual(200, response.status_code)
+            r = response.json()
+            # self.api.writeLog(sys._getframe().f_code.co_name, response.text)
+            self.assertEqual(0, r['status'])
+        except:
+            print 'status code:%s' % response.status_code
+            raise
+        finally:
+            self.api.writeLog(sys._getframe().f_code.co_name,
+                              'api: %s\nstatus_code: %s\ntext: %s' % (
+                                  response.url, response.status_code, response.text))

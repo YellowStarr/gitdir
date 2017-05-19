@@ -16,7 +16,7 @@ class UserAPI:
         '''
         headers = {
             "token": token,
-            "Host": "139.129.208.77:8080",
+            "Host": self.baseurl,
             "User-Agent": "HeiPa/1.0.1 (iPhone; iOS 9.3.5; Scale/2.00)",
             "Accept": "*/*",
             "Accept-Language": "zh-Hans-CN;q=1",
@@ -69,7 +69,7 @@ class UserAPI:
     def user_Focus(self,id,token):
         headers = {
             "token": token,
-            "Host": "139.129.208.77:8080",
+            "Host": self.baseurl,
             "User-Agent": "HeiPa/1.0.1 (iPhone; iOS 9.3.5; Scale/2.00)",
             "Accept": "*/*",
             "Accept-Language": "zh-Hans-CN;q=1",
@@ -87,7 +87,7 @@ class UserAPI:
     def user_cancelFocus(self,id,token):
         headers = {
             "token": token,
-            "Host": "139.129.208.77:8080",
+            "Host": self.baseurl,
             "User-Agent": "HeiPa/1.0.1 (iPhone; iOS 9.3.5; Scale/2.00)",
             "Accept": "*/*",
             "Accept-Language": "zh-Hans-CN;q=1",
@@ -137,7 +137,7 @@ class UserAPI:
         u'''加入黑名单'''
         headers = {
             "token": token,
-            "Host": "139.129.208.77:8080",
+            "Host": self.baseurl,
             "User-Agent": "HeiPa/1.0.1 (iPhone; iOS 9.3.5; Scale/2.00)",
             "Accept": "*/*",
             "Accept-Language": "zh-Hans-CN;q=1",
@@ -156,7 +156,7 @@ class UserAPI:
         u'''移出黑名单'''
         headers = {
             "token": token,
-            "Host": "139.129.208.77:8080",
+            "Host": self.baseurl,
             "User-Agent": "HeiPa/1.0.1 (iPhone; iOS 9.3.5; Scale/2.00)",
             "Accept": "*/*",
             "Accept-Language": "zh-Hans-CN;q=1",
@@ -175,7 +175,7 @@ class UserAPI:
         u'''黑名单'''
         headers = {
             "token": token,
-            "Host": "139.129.208.77:8080",
+            "Host": self.baseurl,
             "User-Agent": "HeiPa/1.0.1 (iPhone; iOS 9.3.5; Scale/2.00)",
             "Accept": "*/*",
             "Accept-Language": "zh-Hans-CN;q=1",
@@ -194,7 +194,7 @@ class UserAPI:
         u'''我加入的串烧'''
         headers = {
             "token": token,
-            "Host": "139.129.208.77:8080",
+            "Host": self.baseurl,
             "User-Agent": "HeiPa/1.0.1 (iPhone; iOS 9.3.5; Scale/2.00)",
             "Accept": "*/*",
             "Accept-Language": "zh-Hans-CN;q=1",
@@ -213,7 +213,7 @@ class UserAPI:
         u'''我加入的串烧'''
         headers = {
             "token": token,
-            "Host": "139.129.208.77:8080",
+            "Host": self.baseurl,
             "User-Agent": "HeiPa/1.0.1 (iPhone; iOS 9.3.5; Scale/2.00)",
             "Accept": "*/*",
             "Accept-Language": "zh-Hans-CN;q=1",
@@ -253,7 +253,7 @@ class UserAPI:
         u'''修改用户信息'''
         headers = {
             "token": token,
-            "Host": "139.129.208.77:8080",
+            "Host": self.baseurl,
             "User-Agent": "HeiPa/1.0.1 (iPhone; iOS 9.3.5; Scale/2.00)",
             "Accept": "*/*",
             "Accept-Language": "zh-Hans-CN;q=1",
@@ -284,7 +284,7 @@ class UserAPI:
         u'''我的串烧'''
         headers = {
             "token": token,
-            "Host": "139.129.208.77:8080",
+            "Host": self.baseurl,
             "User-Agent": "HeiPa/1.0.1 (iPhone; iOS 9.3.5; Scale/2.00)",
             "Accept": "*/*",
             "Accept-Language": "zh-Hans-CN;q=1",
@@ -303,7 +303,7 @@ class UserAPI:
         u'''获取吐槽作品'''
         headers = {
             "token": token,
-            "Host": "139.129.208.77:8080",
+            "Host": self.baseurl,
             "User-Agent": "HeiPa/1.0.1 (iPhone; iOS 9.3.5; Scale/2.00)",
             "Accept": "*/*",
             "Accept-Language": "zh-Hans-CN;q=1",
@@ -322,7 +322,7 @@ class UserAPI:
         u'''获取我的独白'''
         headers = {
             "token": token,
-            "Host": "139.129.208.77:8080",
+            "Host": self.baseurl,
             "User-Agent": "HeiPa/1.0.1 (iPhone; iOS 9.3.5; Scale/2.00)",
             "Accept": "*/*",
             "Accept-Language": "zh-Hans-CN;q=1",

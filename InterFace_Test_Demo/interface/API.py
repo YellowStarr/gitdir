@@ -1,16 +1,21 @@
 #coding=utf-8
 
 import requests, time, os
-import json
+
 
 class MyAPI:
     # def __init__(self):
-    def hotSinger(self,listen,fans,like,repo):
-        singerScore=listen+2*fans+3*like+4*repo
+
+    def hotsinger(self, listen, fans, like, repo):
+        lt = [listen, fans, like, repo]
+        lt = map(float, lt)
+        singerScore = lt[0] + 2*lt[1] + 3*lt[2] + 4*lt[3]
         return singerScore
 
-    def hotWork(self,listen,praise,repo,collect):
-        songScore=listen+2*praise+3*repo+4*collect
+    def hotWork(self, listen, praise, repo, collect):
+        lt = [listen, praise, repo, collect]
+        lt = map(float, lt)
+        songScore = lt[0] + 2*lt[1] + 3*lt[2] + 4*lt[3]
         return songScore
 
     def getTokenAndId(self):
@@ -35,16 +40,25 @@ class MyAPI:
         url = self.baseurl + '/api/user/statistic'
         r = requests.get(url, params=param)
         print r.url
-        # self.assertEqual(200, r.status_code)
+
         s = r.json()
         repostNum = s['data']['repostCount']
         return repostNum
 
-    def writeLog(self, func, obj):
-        t = time.strftime("%Y%m%d-%H", time.localtime())
+    def writeLog(self, func, obj):    # 该函数的作用是新建一个log.txt，记录response.text
+
+        '''functime = time.strftime("%H:%M:%S", time.localtime())
+        path = os.getcwd()
+        logname = path + '\Log\log.txt'
+        f = open(logname, 'a+')
+        f.write("------------------------------------%s:%s-----------------------------------------------"
+                % (func, functime) + '\n')
+        f.write(obj.encode('utf-8') + '\n')
+        f.close()'''
         functime = time.strftime("%H:%M:%S", time.localtime())
         path = os.getcwd()
-        logname = path + '\Log\log%s' % t+'.txt'
+
+        logname = path + '\Log\log.txt'
         f = open(logname, 'a+')
         f.write("------------------------------------%s:%s-----------------------------------------------"
                 % (func, functime) + '\n')

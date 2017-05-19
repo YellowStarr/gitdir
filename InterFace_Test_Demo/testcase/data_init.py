@@ -5,25 +5,20 @@ from dbManual import DBManual
 class testData:
     def __init__(self):
         self.db=DBManual()
-
-
         self.login_data = [
             {'phoneNumber': 18782943850, 'password': 'G1dAKkZ1s34ML1Y02YoGTErwpxVzh0T5kChN5y5OTcJYAqUJfwsjkQ',
              'id': 100001775,
-             'token': 'eyJhbGciOiJIUzI1NiIsImV4cCI6MTQ5MzE3MjkzOCwiaWF0IjoxNDkzMTY5MzM4fQ.eyJpZCI6MTAwMDAxNzc1fQ.Joiw5NCcB6nklHS4QqIMjyTpKOizUzfANlHtClZ9vaM'},
+             'token': '70ScZB4na1obGZKlUdetrA=='},
             {'phoneNumber': 18109053700, 'password': 'G1dAKkZ1s34ML1Y02YoGTErwpxVzh0T5kChN5y5OTcJYAqUJfwsjkQ',
              'id': 100001776,
-             'token': 'eyJhbGciOiJIUzI1NiIsImV4cCI6MTQ5MzE5NjYzNSwiaWF0IjoxNDkzMTkzMDM1fQ.eyJpZCI6MTAwMDAxNzc2fQ.MAFfOaWGyExzSr88kg_FMb_jHE5g07_RH7Lwn-JyuHE'
+             'token': 'kmIBqtaMBT4WbNBwaGjNsA=='
              },
-            {
-                'id':100001811,
-                'token':'eyJhbGciOiJIUzI1NiIsImV4cCI6MTQ5NDIyNjEzNywiaWF0IjoxNDk0MjIyNTM3fQ.eyJpZCI6MTAwMDAxODExfQ.ZXiaeDoQR4aAmbqU9VVP-dyjZruvgPiqIM49n3DINtU'
-            }
         ]
-
+    @property
     def getUserData(self):
         return self.login_data
 
+    @property
     def getSongIds(self):
         songIds = self.db.getALL('song_basic_info')
         songidList=[]

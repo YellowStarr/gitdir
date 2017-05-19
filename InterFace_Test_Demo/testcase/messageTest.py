@@ -9,7 +9,7 @@ import data_init,dbManual
 
 class MessageTest(unittest.TestCase):
     def setUp(self):
-        self.baseurl = 'http://139.129.208.77:8080'
+        self.baseurl = 'http://test.rapself.com:9091'
         self.d = data_init.testData()
         self.verificationErrors = []
         self.accept_next_alert = True
@@ -20,12 +20,19 @@ class MessageTest(unittest.TestCase):
     def test_message_Unread(self):
         token = self.d.login_data[0]['token']
         response = self.user.message_Unread(token)
-        r = response.json()
-        self.api.writeLog(sys._getframe().f_code.co_name, response.text)
-        self.assertEqual(0, r['status'])
-        # self.assertEqual(num, len(r['data']['songs']))
-
-    def test_message_Unread_token_null(self):
+        try:
+            self.assertEqual(200, response.status_code)
+            r = response.json()
+            # self.api.writeLog(sys._getframe().f_code.co_name, response.text)
+            self.assertEqual(0, r['status'])
+        except:
+            print 'status code:%s' % response.status_code
+            raise
+        finally:
+            self.api.writeLog(sys._getframe().f_code.co_name,
+                              'api: %s\nstatus_code: %s\ntext: %s' % (
+                                  response.url, response.status_code, response.text))
+    """def test_message_Unread_token_null(self):
         # token = self.d.login_data[0]['token']
         response = self.user.message_Unread(None)
         r = response.json()
@@ -38,23 +45,41 @@ class MessageTest(unittest.TestCase):
         response = self.user.message_Unread('ddd')
         r = response.json()
         self.api.writeLog(sys._getframe().f_code.co_name, response.text)
-        self.assertEqual(4, r['status'])
+        self.assertEqual(4, r['status'])"""
 
     def test_message_History_sys(self):
         token = self.d.login_data[0]['token']
         response = self.user.message_History(token, 'sys')
-        r = response.json()
-        self.api.writeLog(sys._getframe().f_code.co_name, response.text)
-        self.assertEqual(0, r['status'])
+        try:
+            self.assertEqual(200, response.status_code)
+            r = response.json()
+            # self.api.writeLog(sys._getframe().f_code.co_name, response.text)
+            self.assertEqual(0, r['status'])
+        except:
+            print 'status code:%s' % response.status_code
+            raise
+        finally:
+            self.api.writeLog(sys._getframe().f_code.co_name,
+                              'api: %s\nstatus_code: %s\ntext: %s' % (
+                                  response.url, response.status_code, response.text))
 
     def test_message_History_notice(self):
         token = self.d.login_data[0]['token']
         response = self.user.message_History(token, 'notice')
-        r = response.json()
-        self.api.writeLog(sys._getframe().f_code.co_name, response.text)
-        self.assertEqual(0, r['status'])
+        try:
+            self.assertEqual(200, response.status_code)
+            r = response.json()
+            # self.api.writeLog(sys._getframe().f_code.co_name, response.text)
+            self.assertEqual(0, r['status'])
+        except:
+            print 'status code:%s' % response.status_code
+            raise
+        finally:
+            self.api.writeLog(sys._getframe().f_code.co_name,
+                              'api: %s\nstatus_code: %s\ntext: %s' % (
+                                  response.url, response.status_code, response.text))
 
-    def test_message_History_notice_token_null(self):
+    """def test_message_History_notice_token_null(self):
         # token = self.d.login_data[0]['token']
         response = self.user.message_History(None, 'notice')
         r = response.json()
@@ -66,4 +91,4 @@ class MessageTest(unittest.TestCase):
         response = self.user.message_History('asdfsadf', 'notice')
         r = response.json()
         self.api.writeLog(sys._getframe().f_code.co_name, response.text)
-        self.assertEqual(4, r['status'])
+        self.assertEqual(4, r['status'])"""

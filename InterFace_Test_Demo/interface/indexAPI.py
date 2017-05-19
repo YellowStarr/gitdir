@@ -21,7 +21,7 @@ class IndexAPI:
         u'''该Url包括(4:合成失败,6:合成中)两个状态的歌曲'''
         headers = {
             "token": token,
-            "Host": "139.129.208.77:8080",
+            "Host": self.baseurl,
             "User-Agent": "HeiPa/1.0.1 (iPhone; iOS 9.3.5; Scale/2.00)",
             "Accept": "*/*",
             "Accept-Language": "zh-Hans-CN;q=1",

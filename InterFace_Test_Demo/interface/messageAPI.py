@@ -19,7 +19,7 @@ class MessageAPI:
         '''
         headers = {
             "token": token,
-            "Host": "139.129.208.77:8080",
+            "Host": self.baseurl,
             "User-Agent": "HeiPa/1.0.1 (iPhone; iOS 9.3.5; Scale/2.00)",
             "Accept": "*/*",
             "Accept-Language": "zh-Hans-CN;q=1",
@@ -41,7 +41,7 @@ class MessageAPI:
         '''
         headers = {
             "token": token,
-            "Host": "139.129.208.77:8080",
+            "Host": self.baseurl,
             "User-Agent": "HeiPa/1.0.1 (iPhone; iOS 9.3.5; Scale/2.00)",
             "Accept": "*/*",
             "Accept-Language": "zh-Hans-CN;q=1",

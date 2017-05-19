@@ -67,7 +67,8 @@ class SendMail:
     def send(self):
         self.take_messages()
         self.msg['from'] = 'sillyapplemi@126.com'  # 发送邮件的人
-        self.msg['to'] = '263697396@qq.com'     # 收件人和发送人必须这里定义一下，执行才不会报错。
+        for i in range(len(self.sendTo)):
+            self.msg['to'] = self.sendTo[i]     # 收件人和发送人必须这里定义一下，执行才不会报错。
         #smtp = smtplib.SMTP('smtp.163.com', 25)  # 连接服务器
         smtp = smtplib.SMTP()
         smtp.connect('smtp.126.com')
