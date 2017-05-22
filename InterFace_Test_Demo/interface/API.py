@@ -58,7 +58,7 @@ class MyAPI:
         functime = time.strftime("%H:%M:%S", time.localtime())
         path = os.getcwd()
 
-        logpth = os.path.join(path, 'Log')
+        logpth = os.path.join(path, 'log')
         logname = os.path.join(logpth, 'log.txt')
         
         f = open(logname, 'a+')
