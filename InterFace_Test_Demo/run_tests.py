@@ -34,6 +34,7 @@ if __name__=="__main__":
     logname = os.path.join(logpth, 'log.txt')
     if os.path.exists(logname):
         os.remove(logname)
+        # os.open('log.txt', 'a+')
 
     testunit = unittest.TestSuite()
     for i in range(0, len(caseNames)):

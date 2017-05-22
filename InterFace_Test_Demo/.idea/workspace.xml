@@ -2,20 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="924a44e4-6202-4133-ad61-f7939173c71b" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/log/log20170516-13.txt" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/interface/CoreAPI.py" afterPath="$PROJECT_DIR$/interface/CoreAPI.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/interface/LoginAPI.py" afterPath="$PROJECT_DIR$/interface/LoginAPI.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/interface/userAPI.py" afterPath="$PROJECT_DIR$/interface/userAPI.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/log.txt" afterPath="$PROJECT_DIR$/log/log.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/interface/API.py" afterPath="$PROJECT_DIR$/interface/API.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mail.py" afterPath="$PROJECT_DIR$/mail.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcase/coreTest.py" afterPath="$PROJECT_DIR$/testcase/coreTest.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcase/data_init.py" afterPath="$PROJECT_DIR$/testcase/data_init.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcase/loginTests.py" afterPath="$PROJECT_DIR$/testcase/loginTests.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcase/mapTest.py" afterPath="$PROJECT_DIR$/testcase/mapTest.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcase/searchTest.py" afterPath="$PROJECT_DIR$/testcase/searchTest.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcase/userinfoTest.py" afterPath="$PROJECT_DIR$/testcase/userinfoTest.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report/reporter.html" afterPath="$PROJECT_DIR$/report/reporter.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/run_tests.py" afterPath="$PROJECT_DIR$/run_tests.py" />
     </list>
     <ignored path="untitled.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -54,19 +43,6 @@
                 <element signature="e#11888#13074#0" expanded="false" />
                 <element signature="e#14570#15567#0" expanded="false" />
                 <element signature="e#18176#18512#1" expanded="false" />
-                <marker date="1495188113761" expanded="true" signature="3944:3994" ph="SELECT liste... song_basic_info" />
-                <marker date="1495188113761" expanded="true" signature="8617:8670" ph="SELECT user_... song_praise_info" />
-                <marker date="1495188113761" expanded="true" signature="10485:10547" ph="SELECT song_... song_praise_info" />
-                <marker date="1495188113761" expanded="true" signature="10828:10882" ph="SELECT count... song_praise_info" />
-                <marker date="1495188113761" expanded="true" signature="11970:12024" ph="SELECT user_... song_collect_info" />
-                <marker date="1495188113761" expanded="true" signature="13158:13212" ph="SELECT song_... song_collect_info" />
-                <marker date="1495188113761" expanded="true" signature="13484:13539" ph="SELECT count... song_collect_info" />
-                <marker date="1495188113761" expanded="true" signature="14972:15090" ph="SELECT count... song_collect_info" />
-                <marker date="1495188113761" expanded="true" signature="17106:17171" ph="SELECT * FRO... sub_comment" />
-                <marker date="1495188113761" expanded="true" signature="18655:18739" ph="SELECT * FRO... song_basic_info" />
-                <marker date="1495188113761" expanded="true" signature="20378:20445" ph="SELECT curr_... medley_song_info" />
-                <marker date="1495188113761" expanded="true" signature="22454:22519" ph="SELECT id FR... song_comment_info" />
-                <marker date="1495188113761" expanded="true" signature="22886:22932" ph="SELECT statu... song_comment_info" />
               </folding>
             </state>
           </provider>
@@ -75,8 +51,8 @@
       <file leaf-file-name="run_tests.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/run_tests.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="940">
-              <caret line="47" column="83" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="83" />
+            <state relative-caret-position="505">
+              <caret line="33" column="45" selection-start-line="32" selection-start-column="4" selection-end-line="33" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -95,18 +71,28 @@
       <file leaf-file-name="mail.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mail.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="766">
-              <caret line="82" column="86" selection-start-line="82" selection-start-column="86" selection-end-line="82" selection-end-column="86" />
+            <state relative-caret-position="120">
+              <caret line="40" column="33" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="33" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="loginTests.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="loginTests.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testcase/loginTests.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3680">
-              <caret line="184" column="31" selection-start-line="184" selection-start-column="31" selection-end-line="184" selection-end-column="31" />
+            <state relative-caret-position="626">
+              <caret line="96" column="29" selection-start-line="96" selection-start-column="21" selection-end-line="96" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="API.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/interface/API.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="725">
+              <caret line="62" column="8" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -171,11 +157,9 @@
         <option value="$PROJECT_DIR$/testcase/shareTest.py" />
         <option value="$PROJECT_DIR$/interface/shareAPI.py" />
         <option value="$PROJECT_DIR$/interface/messageAPI.py" />
-        <option value="$PROJECT_DIR$/interface/API.py" />
         <option value="$PROJECT_DIR$/HTMLTestRunner.py" />
         <option value="$PROJECT_DIR$/testcase/classifyCode.py" />
         <option value="$PROJECT_DIR$/testcase/__init__.py" />
-        <option value="$PROJECT_DIR$/run_tests.py" />
         <option value="$PROJECT_DIR$/interface/LoginAPI.py" />
         <option value="$PROJECT_DIR$/testcase/mapTest.py" />
         <option value="$PROJECT_DIR$/testcase/loginTests.py" />
@@ -186,6 +170,8 @@
         <option value="$PROJECT_DIR$/testcase/searchTest.py" />
         <option value="$PROJECT_DIR$/interface/CoreAPI.py" />
         <option value="$PROJECT_DIR$/mail.py" />
+        <option value="$PROJECT_DIR$/run_tests.py" />
+        <option value="$PROJECT_DIR$/interface/API.py" />
       </list>
     </option>
   </component>
@@ -317,8 +303,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -813,13 +799,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/interface/API.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1180">
-          <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/report/reporter.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -964,43 +943,38 @@
             <element signature="e#11888#13074#0" expanded="false" />
             <element signature="e#14570#15567#0" expanded="false" />
             <element signature="e#18176#18512#1" expanded="false" />
-            <marker date="1495188113761" expanded="true" signature="3944:3994" ph="SELECT liste... song_basic_info" />
-            <marker date="1495188113761" expanded="true" signature="8617:8670" ph="SELECT user_... song_praise_info" />
-            <marker date="1495188113761" expanded="true" signature="10485:10547" ph="SELECT song_... song_praise_info" />
-            <marker date="1495188113761" expanded="true" signature="10828:10882" ph="SELECT count... song_praise_info" />
-            <marker date="1495188113761" expanded="true" signature="11970:12024" ph="SELECT user_... song_collect_info" />
-            <marker date="1495188113761" expanded="true" signature="13158:13212" ph="SELECT song_... song_collect_info" />
-            <marker date="1495188113761" expanded="true" signature="13484:13539" ph="SELECT count... song_collect_info" />
-            <marker date="1495188113761" expanded="true" signature="14972:15090" ph="SELECT count... song_collect_info" />
-            <marker date="1495188113761" expanded="true" signature="17106:17171" ph="SELECT * FRO... sub_comment" />
-            <marker date="1495188113761" expanded="true" signature="18655:18739" ph="SELECT * FRO... song_basic_info" />
-            <marker date="1495188113761" expanded="true" signature="20378:20445" ph="SELECT curr_... medley_song_info" />
-            <marker date="1495188113761" expanded="true" signature="22454:22519" ph="SELECT id FR... song_comment_info" />
-            <marker date="1495188113761" expanded="true" signature="22886:22932" ph="SELECT statu... song_comment_info" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/run_tests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="940">
-          <caret line="47" column="83" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="83" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mail.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="766">
-          <caret line="82" column="86" selection-start-line="82" selection-start-column="86" selection-end-line="82" selection-end-column="86" />
+        <state relative-caret-position="120">
+          <caret line="40" column="33" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/testcase/loginTests.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3680">
-          <caret line="184" column="31" selection-start-line="184" selection-start-column="31" selection-end-line="184" selection-end-column="31" />
+        <state relative-caret-position="626">
+          <caret line="96" column="29" selection-start-line="96" selection-start-column="21" selection-end-line="96" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run_tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="505">
+          <caret line="33" column="45" selection-start-line="32" selection-start-column="4" selection-end-line="33" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/API.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="725">
+          <caret line="62" column="8" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="8" />
           <folding />
         </state>
       </provider>
