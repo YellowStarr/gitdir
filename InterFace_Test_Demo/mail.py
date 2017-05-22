@@ -7,7 +7,7 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
 reportPath = os.path.join(os.getcwd(), 'report')  # 测试报告的路径
-logPath = os.path.join(os.getcwd(), 'Log')
+logPath = os.path.join(os.getcwd(), 'log')
 print("打印路径：")
 
 print(reportPath)

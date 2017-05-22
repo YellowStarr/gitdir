@@ -30,7 +30,7 @@ if __name__=="__main__":
     ]
     # 运行时，先判断Log文件夹中是否已存在log.txt文件，若存在，删除
     path = os.getcwd()
-    logpth =os.path.join(path, 'Log')
+    logpth =os.path.join(path, 'log')
     logname = os.path.join(logpth, 'log.txt')
     if os.path.exists(logname):
         os.remove(logname)
