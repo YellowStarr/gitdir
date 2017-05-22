@@ -13,7 +13,7 @@ if __name__=="__main__":
     print "---------------------------------------start-----------------------------------------"
 
     caseNames = [
-        loginTests.LoginTest,
+        loginTest.LoginTest,
         userinfoTest.userinfoTest,
         # userErrorCheck.userErrorCheck,
         coreTest.coreTest,
