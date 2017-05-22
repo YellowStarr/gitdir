@@ -81,12 +81,22 @@ class CoreAPI:
             @return:
                 data{count},status,msg
         '''
+        headers={
+            "token": token,
+            "Host": self.baseurl,
+            "User-Agent": "HeiPa/1.0.1 (iPhone; iOS 9.3.5; Scale/2.00)",
+            "Accept": "*/*",
+            "Accept-Language": "zh-Hans-CN;q=1",
+            "Accept-Encoding": "gzip, deflate",
+            "Content-Type": "application/json; charset=UTF-8",
+            "Connection": "keep-alive"
+        }
         url = self.baseurl + '/api/user/listen'
-        r = requests.post(url,json={'id':id,'token':token})
+        r = requests.post(url, json={'id': id}, headers=headers)
         # r = r.json()
         return r
 
-    def core_SongDetail_V1(self,id):
+    def core_SongDetail_V1(self, id):
         u'''歌曲详情
             @Method:get
             @param: 歌曲id
@@ -97,7 +107,7 @@ class CoreAPI:
                       ]},msg,status
         '''
         url = self.baseurl + '/api/songDetail/v1'
-        r = requests.get(url,params={'id':id})
+        r = requests.get(url, params={'id': id})
         # r = r.json()
         return r
 
@@ -199,8 +209,7 @@ class CoreAPI:
         # r = r.json()
         return r
 
-
-    def core_Post_SubComment(self,token,songCommentId,toCommentId,content,toUserId,toUserName,commentAsset=[]):
+    def core_Post_SubComment(self, token, songCommentId, toCommentId, content, toUserId, toUserName, commentAsset=[]):
         u'''评论评论
             @Method:get
             @param: songCommentId:string 评论/子评论id
@@ -225,8 +234,8 @@ class CoreAPI:
             "Connection": "keep-alive"
         }
         url = self.baseurl + '/api/subComments'
-        param = {'toCommentId': toCommentId, 'songCommentId': songCommentId, 'content':content, 'toUserId':toUserId,
-                 'toUserName':toUserName, 'commentAsset':commentAsset}
+        param = {'toCommentId': toCommentId, 'songCommentId': songCommentId, 'content': content, 'toUserId': toUserId,
+                 'toUserName': toUserName, 'commentAsset': commentAsset}
         r = requests.post(url, json=param, headers=headers)
         # r = r.json()
         return r

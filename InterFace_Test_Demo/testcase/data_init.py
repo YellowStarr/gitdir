@@ -50,6 +50,6 @@ class testData:
         return medleySet
 
     def getUndoneMedley(self):
-        sql = 'SELECT * FROM medley_song_info WHERE audio_id=-1 AND curr_participant_count < max_participant_count'
+        sql = 'SELECT * FROM medley_song_info WHERE curr_participant_count < max_participant_count'
         medleySet = self.db.getSet(sql)
         return medleySet

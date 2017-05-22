@@ -40,6 +40,7 @@ class MapTest(unittest.TestCase):
         complaintnum = complaint[0][0]
         rapnum = rap[0][0]
         response = self.user.map_Near(latitude, longitude, radius, '')
+        args = {'latitude': latitude, 'longitude': longitude, 'radius': radius}
         try:
             self.assertEqual(200, response.status_code)
             r = response.json()
@@ -53,7 +54,7 @@ class MapTest(unittest.TestCase):
             raise
         finally:
             self.api.writeLog(sys._getframe().f_code.co_name,
-                             'api: %s\nstatus_code: %s\ntext: %s' % (
+                             'args:%s\napi: %s\nstatus_code: %s\ntext: %s' % (args,
                              response.url, response.status_code, response.text))
 
     '''def test_Near_all_null(self):

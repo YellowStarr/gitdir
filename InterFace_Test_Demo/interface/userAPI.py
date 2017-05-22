@@ -4,8 +4,8 @@ __author__ = 'QiuWenjing'
 import requests
 from interface.API import MyAPI
 class UserAPI:
-    def __init__(self,url):
-        self.baseurl=url
+    def __init__(self, url):
+        self.baseurl = url
         self.api = MyAPI()
 
     def user_FollowedSong(self, token, page=1, size=10):
@@ -248,7 +248,7 @@ class UserAPI:
       
         return r
 
-    def user_ModifyInfo(self, token, id, userName, phoneNumber, area='1', birthday='1990-09-11', emotionStatus=1, hasFocus='', personalProfile='',
+    def user_ModifyInfo(self, token, id, userName, phoneNumber, area='1', birthday=652978800000, emotionStatus=1, hasFocus='', personalProfile='',
                          portrait='', sex=1):
         u'''修改用户信息'''
         headers = {

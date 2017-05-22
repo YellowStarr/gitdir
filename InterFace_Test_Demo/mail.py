@@ -65,19 +65,20 @@ class SendMail:
         self.msg.attach(att2)
 
     def send(self):
-        self.take_messages()
-        self.msg['from'] = 'sillyapplemi@126.com'  # 发送邮件的人
+
         for i in range(len(self.sendTo)):
+            self.take_messages()
+            self.msg['from'] = 'sillyapplemi@126.com'  # 发送邮件的人
             self.msg['to'] = self.sendTo[i]     # 收件人和发送人必须这里定义一下，执行才不会报错。
         #smtp = smtplib.SMTP('smtp.163.com', 25)  # 连接服务器
-        smtp = smtplib.SMTP()
-        smtp.connect('smtp.126.com')
-        smtp.login('sillyapplemi@126.com', 'a^2+b^2=c^2')  # 登录的用户名和密码（注意密码是设置客户端授权码，因为使用用户密码不稳听，有时无法认证成功，导致登录不上，故无法发送邮件。）
-        smtp.sendmail(self.msg['from'], self.msg['to'], self.msg.as_string())  # 发送邮件
-        smtp.close()
-        print'sendmail success'
+            smtp = smtplib.SMTP()
+            smtp.connect('smtp.126.com')
+            smtp.login('sillyapplemi@126.com', 'a^2+b^2=c^2')  # 登录的用户名和密码（注意密码是设置客户端授权码，因为使用用户密码不稳听，有时无法认证成功，导致登录不上，故无法发送邮件。）
+            smtp.sendmail(self.msg['from'], self.msg['to'], self.msg.as_string())  # 发送邮件
+            smtp.close()
+            print'sendmail success'
 
 
 if __name__ == '__main__':
-    sendMail = SendMail()
+    sendMail = SendMail(['1095222570@qq.com', '263697396@qq.com', '358014589@qq.com'])
     sendMail.send()

@@ -59,7 +59,7 @@ class SearchTest(unittest.TestCase):
     def test_search_Song_DIG(self):
         keyword = u'11'
         sql = 'SELECT COUNT(*) FROM song_basic_info where song_name LIKE "%' + keyword + '%" and song_status=1'
-        num = self.db.excuteSQL(sql)
+        num = self.db.getSingle(sql)
         print num
         response = self.user.search_Song(keyword)
         try:
@@ -79,7 +79,7 @@ class SearchTest(unittest.TestCase):
     def test_search_User_CN(self):
         keyword = u'罗亮'
         sql = 'SELECT COUNT(*) FROM user_profile_basic where user_name LIKE "%' + keyword.encode('utf-8') + '%"'
-        num = self.db.excuteSQL(sql)
+        num = self.db.getSingle(sql)
         print num
         response = self.user.search_User(keyword)
         try:
@@ -99,7 +99,7 @@ class SearchTest(unittest.TestCase):
     def test_search_User_EN(self):
         keyword = u'sleepyhead'
         sql = 'SELECT COUNT(*) FROM user_profile_basic where user_name LIKE "%' + keyword + '%"'
-        num = self.db.excuteSQL(sql)
+        num = self.db.getSingle(sql)
         response = self.user.search_User(keyword)
         try:
             self.assertEqual(200, response.status_code)

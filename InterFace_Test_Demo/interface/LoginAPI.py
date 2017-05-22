@@ -109,7 +109,7 @@ class LoginAPI:
         '''
         params={'accessId':accessId}
         url = self.baseurl + '/api/config'
-        r = requests.get(url,params=params)
+        r = requests.get(url, params=params)
         print r.text
         # r = r.json()
         return r

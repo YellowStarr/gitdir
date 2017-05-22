@@ -5,7 +5,7 @@ import unittest,requests
 from interface.LoginAPI import LoginAPI
 from data_init import testData
 from interface.API import MyAPI
-from classifyCode import ClassifyCode
+
 
 class LoginTest(unittest.TestCase):
 
@@ -16,7 +16,7 @@ class LoginTest(unittest.TestCase):
         self.udata = login.getUserData[0]
         self.api = MyAPI()
         self.result = ""
-        self.classifycode = ClassifyCode()
+        # self.classifycode = ClassifyCode()
     def tearDown(self):
         print self.result
 
@@ -24,6 +24,7 @@ class LoginTest(unittest.TestCase):
         u"""登陆成功测试"""
         print "-----------------------------------running test_login_success----------------------------------------- "
         response = self.user.login_Login(self.udata['phoneNumber'], self.udata['password'])
+        args = {"terminal": 2, 'password': self.udata['password'], 'phone': self.udata['phoneNumber']}
         try:
             self.assertEqual(200, response.status_code, 'status code:%s' % response.status_code)
             r = response.json()
@@ -36,7 +37,7 @@ class LoginTest(unittest.TestCase):
             raise
         finally:
             self.api.writeLog(sys._getframe().f_code.co_name,
-                              'api: %s\nstatus_code: %s\ntext: %s' % (
+                              'args: %s\napi: %s\nstatus_code: %s\ntext: %s' % (args,
                               response.url, response.status_code, response.text))
 
     def test_login_password_wrong(self):
@@ -46,13 +47,9 @@ class LoginTest(unittest.TestCase):
         try:
             self.assertEqual(200, response.status_code, 'status code:%s' % response.status_code)
             r = response.json()
-            # self.api.writeLog(sys._getframe().f_code.co_name, response.text)
             self.assertEqual(r['status'], 97)
         except:
             print 'status code:%s' % response.status_code
-            # self.api.writeLog(sys._getframe().f_code.co_name,
-            #                   'api: %s\nstatus_code: %s' % (response.url, response.status_code))
-            # self.classifycode.comparecode(response)
             raise
         finally:
             self.api.writeLog(sys._getframe().f_code.co_name,
@@ -92,13 +89,9 @@ class LoginTest(unittest.TestCase):
         try:
             self.assertEqual(200, response.status_code, 'status code:%s' % response.status_code)
             r = response.json()
-            # self.api.writeLog(sys._getframe().f_code.co_name, response.text)
             self.assertEqual(r['status'], 98)
-            # print response
         except:
             print 'status code:%s' % response.status_code
-            # self.api.writeLog(sys._getframe().f_code.co_name,
-            #                   'api: %s\nstatus_code: %s' % (response.url, response.status_code))
             raise
         finally:
             self.api.writeLog(sys._getframe().f_code.co_name,
@@ -116,8 +109,7 @@ class LoginTest(unittest.TestCase):
             self.assertEqual(r['status'], 111)
         except:
             print 'status code:%s' % response.status_code
-            # self.api.writeLog(sys._getframe().f_code.co_name,
-            #                   'api: %s\nstatus_code: %s' % (response.url, response.status_code))
+
             raise
         finally:
             self.api.writeLog(sys._getframe().f_code.co_name,
@@ -129,12 +121,10 @@ class LoginTest(unittest.TestCase):
         try:
             self.assertEqual(200, response.status_code, 'status code:%s' % response.status_code)
             r = response.json()
-            # self.api.writeLog(sys._getframe().f_code.co_name, response.text)
             self.assertEqual(r['status'], 0)
         except:
             print 'status code:%s' % response.status_code
-            # self.api.writeLog(sys._getframe().f_code.co_name,
-            #                   'api: %s\nstatus_code: %s' % (response.url, response.status_code))
+
             raise
         finally:
             self.api.writeLog(sys._getframe().f_code.co_name,
@@ -146,12 +136,11 @@ class LoginTest(unittest.TestCase):
         try:
             self.assertEqual(200, response.status_code, 'status code:%s' % response.status_code)
             r = response.json()
-            # self.api.writeLog(sys._getframe().f_code.co_name, response.text)
+
             self.assertEqual(r['status'], 0)
         except:
             print 'status code:%s' % response.status_code
-            # self.api.writeLog(sys._getframe().f_code.co_name,
-            #                   'api: %s\nstatus_code: %s' % (response.url, response.status_code))
+
             raise
         finally:
             self.api.writeLog(sys._getframe().f_code.co_name,
@@ -159,50 +148,44 @@ class LoginTest(unittest.TestCase):
                               response.url, response.status_code, response.text))
 
     def test_login_ThirdParty_QQ(self):
-        response = self.user.login_ThirdParty('UID_E5471C281EF0A4C785B31A0A58A55342', 'sin', '', '')
+        response = self.user.login_ThirdParty('UID_E5471C281EF0A4C785B31A0A58A55342', 'sin', '2', '0')
         try:
             self.assertEqual(200, response.status_code, 'status code:%s' % response.status_code)
             r = response.json()
-            # self.api.writeLog(sys._getframe().f_code.co_name, response.text)
+
             self.assertEqual(r['status'], 0)
         except:
             print 'status code:%s' % response.status_code
-            # self.api.writeLog(sys._getframe().f_code.co_name,
-            #                   'api: %s\nstatus_code: %s' % (response.url, response.status_code))
+
             raise
         finally:
             self.api.writeLog(sys._getframe().f_code.co_name,
                               'api: %s\nstatus_code: %s\ntext: %s' % (
                               response.url, response.status_code, response.text))
 
-    def test_login_ThirdParty_QQ_token_wrong(self):
+    '''def test_login_ThirdParty_QQ_token_wrong(self):
         response = self.user.login_ThirdParty('', 'sin', 2, 0)
         try:
             self.assertEqual(200, response.status_code, 'status code:%s' % response.status_code)
             r = response.json()
-            # self.api.writeLog(sys._getframe().f_code.co_name, response.text)
             self.assertEqual(r['status'], 4)
         except:
             print 'status code:%s' % response.status_code
-            # self.api.writeLog(sys._getframe().f_code.co_name,
-            #                   'api: %s\nstatus_code: %s' % (response.url, response.status_code))
+
             raise
         finally:
             self.api.writeLog(sys._getframe().f_code.co_name,
                               'api: %s\nstatus_code: %s\ntext: %s' % (
-                              response.url, response.status_code, response.text))
+                              response.url, response.status_code, response.text))'''
 
     def test_forgetpwd_msgCode_no_pbone(self):
         response = self.user.forgetpwd_msgCode()
         try:
             self.assertEqual(200, response.status_code, 'status code:%s' % response.status_code)
             r = response.json()
-            # self.api.writeLog(sys._getframe().f_code.co_name, response.text)
             self.assertEqual(r['status'], 103)
         except:
             print 'status code:%s' % response.status_code
-            # self.api.writeLog(sys._getframe().f_code.co_name,
-            #                   'api: %s\nstatus_code: %s' % (response.url, response.status_code))
             raise
         finally:
             self.api.writeLog(sys._getframe().f_code.co_name,
@@ -218,8 +201,6 @@ class LoginTest(unittest.TestCase):
             self.assertEqual(r['status'], 0)
         except:
             print 'status code:%s' % response.status_code
-            # self.api.writeLog(sys._getframe().f_code.co_name,
-            #                   'api: %s\nstatus_code: %s' % (response.url, response.status_code))
             raise
         finally:
             self.api.writeLog(sys._getframe().f_code.co_name,
@@ -228,19 +209,17 @@ class LoginTest(unittest.TestCase):
 
     def test_register(self):
         response = self.user.register_Register('qiuwj', 15350556639, '888888', '0000')
+        args = {'username': 'qiuwj', 'password': '888888', 'code': '0000', 'phoneNumber': 15350556639}
         try:
             self.assertEqual(200, response.status_code, 'status code:%s' % response.status_code)
             r = response.json()
-            # self.api.writeLog(sys._getframe().f_code.co_name, response.text)
             self.assertEqual(r['status'], 0)
         except:
             print 'status code:%s' % response.status_code
-            # self.api.writeLog(sys._getframe().f_code.co_name,
-            #                   'api: %s\nstatus_code: %s' % (response.url, response.status_code))
             raise
         finally:
             self.api.writeLog(sys._getframe().f_code.co_name,
-                              'api: %s\nstatus_code: %s\ntext: %s' % (
+                              'args:%s\napi: %s\nstatus_code: %s\ntext: %s' % (args,
                               response.url, response.status_code, response.text))
 
 if __name__ == '__main__':
