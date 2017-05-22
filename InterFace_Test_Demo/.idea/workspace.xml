@@ -5,7 +5,6 @@
     <list default="true" id="924a44e4-6202-4133-ad61-f7939173c71b" name="Default" comment="" />
 =======
     <list default="true" id="924a44e4-6202-4133-ad61-f7939173c71b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/interface/API.py" afterPath="$PROJECT_DIR$/interface/API.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mail.py" afterPath="$PROJECT_DIR$/mail.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/run_tests.py" afterPath="$PROJECT_DIR$/run_tests.py" />
     </list>
@@ -56,11 +55,16 @@
         <entry file="file://$PROJECT_DIR$/run_tests.py">
           <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
+<<<<<<< HEAD
             <state relative-caret-position="111">
               <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
 =======
             <state relative-caret-position="505">
               <caret line="33" column="45" selection-start-line="32" selection-start-column="4" selection-end-line="33" selection-end-column="45" />
+>>>>>>> dev
+=======
+            <state relative-caret-position="545">
+              <caret line="36" column="34" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
 >>>>>>> dev
               <folding />
             </state>
@@ -81,11 +85,16 @@
         <entry file="file://$PROJECT_DIR$/mail.py">
           <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
+<<<<<<< HEAD
             <state relative-caret-position="1560">
               <caret line="82" column="86" selection-start-line="82" selection-start-column="86" selection-end-line="82" selection-end-column="86" />
 =======
             <state relative-caret-position="120">
               <caret line="40" column="33" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="33" />
+>>>>>>> dev
+=======
+            <state relative-caret-position="100">
+              <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
 >>>>>>> dev
               <folding />
             </state>
@@ -102,18 +111,23 @@
       <file leaf-file-name="loginTests.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testcase/loginTests.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="626">
+            <state relative-caret-position="1920">
               <caret line="96" column="29" selection-start-line="96" selection-start-column="21" selection-end-line="96" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="API.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="API.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/interface/API.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="725">
               <caret line="62" column="8" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="8" />
+>>>>>>> dev
+=======
+            <state relative-caret-position="1200">
+              <caret line="60" column="38" selection-start-line="60" selection-start-column="38" selection-end-line="60" selection-end-column="38" />
 >>>>>>> dev
               <folding />
             </state>
@@ -218,13 +232,17 @@
         <option value="$PROJECT_DIR$/testcase/coreTest.py" />
         <option value="$PROJECT_DIR$/testcase/searchTest.py" />
         <option value="$PROJECT_DIR$/interface/CoreAPI.py" />
+        <option value="$PROJECT_DIR$/interface/API.py" />
         <option value="$PROJECT_DIR$/mail.py" />
 <<<<<<< HEAD
         <option value="$PROJECT_DIR$/testcase/loginTests.py" />
         <option value="$PROJECT_DIR$/testcase/__init__.py" />
 =======
         <option value="$PROJECT_DIR$/run_tests.py" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/interface/API.py" />
+>>>>>>> dev
+=======
 >>>>>>> dev
       </list>
     </option>
@@ -282,6 +300,10 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+<<<<<<< HEAD
+=======
+      <pane id="Scratches" />
+>>>>>>> dev
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -358,8 +380,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1011,8 +1031,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mail.py">
+    <entry file="file://$PROJECT_DIR$/testcase/loginTests.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
 <<<<<<< HEAD
         <state relative-caret-position="1560">
           <caret line="82" column="86" selection-start-line="82" selection-start-column="86" selection-end-line="82" selection-end-column="86" />
@@ -1020,10 +1041,15 @@
         <state relative-caret-position="120">
           <caret line="40" column="33" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="33" />
 >>>>>>> dev
+=======
+        <state relative-caret-position="1920">
+          <caret line="96" column="29" selection-start-line="96" selection-start-column="21" selection-end-line="96" selection-end-column="29" />
+>>>>>>> dev
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
 <<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/interface/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -1045,10 +1071,17 @@
         <state relative-caret-position="626">
           <caret line="96" column="29" selection-start-line="96" selection-start-column="21" selection-end-line="96" selection-end-column="29" />
 >>>>>>> dev
+=======
+    <entry file="file://$PROJECT_DIR$/interface/API.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1200">
+          <caret line="60" column="38" selection-start-line="60" selection-start-column="38" selection-end-line="60" selection-end-column="38" />
+>>>>>>> dev
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
 <<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/testcase/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -1066,17 +1099,25 @@
           <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
 =======
     <entry file="file://$PROJECT_DIR$/run_tests.py">
+=======
+    <entry file="file://$PROJECT_DIR$/mail.py">
+>>>>>>> dev
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="505">
-          <caret line="33" column="45" selection-start-line="32" selection-start-column="4" selection-end-line="33" selection-end-column="45" />
+        <state relative-caret-position="100">
+          <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/interface/API.py">
+    <entry file="file://$PROJECT_DIR$/run_tests.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="725">
           <caret line="62" column="8" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="8" />
+>>>>>>> dev
+=======
+        <state relative-caret-position="545">
+          <caret line="36" column="34" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
 >>>>>>> dev
           <folding />
         </state>
