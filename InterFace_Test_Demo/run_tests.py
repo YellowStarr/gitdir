@@ -41,6 +41,8 @@ if __name__=="__main__":
         testunit.addTest(unittest.makeSuite(caseNames[i]))
     # nowtime = time.strftime("%Y-%m-%d@%H_%M_%S", time.localtime(time.time()))
     reportpath = os.path.join(path, 'report')
+    if not os.path.exists(reportpath):
+        os.mkdir(reportpath)
     filename = os.path.join(reportpath, 'reporter.html')
     fp = file(filename, 'wb')
     runner = HTMLTestRunner.HTMLTestRunner(stream=fp, title='testcase-logintest', description='desc')
