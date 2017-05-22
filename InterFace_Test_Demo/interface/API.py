@@ -58,7 +58,9 @@ class MyAPI:
         functime = time.strftime("%H:%M:%S", time.localtime())
         path = os.getcwd()
 
-        logname = path + '\Log\log.txt'
+        logpth = os.path.join(path, 'Log')
+        logname = os.path.join(logpth, 'log.txt')
+        
         f = open(logname, 'a+')
         f.write("------------------------------------%s:%s-----------------------------------------------"
                 % (func, functime) + '\n')
