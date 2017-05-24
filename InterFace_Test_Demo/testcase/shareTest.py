@@ -54,7 +54,8 @@ class ShareTest(unittest.TestCase):
         sidList = self.d.getSongIds
         sid = random.choice(sidList)
         token = self.d.login_data[0]['token']
-        response = self.user.share_Share_Inner(token, sid)
+        share_reason = 'share reason'
+        response = self.user.share_Share_Inner(token, sid, share_reason)
         try:
             self.assertEqual(200, response.status_code)
             r = response.json()

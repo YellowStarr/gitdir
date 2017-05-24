@@ -48,5 +48,6 @@ if __name__=="__main__":
     runner = HTMLTestRunner.HTMLTestRunner(stream=fp, title='testcase-logintest', description='desc')
 
     runner.run(testunit)
+    # ['1095222570@qq.com', '263697396@qq.com', '358014589@qq.com']
     m = mail.SendMail(['1095222570@qq.com', '263697396@qq.com', '358014589@qq.com'])
     m.send()

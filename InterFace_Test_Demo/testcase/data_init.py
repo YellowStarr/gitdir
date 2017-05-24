@@ -4,15 +4,15 @@ from dbManual import DBManual
 
 class testData:
     def __init__(self):
-        self.db=DBManual()
+        self.db = DBManual()
         self.login_data = [
             {'phoneNumber': 18782943850, 'password': 'G1dAKkZ1s34ML1Y02YoGTErwpxVzh0T5kChN5y5OTcJYAqUJfwsjkQ',
              'id': 100001775,
-             'token': '70ScZB4na1obGZKlUdetrA=='},
-            {'phoneNumber': 18109053700, 'password': 'G1dAKkZ1s34ML1Y02YoGTErwpxVzh0T5kChN5y5OTcJYAqUJfwsjkQ',
-             'id': 100001776,
-             'token': 'kmIBqtaMBT4WbNBwaGjNsA=='
-             },
+             'token': 'bVV07EFc6aQTakxhYelXyQ=='},
+            # {'phoneNumber': 18109053700, 'password': 'G1dAKkZ1s34ML1Y02YoGTErwpxVzh0T5kChN5y5OTcJYAqUJfwsjkQ',
+            #  'id': 100001776,
+            #  'token': 'kmIBqtaMBT4WbNBwaGjNsA=='
+            #  },
         ]
     @property
     def getUserData(self):
@@ -28,7 +28,8 @@ class testData:
         return songidList
 
     def getAudios(self):
-        audios = self.db.getALL('audio_basic_info')
+        sql = 'SELECT * FROM audio_basic_info WHERE upload_time>2017-05-01'
+        audios = self.db.getSet(sql)
         audioList = []
         for i in range(len(audios)):
             audioList.append(audios[i])

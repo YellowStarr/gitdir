@@ -162,7 +162,7 @@ class userinfoTest(unittest.TestCase):
 
     def test_Add_BlackList_success(self):
         user = UserAPI(self.baseurl)
-        response = user.user_Add_BlackList(100000027, self.data[0]['token'])
+        response = user.user_Add_BlackList(100000001, self.data[0]['token'])
         try:
             self.assertEqual(200, response.status_code, 'status code:%s' % response.status_code)
             r = response.json()
@@ -225,8 +225,8 @@ class userinfoTest(unittest.TestCase):
 
     def test_Create_Medley_success(self):
         user = UserAPI(self.baseurl)
-        response = user.user_Create_Medley(self.data[0]['token'],[{'key':'http://user-storage.oss-cn-qingdao.aliyuncs.com/audio/20170503134112_100001775_aa5aad11b8b0060d98a53fefda6fd3ab.m4a',
-                                     'duration':3,'lyric':''}],[],104,30.56089,5,'interface')
+        response = user.user_Create_Medley(self.data[0]['token'], [{'key':'http://user-storage.oss-cn-qingdao.aliyuncs.com/audio/20170503134112_100001775_aa5aad11b8b0060d98a53fefda6fd3ab.m4a',
+                                     'duration':3,'lyric':''}], [], 104, 30.56089, 5,'interface')
         params = {'audios': [{'key':'http://user-storage.oss-cn-qingdao.aliyuncs.com/audio/20170503134112_100001775_aa5aad11b8b0060d98a53fefda6fd3ab.m4a',
                                      'duration':3,'lyric':''}], 'images': [], 'latitude': 104, 'longitude': 30.56089,
                   'maxCount': 5, 'title': 'interface'}
@@ -262,7 +262,7 @@ class userinfoTest(unittest.TestCase):
     def test_ModifyInfo(self):
         user = UserAPI(self.baseurl)
         response = user.user_ModifyInfo(self.data[0]['token'], self.data[0]['id'], 'sleepydog', 18782943855)
-        args = {'area': '1', 'birthday': 652978800000, 'emotionStatus': 1,
+        args = {'area': '1', 'birthday': '652978800000', 'emotionStatus': 1,
          'hasFocus': '', 'personalProfile': 'per', 'phoneNumber': 18782943855,
          'portrait': '', 'sex': 1, 'userName': 'sleepydog', 'id': self.data[0]['id']}
         try:

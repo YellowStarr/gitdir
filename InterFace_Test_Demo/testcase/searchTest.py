@@ -28,7 +28,7 @@ class SearchTest(unittest.TestCase):
             r = response.json()
             # self.api.writeLog(sys._getframe().f_code.co_name, response.text)
             self.assertEqual(0, r['status'])
-            self.assertEqual(num, len(r['data']['songs']))
+            self.assertEqual(num[0], len(r['data']['songs']))
         except:
             print 'status code:%s' % response.status_code
             raise
@@ -47,7 +47,7 @@ class SearchTest(unittest.TestCase):
             r = response.json()
             # self.api.writeLog(sys._getframe().f_code.co_name, response.text)
             self.assertEqual(0, r['status'])
-            self.assertEqual(num, len(r['data']['songs']))
+            self.assertEqual(num[0], len(r['data']['songs']))
         except:
             print 'status code:%s' % response.status_code
             raise
@@ -67,7 +67,7 @@ class SearchTest(unittest.TestCase):
             r = response.json()
             # self.api.writeLog(sys._getframe().f_code.co_name, response.text)
             self.assertEqual(0, r['status'])
-            self.assertEqual(num, len(r['data']['songs']))
+            self.assertEqual(num[0], len(r['data']['songs']))
         except:
             print 'status code:%s' % response.status_code
             raise
@@ -87,7 +87,7 @@ class SearchTest(unittest.TestCase):
             r = response.json()
             # self.api.writeLog(sys._getframe().f_code.co_name, response.text)
             self.assertEqual(0, r['status'])
-            self.assertEqual(num, len(r['data']['users']))
+            self.assertEqual(num[0], len(r['data']['users']))
         except:
             print 'status code:%s' % response.status_code
             raise
@@ -106,7 +106,7 @@ class SearchTest(unittest.TestCase):
             r = response.json()
             # self.api.writeLog(sys._getframe().f_code.co_name, response.text)
             self.assertEqual(0, r['status'])
-            self.assertEqual(num, len(r['data']['users']))
+            self.assertEqual(num[0], len(r['data']['users']))
         except:
             print 'status code:%s' % response.status_code
             raise

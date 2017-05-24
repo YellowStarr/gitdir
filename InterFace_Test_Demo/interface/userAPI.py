@@ -262,9 +262,9 @@ class UserAPI:
             "Connection": "keep-alive"
         }
         url = self.baseurl + '/api/modifyUserInfo'
-        params = {'area': area,'birthday': birthday,'emotionStatus': emotionStatus,
-                  'hasFocus': hasFocus,'personalProfile': personalProfile,'phoneNumber': phoneNumber,
-                  'portrait': portrait,'sex': sex,'userName': userName,'id':id}
+        params = {'area': area, 'birthday': birthday, 'emotionStatus': emotionStatus,
+                  'hasFocus': hasFocus, 'personalProfile': personalProfile, 'phoneNumber': phoneNumber,
+                  'portrait': portrait, 'sex': sex, 'userName': userName, 'id': id}
         r = requests.post(url, json=params, headers=headers)
         # self.api.writeLog('user_ModifyInfo', r.text)
        
