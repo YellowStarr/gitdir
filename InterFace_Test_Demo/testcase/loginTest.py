@@ -10,7 +10,7 @@ from interface.API import MyAPI
 class LoginTest(unittest.TestCase):
 
     def setUp(self):
-        self.baseurl = 'http://test.rapself.com:9091'
+        self.baseurl = 'http://139.129.208.77:9091'
         self.user = LoginAPI(self.baseurl)
         login = testData()
         self.udata = login.getUserData[0]
@@ -40,7 +40,7 @@ class LoginTest(unittest.TestCase):
                               'args: %s\napi: %s\nstatus_code: %s\ntext: %s' % (args,
                               response.url, response.status_code, response.text))
 
-    def test_login_password_wrong(self):
+    '''def test_login_password_wrong(self):
         u"""密码错误测试"""
         print "-----------------------------------running test_login_password_wrong----------------------------------------- "
         response = self.user.login_Login('18782943850', 'A1dAKkZ1s34ML1Y02YoGTErwpxVzh0T5kChN5y5OTcJYAqUJfwsjkQ==')
@@ -114,7 +114,7 @@ class LoginTest(unittest.TestCase):
         finally:
             self.api.writeLog(sys._getframe().f_code.co_name,
                               'api: %s\nstatus_code: %s\ntext: %s' % (
-                              response.url, response.status_code, response.text))
+                              response.url, response.status_code, response.text))'''
 
     def test_login_Update_andriod(self):
         response = self.user.login_Update('andriod')
@@ -176,7 +176,7 @@ class LoginTest(unittest.TestCase):
         finally:
             self.api.writeLog(sys._getframe().f_code.co_name,
                               'api: %s\nstatus_code: %s\ntext: %s' % (
-                              response.url, response.status_code, response.text))'''
+                              response.url, response.status_code, response.text))
 
     def test_forgetpwd_msgCode_no_pbone(self):
         response = self.user.forgetpwd_msgCode()
@@ -205,7 +205,7 @@ class LoginTest(unittest.TestCase):
         finally:
             self.api.writeLog(sys._getframe().f_code.co_name,
                               'api: %s\nstatus_code: %s\ntext: %s' % (
-                              response.url, response.status_code, response.text))
+                              response.url, response.status_code, response.text))'''
 
     def test_register(self):
         response = self.user.register_Register('qiuwj', 15350556639, '888888', '0000')

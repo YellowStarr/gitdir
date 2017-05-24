@@ -1,21 +1,24 @@
 # coding=utf-8
 # audio_type :串烧 4，独白2, 吐槽 1,rap
 from dbManual import DBManual
+import requests
 
 class testData:
     def __init__(self):
         self.db = DBManual()
-        self.login_data = [
-            {'phoneNumber': 18782943850, 'password': 'G1dAKkZ1s34ML1Y02YoGTErwpxVzh0T5kChN5y5OTcJYAqUJfwsjkQ',
-             'id': 100001775,
-             'token': 'bVV07EFc6aQTakxhYelXyQ=='},
-            # {'phoneNumber': 18109053700, 'password': 'G1dAKkZ1s34ML1Y02YoGTErwpxVzh0T5kChN5y5OTcJYAqUJfwsjkQ',
-            #  'id': 100001776,
-            #  'token': 'kmIBqtaMBT4WbNBwaGjNsA=='
-            #  },
-        ]
+
+        self.login_data = [{'phoneNumber': 18782943850, 'password': 'G1dAKkZ1s34ML1Y02YoGTErwpxVzh0T5kChN5y5OTcJYAqUJfwsjkQ',
+             'id': 100001775}]
+
     @property
     def getUserData(self):
+        url = 'http://139.129.208.77:9091/api/user/login'
+
+        postdata = {"terminal": 2, 'password': 'G1dAKkZ1s34ML1Y02YoGTErwpxVzh0T5kChN5y5OTcJYAqUJfwsjkQ',
+                    'phone': '18782943850'}
+        r = requests.post(url, json=postdata)
+        response = r.json()
+        self.login_data[0]['token'] = response['data']['token']
         return self.login_data
 
     @property

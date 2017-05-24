@@ -9,8 +9,9 @@ import data_init,dbManual
 
 class IndexTest(unittest.TestCase):
     def setUp(self):
-        self.baseurl = 'http://test.rapself.com:9091'
-        self.d = data_init.testData()
+        self.baseurl = 'http://139.129.208.77:9091'
+        d = data_init.testData()
+        self.d = d.getUserData
         self.verificationErrors = []
         self.accept_next_alert = True
         self.api = MyAPI()
@@ -33,7 +34,7 @@ class IndexTest(unittest.TestCase):
                                   response.url, response.status_code, response.text))
 
     def test_Song_State(self):
-        token = self.d.login_data[0]['token']
+        token = self.d[0]['token']
         response = self.user.index_Song_State(token, 1, 20)
         try:
             self.assertEqual(200, response.status_code)

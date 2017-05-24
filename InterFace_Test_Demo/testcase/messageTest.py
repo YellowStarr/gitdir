@@ -9,8 +9,9 @@ import data_init,dbManual
 
 class MessageTest(unittest.TestCase):
     def setUp(self):
-        self.baseurl = 'http://test.rapself.com:9091'
-        self.d = data_init.testData()
+        self.baseurl = 'http://139.129.208.77:9091'
+        d = data_init.testData()
+        self.d = d.getUserData
         self.verificationErrors = []
         self.accept_next_alert = True
         self.api = MyAPI()
@@ -18,7 +19,7 @@ class MessageTest(unittest.TestCase):
         self.user = MessageAPI(self.baseurl)
 
     def test_message_Unread(self):
-        token = self.d.login_data[0]['token']
+        token = self.d[0]['token']
         response = self.user.message_Unread(token)
         try:
             self.assertEqual(200, response.status_code)
@@ -48,7 +49,7 @@ class MessageTest(unittest.TestCase):
         self.assertEqual(4, r['status'])"""
 
     def test_message_History_sys(self):
-        token = self.d.login_data[0]['token']
+        token = self.d[0]['token']
         response = self.user.message_History(token, 'sys')
         try:
             self.assertEqual(200, response.status_code)
@@ -64,7 +65,7 @@ class MessageTest(unittest.TestCase):
                                   response.url, response.status_code, response.text))
 
     def test_message_History_notice(self):
-        token = self.d.login_data[0]['token']
+        token = self.d[0]['token']
         response = self.user.message_History(token, 'notice')
         try:
             self.assertEqual(200, response.status_code)

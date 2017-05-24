@@ -9,7 +9,7 @@ import mail
 # test_dir='./testcase'
 # discover=unittest.defaultTestLoader.discover(test_dir,pattern='*_test.py')
 
-if __name__=="__main__":
+if __name__ == "__main__":
     print "---------------------------------------start-----------------------------------------"
 
     caseNames = [
@@ -18,19 +18,19 @@ if __name__=="__main__":
         # userErrorCheck.userErrorCheck,
         coreTest.coreTest,
         # coreErrorTest.coreErrorTest,
-        # accompany.Accompany,
+        accompany.Accompany,
         searchTest.SearchTest,
         mapTest.MapTest,
         indexTest.IndexTest,
         shareTest.ShareTest,
         messageTest.MessageTest,
         # indexErrorTest.IndexErrorTest,
-        # complexTest.ComplextTest,
+        complexTest.ComplextTest,
 
     ]
     # 运行时，先判断Log文件夹中是否已存在log.txt文件，若存在，删除
     path = os.getcwd()
-    logpth =os.path.join(path, 'log')
+    logpth = os.path.join(path, 'log')
     logname = os.path.join(logpth, 'log.txt')
     if os.path.exists(logname):
         os.remove(logname)
@@ -49,5 +49,5 @@ if __name__=="__main__":
 
     runner.run(testunit)
     # ['1095222570@qq.com', '263697396@qq.com', '358014589@qq.com']
-    m = mail.SendMail(['1095222570@qq.com', '263697396@qq.com', '358014589@qq.com'])
+    m = mail.SendMail()
     m.send()

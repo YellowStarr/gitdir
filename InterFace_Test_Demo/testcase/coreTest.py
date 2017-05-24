@@ -9,7 +9,7 @@ import data_init, dbManual
 
 class coreTest(unittest.TestCase):
     def setUp(self):
-        self.baseurl = 'http://test.rapself.com:9091'
+        self.baseurl = 'http://139.129.208.77:9091'
         # self.baseurl = 'http://test.rapself.com:8080'
         self.d = data_init.testData()
         self.data = self.d.getUserData
@@ -375,12 +375,14 @@ class coreTest(unittest.TestCase):
         """发布子评论"""
         sql = 'SELECT * FROM sub_comment WHERE status=1 AND  song_comment_id=912'
         commentset = self.db.getSet(sql)
-        comm = random.choice(commentset)[0]
+        # print commentset
+        comm = random.choice(commentset)
+        print comm
         token = self.data[0]['token']
-        response = self.user.core_Post_SubComment(token, 912, comm[0], '图片', comm[3], comm[2], [])
+        response = self.user.core_Post_SubComment(token, '912', str(comm[0]), u'图片', str(comm[2]), comm[3], [])
 
-        args = {'toCommentId': str(comm[0]), 'songCommentId': 912, 'content': u'图片', 'toUserId': str(comm[3]),
-                 'toUserName': comm[2], 'commentAsset': []}
+        args = {'toCommentId': str(comm[0]), 'songCommentId': 912, 'content': u'图片', 'toUserId': str(comm[2]),
+                 'toUserName': comm[3], 'commentAsset': []}
         try:
             self.assertEqual(200, response.status_code, 'status code:%s' % response.status_code)
             r = response.json()
@@ -469,7 +471,6 @@ class coreTest(unittest.TestCase):
         except:
             print 'get comments failed, status code wrong. code:%s' % cr.status_code
             raise
-
         response = self.user.core_songComment(token, sid, content)
         args = {'id': sid, 'content': content, 'resource': []}
         try:
@@ -477,7 +478,8 @@ class coreTest(unittest.TestCase):
             r = response.json()
             # self.api.writeLog(sys._getframe().f_code.co_name, response.text)
             self.assertEqual(0, r['status'])
-            cur_comments = self.user.core_Comment_V1(sid)
+            cur_response = self.user.core_Comment_V1(sid)
+            cur_comments = cur_response.json()
             cur_comNum = len(cur_comments['data']['comments'])
             self.assertEqual(comNum+1, cur_comNum)
         except:

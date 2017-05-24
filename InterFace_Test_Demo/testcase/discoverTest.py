@@ -9,7 +9,7 @@ import data_init,dbManual
 
 class discoverTest(unittest.TestCase):
     def setUp(self):
-        self.baseurl = 'http://test.rapself.com:9091'
+        self.baseurl = 'http://139.129.208.77:9091'
         self.d = data_init.testData()
         self.data = self.d.getUserData
         self.sidList = self.d.getSongIds

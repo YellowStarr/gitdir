@@ -9,7 +9,7 @@ import data_init, dbManual
 
 class userErrorCheck(unittest.TestCase):
     def setUp(self):
-        self.baseurl = 'http://test.rapself.com:9091'
+        self.baseurl = 'http://139.129.208.77:9091'
         d = data_init.testData()
         self.data = d.getUserData
         self.verificationErrors = []

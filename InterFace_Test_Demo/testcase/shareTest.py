@@ -9,8 +9,9 @@ import data_init,dbManual
 
 class ShareTest(unittest.TestCase):
     def setUp(self):
-        self.baseurl = 'http://test.rapself.com:9091'
-        self.d = data_init.testData()
+        self.baseurl = 'http://139.129.208.77:9091'
+        self.s = data_init.testData()
+        self.d = self.s.getUserData
         self.verificationErrors = []
         self.accept_next_alert = True
         self.api = MyAPI()
@@ -19,8 +20,8 @@ class ShareTest(unittest.TestCase):
 
 
     def test_ShareList(self):
-        token = self.d.login_data[0]['token']
-        id = self.d.login_data[0]['id']
+        token = self.d[0]['token']
+        id = self.d[0]['id']
         response = self.user.share_ShareList(token, id)
         try:
             self.assertEqual(200, response.status_code)
@@ -35,7 +36,7 @@ class ShareTest(unittest.TestCase):
                                 'api: %s\nstatus_code: %s\ntext: %s' % (response.url, response.status_code, response.text))
 
     """def test_ShareList_token_null(self):
-        # token = self.d.login_data[0]['token']
+        # token = self.d.login_dat[0]['token']
         id = self.d.login_data[0]['id']
         response = self.user.share_ShareList(None, id)
         r = response.json()
@@ -51,9 +52,9 @@ class ShareTest(unittest.TestCase):
         self.assertEqual(116, r['status'])"""
 
     def test_Share_Inner(self):
-        sidList = self.d.getSongIds
+        sidList = self.s.getSongIds
         sid = random.choice(sidList)
-        token = self.d.login_data[0]['token']
+        token = self.d[0]['token']
         share_reason = 'share reason'
         response = self.user.share_Share_Inner(token, sid, share_reason)
         try:

@@ -1,16 +1,17 @@
 #coding=utf-8
 
-import sys,random,os,json
+import sys,random
 sys.path.append('./interface')
 import unittest
 from interface.CoreAPI import CoreAPI
+from interface.userAPI import UserAPI
 from interface.indexAPI import IndexAPI
 from interface.API import MyAPI
 import data_init,dbManual
 
 class ComplextTest(unittest.TestCase):
     def setUp(self):
-        self.baseurl = 'http://test.rapself.com:9091'
+        self.baseurl = 'http://139.129.208.77:9091'
         self.d = data_init.testData()
         self.data = self.d.getUserData
         self.sidList = self.d.getSongIds
@@ -28,9 +29,9 @@ class ComplextTest(unittest.TestCase):
         response = rank.index_Rank(1, 40)
         r = response.json()
         self.api.writeLog('ranking json', response.text)
-        self.assertEqual(30, len(r['data']['songs']))
+        # self.assertEqual(30, len(r['data']['songs']))
 
-    def test_check_Rank_score(self):   # 检查返回的歌曲排行是否是按照计算规则排序
+    '''def test_check_Rank_score(self):   # 检查返回的歌曲排行是否是按照计算规则排序
         rank = IndexAPI(self.baseurl)
         response = rank.index_Rank(1, 10)
         # self.api.writeLog(sys._getframe().f_code.co_name, response.text)
@@ -47,7 +48,7 @@ class ComplextTest(unittest.TestCase):
             if abs(score - s) > 1.0:
                 print "rank %s: socre is %s, compute result is %s, song id is %s" % (i+1, score, s, r['data']['songs'][i]['id'])
                 err += 1
-        self.assertEqual(0, err)
+        self.assertEqual(0, err)'''
 
     def test_Comment(self):     # 评论
         sid = random.choice(self.sidList)
@@ -77,12 +78,52 @@ class ComplextTest(unittest.TestCase):
         newr = self.user.core_Comment_V1(sid)
         newres = newr.json()
         for i in range(len(newres['data']['comments'])):
-            if cid == newres['data']['comments']['id']:
+            if cid == newres['data']['comments'][i]['id']:
                 err = 1
         self.assertEqual(0, err)
 
+    def test_Add_BlackList_success(self):
+        user = UserAPI(self.baseurl)
+        response = user.user_Add_BlackList('100000001', self.data[0]['token'])
+        try:
+            self.assertEqual(200, response.status_code, 'status code:%s' % response.status_code)
+            r = response.json()
+            # self.api.writeLog(sys._getframe().f_code.co_name, response.text)
+            self.assertEqual(0, r['status'])
+            sql = 'select * from user_blacklist where user_id= %s and black_user_id= %s' % (self.data[0]['id'], 100000001)
+            data = self.db.getSingle(sql)
+            if len(data) == 0:
+                raise AssertionError('insert into database failed')
+            user.user_Del_BlackList('100000001', self.data[0]['token'])
+        except:
+            print 'status code:%s' % response.status_code
+            raise
+        finally:
+            self.api.writeLog(sys._getframe().f_code.co_name,
+                                'api: %s\nstatus_code: %s\ntext: %s' % (response.url, response.status_code, response.text))
 
 
+    '''def test_BlackList_Del(self):
+        sql = 'select black_user_id from user_blacklist where user_id= %s' % (self.data[0]['id'])
+        blackList = self.db.getSet(sql)
+        bid = random.choice(blackList)
+        user = UserAPI(self.baseurl)
+        response = user.user_Del_BlackList(bid[0], self.data[0]['token'])
+        try:
+            self.assertEqual(200, response.status_code, 'status code:%s' % response.status_code)
+            r = response.json()
+            # self.api.writeLog(sys._getframe().f_code.co_name, response.text)
+            self.assertEqual(0, r['status'])
+            sql = 'select * from user_blacklist where user_id= %s and black_user_id= %s' % (self.data[0]['id'], bid[0])
+            num = self.db.getSingle(sql)
+            # if not num:
+                # raise AssertionError('delete failed')
+        except:
+            print 'status code:%s' % response.status_code
+            raise
+        finally:
+            self.api.writeLog(sys._getframe().f_code.co_name,
+                                'api: %s\nstatus_code: %s\ntext: %s' % (response.url, response.status_code, response.text))'''
 
 
 
