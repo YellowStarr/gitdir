@@ -189,9 +189,9 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>testcase-logintest</h1>
-<p class='attribute'><strong>开始时间:</strong> 2017-05-25 18:10:55</p>
-<p class='attribute'><strong>耗时:</strong> 0:01:47.015000</p>
-<p class='attribute'><strong>状态:</strong> 通过 60 失败 6 失败率 9.09%</p>
+<p class='attribute'><strong>开始时间:</strong> 2017-05-25 18:49:56</p>
+<p class='attribute'><strong>耗时:</strong> 0:00:05.259000</p>
+<p class='attribute'><strong>状态:</strong> 通过 8 失败 1 失败率 11.11%</p>
 
 <p class='description'>desc</p>
 </div>
@@ -223,16 +223,16 @@ function showOutput(id, name) {
 </tr>
 
 <tr class='failClass'>
-    <td>testcase.loginTest.LoginTest</td>
-    <td>5</td>
-    <td>4</td>
+    <td>testcase.new1_2.newAPITest</td>
+    <td>9</td>
+    <td>8</td>
     <td>1</td>
     <td>0</td>
-    <!--<td><a href="javascript:showClassDetail('c1',5)">详情</a></td>-->
+    <!--<td><a href="javascript:showClassDetail('c1',9)">详情</a></td>-->
 </tr>
 
 <tr id='pt1.1'>
-    <td class='none'><div class='testcase'>test_login_ThirdParty_QQ</div></td>
+    <td class='none'><div class='testcase'>test_banner</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
@@ -249,7 +249,6 @@ function showOutput(id, name) {
 pt1.1: rap
 
 
-
         </pre>
     </div>
     <!--css div popup end-->
@@ -257,23 +256,27 @@ pt1.1: rap
     </td>
 </tr>
 
-<tr id='pt1.2'>
-    <td class='none'><div class='testcase'>test_login_Update_andriod</div></td>
+<tr id='ft1.2'>
+    <td class='failCase'><div class='testcase'>test_homepage</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.2')" >
-        通过</a>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.2')" >
+        失败</a>
 
-    <div id='div_pt1.2' class="popup_window">
+    <div id='div_ft1.2' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.2').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.2').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-pt1.2: rap
-
+ft1.2: rap
+status code:404
+Traceback (most recent call last):
+  File "G:\workspace\GitDir\InterFace_Test_Demo\testcase\new1_2.py", line 39, in test_homepage
+    self.assertEqual(200, response.status_code, 'status code:%s' % response.status_code)
+AssertionError: status code:404
 
 
         </pre>
@@ -284,7 +287,7 @@ pt1.2: rap
 </tr>
 
 <tr id='pt1.3'>
-    <td class='none'><div class='testcase'>test_login_Update_ios</div></td>
+    <td class='none'><div class='testcase'>test_mycomplaint</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
@@ -301,7 +304,6 @@ pt1.2: rap
 pt1.3: rap
 
 
-
         </pre>
     </div>
     <!--css div popup end-->
@@ -310,7 +312,7 @@ pt1.3: rap
 </tr>
 
 <tr id='pt1.4'>
-    <td class='none'><div class='testcase'>test_login_success</div></td>
+    <td class='none'><div class='testcase'>test_myinfo</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
@@ -325,9 +327,6 @@ pt1.3: rap
         <pre>
         
 pt1.4: rap
------------------------------------running test_login_success----------------------------------------- 
-100001775
-
 
 
         </pre>
@@ -337,62 +336,22 @@ pt1.4: rap
     </td>
 </tr>
 
-<tr id='ft1.5'>
-    <td class='failCase'><div class='testcase'>test_register</div></td>
+<tr id='pt1.5'>
+    <td class='none'><div class='testcase'>test_mymedley</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.5')" >
-        失败</a>
-
-    <div id='div_ft1.5' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.5').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-ft1.5: rap
-status code:200
-Traceback (most recent call last):
-  File "G:\workspace\GitDir\InterFace_Test_Demo\testcase\loginTest.py", line 217, in test_register
-    self.assertEqual(r['status'], 0)
-AssertionError: 113 != 0
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr class='failClass'>
-    <td>testcase.userinfoTest.userinfoTest</td>
-    <td>17</td>
-    <td>16</td>
-    <td>1</td>
-    <td>0</td>
-    <!--<td><a href="javascript:showClassDetail('c2',17)">详情</a></td>-->
-</tr>
-
-<tr id='pt2.1'>
-    <td class='none'><div class='testcase'>test_BlackList_data_check</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.1')" >
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.5')" >
         通过</a>
 
-    <div id='div_pt2.1' class="popup_window">
+    <div id='div_pt1.5' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.5').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-pt2.1: rap
-rap
+pt1.5: rap
 
 
         </pre>
@@ -402,23 +361,22 @@ rap
     </td>
 </tr>
 
-<tr id='pt2.2'>
-    <td class='none'><div class='testcase'>test_Create_Medley_success</div></td>
+<tr id='pt1.6'>
+    <td class='none'><div class='testcase'>test_mysolo</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.2')" >
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.6')" >
         通过</a>
 
-    <div id='div_pt2.2' class="popup_window">
+    <div id='div_pt1.6' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.2').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.6').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-pt2.2: rap
-rap
+pt1.6: rap
 
 
         </pre>
@@ -428,23 +386,22 @@ rap
     </td>
 </tr>
 
-<tr id='pt2.3'>
-    <td class='none'><div class='testcase'>test_FansList_success</div></td>
+<tr id='pt1.7'>
+    <td class='none'><div class='testcase'>test_usercomplaint</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.3')" >
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.7')" >
         通过</a>
 
-    <div id='div_pt2.3' class="popup_window">
+    <div id='div_pt1.7' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.3').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.7').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-pt2.3: rap
-rap
+pt1.7: rap
 
 
         </pre>
@@ -454,24 +411,22 @@ rap
     </td>
 </tr>
 
-<tr id='pt2.4'>
-    <td class='none'><div class='testcase'>test_Focus_success</div></td>
+<tr id='pt1.8'>
+    <td class='none'><div class='testcase'>test_usermedley</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.4')" >
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.8')" >
         通过</a>
 
-    <div id='div_pt2.4' class="popup_window">
+    <div id='div_pt1.8' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.4').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.8').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-pt2.4: rap
-rap
-test_Focus_mix
+pt1.8: rap
 
 
         </pre>
@@ -481,1662 +436,22 @@ test_Focus_mix
     </td>
 </tr>
 
-<tr id='pt2.5'>
-    <td class='none'><div class='testcase'>test_FollowedSong_success</div></td>
+<tr id='pt1.9'>
+    <td class='none'><div class='testcase'>test_usersolo</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.5')" >
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.9')" >
         通过</a>
 
-    <div id='div_pt2.5' class="popup_window">
+    <div id='div_pt1.9' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.5').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.9').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-pt2.5: rap
-rap
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='pt2.6'>
-    <td class='none'><div class='testcase'>test_Medley_Participant_success</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.6')" >
-        通过</a>
-
-    <div id='div_pt2.6' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.6').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt2.6: rap
-rap
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='ft2.7'>
-    <td class='failCase'><div class='testcase'>test_ModifyInfo</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.7')" >
-        失败</a>
-
-    <div id='div_ft2.7' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.7').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-ft2.7: rap
-rap
-status code:200
-Traceback (most recent call last):
-  File "G:\workspace\GitDir\InterFace_Test_Demo\testcase\userinfoTest.py", line 233, in test_ModifyInfo
-    self.assertEqual(0, r['status'])
-AssertionError: 0 != 199
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='pt2.8'>
-    <td class='none'><div class='testcase'>test_Newest_Complaint_success</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.8')" >
-        通过</a>
-
-    <div id='div_pt2.8' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.8').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt2.8: rap
-rap
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='pt2.9'>
-    <td class='none'><div class='testcase'>test_Newest_Medley_success</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.9')" >
-        通过</a>
-
-    <div id='div_pt2.9' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.9').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt2.9: rap
-rap
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='pt2.10'>
-    <td class='none'><div class='testcase'>test_Newest_Rap_success</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.10')" >
-        通过</a>
-
-    <div id='div_pt2.10' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.10').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt2.10: rap
-rap
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='pt2.11'>
-    <td class='none'><div class='testcase'>test_cancelFocus</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.11')" >
-        通过</a>
-
-    <div id='div_pt2.11' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.11').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt2.11: rap
-rap
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='pt2.12'>
-    <td class='none'><div class='testcase'>test_followedList_success</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.12')" >
-        通过</a>
-
-    <div id='div_pt2.12' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.12').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt2.12: rap
-rap
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='pt2.13'>
-    <td class='none'><div class='testcase'>test_get_Statistic</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.13')" >
-        通过</a>
-
-    <div id='div_pt2.13' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.13').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt2.13: rap
-rap
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='pt2.14'>
-    <td class='none'><div class='testcase'>test_get_myComplaint</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.14')" >
-        通过</a>
-
-    <div id='div_pt2.14' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.14').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt2.14: rap
-rap
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='pt2.15'>
-    <td class='none'><div class='testcase'>test_get_myMedley</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.15')" >
-        通过</a>
-
-    <div id='div_pt2.15' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.15').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt2.15: rap
-rap
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='pt2.16'>
-    <td class='none'><div class='testcase'>test_get_myRap</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.16')" >
-        通过</a>
-
-    <div id='div_pt2.16' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.16').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt2.16: rap
-rap
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='pt2.17'>
-    <td class='none'><div class='testcase'>test_get_userInfo</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.17')" >
-        通过</a>
-
-    <div id='div_pt2.17' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.17').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt2.17: rap
-rap
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr class='failClass'>
-    <td>testcase.coreTest.coreTest</td>
-    <td>19</td>
-    <td>18</td>
-    <td>1</td>
-    <td>0</td>
-    <!--<td><a href="javascript:showClassDetail('c3',19)">详情</a></td>-->
-</tr>
-
-<tr id='pt3.1'>
-    <td class='none'><div class='testcase'>test_Collect</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.1')" >
-        通过</a>
-
-    <div id='div_pt3.1' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.1').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt3.1: rap
-G:\workspace\GitDir\InterFace_Test_Demo\testcase\dbManual.py:105: Warning: Incorrect datetime value: '2011' for column 'upload_time' at row 1
-  n = cur.execute(sql)
-rap
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='pt3.2'>
-    <td class='none'><div class='testcase'>test_Comment_Praise</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.2')" >
-        通过</a>
-
-    <div id='div_pt3.2' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.2').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt3.2: rap
-rap
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='pt3.3'>
-    <td class='none'><div class='testcase'>test_Comment_V1</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.3')" >
-        通过</a>
-
-    <div id='div_pt3.3' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.3').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt3.3: rap
-rap
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='ft3.4'>
-    <td class='failCase'><div class='testcase'>test_Comment_V1_Time</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft3.4')" >
-        失败</a>
-
-    <div id='div_ft3.4' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft3.4').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-ft3.4: rap
-rap
-status code:200
-Traceback (most recent call last):
-  File "G:\workspace\GitDir\InterFace_Test_Demo\testcase\coreTest.py", line 131, in test_Comment_V1_Time
-    self.assertEqual(0, r['status'])
-AssertionError: 0 != 999
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='pt3.5'>
-    <td class='none'><div class='testcase'>test_Comment_cancelPraise</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.5')" >
-        通过</a>
-
-    <div id='div_pt3.5' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.5').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt3.5: rap
-rap
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='pt3.6'>
-    <td class='none'><div class='testcase'>test_Compose_complaint</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.6')" >
-        通过</a>
-
-    <div id='div_pt3.6' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.6').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt3.6: rap
-rap
-(100001389L, 'http://user-storage.oss-cn-qingdao.aliyuncs.com/audio/20170417014234_100001773_0fb284e4e22227c7464a4fcd88606ac7.m4a', 2L, datetime.datetime(2017, 4, 17, 13, 42, 35), '')
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='pt3.7'>
-    <td class='none'><div class='testcase'>test_Compose_rap</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.7')" >
-        通过</a>
-
-    <div id='div_pt3.7' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.7').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt3.7: rap
-rap
-(100000416L, 'http://user-storage.oss-cn-qingdao.aliyuncs.com/song/20170318214354_100000169_2aaca4b800b87d680485f26b52744d2c.mp3', 248L, datetime.datetime(2017, 3, 18, 21, 44, 2), '')
-248
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='pt3.8'>
-    <td class='none'><div class='testcase'>test_Del_Music</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.8')" >
-        通过</a>
-
-    <div id='div_pt3.8' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.8').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt3.8: rap
-rap
-100001192
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='pt3.9'>
-    <td class='none'><div class='testcase'>test_Get_Hot_subComment</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.9')" >
-        通过</a>
-
-    <div id='div_pt3.9' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.9').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt3.9: rap
-rap
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='pt3.10'>
-    <td class='none'><div class='testcase'>test_Get_New_subComment</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.10')" >
-        通过</a>
-
-    <div id='div_pt3.10' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.10').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt3.10: rap
-rap
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='pt3.11'>
-    <td class='none'><div class='testcase'>test_Join_Medley</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.11')" >
-        通过</a>
-
-    <div id='div_pt3.11' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.11').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt3.11: rap
-rap
-(100002784L, 'http://user-storage.oss-cn-qingdao.aliyuncs.com/audio/20170503134112_100001775_aa5aad11b8b0060d98a53fefda6fd3ab.m4a', 3L, datetime.datetime(2017, 5, 15, 17, 19, 55), '')
-audio id is 100002784 and medley id is 100001349
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='pt3.12'>
-    <td class='none'><div class='testcase'>test_Listen</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.12')" >
-        通过</a>
-
-    <div id='div_pt3.12' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.12').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt3.12: rap
-rap
-100000564
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='pt3.13'>
-    <td class='none'><div class='testcase'>test_Mycollect</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.13')" >
-        通过</a>
-
-    <div id='div_pt3.13' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.13').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt3.13: rap
-rap
-((15L,),)
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='pt3.14'>
-    <td class='none'><div class='testcase'>test_RecommendLyric</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.14')" >
-        通过</a>
-
-    <div id='div_pt3.14' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.14').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt3.14: rap
-rap
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='pt3.15'>
-    <td class='none'><div class='testcase'>test_SongDetail_V1</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.15')" >
-        通过</a>
-
-    <div id='div_pt3.15' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.15').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt3.15: rap
-rap
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='pt3.16'>
-    <td class='none'><div class='testcase'>test_Song_Praise</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.16')" >
-        通过</a>
-
-    <div id='div_pt3.16' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.16').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt3.16: rap
-rap
-
-()
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='pt3.17'>
-    <td class='none'><div class='testcase'>test_Song_cancelPraise</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.17')" >
-        通过</a>
-
-    <div id='div_pt3.17' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.17').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt3.17: rap
-rap
-((100000264L,), (100000673L,), (100000685L,), (100000012L,), (100000115L,), (100000094L,), (100000678L,), (100001114L,), (100001023L,), (100001176L,), (100001040L,), (100000014L,), (100000137L,), (100000018L,), (100000285L,), (100000202L,), (100001185L,), (100001020L,), (100000983L,), (100000251L,), (100000114L,), (100001062L,), (100000263L,), (100000527L,), (100000704L,), (100000817L,), (100001218L,), (100001330L,), (100000380L,), (100001134L,))
-100000202
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='pt3.18'>
-    <td class='none'><div class='testcase'>test_cancelCollect</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.18')" >
-        通过</a>
-
-    <div id='div_pt3.18' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.18').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt3.18: rap
-rap
-100000150
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='pt3.19'>
-    <td class='none'><div class='testcase'>test_subComment</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.19')" >
-        通过</a>
-
-    <div id='div_pt3.19' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.19').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt3.19: rap
-rap
-(315L, 912L, 100001775L, 'sleepyhead', '??', None, None, None, 1L, 0L, datetime.datetime(2017, 5, 10, 19, 7, 38))
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr class='passClass'>
-    <td>testcase.accompany.Accompany</td>
-    <td>2</td>
-    <td>2</td>
-    <td>0</td>
-    <td>0</td>
-    <!--<td><a href="javascript:showClassDetail('c4',2)">详情</a></td>-->
-</tr>
-
-<tr id='pt4.1'>
-    <td class='none'><div class='testcase'>test_accompany_Classify</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.1')" >
-        通过</a>
-
-    <div id='div_pt4.1' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt4.1').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt4.1: 0
-9
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='pt4.2'>
-    <td class='none'><div class='testcase'>test_accompany_Search</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.2')" >
-        通过</a>
-
-    <div id='div_pt4.2' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt4.2').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt4.2: 0
-0
-useCount:0
-useCount:0
-useCount:0
-1
-0
-useCount:0
-useCount:0
-useCount:0
-2
-0
-useCount:0
-3
-0
-useCount:0
-useCount:0
-useCount:0
-useCount:0
-useCount:0
-useCount:0
-useCount:0
-useCount:0
-4
-0
-useCount:0
-useCount:0
-useCount:0
-useCount:0
-useCount:0
-useCount:0
-useCount:0
-5
-0
-useCount:0
-useCount:0
-useCount:0
-6
-0
-useCount:0
-useCount:0
-useCount:0
-useCount:0
-useCount:0
-useCount:0
-useCount:0
-useCount:0
-useCount:0
-useCount:0
-7
-0
-1000000 has no data
-8
-0
-useCount:0
-useCount:0
-useCount:0
-useCount:0
-useCount:0
-useCount:0
-useCount:0
-useCount:0
-useCount:0
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr class='failClass'>
-    <td>testcase.searchTest.SearchTest</td>
-    <td>6</td>
-    <td>4</td>
-    <td>2</td>
-    <td>0</td>
-    <!--<td><a href="javascript:showClassDetail('c5',6)">详情</a></td>-->
-</tr>
-
-<tr id='pt5.1'>
-    <td class='none'><div class='testcase'>test_search_Hot</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.1')" >
-        通过</a>
-
-    <div id='div_pt5.1' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.1').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt5.1: rap
-rap
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='ft5.2'>
-    <td class='failCase'><div class='testcase'>test_search_Song_CN</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft5.2')" >
-        失败</a>
-
-    <div id='div_ft5.2' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft5.2').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-ft5.2: rap
-rap
-1
-1
-status code:200
-Traceback (most recent call last):
-  File "G:\workspace\GitDir\InterFace_Test_Demo\testcase\searchTest.py", line 32, in test_search_Song_CN
-    self.assertEqual(num, len(r['data']['songs']))
-AssertionError: 1L != 0
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='ft5.3'>
-    <td class='failCase'><div class='testcase'>test_search_Song_DIG</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft5.3')" >
-        失败</a>
-
-    <div id='div_ft5.3' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft5.3').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-ft5.3: rap
-rap
-(44L,)
-status code:200
-Traceback (most recent call last):
-  File "G:\workspace\GitDir\InterFace_Test_Demo\testcase\searchTest.py", line 71, in test_search_Song_DIG
-    self.assertEqual(num[0], len(r['data']['songs']))
-AssertionError: 44L != 6
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='pt5.4'>
-    <td class='none'><div class='testcase'>test_search_Song_EN</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.4')" >
-        通过</a>
-
-    <div id='div_pt5.4' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.4').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt5.4: rap
-rap
-1
-1
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='pt5.5'>
-    <td class='none'><div class='testcase'>test_search_User_CN</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.5')" >
-        通过</a>
-
-    <div id='div_pt5.5' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.5').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt5.5: rap
-rap
-(0L,)
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='pt5.6'>
-    <td class='none'><div class='testcase'>test_search_User_EN</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.6')" >
-        通过</a>
-
-    <div id='div_pt5.6' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.6').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt5.6: rap
-rap
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr class='failClass'>
-    <td>testcase.mapTest.MapTest</td>
-    <td>1</td>
-    <td>0</td>
-    <td>1</td>
-    <td>0</td>
-    <!--<td><a href="javascript:showClassDetail('c6',1)">详情</a></td>-->
-</tr>
-
-<tr id='ft6.1'>
-    <td class='failCase'><div class='testcase'>test_Near_success</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft6.1')" >
-        失败</a>
-
-    <div id='div_ft6.1' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft6.1').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-ft6.1: rap
-rap
-medley actual has 97 and we get 18
-complaint actual has 97 and we get 4
-rap actual has 0 and we get 36
-status code:200
-Traceback (most recent call last):
-  File "G:\workspace\GitDir\InterFace_Test_Demo\testcase\mapTest.py", line 60, in test_Near_success
-    self.assertEqual(0, unequal)
-AssertionError: 0 != 3
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr class='passClass'>
-    <td>testcase.indexTest.IndexTest</td>
-    <td>7</td>
-    <td>7</td>
-    <td>0</td>
-    <td>0</td>
-    <!--<td><a href="javascript:showClassDetail('c7',7)">详情</a></td>-->
-</tr>
-
-<tr id='pt7.1'>
-    <td class='none'><div class='testcase'>test_Homepage</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt7.1')" >
-        通过</a>
-
-    <div id='div_pt7.1' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt7.1').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt7.1: rap
-rap
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='pt7.2'>
-    <td class='none'><div class='testcase'>test_Hot_Complaint</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt7.2')" >
-        通过</a>
-
-    <div id='div_pt7.2' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt7.2').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt7.2: rap
-rap
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='pt7.3'>
-    <td class='none'><div class='testcase'>test_Hot_Medley</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt7.3')" >
-        通过</a>
-
-    <div id='div_pt7.3' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt7.3').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt7.3: rap
-rap
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='pt7.4'>
-    <td class='none'><div class='testcase'>test_Hot_Rap</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt7.4')" >
-        通过</a>
-
-    <div id='div_pt7.4' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt7.4').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt7.4: rap
-rap
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='pt7.5'>
-    <td class='none'><div class='testcase'>test_Rank</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt7.5')" >
-        通过</a>
-
-    <div id='div_pt7.5' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt7.5').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt7.5: rap
-rap
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='pt7.6'>
-    <td class='none'><div class='testcase'>test_Recommend</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt7.6')" >
-        通过</a>
-
-    <div id='div_pt7.6' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt7.6').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt7.6: rap
-rap
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='pt7.7'>
-    <td class='none'><div class='testcase'>test_Song_State</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt7.7')" >
-        通过</a>
-
-    <div id='div_pt7.7' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt7.7').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt7.7: rap
-rap
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr class='passClass'>
-    <td>testcase.shareTest.ShareTest</td>
-    <td>2</td>
-    <td>2</td>
-    <td>0</td>
-    <td>0</td>
-    <!--<td><a href="javascript:showClassDetail('c8',2)">详情</a></td>-->
-</tr>
-
-<tr id='pt8.1'>
-    <td class='none'><div class='testcase'>test_ShareList</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt8.1')" >
-        通过</a>
-
-    <div id='div_pt8.1' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt8.1').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt8.1: rap
-rap
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='pt8.2'>
-    <td class='none'><div class='testcase'>test_Share_Inner</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt8.2')" >
-        通过</a>
-
-    <div id='div_pt8.2' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt8.2').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt8.2: rap
-rap
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr class='passClass'>
-    <td>testcase.messageTest.MessageTest</td>
-    <td>3</td>
-    <td>3</td>
-    <td>0</td>
-    <td>0</td>
-    <!--<td><a href="javascript:showClassDetail('c9',3)">详情</a></td>-->
-</tr>
-
-<tr id='pt9.1'>
-    <td class='none'><div class='testcase'>test_message_History_notice</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt9.1')" >
-        通过</a>
-
-    <div id='div_pt9.1' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt9.1').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt9.1: rap
-rap
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='pt9.2'>
-    <td class='none'><div class='testcase'>test_message_History_sys</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt9.2')" >
-        通过</a>
-
-    <div id='div_pt9.2' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt9.2').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt9.2: rap
-rap
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='pt9.3'>
-    <td class='none'><div class='testcase'>test_message_Unread</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt9.3')" >
-        通过</a>
-
-    <div id='div_pt9.3' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt9.3').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt9.3: rap
-rap
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr class='passClass'>
-    <td>testcase.complexTest.ComplextTest</td>
-    <td>4</td>
-    <td>4</td>
-    <td>0</td>
-    <td>0</td>
-    <!--<td><a href="javascript:showClassDetail('c10',4)">详情</a></td>-->
-</tr>
-
-<tr id='pt10.1'>
-    <td class='none'><div class='testcase'>test_Add_BlackList_success</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt10.1')" >
-        通过</a>
-
-    <div id='div_pt10.1' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt10.1').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt10.1: rap
-rap
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='pt10.2'>
-    <td class='none'><div class='testcase'>test_Comment</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt10.2')" >
-        通过</a>
-
-    <div id='div_pt10.2' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt10.2').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt10.2: rap
-rap
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='pt10.3'>
-    <td class='none'><div class='testcase'>test_check_Rank_num</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt10.3')" >
-        通过</a>
-
-    <div id='div_pt10.3' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt10.3').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt10.3: rap
-rap
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='pt10.4'>
-    <td class='none'><div class='testcase'>test_delComment</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt10.4')" >
-        通过</a>
-
-    <div id='div_pt10.4' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt10.4').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt10.4: rap
-rap
+pt1.9: rap
 
 
         </pre>
@@ -2148,9 +463,9 @@ rap
 
 <tr id='total_row'>
     <td>统计</td>
-    <td>66</td>
-    <td>60</td>
-    <td>6</td>
+    <td>9</td>
+    <td>8</td>
+    <td>1</td>
     <td>0</td>
     <!--<td>&nbsp;</td>-->
 </tr>

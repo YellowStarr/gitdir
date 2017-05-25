@@ -1,22 +1,6 @@
 # coding=utf-8
 # audio_type :串烧 4，独白2, 吐槽 1,rap
 from dbManual import DBManual
-<<<<<<< HEAD
-from interface.LoginAPI import LoginAPI
-class testData:
-    def __init__(self):
-        self.db = DBManual()
-        self.login_data = [
-            {'phoneNumber': 18782943850, 'password': 'G1dAKkZ1s34ML1Y02YoGTErwpxVzh0T5kChN5y5OTcJYAqUJfwsjkQ',
-             'id': 100001775},
-            # {'phoneNumber': 18109053700, 'password': 'G1dAKkZ1s34ML1Y02YoGTErwpxVzh0T5kChN5y5OTcJYAqUJfwsjkQ',
-            #  'id': 100001776},
-        ]
-    @property
-    def getUserData(self, url):
-        lg = LoginAPI(url)
-        r = lg.login_Login(self.login_data[0]['phoneNumber'], self.login_data[0]['password'])
-=======
 import requests
 
 class testData:
@@ -32,7 +16,6 @@ class testData:
         postdata = {"terminal": 2, 'password': 'G1dAKkZ1s34ML1Y02YoGTErwpxVzh0T5kChN5y5OTcJYAqUJfwsjkQ',
                     'phone': '18782943850'}
         r = requests.post(urls, json=postdata)
->>>>>>> master
         response = r.json()
         self.login_data[0]['token'] = response['data']['token']
         return self.login_data

@@ -17,14 +17,15 @@ class NewAPIv1_2:
         r = requests.get(url)
         return r
 
-    def medley_other(self, uid):
+    def medley_other(self, uid, page=1, size=3):
         u"""获取他人的串烧"""
-        url = self.baseurl+'/api/1.2/users/'+uid+'/medleys'
-        r = requests.get(url)
+        url = self.baseurl+'/api/v1.2/users/'+uid+'/medleys'
+        params = {'page': page, 'size': size}
+        r = requests.get(url, params=params)
         # response = r.json()
         return r
 
-    def medley_my(self, token, page=1, size=10):
+    def medley_my(self, token, status=1, page=1, size=3):
         u"""获取我的串烧"""
         url = self.baseurl+'/api/v1.2/user/medleys'
         headers = {
@@ -37,19 +38,19 @@ class NewAPIv1_2:
             "Content-Type": "application/json; charset=UTF-8",
             "Connection": "keep-alive"
         }
-        params = {'page': page, 'size': size}
+        params = {'page': page, 'size': size, 'status': status}
         r = requests.get(url, params=params, headers=headers)
         # response = r.json()
         return r
 
     def complaint_other(self, uid, page=1, size=10):
-        url = self.baseurl+'/api/1.2/users/'+uid+'/raps'
+        url = self.baseurl+'/api/v1.2/users/'+uid+'/raps'
         params = {'page': page, 'size': size}
         r = requests.get(url, params=params)
         # response = r.json()
         return r
 
-    def complaint_my(self, token, status=100, page=1, size=10):
+    def complaint_my(self, token, status=1, page=1, size=3):
         url = self.baseurl+'/api/v1.2/user/raps'
         headers = {
             "token": token,
@@ -67,14 +68,14 @@ class NewAPIv1_2:
         return r
 
     def solo_other(self, uid, page=1, size=10):
-        url = self.baseurl + '/api/1.2/users/' + uid + '/solos'
+        url = self.baseurl + '/api/v1.2/users/' + uid + '/solos'
         params = {'page': page, 'size': size}
         r = requests.get(url, params=params)
         # response = r.json()
         return r
 
-    def solo_my(self, token, status=100, page=1, size=10):
-        url = self.baseurl + '/api/1.2/users/solos'
+    def solo_my(self, token, status=1, page=1, size=10):
+        url = self.baseurl + '/api/v1.2/user/solos'
         headers = {
             "token": token,
             "Host": self.baseurl,
