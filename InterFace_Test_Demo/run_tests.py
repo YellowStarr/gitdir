@@ -9,16 +9,16 @@ import mail
 # test_dir='./testcase'
 # discover=unittest.defaultTestLoader.discover(test_dir,pattern='*_test.py')
 
-if __name__=="__main__":
+if __name__ == "__main__":
     print "---------------------------------------start-----------------------------------------"
 
     caseNames = [
-        loginTests.LoginTest,
+        loginTest.LoginTest,
         userinfoTest.userinfoTest,
         # userErrorCheck.userErrorCheck,
         coreTest.coreTest,
         # coreErrorTest.coreErrorTest,
-        # accompany.Accompany,
+        accompany.Accompany,
         searchTest.SearchTest,
         mapTest.MapTest,
         indexTest.IndexTest,
@@ -31,9 +31,16 @@ if __name__=="__main__":
     # 运行时，先判断Log文件夹中是否已存在log.txt文件，若存在，删除
     path = os.getcwd()
     logpth = os.path.join(path, 'log')
+<<<<<<< HEAD
+=======
+    if not os.path.exists(logpth):
+        os.mkdir(logpth)
+        print logpth
+>>>>>>> master
     logname = os.path.join(logpth, 'log.txt')
     if os.path.exists(logname):
         os.remove(logname)
+
         # os.open('log.txt', 'a+')
 
     testunit = unittest.TestSuite()
@@ -41,10 +48,18 @@ if __name__=="__main__":
         testunit.addTest(unittest.makeSuite(caseNames[i]))
     # nowtime = time.strftime("%Y-%m-%d@%H_%M_%S", time.localtime(time.time()))
     reportpath = os.path.join(path, 'report')
+    if not os.path.exists(reportpath):
+        os.mkdir(reportpath)
     filename = os.path.join(reportpath, 'reporter.html')
     fp = file(filename, 'wb')
     runner = HTMLTestRunner.HTMLTestRunner(stream=fp, title='testcase-logintest', description='desc')
 
     runner.run(testunit)
+<<<<<<< HEAD
     m = mail.SendMail()
     m.send()
+=======
+    # ['1095222570@qq.com', '263697396@qq.com', '358014589@qq.com']
+    m = mail.SendMail()
+    m.send()
+>>>>>>> master

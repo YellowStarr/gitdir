@@ -33,7 +33,7 @@ class ShareAPI:
         # response = r.json()
         return r
 
-    def share_Share_Inner(self, token, sid):
+    def share_Share_Inner(self, token, sid, share_reason):
         u'''站内分享
             Method:get
             @return:
@@ -50,7 +50,7 @@ class ShareAPI:
             "Connection": "keep-alive"
         }
         url = self.baseurl + '/api/user/share'
-        params = {'id': sid}
+        params = {'id': sid,'share_reason': share_reason}
         r = requests.post(url, json=params, headers=headers)
         # response = r.json()
         return r

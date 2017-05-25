@@ -5,13 +5,13 @@ sys.path.append('./interface')
 import unittest
 from interface.CoreAPI import CoreAPI
 from interface.API import MyAPI
-import data_init,dbManual
+import data_init, dbManual
 
 class coreTest(unittest.TestCase):
     def setUp(self):
-        self.baseurl = 'http://test.rapself.com:9091'
-        # self.baseurl = 'http://test.rapself.com:8080'
-        self.d = data_init.testData()
+        self.baseurl = 'http://test.rapself.com:8080'  # java
+        # self.baseurl = 'http://139.129.208.77:9091'
+        self.d = data_init.testData(self.baseurl)
         self.data = self.d.getUserData
         self.sidList = self.d.getSongIds
         self.auList = self.d.getAudios()
@@ -26,11 +26,13 @@ class coreTest(unittest.TestCase):
     def test_Compose_rap(self):
         audio = random.choice(self.auList)
         print audio
-        response = self.user.core_Compose(self.data[0]['token'], 'rap', u'接口post',[{"key" :audio[1],
-                              "lyric": audio[4], "duration": audio[2]}], [], 104, 30.508, [audio[4]],
-                              100001775)
-        args = {'title': u'接口post', 'audios': [{"key" :audio[1],"lyric": audio[4], "duration": audio[2]}], 'images': [], 'latitude': 104, 'longitude': 30.508,
-                'lyric': [audio[4]], 'description': '', 'userId':100001775, 'isPublic': 1}
+        response = self.user.core_Compose(self.data[0]['token'], 'rap', u'qiuwj post', [{"key":audio[1],
+                              "lyric": audio[4], "duration": audio[2]}],
+                                          [], 104, 30.508, [audio[4]], 100001775)
+
+        args = {'title': u'接口post', 'audios': [{"key": audio[1], "lyric": audio[4], "duration": audio[2]}], 'images': [], 'latitude': 104, 'longitude': 30.508,
+                'lyric': [audio[4]], 'description': '', 'userId': 100001775, 'isPublic': 1}
+        print audio[2]
         try:
             self.assertEqual(200, response.status_code, 'status code:%s' % response.status_code)
             r = response.json()
@@ -48,10 +50,8 @@ class coreTest(unittest.TestCase):
     def test_Compose_complaint(self):
         audio = random.choice(self.auList)
         print audio
-        response = self.user.core_Compose(self.data[0]['token'], 'complaint', u'接口post',[{"key": audio[1],
-                              "lyric": "", "duration": audio[2]}], [], 104, 30.508, [audio[4]], 100001775)
-
-        args = {'title': u'接口post', 'audios': [{"key": audio[1],"lyric": "", "duration": audio[2]}], 'images': [], 'latitude': 104, 'longitude': 30.508,
+        response = self.user.core_Compose(self.data[0]['token'], 'complaint', u'接口post',[{"key": audio[1], "lyric": "", "duration": audio[2]}], [], 104, 30.508, [audio[4]], 100001775)
+        args = {'title': u'接口post', 'audios': [{"key": audio[1], "lyric": "", "duration": audio[2]}], 'images': [], 'latitude': 104, 'longitude': 30.508,
                 'lyric': [audio[4]], 'description': '', 'userId': 100001775, 'isPublic': 1}
         try:
             self.assertEqual(200, response.status_code, 'status code:%s' % response.status_code)
@@ -106,7 +106,7 @@ class coreTest(unittest.TestCase):
                               response.url, response.status_code, response.text))
 
     def test_Comment_V1(self):
-        '''获取评论，按热门'''
+        """获取评论，按热门"""
         response = self.user.core_Comment_V1(100000933)
         try:
             self.assertEqual(200, response.status_code, 'status code:%s' % response.status_code)
@@ -122,7 +122,7 @@ class coreTest(unittest.TestCase):
                               response.url, response.status_code, response.text))
 
     def test_Comment_V1_Time(self):
-        '''获取评论，按时间'''
+        """获取评论，按时间"""
         response = self.user.core_Comment_V1(100000933, sort=0)
         try:
             self.assertEqual(200, response.status_code, 'status code:%s' % response.status_code)
@@ -138,7 +138,7 @@ class coreTest(unittest.TestCase):
                               response.url, response.status_code, response.text))
 
     def test_Comment_Praise(self):
-        '''评论点赞'''
+        """评论点赞"""
         response = self.user.core_Comment_Praise(self.data[0]['token'], 888, 1)
         args = {'token':self.data[0]['token'], 'id': 888, 'idType': 1}
         try:
@@ -325,7 +325,7 @@ class coreTest(unittest.TestCase):
             r = response.json()
             # self.api.writeLog(sys._getframe().f_code.co_name, response.text)
             self.assertEqual(0, r['status'])
-            sql = 'SELECT count(*) from song_collect_info c,song_basic_info b where c.user_id = %s and c.song_id=b.id and b.song_status=1' % uid
+            sql = 'SELECT count(*) from song_collect_info c,song_basic_info b where c.user_id = %s and c.song_id=b.id and (b.song_status=1 OR b.song_status=4)' % uid
             collect = self.db.getSet(sql)
             print collect
             self.assertEqual(int(collect[0][0]), len(r['data']['songs']))
@@ -356,7 +356,6 @@ class coreTest(unittest.TestCase):
                                   response.url, response.status_code, response.text))
 
     def test_Get_Hot_subComment(self):
-
         # token = self.data[0]['token']
         response = self.user.core_Get_SubComment(912)
         try:
@@ -373,15 +372,17 @@ class coreTest(unittest.TestCase):
                                   response.url, response.status_code, response.text))
 
     def test_subComment(self):
-        '''发布子评论'''
+        """发布子评论"""
         sql = 'SELECT * FROM sub_comment WHERE status=1 AND  song_comment_id=912'
         commentset = self.db.getSet(sql)
-        comm = random.choice(commentset)[0]
+        # print commentset
+        comm = random.choice(commentset)
+        print comm
         token = self.data[0]['token']
-        response = self.user.core_Post_SubComment(token, 912, comm[0], '图片', comm[3], comm[2], [])
+        response = self.user.core_Post_SubComment(token, '912', str(comm[0]), u'图片', str(comm[2]), comm[3], [])
 
-        args = {'toCommentId': str(comm[0]), 'songCommentId': 912, 'content': u'图片', 'toUserId':str(comm[3]),
-                 'toUserName': comm[2], 'commentAsset': []}
+        args = {'toCommentId': str(comm[0]), 'songCommentId': 912, 'content': u'图片', 'toUserId': str(comm[2]),
+                 'toUserName': comm[3], 'commentAsset': []}
         try:
             self.assertEqual(200, response.status_code, 'status code:%s' % response.status_code)
             r = response.json()
@@ -457,7 +458,7 @@ class coreTest(unittest.TestCase):
                               'args:%s\napi: %s\nstatus_code: %s\ntext: %s' % (args,
                                   response.url, response.status_code, response.text))
 
-    def test_songComment(self):    # 评论歌曲，主评论
+    '''def test_songComment(self):    # 评论歌曲，主评论
         token = self.data[0]['token']
         sid = random.choice(self.sidList)    # 随机获取歌曲id
         print sid
@@ -468,9 +469,8 @@ class coreTest(unittest.TestCase):
             comNum = len(comments['data']['comments'])
             content = 'comment'
         except:
-            print 'get comments failed, status code wrong. code:%s'%cr.status_code
+            print 'get comments failed, status code wrong. code:%s' % cr.status_code
             raise
-
         response = self.user.core_songComment(token, sid, content)
         args = {'id': sid, 'content': content, 'resource': []}
         try:
@@ -478,7 +478,8 @@ class coreTest(unittest.TestCase):
             r = response.json()
             # self.api.writeLog(sys._getframe().f_code.co_name, response.text)
             self.assertEqual(0, r['status'])
-            cur_comments = self.user.core_Comment_V1(sid)
+            cur_response = self.user.core_Comment_V1(sid)
+            cur_comments = cur_response.json()
             cur_comNum = len(cur_comments['data']['comments'])
             self.assertEqual(comNum+1, cur_comNum)
         except:
@@ -487,9 +488,9 @@ class coreTest(unittest.TestCase):
         finally:
             self.api.writeLog(sys._getframe().f_code.co_name,
                               'args: %s\napi: %s\nstatus_code: %s\ntext: %s' % (args,
-                                  response.url, response.status_code, response.text))
+                                  response.url, response.status_code, response.text))'''
 
-    def test_Del_songComment(self):
+    '''def test_Del_songComment(self):
         token = self.data[0]['token']
         uid = self.data[0]['id']
         sql = 'SELECT id FROM song_comment_info WHERE user_id=%s AND  status = 0' % uid
@@ -503,14 +504,14 @@ class coreTest(unittest.TestCase):
             cur_sql = 'SELECT status FROM song_comment_info WHERE id=%s ' % uid
             time.sleep(2)
             comment_status = self.db.excuteSQL(cur_sql)
-            self.assertEqual(99, comment_status)
+            self.assertEqual(0, comment_status)
         except:
             print 'status code:%s' % response.status_code
             raise
         finally:
             self.api.writeLog(sys._getframe().f_code.co_name,
                               'args: songcommentid: %s\napi: %s\nstatus_code: %s\ntext: %s' % (cid,
-                                  response.url, response.status_code, response.text))
+                                  response.url, response.status_code, response.text))'''
 
 if __name__ == "__main__":
     unittest.main()

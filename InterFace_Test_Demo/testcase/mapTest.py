@@ -9,8 +9,9 @@ import data_init, dbManual
 
 class MapTest(unittest.TestCase):
     def setUp(self):
-        self.baseurl = 'http://test.rapself.com:9091'
-        d = data_init.testData()
+        self.baseurl = 'http://test.rapself.com:8080'  # java
+        # self.baseurl = 'http://139.129.208.77:9091'
+        d = data_init.testData(self.baseurl)
         self.data = d.getUserData
         self.verificationErrors = []
         self.accept_next_alert = True
@@ -20,6 +21,7 @@ class MapTest(unittest.TestCase):
         # self.err=[]
 
     def test_Near_success(self):
+        unequal = 0
         latitude = 30.56088604184985
         longitude = 104.05446182158
         radius = 5000
@@ -46,9 +48,16 @@ class MapTest(unittest.TestCase):
             r = response.json()
             self.api.writeLog(sys._getframe().f_code.co_name, response.text)
             self.assertEqual(0, r['status'])
-            self.assertEqual(medleynum,len(r['data']['songs']['medleys']))
-            self.assertEqual(complaintnum,len(r['data']['songs']['complaints']))
-            self.assertEqual(rapnum,len(r['data']['songs']['raps']))
+            if medleynum != len(r['data']['songs']['medleys']):
+                print "medley actual has %s and we get %s" % (medleynum, len(r['data']['songs']['medleys']))
+                unequal += 1
+            if complaintnum != len(r['data']['songs']['complaints']):
+                print "complaint actual has %s and we get %s" % (complaintnum, len(r['data']['songs']['complaints']))
+                unequal += 1
+            if rapnum != len(r['data']['songs']['raps']):
+                print "rap actual has %s and we get %s" % (rapnum, len(r['data']['songs']['raps']))
+                unequal += 1
+            self.assertEqual(0, unequal)
         except:
             print 'status code:%s' % response.status_code
             raise

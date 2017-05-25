@@ -9,8 +9,9 @@ import data_init,dbManual
 
 class SearchTest(unittest.TestCase):
     def setUp(self):
-        self.baseurl = 'http://test.rapself.com:9091'
-        self.d = data_init.testData()
+        self.baseurl = 'http://test.rapself.com:8080'  # java
+        # self.baseurl = 'http://139.129.208.77:9091'
+        self.d = data_init.testData(self.baseurl)
         self.verificationErrors = []
         self.accept_next_alert = True
         self.api = MyAPI()
@@ -67,7 +68,7 @@ class SearchTest(unittest.TestCase):
             r = response.json()
             # self.api.writeLog(sys._getframe().f_code.co_name, response.text)
             self.assertEqual(0, r['status'])
-            self.assertEqual(num, len(r['data']['songs']))
+            self.assertEqual(num[0], len(r['data']['songs']))
         except:
             print 'status code:%s' % response.status_code
             raise
@@ -87,7 +88,7 @@ class SearchTest(unittest.TestCase):
             r = response.json()
             # self.api.writeLog(sys._getframe().f_code.co_name, response.text)
             self.assertEqual(0, r['status'])
-            self.assertEqual(num, len(r['data']['users']))
+            self.assertEqual(num[0], len(r['data']['users']))
         except:
             print 'status code:%s' % response.status_code
             raise
@@ -106,7 +107,7 @@ class SearchTest(unittest.TestCase):
             r = response.json()
             # self.api.writeLog(sys._getframe().f_code.co_name, response.text)
             self.assertEqual(0, r['status'])
-            self.assertEqual(num, len(r['data']['users']))
+            self.assertEqual(num[0], len(r['data']['users']))
         except:
             print 'status code:%s' % response.status_code
             raise

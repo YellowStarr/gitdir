@@ -3,10 +3,10 @@
 import requests
 
 class LoginAPI:
-    def __init__(self,url):
+    def __init__(self, url):
         self.baseurl=url
 
-    def forgetpwd_modifyPwd(self,phoneNumber='',password='',code=''):
+    def forgetpwd_modifyPwd(self, phoneNumber='', password='', code=''):
         u''' 忘记密码页面修改密码接口
             Method:post
 
@@ -86,7 +86,6 @@ class LoginAPI:
 
         postdata = {"terminal": 2, 'password': password, 'phone': phoneNumber}
         r = requests.post(url, json=postdata)
-        # r = r.json()
         return r
 
     def login_Update(self, type):
@@ -96,9 +95,7 @@ class LoginAPI:
                 data{version:{ext,version,url,upgradeContent,platform,minimumSupportVersion,force:0，1 强制更新}},msg,status:0 成功
         '''
         url = self.baseurl + '/api/clientVersion/' + type
-        #url = self.baseurl + '/api/clientVersion/'
         r = requests.get(url)
-        # r = r.json()
         return r
 
     def login_InitConfig(self,accessId='ios'):

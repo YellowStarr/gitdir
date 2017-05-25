@@ -1,6 +1,7 @@
 # coding=utf-8
 # audio_type :串烧 4，独白2, 吐槽 1,rap
 from dbManual import DBManual
+<<<<<<< HEAD
 from interface.LoginAPI import LoginAPI
 class testData:
     def __init__(self):
@@ -15,6 +16,23 @@ class testData:
     def getUserData(self, url):
         lg = LoginAPI(url)
         r = lg.login_Login(self.login_data[0]['phoneNumber'], self.login_data[0]['password'])
+=======
+import requests
+
+class testData:
+    def __init__(self, url):
+        self.baseurl = url
+        self.db = DBManual()
+        self.login_data = [{'phoneNumber': 18782943850, 'password': 'G1dAKkZ1s34ML1Y02YoGTErwpxVzh0T5kChN5y5OTcJYAqUJfwsjkQ',
+             'id': 100001775}]
+
+    @property
+    def getUserData(self):
+        urls = self.baseurl+'/api/user/login'
+        postdata = {"terminal": 2, 'password': 'G1dAKkZ1s34ML1Y02YoGTErwpxVzh0T5kChN5y5OTcJYAqUJfwsjkQ',
+                    'phone': '18782943850'}
+        r = requests.post(urls, json=postdata)
+>>>>>>> master
         response = r.json()
         self.login_data[0]['token'] = response['data']['token']
         return self.login_data
@@ -29,7 +47,8 @@ class testData:
         return songidList
 
     def getAudios(self):
-        audios = self.db.getALL('audio_basic_info')
+        sql = 'SELECT * FROM audio_basic_info WHERE upload_time>2017-05-01'
+        audios = self.db.getSet(sql)
         audioList = []
         for i in range(len(audios)):
             audioList.append(audios[i])

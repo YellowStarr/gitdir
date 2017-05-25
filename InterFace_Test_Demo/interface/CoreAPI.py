@@ -19,7 +19,7 @@ class CoreAPI:
         
         return r
 
-    def core_Compose(self,token,type,title,audios,images,latitude,longitude,lyric,userid,description='',isPublic=1):
+    def core_Compose(self, token, type, title, audios, images, latitude, longitude, lyric, userid, description='', isPublic=1):
         u'''创建和上传歌曲和图片的接口
             Method:post
             :param: type:string
@@ -41,7 +41,7 @@ class CoreAPI:
         if type == 'rap':
             url = self.baseurl + '/api/audio/rap/compose'
             jsons = {'title': title, 'audios': audios, 'images': images, 'latitude': latitude, 'longitude': longitude,
-                    'lyric': lyric, 'description': description, 'userId':userid, 'isPublic': isPublic}
+                    'lyric': lyric, 'description': description, 'userId': userid, 'isPublic': isPublic}
 
         elif type == 'complaint':
             url = self.baseurl + '/api/audio/complaint/compose'
@@ -51,7 +51,7 @@ class CoreAPI:
         
         return r
 
-    def core_Comment_V1(self, id, page=1, size=10, sort=1):
+    def core_Comment_V1(self, id, page=1, size=10, sort='hot'):
         u'''作品评论
             Method:get
             @param: 歌曲id，sort 0 热门 1 最新,page,size

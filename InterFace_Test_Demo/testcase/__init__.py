@@ -1,4 +1,4 @@
-import loginTests
+import loginTest
 import userinfoTest
 import searchTest
 import discoverTest
@@ -12,4 +12,4 @@ import shareTest
 import messageTest
 import userErrorCheck
 import complexTest
-# import classifyCode
+# import data_init
