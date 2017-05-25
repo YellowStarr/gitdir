@@ -8,3 +8,4 @@ import mapAPI
 import indexAPI
 import messageAPI
 import shareAPI
+import newAPIv1_2
