@@ -14,26 +14,30 @@ if __name__ == "__main__":
 
     caseNames = [
         loginTest.LoginTest,
-        userinfoTest.userinfoTest,
+        # userinfoTest.userinfoTest,
         # userErrorCheck.userErrorCheck,
-        coreTest.coreTest,
+        # coreTest.coreTest,
         # coreErrorTest.coreErrorTest,
-        accompany.Accompany,
-        searchTest.SearchTest,
-        mapTest.MapTest,
-        indexTest.IndexTest,
-        shareTest.ShareTest,
-        messageTest.MessageTest,
+        # accompany.Accompany,
+        # searchTest.SearchTest,
+        # mapTest.MapTest,
+        # indexTest.IndexTest,
+        # shareTest.ShareTest,
+        # messageTest.MessageTest,
         # indexErrorTest.IndexErrorTest,
-        complexTest.ComplextTest,
+        # complexTest.ComplextTest,
 
     ]
     # 运行时，先判断Log文件夹中是否已存在log.txt文件，若存在，删除
     path = os.getcwd()
     logpth = os.path.join(path, 'log')
+    if not os.path.exists(logpth):
+        os.mkdir(logpth)
+        print logpth
     logname = os.path.join(logpth, 'log.txt')
     if os.path.exists(logname):
         os.remove(logname)
+
         # os.open('log.txt', 'a+')
 
     testunit = unittest.TestSuite()
