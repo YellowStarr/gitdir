@@ -3,10 +3,10 @@
 import requests
 
 class LoginAPI:
-    def __init__(self,url):
+    def __init__(self, url):
         self.baseurl=url
 
-    def forgetpwd_modifyPwd(self,phoneNumber='',password='',code=''):
+    def forgetpwd_modifyPwd(self, phoneNumber='', password='', code=''):
         u''' 忘记密码页面修改密码接口
             Method:post
 

@@ -9,9 +9,9 @@ import data_init, dbManual
 
 class coreTest(unittest.TestCase):
     def setUp(self):
-        self.baseurl = 'http://139.129.208.77:9091'
-        # self.baseurl = 'http://test.rapself.com:8080'
-        self.d = data_init.testData()
+        self.baseurl = 'http://test.rapself.com:8080'  # java
+        # self.baseurl = 'http://139.129.208.77:9091'
+        self.d = data_init.testData(self.baseurl)
         self.data = self.d.getUserData
         self.sidList = self.d.getSongIds
         self.auList = self.d.getAudios()
@@ -458,7 +458,7 @@ class coreTest(unittest.TestCase):
                               'args:%s\napi: %s\nstatus_code: %s\ntext: %s' % (args,
                                   response.url, response.status_code, response.text))
 
-    def test_songComment(self):    # 评论歌曲，主评论
+    '''def test_songComment(self):    # 评论歌曲，主评论
         token = self.data[0]['token']
         sid = random.choice(self.sidList)    # 随机获取歌曲id
         print sid
@@ -488,9 +488,9 @@ class coreTest(unittest.TestCase):
         finally:
             self.api.writeLog(sys._getframe().f_code.co_name,
                               'args: %s\napi: %s\nstatus_code: %s\ntext: %s' % (args,
-                                  response.url, response.status_code, response.text))
+                                  response.url, response.status_code, response.text))'''
 
-    def test_Del_songComment(self):
+    '''def test_Del_songComment(self):
         token = self.data[0]['token']
         uid = self.data[0]['id']
         sql = 'SELECT id FROM song_comment_info WHERE user_id=%s AND  status = 0' % uid
@@ -511,7 +511,7 @@ class coreTest(unittest.TestCase):
         finally:
             self.api.writeLog(sys._getframe().f_code.co_name,
                               'args: songcommentid: %s\napi: %s\nstatus_code: %s\ntext: %s' % (cid,
-                                  response.url, response.status_code, response.text))
+                                  response.url, response.status_code, response.text))'''
 
 if __name__ == "__main__":
     unittest.main()

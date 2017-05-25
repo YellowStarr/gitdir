@@ -9,9 +9,9 @@ import data_init,dbManual
 
 class userinfoTest(unittest.TestCase):
     def setUp(self):
-        self.baseurl = 'http://139.129.208.77:9091'
-        # self.baseurl = 'http://139.129.208.77:8080'
-        d = data_init.testData()
+        self.baseurl = 'http://test.rapself.com:8080'  # java
+        # self.baseurl = 'http://139.129.208.77:9091'
+        d = data_init.testData(self.baseurl)
         self.data = d.getUserData
         self.verificationErrors = []
         self.accept_next_alert = True

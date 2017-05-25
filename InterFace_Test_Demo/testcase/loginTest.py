@@ -10,9 +10,10 @@ from interface.API import MyAPI
 class LoginTest(unittest.TestCase):
 
     def setUp(self):
-        self.baseurl = 'http://139.129.208.77:9091'
+        self.baseurl = 'http://test.rapself.com:8080'  # java
+        # self.baseurl = 'http://139.129.208.77:9091'
         self.user = LoginAPI(self.baseurl)
-        login = testData()
+        login = testData(self.baseurl)
         self.udata = login.getUserData[0]
         self.api = MyAPI()
         self.result = ""

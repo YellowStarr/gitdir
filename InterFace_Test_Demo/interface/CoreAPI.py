@@ -51,7 +51,7 @@ class CoreAPI:
         
         return r
 
-    def core_Comment_V1(self, id, page=1, size=10, sort=1):
+    def core_Comment_V1(self, id, page=1, size=10, sort='hot'):
         u'''作品评论
             Method:get
             @param: 歌曲id，sort 0 热门 1 最新,page,size

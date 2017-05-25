@@ -9,8 +9,9 @@ import data_init,dbManual
 
 class SearchTest(unittest.TestCase):
     def setUp(self):
-        self.baseurl = 'http://139.129.208.77:9091'
-        self.d = data_init.testData()
+        self.baseurl = 'http://test.rapself.com:8080'  # java
+        # self.baseurl = 'http://139.129.208.77:9091'
+        self.d = data_init.testData(self.baseurl)
         self.verificationErrors = []
         self.accept_next_alert = True
         self.api = MyAPI()
