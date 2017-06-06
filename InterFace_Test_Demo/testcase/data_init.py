@@ -2,18 +2,21 @@
 # audio_type :串烧 4，独白2, 吐槽 1,rap
 from dbManual import DBManual
 import requests
+from config.runconfig import RunConfig
 
 class testData:
     def __init__(self, url):
         self.baseurl = url
         self.db = DBManual()
-        self.login_data = [{'phoneNumber': 18782943850, 'password': 'G1dAKkZ1s34ML1Y02YoGTErwpxVzh0T5kChN5y5OTcJYAqUJfwsjkQ',
+        self.login_data = [{'phoneNumber': 18782943850, 'password': 'UanuDAUYVExCDB1aRnZVrTDz7knglghblLI+jGHk+tpYAqUJfwsjkQ==',
              'id': 100001775}]
 
     @property
     def getUserData(self):
+        cfg = RunConfig()
+        self.baseurl = cfg.get_base_url()
         urls = self.baseurl+'/api/user/login'
-        postdata = {"terminal": 2, 'password': 'G1dAKkZ1s34ML1Y02YoGTErwpxVzh0T5kChN5y5OTcJYAqUJfwsjkQ',
+        postdata = {"terminal": 2, 'password': 'UanuDAUYVExCDB1aRnZVrTDz7knglghblLI+jGHk+tpYAqUJfwsjkQ==',
                     'phone': '18782943850'}
         r = requests.post(urls, json=postdata)
         response = r.json()

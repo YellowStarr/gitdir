@@ -6,11 +6,12 @@ import unittest
 from interface.shareAPI import ShareAPI
 from interface.API import MyAPI
 import data_init,dbManual
+from config.runconfig import RunConfig
 
 class ShareTest(unittest.TestCase):
     def setUp(self):
-        self.baseurl = 'http://test.rapself.com:8080'  # java
-        # self.baseurl = 'http://139.129.208.77:9091'
+        cfg = RunConfig()
+        self.baseurl = cfg.get_base_url()
         self.s = data_init.testData(self.baseurl)
         self.d = self.s.getUserData
         self.verificationErrors = []

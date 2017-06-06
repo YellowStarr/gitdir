@@ -36,7 +36,7 @@ class IndexAPI:
         
         return r
 
-    def index_Hot_Music(self,type,size=10,page=1):
+    def index_Hot_Music(self, type, size=10, page=1):
         u'''获取热门歌曲信息
         :type raps|medleys|complaints|battles
         @return

@@ -71,7 +71,7 @@ class DiscoverAPI:
         # r = r.json()
         return r
 
-    def discover_Join_Activity(self,songId,actId):
+    def discover_Join_Activity(self, songId, actId):
         u"""加入活动
         @Method:post
         @post:{songId,activityId}
@@ -83,8 +83,8 @@ class DiscoverAPI:
         # r = r.json()
         return r
 
-    def discover_Activity_Detail_T30(self,actId):
-        u"""关注列表
+    def discover_Activity_Detail_T30(self, actId):
+        """
         @Method:get
         @params:page,size,activityId
         @return:
@@ -94,12 +94,12 @@ class DiscoverAPI:
                 ]},msg,status
         """
         url = self.baseurl+"/api/activity/song/hot"
-        params={'size':10,'page':1,'activityId':actId}
-        r = requests.get(url,params=params)
+        params = {'size': 10, 'page': 1, 'activityId': actId}
+        r = requests.get(url, params=params)
         # r = r.json()
         return r
 
-    def discover_Activity_Song(self,actId):
+    def discover_Activity_Song(self, actId):
         u"""发现-活动-获取用户参加该活动的歌曲和排名
         @param actId:
         @return:
@@ -129,4 +129,30 @@ class DiscoverAPI:
         # r = r.json()
         return r
 
+    def user_Newest_Medley(self, page=1, size=10):
+        u'''最新串烧'''
+        url = self.baseurl + '/api/song/medley/newest'
+        params = {'page': page, 'size': size}
+        r = requests.get(url, params=params)
+        # self.api.writeLog('user_Newest_Medley', r.text)
+
+        return r
+
+    def user_Newest_Complaint(self, page=1, size=10):
+        u'''最新吐槽'''
+        url = self.baseurl + '/api/song/complaint/newest'
+        params = {'page': page, 'size': size}
+        r = requests.get(url, params=params)
+        # self.api.writeLog('user_Newest_Complaint', r.text)
+        #
+        return r
+
+    def user_Newest_Rap(self, page=1, size=10):
+        u'''最新串烧'''
+        url = self.baseurl + '/api/song/rap/newest'
+        params = {'page': page, 'size': size}
+        r = requests.get(url, params=params)
+        # self.api.writeLog('user_Newest_Rap', r.text)
+
+        return r
     # def discover_New_Complaint(self):

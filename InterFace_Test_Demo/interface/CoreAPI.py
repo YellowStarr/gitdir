@@ -3,7 +3,7 @@
 import requests
 
 class CoreAPI:
-    def __init__(self,url):
+    def __init__(self, url):
         self.baseurl=url
 
     def core_UploadToken(self,file,userId):

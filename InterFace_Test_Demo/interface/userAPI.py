@@ -39,34 +39,8 @@ class UserAPI:
 
         return r
 
-    def user_Newest_Medley(self, page=1, size=10):
-        u'''最新串烧'''
-        url = self.baseurl + '/api/song/medley/newest'
-        params = {'page': page, 'size': size}
-        r = requests.get(url, params=params)
-        # self.api.writeLog('user_Newest_Medley', r.text)
-   
-        return r
 
-    def user_Newest_Complaint(self, page=1, size=10):
-        u'''最新吐槽'''
-        url = self.baseurl + '/api/song/complaint/newest'
-        params = {'page': page, 'size': size}
-        r = requests.get(url, params=params)
-        # self.api.writeLog('user_Newest_Complaint', r.text)
-   
-        return r
-
-    def user_Newest_Rap(self, page=1, size=10):
-        u'''最新串烧'''
-        url = self.baseurl + '/api/song/rap/newest'
-        params = {'page': page, 'size': size}
-        r = requests.get(url, params=params)
-        # self.api.writeLog('user_Newest_Rap', r.text)
-       
-        return r
-
-    def user_Focus(self,id,token):
+    def user_Focus(self, id, token):
         headers = {
             "token": token,
             "Host": self.baseurl,
@@ -248,7 +222,7 @@ class UserAPI:
       
         return r
 
-    def user_ModifyInfo(self, token, id, userName, phoneNumber, area='1', birthday=652978800000, emotionStatus=1, hasFocus='', personalProfile='',
+    def user_ModifyInfo(self, token, id, userName, phoneNumber, area='1', birthday='2010-01-01', emotionStatus=1, hasFocus='', personalProfile='',
                          portrait='', sex=1):
         u'''修改用户信息'''
         headers = {

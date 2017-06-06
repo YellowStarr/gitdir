@@ -9,23 +9,16 @@ import sys
 #追加mysql的bin目录到环境变量
 sys.path.append(r'G:\MySQL\mysql-5.6.35-winx64\bin')
 import MySQLdb
-
-HOST = 'rm-m5eigc4v1r5u7l4xqo.mysql.rds.aliyuncs.com'
-PORT = 3306
-USER = 'autorap'
-PASSWD = 'TUya2016'
-DB = 'rap'
-TABLENAME = 'violation_report'
-
+from config.DBConfig import DBConfig
 
 class DBManual:
     def __init__(self):
-        print DB
-        self.conn = MySQLdb.connect(host=HOST,
-                                    port=PORT,
-                                    user=USER,
-                                    passwd=PASSWD,
-                                    db=DB)
+        self.db = DBConfig().get_db()
+        self.conn = MySQLdb.connect(host=self.db['host'],
+                                    port=int(self.db['port']),
+                                    user=self.db['user'],
+                                    passwd=self.db['pwd'],
+                                    db=self.db['db'])
         self.cur = self.conn.cursor()
 
     def backupDatabase(self):
@@ -42,7 +35,7 @@ class DBManual:
         # 定义sql的格式
         sqlfromat = "%s -h%s -u%s -p%s %s  >%s"
         # 生成相应的sql语句
-        sql = (sqlfromat % (mysqlcomm, HOST, USER, PASSWD, DB, exportfile))
+        sql = (sqlfromat % (mysqlcomm, self.db['host'], self.db['user'], self.db['pwd'], self.db['db'], exportfile))
         # 判断是否已经有相应的sql文件生成；如果有，就按时间重命名该文件
         if os.path.exists(exportfile):
             print(time.ctime())

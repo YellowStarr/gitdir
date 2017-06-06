@@ -1,16 +1,21 @@
 #coding=utf-8
 #伴奏接口测试
 import requests
-import unittest,sys
+import unittest,os
 from interface.API import MyAPI
+from config.runconfig import RunConfig
+
 class Accompany(unittest.TestCase):
+    """this is class doc"""
     def setUp(self):
         self.api = MyAPI()
-        self.baseurl = 'http://test.rapself.com:8080'   #java
+        cfg = RunConfig()
+        self.baseurl = cfg.get_base_url()   #java
         # self.baseurl = 'http://139.129.208.77:9091'
         self.cateIdList = [10000001, 10000002, 10000003, 10000004, 10000005, 10000006, 10000007, 1000000, 10000009]
 
     def test_accompany_Classify(self):
+        """this is method doc"""
         url = self.baseurl + '/api/music/type'
         # param = {'page': 1, 'size': 10}
         r = requests.get(url)

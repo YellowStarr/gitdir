@@ -5,29 +5,27 @@ sys.path.append('testcase')
 import HTMLTestRunner
 import unittest
 from testcase import *
+import logging
 import mail
-# test_dir='./testcase'
-# discover=unittest.defaultTestLoader.discover(test_dir,pattern='*_test.py')
 
 if __name__ == "__main__":
     print "---------------------------------------start-----------------------------------------"
 
     caseNames = [
-        # loginTest.LoginTest,
-        # userinfoTest.userinfoTest,
+        loginTest.LoginTest,
+        userinfoTest.userinfoTest,
         # userErrorCheck.userErrorCheck,
-        # coreTest.coreTest,
+        coreTest.coreTest,
         # coreErrorTest.coreErrorTest,
-        # accompany.Accompany,
-        # searchTest.SearchTest,
-        # mapTest.MapTest,
-        # indexTest.IndexTest,
-        # shareTest.ShareTest,
-        # messageTest.MessageTest,
+        accompany.Accompany,
+        searchTest.SearchTest,
+        mapTest.MapTest,
+        indexTest.IndexTest,
+        shareTest.ShareTest,
+        messageTest.MessageTest,
         # indexErrorTest.IndexErrorTest,
-        # complexTest.ComplextTest,
+        complexTest.ComplextTest,
         new1_2.newAPITest,
-
     ]
     # 运行时，先判断Log文件夹中是否已存在log.txt文件，若存在，删除
     path = os.getcwd()
@@ -39,8 +37,6 @@ if __name__ == "__main__":
     if os.path.exists(logname):
         os.remove(logname)
 
-        # os.open('log.txt', 'a+')
-
     testunit = unittest.TestSuite()
     for i in range(0, len(caseNames)):
         testunit.addTest(unittest.makeSuite(caseNames[i]))
@@ -50,11 +46,11 @@ if __name__ == "__main__":
         os.mkdir(reportpath)
     filename = os.path.join(reportpath, 'reporter.html')
     fp = file(filename, 'wb')
-    runner = HTMLTestRunner.HTMLTestRunner(stream=fp, title='testcase-logintest', description='desc')
+    runner = HTMLTestRunner.HTMLTestRunner(stream=fp, title='testcase-logintest', description='嘿啪app接口测试')
 
     runner.run(testunit)
 
-    m = mail.SendMail()
-    m.send()
+    # m = mail.SendMail()
+    # m.send()
 
 

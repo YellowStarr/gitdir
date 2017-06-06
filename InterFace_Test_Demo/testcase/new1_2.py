@@ -6,11 +6,12 @@ import unittest
 from interface.newAPIv1_2 import NewAPIv1_2
 from interface.API import MyAPI
 import data_init,dbManual
+from config.runconfig import RunConfig
 
 class newAPITest(unittest.TestCase):
     def setUp(self):
-        # self.baseurl = 'http://test.rapself.com:9091'
-        self.baseurl = 'http://test.rapself.com:8080'
+        cfg = RunConfig()
+        self.baseurl = cfg.get_base_url()
         self.d = data_init.testData(self.baseurl)
         self.verificationErrors = []
         self.accept_next_alert = True
@@ -33,7 +34,7 @@ class newAPITest(unittest.TestCase):
                               'args: %s\napi: %s\nstatus_code: %s\ntext: %s' % (0,
                               response.url, response.status_code, response.text))
 
-    def test_homepage(self):
+    '''def test_homepage(self):
         response = self.user.homepage()
         try:
             self.assertEqual(200, response.status_code, 'status code:%s' % response.status_code)
@@ -44,9 +45,9 @@ class newAPITest(unittest.TestCase):
             raise
         finally:
             self.api.writeLog(sys._getframe().f_code.co_name,
-                              'args: %s\napi: %s\nstatus_code: %s\ntext: %s' % (0, response.url, response.status_code, response.text))
+                              'args: %s\napi: %s\nstatus_code: %s\ntext: %s' % (0, response.url, response.status_code, response.text))'''
 
-    def test_usermedley(self):
+    def test_usermedley(self):    # 测试查看其他用户串烧
         uid = '100001773'
         response = self.user.medley_other(uid)
         try:

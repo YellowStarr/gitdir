@@ -6,10 +6,11 @@ import unittest
 from interface.CoreAPI import CoreAPI
 from interface.API import MyAPI
 import data_init, dbManual
-
+from config.runconfig import RunConfig
 class coreErrorTest(unittest.TestCase):
     def setUp(self):
-        self.baseurl = 'http://test.rapself.com:8080'  # java
+        cfg = RunConfig()
+        self.baseurl = cfg.get_base_url()
         # self.baseurl = 'http://139.129.208.77:9091'
         self.d = data_init.testData()
         self.data = self.d.getUserData

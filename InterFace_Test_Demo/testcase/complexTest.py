@@ -8,10 +8,12 @@ from interface.userAPI import UserAPI
 from interface.indexAPI import IndexAPI
 from interface.API import MyAPI
 import data_init,dbManual
+from config.runconfig import RunConfig
 
 class ComplextTest(unittest.TestCase):
     def setUp(self):
-        self.baseurl = 'http://test.rapself.com:8080'  # java
+        cfg = RunConfig()
+        self.baseurl = cfg.get_base_url()
         # self.baseurl = 'http://139.129.208.77:9091'
         self.d = data_init.testData(self.baseurl)
         self.data = self.d.getUserData
@@ -97,34 +99,42 @@ class ComplextTest(unittest.TestCase):
                 raise AssertionError('insert into database failed')
             user.user_Del_BlackList('100000001', self.data[0]['token'])
         except:
-            print 'status code:%s' % response.status_code
+            print 'url: %s\n' % response.url
+            print u'状态码: %s' % response.status_code
+            print u'传递的参数是: %s\n' % '100000001'
+            print u'响应内容: %s\n' % response.text
             raise
         finally:
             self.api.writeLog(sys._getframe().f_code.co_name,
                                 'api: %s\nstatus_code: %s\ntext: %s' % (response.url, response.status_code, response.text))
 
-
-    '''def test_BlackList_Del(self):
-        sql = 'select black_user_id from user_blacklist where user_id= %s' % (self.data[0]['id'])
-        blackList = self.db.getSet(sql)
-        bid = random.choice(blackList)
+    def test_Focus_success(self):
+        """关注成功后取消关注"""
         user = UserAPI(self.baseurl)
-        response = user.user_Del_BlackList(bid[0], self.data[0]['token'])
+        response = user.user_Focus('100001774', self.data[0]['token'])
         try:
             self.assertEqual(200, response.status_code, 'status code:%s' % response.status_code)
             r = response.json()
             # self.api.writeLog(sys._getframe().f_code.co_name, response.text)
-            self.assertEqual(0, r['status'])
-            sql = 'select * from user_blacklist where user_id= %s and black_user_id= %s' % (self.data[0]['id'], bid[0])
-            num = self.db.getSingle(sql)
-            # if not num:
-                # raise AssertionError('delete failed')
+            try:
+                self.assertEqual(0, r['status'])
+                r2 = user.user_cancelFocus('100001774',self.data[0]['token'])
+            except:
+                print "test_Focus_mix"
+                print 'url: %s\n' % r2.url
+                print u'状态码: %s' % r2.status_code
+                print u'传递的参数是: %s\n' % '100001774'
+                print u'响应内容: %s\n' % r2.text
         except:
-            print 'status code:%s' % response.status_code
+            print 'url: %s\n' % response.url
+            print u'状态码: %s' % response.status_code
+            print u'传递的参数是: %s\n' % '100001774'
+            print u'响应内容: %s\n' % response.text
             raise
+
         finally:
             self.api.writeLog(sys._getframe().f_code.co_name,
-                                'api: %s\nstatus_code: %s\ntext: %s' % (response.url, response.status_code, response.text))'''
+                  'api: %s\nstatus_code: %s\ntext: %s' % (response.url, response.status_code, response.text))
 
 
 

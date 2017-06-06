@@ -6,11 +6,12 @@ import unittest
 from interface.DiscoverAPI import DiscoverAPI
 from interface.API import MyAPI
 import data_init,dbManual
+from config.runconfig import RunConfig
 
 class discoverTest(unittest.TestCase):
     def setUp(self):
-        self.baseurl = 'http://test.rapself.com:8080'  # java
-        # self.baseurl = 'http://139.129.208.77:9091'
+        cfg = RunConfig()
+        self.baseurl = cfg.get_base_url()
         self.d = data_init.testData(self.baseurl)
         self.data = self.d.getUserData
         self.sidList = self.d.getSongIds
@@ -38,6 +39,54 @@ class discoverTest(unittest.TestCase):
         self.api.writeLog(sys._getframe().f_code.co_name, response.text)
         self.assertEqual(0, r['status'])
 
+    def test_Newest_Medley_success(self):  # 最新串烧
+
+        response = self.user.user_Newest_Medley(1, 10)
+        try:
+            self.assertEqual(200, response.status_code)
+            r = response.json()
+            # self.api.writeLog(sys._getframe().f_code.co_name, response.text)
+            self.assertEqual(0, r['status'])
+        except:
+            print 'status code:%s' % response.status_code
+            # self.api.writeLog(sys._getframe().f_code.co_name,
+            #                   'api: %s\nstatus_code: %s' % (response.url, response.status_code))
+            raise
+        finally:
+            self.api.writeLog(sys._getframe().f_code.co_name,
+                              'api: %s\nstatus_code: %s\ntext: %s' % (
+                              response.url, response.status_code, response.text))
+
+    def test_Newest_Complaint_success(self):
+
+        response = self.user.user_Newest_Complaint(1, 10)
+        try:
+            self.assertEqual(200, response.status_code, 'status code:%s' % response.status_code)
+            r = response.json()
+            # self.api.writeLog(sys._getframe().f_code.co_name, response.text)
+            self.assertEqual(0, r['status'])
+        except:
+            print 'status code:%s' % response.status_code
+            raise
+        finally:
+            self.api.writeLog(sys._getframe().f_code.co_name,
+                              'api: %s\nstatus_code: %s\ntext: %s' % (
+                              response.url, response.status_code, response.text))
+
+    def test_Newest_Rap_success(self):
+        response = self.user.user_Newest_Rap(1, 10)
+        try:
+            self.assertEqual(200, response.status_code, 'status code:%s' % response.status_code)
+            r = response.json()
+            # self.api.writeLog(sys._getframe().f_code.co_name, response.text)
+            self.assertEqual(0, r['status'])
+        except:
+            print 'status code:%s' % response.status_code
+            raise
+        finally:
+            self.api.writeLog(sys._getframe().f_code.co_name,
+                              'api: %s\nstatus_code: %s\ntext: %s' % (
+                              response.url, response.status_code, response.text))
     """
         def test_ADs(self):
         response = self.user.discover_ADs()

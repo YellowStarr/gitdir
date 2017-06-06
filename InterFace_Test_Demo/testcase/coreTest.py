@@ -6,11 +6,11 @@ import unittest
 from interface.CoreAPI import CoreAPI
 from interface.API import MyAPI
 import data_init, dbManual
-
+from config.runconfig import RunConfig
 class coreTest(unittest.TestCase):
     def setUp(self):
-        self.baseurl = 'http://test.rapself.com:8080'  # java
-        # self.baseurl = 'http://139.129.208.77:9091'
+        cfg = RunConfig()
+        self.baseurl = cfg.get_base_url()
         self.d = data_init.testData(self.baseurl)
         self.data = self.d.getUserData
         self.sidList = self.d.getSongIds
@@ -39,7 +39,10 @@ class coreTest(unittest.TestCase):
             # self.api.writeLog(sys._getframe().f_code.co_name, response.text)
             self.assertEqual(0, r['status'])
         except:
-            print 'status code:%s' % response.status_code
+            print 'url: %s\n' % response.url
+            print u'状态码: %s' % response.status_code
+            print u'传递的参数是: %s\n' % args
+            print u'响应内容: %s\n' % response.text
             raise
         finally:
             self.api.writeLog(sys._getframe().f_code.co_name,
@@ -58,7 +61,10 @@ class coreTest(unittest.TestCase):
             r = response.json()
             self.assertEqual(0, r['status'])
         except:
-            print 'status code:%s' % response.status_code
+            print 'url: %s\n' % response.url
+            print u'状态码: %s' % response.status_code
+            print u'传递的参数是: %s\n' % args
+            print u'响应内容: %s\n' % response.text
             raise
         finally:
             self.api.writeLog(sys._getframe().f_code.co_name,
@@ -76,7 +82,10 @@ class coreTest(unittest.TestCase):
             num = self.db.getALL('solo_recommend_lyric')
             self.assertEqual(len(num), len(r['data']['lyrics']))
         except:
-            print 'status code:%s' % response.status_code
+            print 'url: %s\n' % response.url
+            print u'状态码: %s' % response.status_code
+            # print u'传递的参数是: %s\n' % args
+            print u'响应内容: %s\n' % response.text
             raise
         finally:
             self.api.writeLog(sys._getframe().f_code.co_name,
@@ -98,7 +107,10 @@ class coreTest(unittest.TestCase):
             sec_count = self.db.getSingle(sql)
             self.assertEqual(init_count[0]+1, sec_count[0])
         except:
-            print 'status code:%s' % response.status_code
+            print 'url: %s\n' % response.url
+            print u'状态码: %s' % response.status_code
+            # print u'传递的参数是: %s\n' % args
+            print u'响应内容: %s\n' % response.text
             raise
         finally:
             self.api.writeLog(sys._getframe().f_code.co_name,
@@ -107,14 +119,17 @@ class coreTest(unittest.TestCase):
 
     def test_Comment_V1(self):
         """获取评论，按热门"""
-        response = self.user.core_Comment_V1(100000933)
+        response = self.user.core_Comment_V1('100000933')
         try:
             self.assertEqual(200, response.status_code, 'status code:%s' % response.status_code)
             r = response.json()
             # self.api.writeLog(sys._getframe().f_code.co_name, response.text)
             self.assertEqual(0, r['status'])
         except:
-            print 'status code:%s' % response.status_code
+            print 'url: %s\n' % response.url
+            print u'状态码: %s' % response.status_code
+            print u'传递的参数是: %s\n' % '100000933'
+            print u'响应内容: %s\n' % response.text
             raise
         finally:
             self.api.writeLog(sys._getframe().f_code.co_name,
@@ -123,14 +138,17 @@ class coreTest(unittest.TestCase):
 
     def test_Comment_V1_Time(self):
         """获取评论，按时间"""
-        response = self.user.core_Comment_V1(100000933, sort=0)
+        response = self.user.core_Comment_V1('100000933', sort='hot')
         try:
             self.assertEqual(200, response.status_code, 'status code:%s' % response.status_code)
             r = response.json()
             # self.api.writeLog(sys._getframe().f_code.co_name, response.text)
             self.assertEqual(0, r['status'])
         except:
-            print 'status code:%s' % response.status_code
+            print 'url: %s\n' % response.url
+            print u'状态码: %s' % response.status_code
+            print u'传递的参数是: %s\n' % '100000933'
+            print u'响应内容: %s\n' % response.text
             raise
         finally:
             self.api.writeLog(sys._getframe().f_code.co_name,
@@ -147,7 +165,10 @@ class coreTest(unittest.TestCase):
             # self.api.writeLog(sys._getframe().f_code.co_name, response.text)
             self.assertEqual(0, r['status'])
         except:
-            print 'status code:%s' % response.status_code
+            print 'url: %s\n' % response.url
+            print u'状态码: %s' % response.status_code
+            print u'传递的参数是: %s\n' % '888'
+            print u'响应内容: %s\n' % response.text
             raise
         finally:
             self.api.writeLog(sys._getframe().f_code.co_name,
@@ -162,7 +183,10 @@ class coreTest(unittest.TestCase):
             # self.api.writeLog(sys._getframe().f_code.co_name, response.text)
             self.assertEqual(0, r['status'])
         except:
-            print 'status code:%s' % response.status_code
+            print 'url: %s\n' % response.url
+            print u'状态码: %s' % response.status_code
+            print u'传递的参数是: %s\n' % '888'
+            print u'响应内容: %s\n' % response.text
             raise
         finally:
             self.api.writeLog(sys._getframe().f_code.co_name,
@@ -178,7 +202,10 @@ class coreTest(unittest.TestCase):
             # self.api.writeLog(sys._getframe().f_code.co_name, response.text)
             self.assertEqual(0, r['status'])
         except:
-            print 'status code:%s' % response.status_code
+            print 'url: %s\n' % response.url
+            print u'状态码: %s' % response.status_code
+            print u'传递的参数是: %s\n' % songid
+            print u'响应内容: %s\n' % response.text
             raise
         finally:
             self.api.writeLog(sys._getframe().f_code.co_name,
@@ -205,7 +232,10 @@ class coreTest(unittest.TestCase):
                 else:
                     self.assertEqual(105, r['status'])
             except:
-                print 'status code:%s' % response.status_code
+                print 'url: %s\n' % response.url
+                print u'状态码: %s' % response.status_code
+                print u'传递的参数是: %s\n' % id
+                print u'响应内容: %s\n' % response.text
                 raise
             finally:
                 self.api.writeLog(sys._getframe().f_code.co_name,
@@ -219,7 +249,10 @@ class coreTest(unittest.TestCase):
             # self.api.writeLog(sys._getframe().f_code.co_name, response.text)
                 self.assertEqual(0, r['status'])
             except:
-                print 'status code:%s' % response.status_code
+                print 'url: %s\n' % response.url
+                print u'状态码: %s' % response.status_code
+                print u'传递的参数是: %s\n' % id
+                print u'响应内容: %s\n' % response.text
                 raise
             finally:
                 self.api.writeLog(sys._getframe().f_code.co_name,
@@ -250,7 +283,10 @@ class coreTest(unittest.TestCase):
             else:
                 self.api.writeLog(sys._getframe().f_code.co_name, 'has no sid')
         except:
-            print 'status code:%s' % response.status_code
+            print 'url: %s\n' % response.url
+            print u'状态码: %s' % response.status_code
+            print u'传递的参数是: %s\n' % id
+            print u'响应内容: %s\n' % response.text
             raise
         finally:
             self.api.writeLog(sys._getframe().f_code.co_name,
@@ -278,7 +314,10 @@ class coreTest(unittest.TestCase):
                 else:
                     self.assertEqual(0, r['status'])
         except:
-            print 'status code:%s' % response.status_code
+            print 'url: %s\n' % response.url
+            print u'状态码: %s' % response.status_code
+            print u'传递的参数是: %s\n' % sid
+            print u'响应内容: %s\n' % response.text
             raise
         finally:
             self.api.writeLog(sys._getframe().f_code.co_name,
@@ -309,7 +348,10 @@ class coreTest(unittest.TestCase):
             else:
                 self.api.writeLog(sys._getframe().f_code.co_name, 'user_id %s has no collection' % uid)
         except:
-            print 'status code:%s' % response.status_code
+            print 'url: %s\n' % response.url
+            print u'状态码: %s' % response.status_code
+            print u'传递的参数是: %s\n' % id
+            print u'响应内容: %s\n' % response.text
             raise
         finally:
             self.api.writeLog(sys._getframe().f_code.co_name,
@@ -325,12 +367,15 @@ class coreTest(unittest.TestCase):
             r = response.json()
             # self.api.writeLog(sys._getframe().f_code.co_name, response.text)
             self.assertEqual(0, r['status'])
-            sql = 'SELECT count(*) from song_collect_info c,song_basic_info b where c.user_id = %s and c.song_id=b.id and (b.song_status=1 OR b.song_status=4)' % uid
+            sql = 'SELECT count(*) from song_collect_info c,song_basic_info b where c.user_id = %s and c.song_id=b.id ' % uid
             collect = self.db.getSet(sql)
             print collect
             self.assertEqual(int(collect[0][0]), len(r['data']['songs']))
         except:
-            print 'status code:%s' % response.status_code
+            print 'url: %s\n' % response.url
+            print u'状态码: %s' % response.status_code
+            # print u'传递的参数是: %s\n' % songid
+            print u'响应内容: %s\n' % response.text
             raise
         finally:
             self.api.writeLog(sys._getframe().f_code.co_name,
@@ -348,7 +393,10 @@ class coreTest(unittest.TestCase):
             # self.api.writeLog(sys._getframe().f_code.co_name, response.text)
             self.assertEqual(0, r['status'])
         except:
-            print 'status code:%s' % response.status_code
+            print 'url: %s\n' % response.url
+            print u'状态码: %s' % response.status_code
+            print u'传递的参数是: %s\n' % '912'
+            print u'响应内容: %s\n' % response.text
             raise
         finally:
             self.api.writeLog(sys._getframe().f_code.co_name,
@@ -364,7 +412,10 @@ class coreTest(unittest.TestCase):
             # self.api.writeLog(sys._getframe().f_code.co_name, response.text)
             self.assertEqual(0, r['status'])
         except:
-            print 'status code:%s' % response.status_code
+            print 'url: %s\n' % response.url
+            print u'状态码: %s' % response.status_code
+            print u'传递的参数是: %s\n' % '912'
+            print u'响应内容: %s\n' % response.text
             raise
         finally:
             self.api.writeLog(sys._getframe().f_code.co_name,
@@ -389,7 +440,10 @@ class coreTest(unittest.TestCase):
         # self.api.writeLog(sys._getframe().f_code.co_name, response.text)
             self.assertEqual(0, r['status'])
         except:
-            print 'status code:%s' % response.status_code
+            print 'url: %s\n' % response.url
+            print u'状态码: %s' % response.status_code
+            print u'传递的参数是: %s\n' % args
+            print u'响应内容: %s\n' % response.text
             raise
         finally:
             self.api.writeLog(sys._getframe().f_code.co_name,
@@ -422,7 +476,10 @@ class coreTest(unittest.TestCase):
             self.api.writeLog(sys._getframe().f_code.co_name, response.text)
             self.assertEqual(0, r['status'])
         except:
-            print 'status code:%s' % response.status_code
+            print 'url: %s\n' % response.url
+            print u'状态码: %s' % response.status_code
+            print u'传递的参数是: %s\n' % sid
+            print u'响应内容: %s\n' % response.text
             raise
         finally:
             self.api.writeLog(sys._getframe().f_code.co_name,
@@ -451,7 +508,10 @@ class coreTest(unittest.TestCase):
             cur_participanter = ran_medley[0]
             self.assertEqual(participanter+1, cur_participanter)
         except:
-            print 'status code:%s' % response.status_code
+            print 'url: %s\n' % response.url
+            print u'状态码: %s' % response.status_code
+            print u'传递的参数是: %s\n' % mid
+            print u'响应内容: %s\n' % response.text
             raise
         finally:
             self.api.writeLog(sys._getframe().f_code.co_name,

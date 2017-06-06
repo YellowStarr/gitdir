@@ -99,6 +99,7 @@ import sys
 import time
 import unittest
 from xml.sax import saxutils
+import inspect
 
 
 # ------------------------------------------------------------------------
@@ -431,9 +432,12 @@ a.popup_link:hover {
 <col align='right' />
 <col align='right' />
 <col align='right' />
+<col align='right' />
 </colgroup>
 <tr id='header_row'>
     <td>测试组/测试用例</td>
+    <!--<td>url</td>
+    <td>arguements</td>-->
     <td>总数</td>
     <td>通过</td>
     <td>失败</td>
@@ -468,6 +472,7 @@ a.popup_link:hover {
     REPORT_TEST_WITH_OUTPUT_TMPL = r"""
 <tr id='%(tid)s'>
     <td class='%(style)s'><div class='testcase'>%(desc)s</div></td>
+
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
@@ -646,6 +651,7 @@ class HTMLTestRunner(Template_mixin):
         classes = []
         for n,t,o,e in result_list:
             cls = t.__class__
+            # print inspect.stack()[1][3]
             if not rmap.has_key(cls):
                 rmap[cls] = []
                 classes.append(cls)
@@ -662,9 +668,9 @@ class HTMLTestRunner(Template_mixin):
         startTime = str(self.startTime)[:19]
         duration = str(self.stopTime - self.startTime)
         status = []
-        if result.success_count: status.append(u'通过 %s'    % result.success_count)
+        if result.success_count: status.append(u'通过 %s' % result.success_count)
         if result.failure_count: status.append(u'失败 %s' % result.failure_count)
-        if result.error_count:   status.append(u'错误 %s'   % result.error_count)
+        if result.error_count:   status.append(u'错误 %s' % result.error_count)
 
         count = result.success_count+result.failure_count+result.error_count
         failure_percent = round(float(result.failure_count)/float(count), 4) * 100
@@ -714,7 +720,7 @@ class HTMLTestRunner(Template_mixin):
         heading = self.HEADING_TMPL % dict(
             title = saxutils.escape(self.title),
             parameters = ''.join(a_lines),
-            description = saxutils.escape(self.description),
+            description = saxutils.escape(self.description.decode('utf-8')),
         )
         return heading
 
@@ -738,9 +744,11 @@ class HTMLTestRunner(Template_mixin):
             doc = cls.__doc__ and cls.__doc__.split("\n")[0] or ""
             desc = doc and '%s: %s' % (name, doc) or name
 
+
             row = self.REPORT_CLASS_TMPL % dict(
                 style = ne > 0 and 'errorClass' or nf > 0 and 'failClass' or 'passClass',
                 desc = desc,
+
                 count = np+nf+ne,
                 Pass = np,
                 fail = nf,
@@ -776,13 +784,13 @@ class HTMLTestRunner(Template_mixin):
         tmpl = has_output and self.REPORT_TEST_WITH_OUTPUT_TMPL or self.REPORT_TEST_NO_OUTPUT_TMPL
 
         # o and e should be byte string because they are collected from stdout and stderr?
-        if isinstance(o,str):
+        if isinstance(o, str):
             # TODO: some problem with 'string_escape': it escape \n and mess up formating
             # uo = unicode(o.encode('string_escape'))
             uo = o.decode('utf-8')
         else:
             uo = o
-        if isinstance(e,str):
+        if isinstance(e, str):
             # TODO: some problem with 'string_escape': it escape \n and mess up formating
             # ue = unicode(e.encode('string_escape'))
             ue = e.decode('utf-8')

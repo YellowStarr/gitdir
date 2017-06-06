@@ -6,7 +6,7 @@ class LoginAPI:
     def __init__(self, url):
         self.baseurl=url
 
-    def forgetpwd_modifyPwd(self, phoneNumber='', password='', code=''):
+    def forgetpwd_modifyPwd(self, args):
         u''' 忘记密码页面修改密码接口
             Method:post
 
@@ -16,13 +16,7 @@ class LoginAPI:
             @return: status:0 成功,1 旧密码错误 99 数据错误
         '''
         url = self.baseurl+'/api/forgetPass'
-        postdata = {'phoneNumber':phoneNumber, 'password': password,
-                    "code": code}
-        r = requests.post(url, json=postdata)
-        # print r.text
-        # self.assertEqual(200, r.status_code)
-        # r = r.json()
-
+        r = requests.post(url, json=args)
         return r
 
     def forgetpwd_msgCode(self, phoneNumber=''):
@@ -98,23 +92,21 @@ class LoginAPI:
         r = requests.get(url)
         return r
 
-    def login_InitConfig(self,accessId='ios'):
+    def login_InitConfig(self, accessId='ios'):
         u'''获取初始化
             Method:get
             @return:
                 data{config:{ossAccessKeySecret,ossBucketName,ossAccessKeyId,andriod:{},ossEndPoint,ios:{}}},msg,status:0 成功
         '''
-        params={'accessId':accessId}
+        params={'accessId': accessId}
         url = self.baseurl + '/api/config'
         r = requests.get(url, params=params)
         print r.text
         # r = r.json()
         return r
 
-    def login_ThirdParty(self, token, username, sex, thirdPartyType):
+    def login_ThirdParty(self, args={}):
         url = self.baseurl+'/api/thirdPartyLogin'
-        params = {'userName': username, 'sex': sex, 'thirdPartyType': thirdPartyType, 'token': token}
-        r = requests.post(url, json=params)
-        # r = r.json()
+        r = requests.post(url, json=args)
         return r
 

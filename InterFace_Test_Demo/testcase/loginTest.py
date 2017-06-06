@@ -5,13 +5,13 @@ import unittest,requests
 from interface.LoginAPI import LoginAPI
 from data_init import testData
 from interface.API import MyAPI
-
+from config.runconfig import RunConfig
 
 class LoginTest(unittest.TestCase):
 
     def setUp(self):
-        self.baseurl = 'http://test.rapself.com:8080'  # java
-        # self.baseurl = 'http://139.129.208.77:9091'
+        cfg = RunConfig()
+        self.baseurl = cfg.get_base_url()
         self.user = LoginAPI(self.baseurl)
         login = testData(self.baseurl)
         self.udata = login.getUserData[0]
@@ -32,9 +32,10 @@ class LoginTest(unittest.TestCase):
             self.assertEqual(r['status'], 0, 'wrong')
             print r['data']['user']['id']
         except:
-            print 'status code:%s' % response.status_code
-            # self.classifycode.comparecode(response)
-            # self.classifycode.classify_err_by_code()
+            print 'url: %s\n' % response.url
+            print u'状态码: %s' % response.status_code
+            print u'传递的参数是: %s\n' % args
+            print u'响应内容: %s\n' % response.text
             raise
         finally:
             self.api.writeLog(sys._getframe().f_code.co_name,
@@ -124,8 +125,10 @@ class LoginTest(unittest.TestCase):
             r = response.json()
             self.assertEqual(r['status'], 0)
         except:
-            print 'status code:%s' % response.status_code
-
+            print 'url: %s\n' % response.url
+            print u'状态码: %s' % response.status_code
+            print u'传递的参数是: %s\n' % 'andriod'
+            print u'响应内容: %s\n' % response.text
             raise
         finally:
             self.api.writeLog(sys._getframe().f_code.co_name,
@@ -140,8 +143,10 @@ class LoginTest(unittest.TestCase):
 
             self.assertEqual(r['status'], 0)
         except:
-            print 'status code:%s' % response.status_code
-
+            print 'url: %s\n' % response.url
+            print u'状态码: %s' % response.status_code
+            print u'传递的参数是: %s\n' % 'ios'
+            print u'响应内容: %s\n' % response.text
             raise
         finally:
             self.api.writeLog(sys._getframe().f_code.co_name,
@@ -149,15 +154,18 @@ class LoginTest(unittest.TestCase):
                               response.url, response.status_code, response.text))
 
     def test_login_ThirdParty_QQ(self):
-        response = self.user.login_ThirdParty('UID_E5471C281EF0A4C785B31A0A58A55342', 'sin', '2', '0')
+        args = {'userName':  'sin', 'sex':  '1', 'thirdPartyType': '2', 'token': 'UID_E5471C281EF0A4C785B31A0A58A55342'}
+        response = self.user.login_ThirdParty(args)
         try:
             self.assertEqual(200, response.status_code, 'status code:%s' % response.status_code)
             r = response.json()
 
             self.assertEqual(r['status'], 0)
         except:
-            print 'status code:%s' % response.status_code
-
+            print 'url: %s\n' % response.url
+            print u'状态码: %s' % response.status_code
+            print u'传递的参数是: %s\n'% args
+            print u'响应内容: %s\n'% response.text
             raise
         finally:
             self.api.writeLog(sys._getframe().f_code.co_name,
@@ -208,20 +216,43 @@ class LoginTest(unittest.TestCase):
                               'api: %s\nstatus_code: %s\ntext: %s' % (
                               response.url, response.status_code, response.text))'''
 
-    def test_register(self):
-        response = self.user.register_Register('qiuwj', 15350556639, '888888', '0000')
-        args = {'username': 'qiuwj', 'password': '888888', 'code': '0000', 'phoneNumber': 15350556639}
+    def test_forgetpwd(self):
+        """忘记密码"""
+        args = {'phoneNumber': '18782943850', 'password': '21218cca77804d2ba1922c33e0151105',
+                    "code": '0000'}
+        response = self.user.forgetpwd_msgCode('18782943850')
+        try:
+            self.assertEqual(200, response.status_code, 'status code:%s' % response.status_code)
+            try:
+                r = self.user.forgetpwd_modifyPwd(args)
+                self.assertEqual(200, r.status_code)
+            except:
+                print 'url: %s\n' % r.url
+                print u'状态码: %s' % r.status_code
+                print u'传递的参数是: %s\n' % args
+                print u'响应内容: %s\n' % r.text
+        except:
+            print 'url: %s\n' % response.url
+            print u'状态码: %s' % response.status_code
+            print u'传递的参数是: %s\n' % args['phoneNumber']
+            print u'响应内容: %s\n' % response.text
+
+    '''def test_register(self):
+        response = self.user.register_Register('qiuwj', '15350556639', '888888', '0000')
+        args = {'username': 'qiuwj', 'password': '888888', 'code': '0000', 'phoneNumber': '15350556639'}
         try:
             self.assertEqual(200, response.status_code, 'status code:%s' % response.status_code)
             r = response.json()
             self.assertEqual(r['status'], 0)
         except:
-            print 'status code:%s' % response.status_code
+            print u'状态码: %s' % response.status_code
+            print u'传递的参数是: %s\n' % args
+            print u'响应内容: %s\n' % response.text
             raise
         finally:
             self.api.writeLog(sys._getframe().f_code.co_name,
                               'args:%s\napi: %s\nstatus_code: %s\ntext: %s' % (args,
-                              response.url, response.status_code, response.text))
+                              response.url, response.status_code, response.text))'''
 
 if __name__ == '__main__':
         unittest.main()

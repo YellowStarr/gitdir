@@ -6,11 +6,12 @@ import unittest
 from interface.userAPI import UserAPI
 from interface.API import MyAPI
 import data_init,dbManual
+from config.runconfig import RunConfig
 
 class userinfoTest(unittest.TestCase):
     def setUp(self):
-        self.baseurl = 'http://test.rapself.com:8080'  # java
-        # self.baseurl = 'http://139.129.208.77:9091'
+        cfg = RunConfig()
+        self.baseurl = cfg.get_base_url()
         d = data_init.testData(self.baseurl)
         self.data = d.getUserData
         self.verificationErrors = []
@@ -21,7 +22,7 @@ class userinfoTest(unittest.TestCase):
 
     def test_FollowedSong_success(self):
         user = UserAPI(self.baseurl)
-        response = user.user_FollowedSong(random.choice(self.data)['token'])
+        response = user.user_FollowedSong(self.data[0]['token'])
         try:
             self.assertEqual(200, response.status_code)
             # response.status_code == 200
@@ -29,101 +30,14 @@ class userinfoTest(unittest.TestCase):
             # self.api.writeLog(sys._getframe().f_code.co_name, )
             self.assertEqual(0, r['status'])
         except:
-            print 'status code:%s' % response.status_code
+            print 'url: %s\n' % response.url
+            print u'状态码: %s' % response.status_code
+            print u'传递的参数是: %s\n' % self.data['token']
+            print u'响应内容: %s\n' % response.text
             raise
         finally:
             self.api.writeLog(sys._getframe().f_code.co_name,
                               'api: %s\nstatus_code: %s\ntext: %s' % (response.url, response.status_code, response.text))
-
-    def test_Newest_Medley_success(self):   # 最新串烧
-        user = UserAPI(self.baseurl)
-        response = user.user_Newest_Medley(1, 10)
-        try:
-            self.assertEqual(200, response.status_code)
-            r = response.json()
-            # self.api.writeLog(sys._getframe().f_code.co_name, response.text)
-            self.assertEqual(0, r['status'])
-        except:
-            print 'status code:%s' % response.status_code
-            # self.api.writeLog(sys._getframe().f_code.co_name,
-            #                   'api: %s\nstatus_code: %s' % (response.url, response.status_code))
-            raise
-        finally:
-            self.api.writeLog(sys._getframe().f_code.co_name,
-                              'api: %s\nstatus_code: %s\ntext: %s' % (response.url, response.status_code, response.text))
-
-    def test_Newest_Complaint_success(self):
-        user = UserAPI(self.baseurl)
-        response = user.user_Newest_Complaint(1, 10)
-        try:
-            self.assertEqual(200, response.status_code, 'status code:%s' % response.status_code)
-            r = response.json()
-            # self.api.writeLog(sys._getframe().f_code.co_name, response.text)
-            self.assertEqual(0, r['status'])
-        except:
-            print 'status code:%s' % response.status_code
-            raise
-        finally:
-            self.api.writeLog(sys._getframe().f_code.co_name,
-                              'api: %s\nstatus_code: %s\ntext: %s' % (response.url, response.status_code, response.text))
-
-    def test_Newest_Rap_success(self):
-        user = UserAPI(self.baseurl)
-        response = user.user_Newest_Rap(1, 10)
-        try:
-            self.assertEqual(200, response.status_code, 'status code:%s' % response.status_code)
-            r = response.json()
-            # self.api.writeLog(sys._getframe().f_code.co_name, response.text)
-            self.assertEqual(0, r['status'])
-        except:
-            print 'status code:%s' % response.status_code
-            raise
-        finally:
-            self.api.writeLog(sys._getframe().f_code.co_name,
-                              'api: %s\nstatus_code: %s\ntext: %s' % (response.url, response.status_code, response.text))
-
-    def test_Focus_success(self):
-        """关注成功"""
-        user = UserAPI(self.baseurl)
-        response = user.user_Focus('100001774', self.data[0]['token'])
-        try:
-            self.assertEqual(200, response.status_code, 'status code:%s' % response.status_code)
-            r = response.json()
-            # self.api.writeLog(sys._getframe().f_code.co_name, response.text)
-            try:
-                self.assertEqual(0, r['status'])
-            except:
-                print "test_Focus_mix"
-
-        except:
-            print 'status code:%s' % response.status_code
-            raise
-
-        finally:
-            self.api.writeLog(sys._getframe().f_code.co_name,
-                  'api: %s\nstatus_code: %s\ntext: %s' % (response.url, response.status_code, response.text))
-
-
-    def test_cancelFocus(self):
-        """取消关注"""
-        user = UserAPI(self.baseurl)
-        user.user_Focus('100000027', self.data[0]['token'])
-        response = user.user_cancelFocus('100000027', self.data[0]['token'])
-        try:
-            self.assertEqual(200, response.status_code, 'status code:%s' % response.status_code)
-            r = response.json()
-            try:
-                self.assertEqual(0, r['status'])
-            except:
-                print "test_cancelFocus failed"
-                # self.verificationErrors.append(e)
-        except:
-            print 'status code:%s' % response.status_code
-            raise
-
-        finally:
-            self.api.writeLog(sys._getframe().f_code.co_name,
-                                'api: %s\nstatus_code: %s\ntext: %s' % (response.url, response.status_code, response.text))
 
     def test_followedList_success(self):
         user = UserAPI(self.baseurl)
@@ -138,12 +52,14 @@ class userinfoTest(unittest.TestCase):
                 print "test_cancelFocus_again failed"
             # self.verificationErrors.append(e)
         except:
-            print 'status code:%s' % response.status_code
+            print 'url: %s\n' % response.url
+            print u'状态码: %s' % response.status_code
+            print u'传递的参数是: %s\n' % self.data[0]['id']
+            print u'响应内容: %s\n' % response.text
             raise
         finally:
             self.api.writeLog(sys._getframe().f_code.co_name,
                                 'api: %s\nstatus_code: %s\ntext: %s' % (response.url, response.status_code, response.text))
-
 
     def test_FansList_success(self):
         user = UserAPI(self.baseurl)
@@ -154,7 +70,10 @@ class userinfoTest(unittest.TestCase):
             # self.api.writeLog(sys._getframe().f_code.co_name, response.text)
             self.assertEqual(0, r['status'])
         except:
-            print 'status code:%s' % response.status_code
+            print 'url: %s\n' % response.url
+            print u'状态码: %s' % response.status_code
+            print u'传递的参数是: %s\n' % self.data[0]['id']
+            print u'响应内容: %s\n' % response.text
             raise
         finally:
             self.api.writeLog(sys._getframe().f_code.co_name,
@@ -174,17 +93,18 @@ class userinfoTest(unittest.TestCase):
             num = self.db.getSingle(sql)
             self.assertEqual(len(r['data']['blacklist']), int(num[0]))
         except:
-            print 'status code:%s' % response.status_code
-            # self.api.writeLog(sys._getframe().f_code.co_name,
-            #                   'api: %s\nstatus_code: %s' % (response.url, response.status_code))
+            print 'url: %s\n' % response.url
+            print u'状态码: %s' % response.status_code
+            # print u'传递的参数是: %s\n' % ar
+            print u'响应内容: %s\n' % response.text
             raise
         finally:
             self.api.writeLog(sys._getframe().f_code.co_name,
                                 'api: %s\nstatus_code: %s\ntext: %s' % (response.url, response.status_code, response.text))
 
-
-
     def test_Create_Medley_success(self):
+        args = {'audios': [{'key':'http://user-storage.oss-cn-qingdao.aliyuncs.com/audio/20170503134112_100001775_aa5aad11b8b0060d98a53fefda6fd3ab.m4a',
+                                     'duration':3,'lyric':''}], 'images': [], 'latitude': 104, 'longitude': 30.56089, 'maxCount':5, 'title': 'interface'}
         user = UserAPI(self.baseurl)
         response = user.user_Create_Medley(self.data[0]['token'], [{'key':'http://user-storage.oss-cn-qingdao.aliyuncs.com/audio/20170503134112_100001775_aa5aad11b8b0060d98a53fefda6fd3ab.m4a',
                                      'duration':3,'lyric':''}], [], 104, 30.56089, 5,'interface')
@@ -196,7 +116,10 @@ class userinfoTest(unittest.TestCase):
             r = response.json()
             self.assertEqual(0, r['status'])
         except:
-            print 'status code:%s' % response.status_code
+            print 'url: %s\n' % response.url
+            print u'状态码: %s' % response.status_code
+            print u'传递的参数是: %s\n' % args
+            print u'响应内容: %s\n' % response.text
             raise
         finally:
             self.api.writeLog(sys._getframe().f_code.co_name,
@@ -211,9 +134,10 @@ class userinfoTest(unittest.TestCase):
             # self.api.writeLog(sys._getframe().f_code.co_name, response.text)
             self.assertEqual(0, r['status'])
         except:
-            print 'status code:%s' % response.status_code
-            # self.api.writeLog(sys._getframe().f_code.co_name,
-            #                   'api: %s\nstatus_code: %s' % (response.url, response.status_code))
+            print 'url: %s\n' % response.url
+            print u'状态码: %s' % response.status_code
+            print u'传递的参数是: %s\n' % "100000003"
+            print u'响应内容: %s\n' % response.text
             raise
         finally:
             self.api.writeLog(sys._getframe().f_code.co_name,
@@ -223,8 +147,8 @@ class userinfoTest(unittest.TestCase):
     def test_ModifyInfo(self):
         user = UserAPI(self.baseurl)
         response = user.user_ModifyInfo(self.data[0]['token'], self.data[0]['id'], 'sleepydog', 18782943855)
-        args = {'area': '1', 'birthday': '652978800000', 'emotionStatus': 1,
-         'hasFocus': '', 'personalProfile': 'per', 'phoneNumber': 18782943855,
+        args = {'area': u'四川 成都', 'birthday': "2015-06-06", 'emotionStatus': 1,
+         'hasFocus': '', 'personalProfile': 'per', 'phoneNumber': '18782943855',
          'portrait': '', 'sex': 1, 'userName': 'sleepydog', 'id': self.data[0]['id']}
         try:
             self.assertEqual(200, response.status_code, 'status code:%s' % response.status_code)
@@ -232,7 +156,10 @@ class userinfoTest(unittest.TestCase):
             # self.api.writeLog(sys._getframe().f_code.co_name, response.text)
             self.assertEqual(0, r['status'])
         except:
-            print 'status code:%s' % response.status_code
+            print '\nurl: %s\n' % response.url
+            print u'状态码: %s' % response.status_code
+            print u'传递的参数是: %s\n' % args
+            print u'响应内容: %s\n' % response.text
             raise
         finally:
             self.api.writeLog(sys._getframe().f_code.co_name,
@@ -247,9 +174,10 @@ class userinfoTest(unittest.TestCase):
             # self.api.writeLog(sys._getframe().f_code.co_name, response.text)
             self.assertEqual(0, r['status'])
         except:
-            print 'status code:%s' % response.status_code
-            # self.api.writeLog(sys._getframe().f_code.co_name,
-            #                   'api: %s\nstatus_code: %s' % (response.url, response.status_code))
+            print 'url: %s\n' % response.url
+            print u'状态码: %s' % response.status_code
+            print u'传递的参数是: %s\n' % self.data[0]['id']
+            print u'响应内容: %s\n' % response.text
             raise
         finally:
             self.api.writeLog(sys._getframe().f_code.co_name,
@@ -264,32 +192,36 @@ class userinfoTest(unittest.TestCase):
             # self.api.writeLog(sys._getframe().f_code.co_name, response.text)
             self.assertEqual(0, r['status'])
         except:
-            print 'status code:%s' % response.status_code
-            # self.api.writeLog(sys._getframe().f_code.co_name,
-            #                   'api: %s\nstatus_code: %s' % (response.url, response.status_code))
+            print 'url: %s\n' % response.url
+            print u'状态码: %s' % response.status_code
+            # print u'传递的参数是: %s\n' % args
+            print u'响应内容: %s\n' % response.text
             raise
         finally:
             self.api.writeLog(sys._getframe().f_code.co_name,
                                 'api: %s\nstatus_code: %s\ntext: %s' % (response.url, response.status_code, response.text))
 
     def test_get_myComplaint(self):
+        args = {'token': self.data[0]['token'], 'status': 100}
         user = UserAPI(self.baseurl)
-        response = user.user_getMyComplaint(self.data[0]['token'], 100)
+        response = user.user_getMyComplaint(self.data[0]['token'], 3)
         try:
             self.assertEqual(200, response.status_code, 'status code:%s' % response.status_code)
             r = response.json()
             # self.api.writeLog(sys._getframe().f_code.co_name, response.text)
             self.assertEqual(0, r['status'])
         except:
-            print 'status code:%s' % response.status_code
-            # self.api.writeLog(sys._getframe().f_code.co_name,
-            #                   'api: %s\nstatus_code: %s' % (response.url, response.status_code))
+            print 'url: %s\n' % response.url
+            print u'状态码: %s' % response.status_code
+            print u'传递的参数是: %s\n' % args
+            print u'响应内容: %s\n' % response.text
             raise
         finally:
             self.api.writeLog(sys._getframe().f_code.co_name,
                                 'api: %s\nstatus_code: %s\ntext: %s' % (response.url, response.status_code, response.text))
 
     def test_get_myRap(self):
+        args = {'token': self.data[0]['token'], 'status': 100}
         user = UserAPI(self.baseurl)
         response = user.user_getMyRap(self.data[0]['token'], 100)
         try:
@@ -298,9 +230,10 @@ class userinfoTest(unittest.TestCase):
             # self.api.writeLog(sys._getframe().f_code.co_name, response.text)
             self.assertEqual(0, r['status'])
         except:
-            print 'status code:%s' % response.status_code
-            # self.api.writeLog(sys._getframe().f_code.co_name,
-            #                   'api: %s\nstatus_code: %s' % (response.url, response.status_code))
+            print 'url:%s'% response.url
+            print u'状态码: %s' % response.status_code
+            # print u'传递的参数是: %s\n' % args
+            print u'响应内容: %s\n' % response.text
             raise
         finally:
             self.api.writeLog(sys._getframe().f_code.co_name,
@@ -316,9 +249,10 @@ class userinfoTest(unittest.TestCase):
             # self.api.writeLog(sys._getframe().f_code.co_name, response.text)
             self.assertEqual(0, r['status'])
         except:
-            print 'status code:%s' % response.status_code
-            # self.api.writeLog(sys._getframe().f_code.co_name,
-            #                   'api: %s\nstatus_code: %s' % (response.url, response.status_code))
+            print 'url: %s\n' % response.url
+            print u'状态码: %s' % response.status_code
+            print u'传递的参数是: %s\n' % self.data[0]['id']
+            print u'响应内容: %s\n' % response.text
             raise
         finally:
             self.api.writeLog(sys._getframe().f_code.co_name,
