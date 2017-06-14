@@ -5,28 +5,14 @@ sys.path.append('testcase')
 import HTMLTestRunner
 import unittest
 from testcase import *
+from config.CaseMode import CaseConfig
 import logging
 import mail
 
 if __name__ == "__main__":
     print "---------------------------------------start-----------------------------------------"
-
-    caseNames = [
-        loginTest.LoginTest,
-        userinfoTest.userinfoTest,
-        # userErrorCheck.userErrorCheck,
-        coreTest.coreTest,
-        # coreErrorTest.coreErrorTest,
-        accompany.Accompany,
-        searchTest.SearchTest,
-        mapTest.MapTest,
-        indexTest.IndexTest,
-        shareTest.ShareTest,
-        messageTest.MessageTest,
-        # indexErrorTest.IndexErrorTest,
-        complexTest.ComplextTest,
-        new1_2.newAPITest,
-    ]
+    case = CaseConfig()
+    caseNames = eval(case.get_case_list())
     # 运行时，先判断Log文件夹中是否已存在log.txt文件，若存在，删除
     path = os.getcwd()
     logpth = os.path.join(path, 'log')

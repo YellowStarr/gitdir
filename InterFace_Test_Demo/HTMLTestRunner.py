@@ -673,7 +673,8 @@ class HTMLTestRunner(Template_mixin):
         if result.error_count:   status.append(u'错误 %s' % result.error_count)
 
         count = result.success_count+result.failure_count+result.error_count
-        failure_percent = round(float(result.failure_count)/float(count), 4) * 100
+        if count != 0:
+            failure_percent = round(float(result.failure_count)/float(count), 4) * 100
         if count: status.append(u'失败率 %.2f%%' % failure_percent)
 
         if status:

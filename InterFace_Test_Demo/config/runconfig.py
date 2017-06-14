@@ -1,6 +1,6 @@
 #coding = utf-8
 from ConfigParser import ConfigParser
-import os,sys
+import os
 
 class RunConfig:
     def __init__(self):
