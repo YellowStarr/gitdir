@@ -70,7 +70,7 @@ class DBManual:
         except MySQLdb.Error:
             print "insert into table wrong"
 
-    def excuteSQL(self,sql):
+    def excuteSQL(self, sql):
         cur = self.cur
         try:
             n = cur.execute(sql)

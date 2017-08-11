@@ -46,36 +46,37 @@ class HandleExcel:
             testcase_list.append(case)
         return testcase_list
 
-    def write_result(self, workbook, sheetname, result, resultfile):    #将测试结果写入excel，传入测试用例文件，测试结果数组，及保存文件名
+    def write_result(self, workbook, resultdic, resultfile):    #将测试结果写入excel，传入测试用例文件，测试结果数组，及保存文件名
         """
 
         :param workbook: excel名
-        :param sheetname: sheet名
-        :param result: 结果数组 result=[{"case_no","response","result","time"}]
+        :param resultdic: {"sheetname":result}
         :param resultfile: 保存的excel名
         :return:
         """
         testfile = xlrd.open_workbook(workbook)
         copyfile = copy(testfile)
-        table = copyfile.get_sheet(sheetname)
-        if not isinstance(result, list):
-            logging.error(u'result 请传入数组')
-            sys.exit()
-        else:
-            for i in range(0, len(result)):
-                # row = result[i]['case_no'].split('-')[1]
-                row = result[i]['case_no']
-                # table.write(int(row), 8, result[i]['rcode'])
-                table.write(int(row), 9, result[i]['response'])
-                table.write(int(row), 11, str(result[i]['time']))
-                if result[i]['result'] == 'fail':    #如果测试结果为fail 则该单元格标红
-                    pattern = xlwt.Pattern()
-                    pattern.pattern = xlwt.Pattern.SOLID_PATTERN
-                    pattern.pattern_fore_colour = 2
-                    style = xlwt.XFStyle()
-                    style.pattern = pattern
-                    table.write(int(row), 10, 'fail', style)
-                else:
-                    table.write(int(row), 10, 'pass')
-            print "[%s saving xls name :%s]" % (time.strftime("%Y-%m-%d %H:%M:%S"), resultfile)
-            copyfile.save(resultfile)
+        for sheetname in resultdic:
+            table = copyfile.get_sheet(sheetname)
+            result = resultdic[sheetname]
+            if not isinstance(result, list):
+                logging.error(u'result 请传入数组')
+                sys.exit()
+            else:
+                for i in range(0, len(result)):
+                    # row = result[i]['case_no'].split('-')[1]
+                    row = result[i]['case_no']
+                    # table.write(int(row), 8, result[i]['rcode'])
+                    table.write(int(row), 9, result[i]['response'])
+                    table.write(int(row), 11, str(result[i]['time']))
+                    if result[i]['result'] == 'fail':    #如果测试结果为fail 则该单元格标红
+                        pattern = xlwt.Pattern()
+                        pattern.pattern = xlwt.Pattern.SOLID_PATTERN
+                        pattern.pattern_fore_colour = 2
+                        style = xlwt.XFStyle()
+                        style.pattern = pattern
+                        table.write(int(row), 10, 'fail', style)
+                    else:
+                        table.write(int(row), 10, 'pass')
+                print "[%s saving xls name :%s]" % (time.strftime("%Y-%m-%d %H:%M:%S"), resultfile)
+        copyfile.save(resultfile)

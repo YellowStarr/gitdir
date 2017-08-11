@@ -2,17 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62c0323a-ccb1-4756-a140-8c2514231f80" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API2.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/login_test.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/user_case.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/casedir/testcase.xls" afterPath="$PROJECT_DIR$/casedir/testcase.xls" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/DBConfig.py" afterPath="$PROJECT_DIR$/config/DBConfig.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/dbconfig.conf" afterPath="$PROJECT_DIR$/config/dbconfig.conf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/httpconfig.conf" afterPath="$PROJECT_DIR$/config/httpconfig.conf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dbManual.py" afterPath="$PROJECT_DIR$/dbManual.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/handleExcel.py" afterPath="$PROJECT_DIR$/handleExcel.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/run_case.py" afterPath="$PROJECT_DIR$/run_case.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../spider/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../spider/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/insertTestcase.py" afterPath="$PROJECT_DIR$/insertTestcase.py" />
     </list>
     <ignored path="Interface2.0.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,6 +21,7 @@
     <SUITE FILE_PATH="coverage/Interface2.0$register_case.coverage" NAME="register_case Coverage Results" MODIFIED="1502357860531" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Interface2.0$login_test.coverage" NAME="login_test Coverage Results" MODIFIED="1502434010442" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Interface2.0$run_case.coverage" NAME="run_case Coverage Results" MODIFIED="1502096776653" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Interface2.0$insertTestcase.coverage" NAME="insertTestcase Coverage Results" MODIFIED="1502445305738" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Interface2.0$testSuit.coverage" NAME="testSuit Coverage Results" MODIFIED="1502270795014" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Interface2.0$user_case.coverage" NAME="user_case Coverage Results" MODIFIED="1502433380463" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
@@ -40,68 +34,59 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="login_test.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/login_test.py">
+      <file leaf-file-name="register_case.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/register_case.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369">
-              <caret line="727" column="25" selection-start-line="727" selection-start-column="25" selection-end-line="727" selection-end-column="25" />
+            <state relative-caret-position="379">
+              <caret line="381" column="28" selection-start-line="381" selection-start-column="24" selection-end-line="381" selection-end-column="37" />
               <folding>
-                <element signature="e#109#130#0" expanded="true" />
-                <marker date="1502435412308" expanded="true" signature="907:982" ph="update login... " />
-                <marker date="1502435412308" expanded="true" signature="2486:2561" ph="update login... " />
-                <marker date="1502435412308" expanded="true" signature="2785:2860" ph="update login... " />
-                <marker date="1502435412308" expanded="true" signature="3064:3139" ph="update login... " />
-                <marker date="1502435412308" expanded="true" signature="4105:4180" ph="update login... " />
-                <marker date="1502435412308" expanded="true" signature="4404:4479" ph="update login... " />
-                <marker date="1502435412308" expanded="true" signature="4680:4755" ph="update login... " />
-                <marker date="1502435412308" expanded="true" signature="5640:5715" ph="update login... " />
-                <marker date="1502435412308" expanded="true" signature="5939:6014" ph="update login... " />
-                <marker date="1502435412308" expanded="true" signature="6215:6290" ph="update login... " />
-                <marker date="1502435412308" expanded="true" signature="6981:7056" ph="update login... " />
-                <marker date="1502435412308" expanded="true" signature="8372:8447" ph="update login... " />
-                <marker date="1502435412308" expanded="true" signature="9716:9791" ph="update login... " />
-                <marker date="1502435412308" expanded="true" signature="11006:11081" ph="update login... " />
-                <marker date="1502435412308" expanded="true" signature="12328:12403" ph="update login... " />
-                <marker date="1502435412308" expanded="true" signature="13657:13732" ph="update login... " />
-                <marker date="1502435412308" expanded="true" signature="14947:15022" ph="update login... " />
-                <marker date="1502435412308" expanded="true" signature="16283:16358" ph="update login... " />
-                <marker date="1502435412308" expanded="true" signature="17620:17695" ph="update login... " />
-                <marker date="1502435412308" expanded="true" signature="18888:18963" ph="update login... " />
-                <marker date="1502435412308" expanded="true" signature="20204:20279" ph="update login... " />
-                <marker date="1502435412308" expanded="true" signature="21453:21528" ph="update login... " />
-                <marker date="1502435412308" expanded="true" signature="22496:22545" ph="select respo... login_case" />
-                <marker date="1502435412308" expanded="true" signature="23222:23297" ph="update login... " />
-                <marker date="1502435412308" expanded="true" signature="24212:24261" ph="select respo... login_case" />
-                <marker date="1502435412308" expanded="true" signature="24944:25019" ph="update login... " />
-                <marker date="1502435412308" expanded="true" signature="25910:25959" ph="select respo... login_case" />
-                <marker date="1502435412308" expanded="true" signature="26656:26731" ph="update login... " />
-                <marker date="1502435412308" expanded="true" signature="27517:27566" ph="select respo... login_case" />
-                <marker date="1502435412308" expanded="true" signature="28180:28255" ph="update login... " />
-                <marker date="1502435412308" expanded="true" signature="28882:28957" ph="update login... " />
-                <marker date="1502435412308" expanded="true" signature="29149:29198" ph="select respo... login_case" />
-                <marker date="1502435412308" expanded="true" signature="29814:29889" ph="update login... " />
-                <marker date="1502435412308" expanded="true" signature="30521:30596" ph="update login... " />
-                <marker date="1502435412308" expanded="true" signature="30778:30827" ph="select respo... login_case" />
-                <marker date="1502435412308" expanded="true" signature="31421:31496" ph="update login... " />
-                <marker date="1502435412308" expanded="true" signature="32272:32322" ph="select respo... login_case" />
-                <marker date="1502435412308" expanded="true" signature="32939:33014" ph="update login... " />
-                <marker date="1502435412308" expanded="true" signature="34126:34201" ph="update login... " />
+                <element signature="e#335#356#0" expanded="true" />
+                <marker date="1502434440892" expanded="true" signature="994:1072" ph="update regis... " />
+                <marker date="1502434440892" expanded="true" signature="2192:2270" ph="update regis... " />
+                <marker date="1502434440892" expanded="true" signature="3383:3461" ph="update regis... " />
+                <marker date="1502434440892" expanded="true" signature="4536:4614" ph="update regis... " />
+                <marker date="1502434440892" expanded="true" signature="5875:5953" ph="update regis... " />
+                <marker date="1502434440892" expanded="true" signature="6748:6800" ph="select respo... register_case" />
+                <marker date="1502434440892" expanded="true" signature="7520:7598" ph="update regis... " />
+                <marker date="1502434440892" expanded="true" signature="8387:8439" ph="select respo... register_case" />
+                <marker date="1502434440892" expanded="true" signature="9155:9233" ph="update regis... " />
+                <marker date="1502434440892" expanded="true" signature="10019:10071" ph="select respo... register_case" />
+                <marker date="1502434440892" expanded="true" signature="10775:10853" ph="update regis... " />
+                <marker date="1502434440892" expanded="true" signature="11653:11705" ph="select respo... register_case" />
+                <marker date="1502434440892" expanded="true" signature="12425:12503" ph="update regis... " />
+                <marker date="1502434440892" expanded="true" signature="13308:13360" ph="select respo... register_case" />
+                <marker date="1502434440892" expanded="true" signature="14076:14154" ph="update regis... " />
+                <marker date="1502434440892" expanded="true" signature="14956:15008" ph="select respo... register_case" />
+                <marker date="1502434440892" expanded="true" signature="15712:15790" ph="update regis... " />
+                <marker date="1502434440892" expanded="true" signature="16600:16652" ph="select respo... register_case" />
+                <marker date="1502434440892" expanded="true" signature="17369:17447" ph="update regis... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user_case.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/user_case.py">
+      <file leaf-file-name="insertTestcase.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/insertTestcase.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="79">
-              <caret line="25" column="27" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
+            <state relative-caret-position="440">
+              <caret line="73" column="11" selection-start-line="73" selection-start-column="11" selection-end-line="73" selection-end-column="11" />
               <folding>
-                <element signature="e#109#130#0" expanded="true" />
-                <marker date="1502435205043" expanded="true" signature="359:433" ph="update user_... " />
-                <marker date="1502435205043" expanded="true" signature="596:1601" ph="select user_... user_profile_login" />
-                <marker date="1502435205043" expanded="true" signature="664:706" ph="select args user_case" />
-                <marker date="1502435205043" expanded="true" signature="664:708" ph="select args user_case" />
+                <element signature="e#62#91#0" expanded="true" />
+                <marker date="1502445301010" expanded="true" signature="462:524" ph="insert into &quot;&quot;... " />
+                <marker date="1502445301010" expanded="true" signature="716:761" ph="select case_... " />
+                <marker date="1502445301010" expanded="true" signature="716:762" ph="select case_... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dbManual.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dbManual.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-20">
+              <caret line="72" column="24" selection-start-line="72" selection-start-column="24" selection-end-line="72" selection-end-column="24" />
+              <folding>
+                <marker date="1502444964979" expanded="true" signature="2693:2716" ph="insert into table... " />
               </folding>
             </state>
           </provider>
@@ -110,43 +95,11 @@
       <file leaf-file-name="handleExcel.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/handleExcel.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="579">
-              <caret line="79" column="95" selection-start-line="79" selection-start-column="11" selection-end-line="79" selection-end-column="95" />
+            <state relative-caret-position="-21">
+              <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
               <folding>
                 <element signature="e#56#85#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="run_case.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/run_case.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="79" column="59" selection-start-line="79" selection-start-column="41" selection-end-line="79" selection-end-column="59" />
-              <folding>
-                <element signature="e#60#78#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CaseMode.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/CaseMode.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="case_list.conf" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/case_list.conf">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20">
-              <caret line="1" column="18" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="18" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -175,11 +128,12 @@
         <option value="$PROJECT_DIR$/config/DBConfig.py" />
         <option value="$PROJECT_DIR$/testSuit.py" />
         <option value="$PROJECT_DIR$/API2.py" />
-        <option value="$PROJECT_DIR$/dbManual.py" />
         <option value="$PROJECT_DIR$/register_case.py" />
-        <option value="$PROJECT_DIR$/handleExcel.py" />
         <option value="$PROJECT_DIR$/user_case.py" />
         <option value="$PROJECT_DIR$/login_test.py" />
+        <option value="$PROJECT_DIR$/handleExcel.py" />
+        <option value="$PROJECT_DIR$/dbManual.py" />
+        <option value="$PROJECT_DIR$/insertTestcase.py" />
       </list>
     </option>
   </component>
@@ -190,7 +144,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="293" />
+    <option name="x" value="83" />
     <option name="width" value="1639" />
     <option name="height" value="1056" />
   </component>
@@ -282,25 +236,7 @@
       <recent name="G:\workspace\GitDir\Interface2.0\casedir" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.login_test">
-    <configuration default="false" name="run_case" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Interface2.0" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/run_case.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python.insertTestcase">
     <configuration default="false" name="testSuit" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -369,6 +305,24 @@
       <module name="Interface2.0" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/user_case.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="insertTestcase" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Interface2.0" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/insertTestcase.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -582,19 +536,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.run_case" />
-      <item index="1" class="java.lang.String" itemvalue="Python.testSuit" />
-      <item index="2" class="java.lang.String" itemvalue="Python.register_case" />
-      <item index="3" class="java.lang.String" itemvalue="Python.login_test" />
-      <item index="4" class="java.lang.String" itemvalue="Python.user_case" />
+      <item index="0" class="java.lang.String" itemvalue="Python.testSuit" />
+      <item index="1" class="java.lang.String" itemvalue="Python.register_case" />
+      <item index="2" class="java.lang.String" itemvalue="Python.login_test" />
+      <item index="3" class="java.lang.String" itemvalue="Python.user_case" />
+      <item index="4" class="java.lang.String" itemvalue="Python.insertTestcase" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.login_test" />
-        <item index="1" class="java.lang.String" itemvalue="Python.user_case" />
-        <item index="2" class="java.lang.String" itemvalue="Python.register_case" />
-        <item index="3" class="java.lang.String" itemvalue="Python.testSuit" />
-        <item index="4" class="java.lang.String" itemvalue="Python.run_case" />
+        <item index="0" class="java.lang.String" itemvalue="Python.insertTestcase" />
+        <item index="1" class="java.lang.String" itemvalue="Python.login_test" />
+        <item index="2" class="java.lang.String" itemvalue="Python.user_case" />
+        <item index="3" class="java.lang.String" itemvalue="Python.register_case" />
+        <item index="4" class="java.lang.String" itemvalue="Python.testSuit" />
       </list>
     </recent_temporary>
   </component>
@@ -612,16 +566,16 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="293" y="0" width="1639" height="1056" extended-state="1" />
-    <editor active="true" />
+    <frame x="83" y="0" width="1639" height="1056" extended-state="0" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09858287" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09858287" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2084656" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2084656" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -673,23 +627,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/config/httpconfig.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/handleExcel.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#56#85#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/run_case.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1340">
@@ -1036,63 +973,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dbManual.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="620">
-          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding>
-            <marker date="1502434052846" expanded="true" signature="2693:2716" ph="insert into table... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python27/Lib/site-packages/MySQLdb/cursors.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="158" column="0" selection-start-line="158" selection-start-column="0" selection-end-line="158" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/register_case.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="386" column="55" selection-start-line="386" selection-start-column="55" selection-end-line="386" selection-end-column="55" />
-          <folding>
-            <element signature="e#335#356#0" expanded="true" />
-            <marker date="1502434440892" expanded="true" signature="994:1072" ph="update regis... " />
-            <marker date="1502434440892" expanded="true" signature="2192:2270" ph="update regis... " />
-            <marker date="1502434440892" expanded="true" signature="3383:3461" ph="update regis... " />
-            <marker date="1502434440892" expanded="true" signature="4536:4614" ph="update regis... " />
-            <marker date="1502434440892" expanded="true" signature="5875:5953" ph="update regis... " />
-            <marker date="1502434440892" expanded="true" signature="6748:6800" ph="select respo... register_case" />
-            <marker date="1502434440892" expanded="true" signature="7520:7598" ph="update regis... " />
-            <marker date="1502434440892" expanded="true" signature="8387:8439" ph="select respo... register_case" />
-            <marker date="1502434440892" expanded="true" signature="9155:9233" ph="update regis... " />
-            <marker date="1502434440892" expanded="true" signature="10019:10071" ph="select respo... register_case" />
-            <marker date="1502434440892" expanded="true" signature="10775:10853" ph="update regis... " />
-            <marker date="1502434440892" expanded="true" signature="11653:11705" ph="select respo... register_case" />
-            <marker date="1502434440892" expanded="true" signature="12425:12503" ph="update regis... " />
-            <marker date="1502434440892" expanded="true" signature="13308:13360" ph="select respo... register_case" />
-            <marker date="1502434440892" expanded="true" signature="14076:14154" ph="update regis... " />
-            <marker date="1502434440892" expanded="true" signature="14956:15008" ph="select respo... register_case" />
-            <marker date="1502434440892" expanded="true" signature="15712:15790" ph="update regis... " />
-            <marker date="1502434440892" expanded="true" signature="16600:16652" ph="select respo... register_case" />
-            <marker date="1502434440892" expanded="true" signature="17369:17447" ph="update regis... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/handleExcel.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="579">
-          <caret line="79" column="95" selection-start-line="79" selection-start-column="11" selection-end-line="79" selection-end-column="95" />
-          <folding>
-            <element signature="e#56#85#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/user_case.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="79">
@@ -1152,6 +1032,86 @@
             <marker date="1502435412308" expanded="true" signature="32272:32322" ph="select respo... login_case" />
             <marker date="1502435412308" expanded="true" signature="32939:33014" ph="update login... " />
             <marker date="1502435412308" expanded="true" signature="34126:34201" ph="update login... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register_case.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="381" column="28" selection-start-line="381" selection-start-column="24" selection-end-line="381" selection-end-column="37" />
+          <folding>
+            <element signature="e#335#356#0" expanded="true" />
+            <marker date="1502434440892" expanded="true" signature="994:1072" ph="update regis... " />
+            <marker date="1502434440892" expanded="true" signature="2192:2270" ph="update regis... " />
+            <marker date="1502434440892" expanded="true" signature="3383:3461" ph="update regis... " />
+            <marker date="1502434440892" expanded="true" signature="4536:4614" ph="update regis... " />
+            <marker date="1502434440892" expanded="true" signature="5875:5953" ph="update regis... " />
+            <marker date="1502434440892" expanded="true" signature="6748:6800" ph="select respo... register_case" />
+            <marker date="1502434440892" expanded="true" signature="7520:7598" ph="update regis... " />
+            <marker date="1502434440892" expanded="true" signature="8387:8439" ph="select respo... register_case" />
+            <marker date="1502434440892" expanded="true" signature="9155:9233" ph="update regis... " />
+            <marker date="1502434440892" expanded="true" signature="10019:10071" ph="select respo... register_case" />
+            <marker date="1502434440892" expanded="true" signature="10775:10853" ph="update regis... " />
+            <marker date="1502434440892" expanded="true" signature="11653:11705" ph="select respo... register_case" />
+            <marker date="1502434440892" expanded="true" signature="12425:12503" ph="update regis... " />
+            <marker date="1502434440892" expanded="true" signature="13308:13360" ph="select respo... register_case" />
+            <marker date="1502434440892" expanded="true" signature="14076:14154" ph="update regis... " />
+            <marker date="1502434440892" expanded="true" signature="14956:15008" ph="select respo... register_case" />
+            <marker date="1502434440892" expanded="true" signature="15712:15790" ph="update regis... " />
+            <marker date="1502434440892" expanded="true" signature="16600:16652" ph="select respo... register_case" />
+            <marker date="1502434440892" expanded="true" signature="17369:17447" ph="update regis... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/handleExcel.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-21">
+          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding>
+            <element signature="e#56#85#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/django/db/backends/sqlite3/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-541">
+          <caret line="323" column="8" selection-start-line="323" selection-start-column="8" selection-end-line="323" selection-end-column="8" />
+          <folding>
+            <marker date="1497601158567" expanded="true" signature="12241:12483" ph="SELECT REFER... missing_value" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dbManual.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-20">
+          <caret line="72" column="24" selection-start-line="72" selection-start-column="24" selection-end-line="72" selection-end-column="24" />
+          <folding>
+            <marker date="1502444964979" expanded="true" signature="2693:2716" ph="insert into table... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/MySQLdb/cursors.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="839">
+          <caret line="173" column="0" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/insertTestcase.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="73" column="11" selection-start-line="73" selection-start-column="11" selection-end-line="73" selection-end-column="11" />
+          <folding>
+            <element signature="e#62#91#0" expanded="true" />
+            <marker date="1502445301010" expanded="true" signature="462:524" ph="insert into &quot;&quot;... " />
+            <marker date="1502445301010" expanded="true" signature="716:761" ph="select case_... " />
+            <marker date="1502445301010" expanded="true" signature="716:762" ph="select case_... " />
           </folding>
         </state>
       </provider>
