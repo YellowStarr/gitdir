@@ -30,7 +30,7 @@ class API2:
             header["HeipaAppMessage"] = "deviceId=%s;clientVersion=2.0;platform=iOS" % deviceId
             if "accessToken" in kwargs.keys():
                 token = kwargs['accessToken']
-                header['token'] = token
+                header['heipaToken'] = token
         return header
 
     def device_register(self, params):
@@ -73,8 +73,8 @@ class API2:
         :param header:
         :return:
         """
-        url = self.get_baseurl+"/sms/register/moblile"
-        r = requests.get(url,params=params,headers=header)
+        url = self.get_baseurl+"/sms/register/mobile"
+        r = requests.get(url, params=params, headers=header)
         return r
 
     def mobile_login(self, params, header):

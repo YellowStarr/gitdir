@@ -64,23 +64,23 @@ if __name__ == "__main__":
     r = {}
     t = tool()
     # t.insertCase('user_case', params)
-    register_data = t.select_result('register_case')
+    '''register_data = t.select_result('register_case')
     register_result = t.trans_list(register_data)
     login_data = t.select_result('login_case')
     login_result = t.trans_list(login_data)
     r['register'] = register_result
     r['login'] = login_result
     t.write_to_excel(r)
-    t.cls()
+    t.cls()'''
 
-    '''params = [
-        (12,'{"userid":6299163298503852033}','/login/:uid'),
-        (2,'{"account":1878294350,"password":"888888"}','/user'),
-        (3,'','/user'),
-        (4,'{"userName":"cha","email":"sillyapplemi@126.com","sex":0,"birthday":"1990-09-11","emotionStatus":"","personalProfile":""}','/user'),
-        (5,'{"flowPlaySettings":0,"commentBoardPrivacySettings":0,"pushSystemNoticeSettings":0,"pushLikeNoticeSettings":0,"pushCommentBoardNoticeSettings":0}','/user/setting'),
-        (6,'{"uid":6299163298503852033}','/user/:uid/following?page=1&size=10&sort=default'),
-        (7,'{"uid":6299163298503852033}','/user/:uid/follower?page=1&size=11&sort=default')]'''
+    params = [
+        (19, '{"phoneNumber":"1878294381"}', '/sms/register/mobile'),
+        (20, '{"phoneNumber":"18782943855","password":"88888","platform":"iOS","clientVersion":"2.0","registerSmsCode":"0000","registerSmsId":""}', '/sms/register/mobile'),
+        (21, '{"phoneNumber":"18782943854","password":"88888888888888888","platform":"iOS","clientVersion":"2.0","registerSmsCode":"0000","registerSmsId":""}', '/sms/register/mobile'),
+        (22, '{"phoneNumber":"18782943856","password":"888888888+./88888","platform":"iOS","clientVersion":"2.0","registerSmsCode":"0000","registerSmsId":""}', '/sms/register/mobile'),
+    ]
+    t.insertCase('register_case', params)
+    t.cls()
 
    
 

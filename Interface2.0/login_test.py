@@ -1,6 +1,7 @@
 # -*-coding=utf-8 -*-
 """
 登陆部分测试用例，对应testcase中login。测试每个用例的响应结果会写到数据库中login_case表中对应的case_no中的response中
+待解决日志问题
 """
 
 from API2 import API2
@@ -15,11 +16,12 @@ class login_case(unittest.TestCase):
         self.api = API2()
         self.casedb = DBManual()
 
+
     def test_01_login_mobile(self):
         case_no = 1
         cur = self.casedb.connect_casedb()
         header = self.api.get_header(deviceId="34e7a55f-8fb9-4511-b1b7-55d6148fa9bb")
-        param = {"phoneNumber": "18782943850", "password": "888888", "platform": "iOS",
+        param = {"phoneNumber": "18782943852", "password": "888888", "platform": "iOS",
                  "clientVersion": "2.0", "machineId": 100001}
         response = self.api.mobile_login(param, header)
         self.assertEqual(response.status_code, 200, u"http响应错误，错误码 %s" % response.status_code)
@@ -35,6 +37,7 @@ class login_case(unittest.TestCase):
                 except MySQLdb.Error, e:
                     print "manual database error:%s" % e
             except AssertionError:
+                print data['message']
                 cur.execute(sql, (d, "fail", t, case_no))
         except TypeError:
             data = unicode(response.text, 'utf-8')
@@ -43,7 +46,7 @@ class login_case(unittest.TestCase):
         # cur.close()
         self.casedb.closeDB(cur)
 
-    def test_02_mobile_login_phone_wrong(self):
+        '''def test_02_mobile_login_phone_wrong(self):
         case_no = 2
         cur = self.casedb.connect_casedb()
         header = self.api.get_header(deviceId="34e7a55f-8fb9-4511-b1b7-55d6148fa9bb")
@@ -163,7 +166,7 @@ class login_case(unittest.TestCase):
             data = unicode(response.text, 'utf-8')
             logging.info("返回值非json: %s")
             cur.execute(sql, (data, "fail", t, case_no))
-        self.casedb.closeDB(cur)
+        self.casedb.closeDB(cur)'''
 
     def test_06_login_weixin(self):
         case_no = 6
@@ -193,7 +196,7 @@ class login_case(unittest.TestCase):
         # cur.close()
         self.casedb.closeDB(cur)
 
-    def test_07_login_weixin_token_wrong(self):
+    '''def test_07_login_weixin_token_wrong(self):
         case_no = 7
         cur = self.casedb.connect_casedb()
         header = self.api.get_header(deviceId="34e7a55f-8fb9-4511-b1b7-55d6148fa9bb")
@@ -278,8 +281,8 @@ class login_case(unittest.TestCase):
         case_no = 10
         cur = self.casedb.connect_casedb()
         header = self.api.get_header(deviceId="34e7a55f-8fb9-4511-b1b7-55d6148fa9bb")
-        param = {"thirdAuthToken":"qqtoke","thirdPlatformType":"qq","platform":"iOS",
-                 "clientVersion":"2.0","machineId":100001}
+        param = {"thirdAuthToken": "qqtoke", "thirdPlatformType": "qq", "platform": "iOS",
+                 "clientVersion": "2.0", "machineId": 100001}
         response = self.api.third_login('qq', param, header)
         self.assertEqual(response.status_code, 200, u"http响应错误，错误码 %s" % response.status_code)
         t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
@@ -326,14 +329,14 @@ class login_case(unittest.TestCase):
             data = unicode(response.text, 'utf-8')
             cur.execute(sql, (data, "fail", t, case_no))
         # cur.close()
-        self.casedb.closeDB(cur)
+        self.casedb.closeDB(cur)'''
 
     def test_12_login_weibo(self):
         case_no = 12
         cur = self.casedb.connect_casedb()
         header = self.api.get_header(deviceId="34e7a55f-8fb9-4511-b1b7-55d6148fa9bb")
-        param = {"thirdAuthToken":"weibotoken","thirdPlatformType":"weibo","platform":"iOS",
-                 "clientVersion":"2.0","machineId": 100001}
+        param = {"thirdAuthToken": "weibotoken", "thirdPlatformType": "weibo", "platform": "iOS",
+                 "clientVersion": "2.0","machineId": 100001}
         response = self.api.third_login('weibo', param, header)
         self.assertEqual(response.status_code, 200, u"http响应错误，错误码 %s" % response.status_code)
         t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
@@ -355,7 +358,7 @@ class login_case(unittest.TestCase):
         # cur.close()
         self.casedb.closeDB(cur)
 
-    def test_13_login_weibo_token_wrong(self):
+    '''def test_13_login_weibo_token_wrong(self):
         case_no = 13
         cur = self.casedb.connect_casedb()
         header = self.api.get_header(deviceId="34e7a55f-8fb9-4511-b1b7-55d6148fa9bb")
@@ -415,7 +418,7 @@ class login_case(unittest.TestCase):
         case_no = 15
         cur = self.casedb.connect_casedb()
         # header = self.api.get_header({"deviceId": "34e7a55f-8fb9-4511-b1b7-55d6148fa9bb"})
-        param = {"deviceId":"34e7a55f-8fb9-4511-b1b7-55d6148fa9bb","password":"","platform":"iOS",
+        param = {"deviceId": "34e7a55f-8fb9-4511-b1b7-55d6148fa9bb", "password": "", "platform": "iOS",
                  "clientVersion": "2.0"}
         response = self.api.device_login(param)
         self.assertEqual(response.status_code, 200, u"http响应错误，错误码 %s" % response.status_code)
@@ -583,11 +586,11 @@ class login_case(unittest.TestCase):
 
             cur.execute(sql, (data, "fail", t, case_no))
         # cur.close()
-        self.casedb.closeDB(cur)
+        self.casedb.closeDB(cur)'''
 
     def test_20_modify_pwd(self):
         case_no = 20
-        headerdic = {}
+
         select_sql = """select response from login_case where case_no = 1 """
         # 数据库取数据
         cur = self.casedb.connect_casedb()
@@ -624,7 +627,7 @@ class login_case(unittest.TestCase):
 
     def test_21_logout(self):
         case_no = 21
-        select_sql = """select response from login_case where case_no = 1 """
+        select_sql = """select response from login_case where case_no = 12 """
         # 数据库取数据
         cur = self.casedb.connect_casedb()
         cur.execute(select_sql)
@@ -650,6 +653,7 @@ class login_case(unittest.TestCase):
                 except MySQLdb.Error, e:
                     print "manual database error:%s" % e
             except AssertionError:
+                print data['message']
                 cur.execute(sql, (d, "fail", t, case_no))
         except TypeError:
             data = unicode(response.text, 'utf-8')
@@ -661,15 +665,17 @@ class login_case(unittest.TestCase):
 
     def test_22_logout_lack_args(self):
         case_no = 22
-
-        select_sql = """select response from login_case where case_no = 6 """
         # 数据库取数据
         cur = self.casedb.connect_casedb()
-        cur.execute(select_sql)
-        re = cur.fetchone()
-        res = eval(re[0])  # str数据转为dict
-        tokendic = res['data']['token']
-        header = self.api.get_header(deviceId="34e7a55f-8fb9-4511-b1b7-55d6148fa9bb",accessToken=tokendic['accessToken'])
+
+        header = self.api.get_header(deviceId="34e7a55f-8fb9-4511-b1b7-55d6148fa9bb")
+        p = {"phoneNumber": "18782943852", "password": "888888", "platform": "iOS",
+         "clientVersion": "2.0", "machineId": 100001}
+        r = self.api.mobile_login(p, header)
+        request = r.json()
+        accessToken = request['data']['token']['accessToken']
+
+        header = self.api.get_header(deviceId="34e7a55f-8fb9-4511-b1b7-55d6148fa9bb", accessToken=accessToken)
         param = {"platform": "iOS"}
         response = self.api.login_out(param, header)
         self.assertEqual(response.status_code, 200, u"http响应错误，错误码 %s" % response.status_code)
@@ -680,7 +686,7 @@ class login_case(unittest.TestCase):
 
             try:
                 d = json.dumps(data, ensure_ascii=False)
-                self.assertEqual(data["errorCode"], 100207, u"错误信息: %s" % data['message'])
+                self.assertEqual(data["errorCode"], 100101, u"错误信息: %s" % data['message'])
 
                 try:
 
@@ -698,27 +704,25 @@ class login_case(unittest.TestCase):
 
     def test_23_logout_machineid_wrong(self):
         case_no = 23
-        select_sql = """select response from login_case where case_no = 12 """
-        # 数据库取数据
         cur = self.casedb.connect_casedb()
-        cur.execute(select_sql)
-        re = cur.fetchone()
+        header = self.api.get_header(deviceId="34e7a55f-8fb9-4511-b1b7-55d6148fa9bb")
+        p = {"phoneNumber": "18782943852", "password": "888888", "platform": "iOS",
+             "clientVersion": "2.0", "machineId": 100001}
+        r = self.api.mobile_login(p, header)
+        request = r.json()
+        accessToken = request['data']['token']['accessToken']
 
-        res = eval(re[0])  # str数据转为dict
-        tokendic = res['data']['token']
-        header = self.api.get_header(deviceId="34e7a55f-8fb9-4511-b1b7-55d6148fa9bb", accessToken=tokendic['accessToken'])
-        param = {"platform": "iOS", "machineId":1000100}
+        header = self.api.get_header(deviceId="34e7a55f-8fb9-4511-b1b7-55d6148fa9bb", accessToken=accessToken)
+        param = {"platform": "iOS", "machineId": 1000100}
         response = self.api.login_out(param, header)
         self.assertEqual(response.status_code, 200, u"http响应错误，错误码 %s" % response.status_code)
         t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
         sql = """update login_case set response=%s,result=%s,test_time=%s WHERE case_no = %s"""
         try:
             data = response.json()
-
             try:
                 d = json.dumps(data, ensure_ascii=False)
-                self.assertEqual(data["errorCode"], 100207, u"错误信息: %s" % data['message'])
-
+                self.assertEqual(data["errorCode"], 100202, u"错误信息: %s" % data['message'])
                 try:
                     cur.execute(sql, (d, "pass", t, case_no))
                 except MySQLdb.Error, e:
@@ -734,12 +738,13 @@ class login_case(unittest.TestCase):
 
     def test_24_logout_unlogin(self):
         case_no = 24
+        t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
         cur = self.casedb.connect_casedb()
         header = self.api.get_header()
         param = {"platform": "iOS", "machineId": 100001}
+        print "[%s excuting case %s ] params: %s" % (t, 'test_24_logout_unlogin', param)
         response = self.api.login_out(param, header)
         self.assertEqual(response.status_code, 200, u"http响应错误，错误码 %s" % response.status_code)
-        t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
         sql = """update login_case set response=%s,result=%s,test_time=%s WHERE case_no = %s"""
         try:
             data = response.json()
@@ -753,12 +758,13 @@ class login_case(unittest.TestCase):
                 except MySQLdb.Error, e:
                     print "manual database error:%s" % e
             except AssertionError:
+                print
                 cur.execute(sql, (d, "fail", t, case_no))
         except TypeError:
             data = unicode(response.text, 'utf-8')
 
             cur.execute(sql, (data, "fail", t, case_no))
-        # cur.close()
+
         self.casedb.closeDB(cur)
 
 if __name__ == "__main__":
