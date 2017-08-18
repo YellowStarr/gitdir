@@ -118,7 +118,7 @@ class API2:
         :return:
         """
         url = self.get_baseurl+"/user/account/binding/%s" % third
-        r = requests.put(url, params=params, headers=header)
+        r = requests.put(url, json=params, headers=header)
         return r
 
     def bind_phone(self, params, header):
@@ -162,7 +162,7 @@ class API2:
         :return:
         """
         url = self.get_baseurl+"/user/password"
-        r = requests.patch(url, params=params, headers=header)
+        r = requests.patch(url, json=params, headers=header)
         return r
     def login_out(self, params, header):
         """
@@ -184,11 +184,80 @@ class API2:
         r = requests.get(url, headers=header)
         return r
 
-    
-        
+    def get_my_info(self, header):
 
+        url = self.get_baseurl+"/user"
+        r = requests.get(url, headers=header)
+        return r
 
+    def modify_my_info(self, param, header):
 
+        url = self.get_baseurl+"/user"
+        r = requests.patch(url, json=param, headers=header)
+        return r
+
+    def op_settings(self, method, header, **params):
+
+        url = self.get_baseurl+"/user/settings"
+        if method == 'patch':
+            # print params
+            r = requests.patch(url, json=params['params'], headers=header)
+        elif method == 'get':
+            r = requests.get(url, headers=header)
+        else:
+            raise ValueError('method must be patch or get')
+        return r
+
+    def op_focus(self, method, uid, header, **kwargs):
+        """
+        :param method: [put|get|delete]
+        :param uid: 被关注用户id
+        :param header:
+        :param kwargs: page
+        :return:
+        """
+        if method == 'get':
+            if 'page' in kwargs.keys():
+                url = self.get_baseurl + \
+                      "/user/%s/following?page=%s&size=10&sort=default" % (uid, kwargs['page'])
+            else:
+                url = self.get_baseurl + \
+                      "/user/%s/following?page=1&size=10&sort=default" % (uid)
+            r = requests.get(url, headers=header)
+        elif method == 'put':
+            url = self.get_baseurl + "/user/following/%s" % uid
+            r = requests.put(url, headers=header)
+        elif method == 'delete':
+            url = self.get_baseurl + "/user/following/%s" % uid
+            r = requests.delete(url, headers=header)
+        else:
+            raise ValueError('method must be PUT or GET or DELETE')
+        return r
+
+    def get_fans_list(self, uid, header):
+        url = self.get_baseurl + "/user/%s/follower?page=1&size=10&sort=default" % uid
+        r = requests.get(url, headers=header)
+        return r
+
+    def op_blacklist(self, method, header, *uid):
+        """
+        :param method: [put|get|delete]
+        :param uid: 被加黑用户id
+        :param header:
+        :return:
+        """
+        if method == 'get':
+            url = self.get_baseurl + "/user/blacklist?page=1&size=10"
+            r = requests.get(url, headers=header)
+        elif method == 'put':
+            url = self.get_baseurl + "/user/blacklist/%s" % uid
+            r = requests.put(url, headers=header)
+        elif method == 'delete':
+            url = self.get_baseurl + "/user/blacklist/%s" % uid
+            r = requests.delete(url, headers=header)
+        else:
+            raise ValueError('method must be PUT or GET or DELETE')
+        return r
 
 
 

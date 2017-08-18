@@ -1,0 +1,12 @@
+[2017-08-18 17:11:22 excuting 22] header： {'Date': 'Fri, 18 Aug 2017 09:13:25 GMT', 'Connection': 'close', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '86', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+[2017-08-18 17:11:22 excuting 22] request url: http://139.224.68.41:8080/api/v2.0/logout 
+[2017-08-18 17:11:22 excuting 22] request json: ({'platform': 'iOS'},) 
+[2017-08-18 17:11:22 excuting 22] response data: {"errorCode": 0, "message": "OK", "data": {"logoutTime": "2017-08-18 17:13:25"}} 
+[2017-08-18 17:11:59 excuting 23] header： {'Date': 'Fri, 18 Aug 2017 09:14:02 GMT', 'Connection': 'close', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '86', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+[2017-08-18 17:11:59 excuting 23] request url: http://139.224.68.41:8080/api/v2.0/logout 
+[2017-08-18 17:11:59 excuting 23] request json: ({'platform': 'iOS', 'machineId': 1000100},) 
+[2017-08-18 17:11:59 excuting 23] response data: {"errorCode": 0, "message": "OK", "data": {"logoutTime": "2017-08-18 17:14:02"}} 
+[2017-08-18 17:12:01 excuting 22] header： {'Date': 'Fri, 18 Aug 2017 09:14:04 GMT', 'Connection': 'close', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '86', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+[2017-08-18 17:12:01 excuting 22] request url: http://139.224.68.41:8080/api/v2.0/logout 
+[2017-08-18 17:12:01 excuting 22] request json: ({'platform': 'iOS'},) 
+[2017-08-18 17:12:01 excuting 22] response data: {"errorCode": 0, "message": "OK", "data": {"logoutTime": "2017-08-18 17:14:04"}} 
