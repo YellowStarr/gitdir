@@ -164,6 +164,7 @@ class API2:
         url = self.get_baseurl+"/user/password"
         r = requests.patch(url, json=params, headers=header)
         return r
+
     def login_out(self, params, header):
         """
         退出登录
@@ -234,9 +235,12 @@ class API2:
             raise ValueError('method must be PUT or GET or DELETE')
         return r
 
-    def get_fans_list(self, uid, header):
-        url = self.get_baseurl + "/user/%s/follower?page=1&size=10&sort=default" % uid
-        r = requests.get(url, headers=header)
+    def get_fans_list(self, uid, header, **params):
+        url = self.get_baseurl + "/user/%s/follower" % uid
+        if 'param' in params.keys():
+            r = requests.get(url, params=params['param'], headers=header)
+        else:
+            r = requests.get(url, headers=header)
         return r
 
     def op_blacklist(self, method, header, *uid):
@@ -258,6 +262,396 @@ class API2:
         else:
             raise ValueError('method must be PUT or GET or DELETE')
         return r
+
+    def op_collect(self, method, header, **kwargs):
+        """
+        收藏接口，包括收藏，收藏列表，取消收藏
+        get时，args传page,size,sort
+        put 或delete,则传递userId,opusId,有attach时还有attach
+        :param method: [put|get|delete]
+        :param header:
+        :param kwargs:{'userid', 'opusid'}
+        :return:
+        """
+        if kwargs:
+            kwargs = kwargs['kwargs']
+        if method in ['put', 'delete']:
+            userid = kwargs['userid']
+            opusid = kwargs['opusid']
+            if 'attach' in kwargs.keys():
+                attach = kwargs['attach']
+                if method == 'put':
+                    url = self.get_baseurl + "/user/collect/%s/%s" % (userid, opusid)
+                    r = requests.put(url, json={"attach": attach}, headers=header)
+                else:
+                    url = self.get_baseurl + '/user/collect/%s/%s' % (userid, opusid)
+                    r = requests.delete(url,params=attach, headers=header)
+            else:
+                url = self.get_baseurl + "/user/collect/%s/%s" % (userid, opusid)
+                if method == 'put':
+                    r = requests.put(url, headers=header)
+                else:
+                    r = requests.delete(url, headers=header)
+        elif method == 'get':
+            url = self.get_baseurl + '/user/collect'
+            if kwargs:
+                r = requests.get(url, params=kwargs, headers=header)
+            else:
+                r = requests.get(url, headers=header)
+        else:
+            raise ValueError("Method must be [PUT,DELETE,GET]")
+        return r
+
+    def op_praise(self, typo, header, **kwargs):
+        """
+        点赞接口，包括作品点赞，评论点赞
+        :param typo: [opus|comment]
+        :param header:
+        :param kwargs:点赞作品{'userid','opusid'};点赞评论{'userid','opusid'，'commentid'}
+        :return:
+        """
+        if kwargs:
+            kwargs = kwargs['kwargs']
+        if typo == 'opus':
+            url = self.get_baseurl + '/user/like/%s/%s' % \
+                                     (kwargs['userid'], kwargs['opusid'])
+            if 'attach' in kwargs.keys():
+                r = requests.put(url, json={'attach': kwargs['attach']}, headers=header)
+            else:
+                r = requests.put(url, headers=header)
+        elif typo == 'comment':
+            url = self.get_baseurl + '/comment/like/%s/opus/song/%s/%s' % \
+                                         (kwargs['userid'], kwargs['opusid'], kwargs['commentid'])
+            r = requests.put(url, headers=header)
+        else:
+            raise ValueError("Method must be [PUT,DELETE,GET]")
+        return r
+
+    # 创作接口，包括虚拟歌手，自由说唱，智能说唱，串烧
+    def create_virtual_singer(self, typo, data, header):
+        """
+        创作虚拟歌手作品，自由说唱，智能说唱,串烧
+        :param typo: virtual|free|intelligent|medley
+        :param data:{}
+        :param header:
+        :return:
+        """
+        if typo == 'virtual':
+            url = self.get_baseurl + '/opus/song/singer'
+        elif typo == 'free':
+            url = self.get_baseurl + '/opus/song/free'
+        elif typo == 'intelligent':
+            url = self.get_baseurl + '/opus/song/intel'
+        elif typo == 'medley':
+            url = self.get_baseurl + '/opus/song/medley'
+        else:
+            raise ValueError("Typo value wrong, must in [virtual,free,intelligent,medley]")
+        r = requests.post(url, json=data, headers=header)
+        return r
+
+    def modify_opus_info(self, songid, data, header):
+        """
+        修改歌曲信息
+        :param songid:
+        :param data:
+        :param header:
+        :return:
+        """
+        url = self.get_baseurl + '/opus/song/%s' % songid
+        r = requests.patch(url, json=data, headers=header)
+        return r
+
+    def op_share(self, method, header, **kwargs):
+        """
+        分享操作相关，分享，取消分享，分享列表
+        :param method: put\delete\get
+        :param data:
+        :param header:
+        :param kwargs:
+        :return:
+        """
+        if kwargs:
+            kwargs = kwargs['kwargs']
+        if method == 'put':
+            url = self.get_baseurl + '/user/share/%s/%s' % (kwargs['userid'], kwargs['opusid'])
+            r = requests.put(url, json=kwargs['param'], headers=header)
+        elif method == 'delete':
+            url = self.get_baseurl + '/user/share/%s' % (kwargs['shareid'])
+            if 'attach' in kwargs.keys():
+                url = self.get_baseurl + '/user/share'
+                r = requests.delete(url, params=kwargs['param'], headers=header)
+            else:
+                r = requests.delete(url, headers=header)
+        elif method == 'get':
+            url = self.get_baseurl + '/user/share'
+            if kwargs:
+                r = requests.get(url, params=kwargs, headers=header)
+            else:
+                r = requests.get(url, headers=header)
+        else:
+            raise ValueError("Method must be [PUT,DELETE,GET]")
+        return r
+
+    def get_version(self, platform, header):
+        url ='http://139.224.68.41:8080/api/update/version/%s' % platform
+        r = requests.get(url, headers=header)
+        return r
+
+    def get_share_link(self, opusid, header):
+        url = self.get_baseurl + '/user/share/%s/share_link' % opusid
+        r = requests.get(url, headers=header)
+        return r
+
+    # 发布作品
+    def opus_publish(self, opusid, data, header):
+
+        url = self.get_baseurl + '/opus/song/%s/publish' % opusid
+        r = requests.patch(url, json=data, headers=header)
+        return r
+
+    def op_comment(self, typo, method, header, **kwargs):
+        """
+        歌曲详情页面评论及子评论相关操作
+        :param typo:  song|comment 代表歌曲评论和子评论
+        :param method: post|get|delete
+        :param header:
+        :param kwargs:
+        :return:
+        """
+        if kwargs:
+            kwargs = kwargs['kwargs']
+        if typo == 'song':
+            if method == 'post':
+                url = self.get_baseurl + '/comment/%s/opus/song/%s' % (kwargs['userid'], kwargs['opusid'])
+                r = requests.post(url, json=kwargs['param'], headers=header)
+            elif method == 'delete':
+                url = self.get_baseurl + '/comment/%s/opus/song/%s/%s' % (kwargs['userid'], kwargs['opusid'], kwargs['commentid'])
+                r = requests.delete(url, headers=header)
+            elif method == 'get':
+                url = self.get_baseurl + '/comment/%s/opus/song/%s' % (kwargs['userid'], kwargs['opusid'])
+                if 'param' in kwargs.keys():
+                    r = requests.get(url, params=kwargs['param'], headers=header)
+                else:
+                    r = requests.get(url, headers=header)
+            else:
+                raise ValueError("Method must be [PUT,DELETE,GET]")
+        elif typo == 'comment':
+            if method == 'post':
+                url = self.get_baseurl + '/comment/%s/opus/song/%s/%s' % (kwargs['userid'], kwargs['opusid'], kwargs['commentid'])
+                r = requests.post(url, json=kwargs['param'], headers=header)
+            elif method == 'delete':
+                url = self.get_baseurl + '/comment/%s/opus/song/%s/%s' % (kwargs['userid'], kwargs['opusid'], kwargs['commentid'])
+                r = requests.delete(url, headers=header)
+            elif method == 'get':
+                url = self.get_baseurl + '/comment/%s/opus/song/%s/%s' % (kwargs['userid'], kwargs['opusid'], kwargs['commentid'])
+                if 'param' in kwargs.keys():
+                    r = requests.get(url, params=kwargs['param'], headers=header)
+                else:
+                    r = requests.get(url, headers=header)
+            else:
+                raise ValueError("Method must be [PUT,DELETE,GET]")
+        return r
+
+    # 查看别人已发布作品，查看自己发布及未发布作品
+    def op_opus(self, myself, header, ispublish=1, param={}):
+        """
+        :param myself: 0,1
+        :param ispublish:  取值为0，1
+        :param header:
+        :param param:
+        :return:
+        """
+        url_list = ['/user/opus/unpublished', '/user/opus/published']
+        if myself == 1:
+            url = self.get_baseurl + url_list[ispublish]
+            if param:
+                r = requests.get(url, params=param, headers=header)
+            else:
+                r = requests.get(url, headers=header)
+        elif myself == 0:
+            url = self.get_baseurl + '/user/%s/opus/published' % param['userid']
+            if 'param' in param.keys():
+                r = requests.get(url, params=param['param'], headers=header)
+            else:
+                r = requests.get(url, headers=header)
+        return r
+
+    def listen(self, header, **kwargs):
+        if kwargs:
+            kwargs = kwargs['kwargs']
+        url = self.get_baseurl + '/user/listen/%s/%s' % (kwargs['userid'], kwargs['opusid'])
+        r = requests.put(url, json=kwargs['param'], headers=header)
+        return r
+
+    # 加入串烧，查看串烧参与者，撤销加入串烧
+    def op_medley(self, method, header, **kwargs):
+        try:
+            kwargs = kwargs['kwargs']
+        except ValueError:
+            print kwargs
+        url = self.get_baseurl + '/opus/song/%s/participant' % kwargs['opusid']
+        if method == 'post':
+            r = requests.post(url, json=kwargs['param'], headers=header)
+        elif method == 'get':    # 查看串烧参与者
+            if 'param' in kwargs.keys():
+                r = requests.get(url, params=kwargs['param'], headers=header)
+            else:
+                r = requests.get(url, headers=header)
+        elif method == 'delete':
+            url = self.get_baseurl + '/opus/song/%s/participant/%s' % (kwargs['opusid'],kwargs['participantid'])
+            r = requests.delete(url, headers=header)
+        return r
+
+    # 删除作品
+    def delete_opus(self, header, sid):
+        url = self.get_baseurl + '/opus/song/%s' % sid
+        r = requests.delete(url, headers=header)
+        return r
+
+    def get_oss_url(self, header, param):
+        url = self.get_baseurl + '/oss/presign'
+        r = requests.post(url, json=param, headers=header)
+        return r
+
+    def opus_score(self, header, param):
+
+        url = self.get_baseurl + '/user/score/%s/%s' % (param['userid'], param['opusid'])
+        r = requests.put(url, json=param['param'], headers=header)
+        return r
+
+    def shown_page(self, key, header, param):
+        """
+        展示页面接口。推荐recommend，热门hot，最新newest，榜单ranking，音乐人musician，星探scout
+        :param key:
+        :param header:
+        :param param:
+        :return:
+        """
+        urldict = {
+            'recommend': '/page/recommend',
+            'hot': '/page/popular',
+            'newest': '/page/release',
+            'ranking': '/page/ranking',
+            'musician': '/ranking/user/musician',
+            'scout': '/ranking/user/scout'
+        }
+
+        url = self.get_baseurl + urldict[key]
+        r = requests.get(url, params=param, headers=header)
+        return r
+
+    # 反馈及举报
+    def violate_feedback(self, key, header, param):
+        """
+        key取值为0,1.0为举报，1为反馈
+        :param key:
+        :param header:
+        :param param:
+        :return:
+        """
+        url_list = ['/violate', '/feedback']
+        url = self.get_baseurl + url_list[key]
+        r = requests.post(url, json=param, headers=header)
+        return r
+
+    def get_song_detail(self, flag, header, param):
+        """歌曲详情页面评论列表"""
+        if flag == 0:
+            url = self.get_baseurl + '/page/opus/song/%s' % param['opusid']
+        elif flag == 1:
+            url = self.get_baseurl + '/page/comment/%s/opus/song/%s' % (param['userid'], param['opusid'])
+        if 'param' in param.keys():
+            r = requests.get(url, params=param['param'], headers=header)
+        else:
+            r = requests.get(url, headers=header)
+        return r
+
+    def search(self, key, header, param):
+        url_dict = {
+            'user': '/search/user',
+            'opus': '/search/opus/song',
+            'hot': '/search/keyword'
+        }
+        url = self.get_baseurl + url_dict[key]
+        if param:
+            r = requests.get(url, params=param, headers=header)
+        else:
+            r = requests.get(url, headers=header)
+        return r
+
+    # 操作消息接口
+    def op_notice(self, key, method, header, param={}):
+        """
+        通知查看、清空、已读操作
+        :param key: r系统通知,like点赞，share转发，comment评论
+        :param header:
+        :param param:
+        :return:
+        """
+        url_dict = {
+            'r': '/notice/r',
+            'like': '/notice/like',
+            'share': '/notice/share',
+            'comment': '/notice/comment',
+        }
+        url = self.get_baseurl + url_dict[key]
+        if method == 'get':    # 查看通知
+            if 'param' in param.keys():
+                r = requests.get(url, params=param, headers=header)
+            else:
+                r = requests.get(url, headers=header)
+        elif method == 'put':    # 标记通知为已读
+            if 'lastReadAt' in param.keys():
+                r = requests.put(url, json=param, headers=header)
+            else:
+                r = requests.put(url, headers=header)
+        elif method == 'delete':    # 清空通知列表
+                r = requests.delete(url, headers=header)
+        else:
+            raise ValueError("METHOD ERROR! MUST BE GET or PUT or DELETE")
+        return r
+
+    def get_unread(self, key, header):
+        """
+        获取未读通知
+        :param key: unread未读消息，r系统通知,like点赞，share转发，comment评论
+        :param header:
+        :param param:
+        :return:
+        """
+        url_dict = {
+            'unread': '/notice/unread_count',
+            'r': '/notice/r/unread_count',
+            'like': '/notice/like/unread_count',
+            'share': '/notice/share/unread_count',
+            'comment': '/notice/comment/unread_count',
+        }
+        url = self.get_baseurl + url_dict[key]
+        r = requests.get(url, headers=header)
+        return r
+
+    # def song_popularity(self):
+    #
+    #     popularity = share * 3 + collect * 2 + listen * 3 + praise + comment * 2
+    #     return popularity
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

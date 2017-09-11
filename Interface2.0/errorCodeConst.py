@@ -1,5 +1,4 @@
-# -*-coding = utf-8 -*-
-
+# -*-coding:utf-8 -*-
 class errorCodeConst:
 
     @property
@@ -19,7 +18,7 @@ class errorCodeConst:
         return 100102
 
     @property
-    def ARGS_VALUE_ERROR(self):
+    def   ARGS_VALUE_ERROR(self):
         """
         参数取值错误(一般用于有参数列表的值,比如定义了三个值,但是传递的是之外的值)
         :return:
@@ -361,4 +360,5 @@ class errorCodeConst:
         :return:
         """
         return 209901
+
 

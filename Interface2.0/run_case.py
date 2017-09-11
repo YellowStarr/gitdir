@@ -6,7 +6,7 @@ import handleExcel
 import requests,logging,sys
 from config import runconfig
 from config import CaseMode
-import time,chardet,json
+import time,json
 
 
 class run_case:
@@ -22,7 +22,6 @@ class run_case:
 
     def headers_token(self, flag):    #flag为标识是否需要token
         if flag == 1 or flag == "1":
-            # token = self.get_token()
             headers = {
                 "token": self.token,
                 "Host": self.baseurl,
@@ -104,7 +103,13 @@ class run_case:
     def get_token(self):    #获取token
         url = self.baseurl+'/login'
         print url
-        postdata = {'phoneNumber': "18782943850", "password": "888888", "platform": "iOS", "clientVersion": "2.0", "machineId": "100001"}
+        postdata = {
+            'phoneNumber': "18782943850",
+            "password": "888888",
+            "platform": "iOS",
+            "clientVersion": "2.0",
+            "machineId": "100001"
+        }
         r = requests.post(url, json=postdata, headers=self.headers_token(0))
         if r.status_code == 200:
             data = r.json()

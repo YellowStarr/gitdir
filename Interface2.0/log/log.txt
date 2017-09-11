@@ -1,12 +1,1415 @@
-[2017-08-18 17:11:22 excuting 22] header： {'Date': 'Fri, 18 Aug 2017 09:13:25 GMT', 'Connection': 'close', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '86', 'X-Application-Context': 'HeiPaServer:test:8080'} 
-[2017-08-18 17:11:22 excuting 22] request url: http://139.224.68.41:8080/api/v2.0/logout 
-[2017-08-18 17:11:22 excuting 22] request json: ({'platform': 'iOS'},) 
-[2017-08-18 17:11:22 excuting 22] response data: {"errorCode": 0, "message": "OK", "data": {"logoutTime": "2017-08-18 17:13:25"}} 
-[2017-08-18 17:11:59 excuting 23] header： {'Date': 'Fri, 18 Aug 2017 09:14:02 GMT', 'Connection': 'close', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '86', 'X-Application-Context': 'HeiPaServer:test:8080'} 
-[2017-08-18 17:11:59 excuting 23] request url: http://139.224.68.41:8080/api/v2.0/logout 
-[2017-08-18 17:11:59 excuting 23] request json: ({'platform': 'iOS', 'machineId': 1000100},) 
-[2017-08-18 17:11:59 excuting 23] response data: {"errorCode": 0, "message": "OK", "data": {"logoutTime": "2017-08-18 17:14:02"}} 
-[2017-08-18 17:12:01 excuting 22] header： {'Date': 'Fri, 18 Aug 2017 09:14:04 GMT', 'Connection': 'close', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '86', 'X-Application-Context': 'HeiPaServer:test:8080'} 
-[2017-08-18 17:12:01 excuting 22] request url: http://139.224.68.41:8080/api/v2.0/logout 
-[2017-08-18 17:12:01 excuting 22] request json: ({'platform': 'iOS'},) 
-[2017-08-18 17:12:01 excuting 22] response data: {"errorCode": 0, "message": "OK", "data": {"logoutTime": "2017-08-18 17:14:04"}} 
+
+[2017-09-08 16:41:33 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/register/mobile 
+
+[2017-09-08 16:41:33 excuting case_no: listen] request json: 13000000000 
+
+[2017-09-08 16:41:33 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"userId": 6311841385649537093}} 
+
+[2017-09-08 16:41:33 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:44:15 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '80', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:41:33 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/register/mobile 
+
+[2017-09-08 16:41:33 excuting case_no: listen] request json: 13000000001 
+
+[2017-09-08 16:41:33 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"userId": 6311841386878468166}} 
+
+[2017-09-08 16:41:33 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:44:15 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '80', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:41:33 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/register/mobile 
+
+[2017-09-08 16:41:33 excuting case_no: listen] request json: 13000000002 
+
+[2017-09-08 16:41:33 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"userId": 6311841387776049223}} 
+
+[2017-09-08 16:41:34 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:44:15 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '80', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:41:34 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/register/mobile 
+
+[2017-09-08 16:41:34 excuting case_no: listen] request json: 13000000003 
+
+[2017-09-08 16:41:34 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"userId": 6311841388682018888}} 
+
+[2017-09-08 16:41:34 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:44:15 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '80', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:41:34 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/register/mobile 
+
+[2017-09-08 16:41:34 excuting case_no: listen] request json: 13000000004 
+
+[2017-09-08 16:41:34 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"userId": 6311841389579599945}} 
+
+[2017-09-08 16:41:34 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:44:15 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '80', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:41:34 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/register/mobile 
+
+[2017-09-08 16:41:34 excuting case_no: listen] request json: 13000000005 
+
+[2017-09-08 16:41:34 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"userId": 6311841390384906314}} 
+
+[2017-09-08 16:41:34 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:44:16 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '80', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:41:34 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/register/mobile 
+
+[2017-09-08 16:41:34 excuting case_no: listen] request json: 13000000006 
+
+[2017-09-08 16:41:34 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"userId": 6311841391177629771}} 
+
+[2017-09-08 16:41:34 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:44:16 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '80', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:41:34 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/register/mobile 
+
+[2017-09-08 16:41:34 excuting case_no: listen] request json: 13000000007 
+
+[2017-09-08 16:41:34 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"userId": 6311841392054239308}} 
+
+[2017-09-08 16:41:35 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:44:16 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '80', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:41:35 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/register/mobile 
+
+[2017-09-08 16:41:35 excuting case_no: listen] request json: 13000000008 
+
+[2017-09-08 16:41:35 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"userId": 6311841392956014669}} 
+
+[2017-09-08 16:41:35 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:44:16 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '80', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:41:35 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/register/mobile 
+
+[2017-09-08 16:41:35 excuting case_no: listen] request json: 13000000009 
+
+[2017-09-08 16:41:35 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"userId": 6311841393841012814}} 
+
+[2017-09-08 16:41:35 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:44:16 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '80', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:41:35 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/register/mobile 
+
+[2017-09-08 16:41:35 excuting case_no: listen] request json: 13000000010 
+
+[2017-09-08 16:41:35 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"userId": 6311841394713428047}} 
+
+[2017-09-08 16:41:35 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:44:17 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '80', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:41:35 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/register/mobile 
+
+[2017-09-08 16:41:35 excuting case_no: listen] request json: 13000000011 
+
+[2017-09-08 16:41:35 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"userId": 6311841395615203408}} 
+
+[2017-09-08 16:41:36 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:44:17 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '80', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:41:36 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/register/mobile 
+
+[2017-09-08 16:41:36 excuting case_no: listen] request json: 13000000012 
+
+[2017-09-08 16:41:36 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"userId": 6311841396357595217}} 
+
+[2017-09-08 16:41:36 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:44:17 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '80', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:41:36 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/register/mobile 
+
+[2017-09-08 16:41:36 excuting case_no: listen] request json: 13000000013 
+
+[2017-09-08 16:41:36 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"userId": 6311841397255176274}} 
+
+[2017-09-08 16:41:36 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:44:17 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '80', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:41:36 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/register/mobile 
+
+[2017-09-08 16:41:36 excuting case_no: listen] request json: 13000000014 
+
+[2017-09-08 16:41:36 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"userId": 6311841398165340243}} 
+
+[2017-09-08 16:41:36 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:44:17 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '80', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:41:36 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/register/mobile 
+
+[2017-09-08 16:41:36 excuting case_no: listen] request json: 13000000015 
+
+[2017-09-08 16:41:36 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"userId": 6311841399050338388}} 
+
+[2017-09-08 16:41:36 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:44:18 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '80', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:41:36 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/register/mobile 
+
+[2017-09-08 16:41:36 excuting case_no: listen] request json: 13000000016 
+
+[2017-09-08 16:41:36 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"userId": 6311841399910170709}} 
+
+[2017-09-08 16:41:37 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:44:18 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '80', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:41:37 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/register/mobile 
+
+[2017-09-08 16:41:37 excuting case_no: listen] request json: 13000000017 
+
+[2017-09-08 16:41:37 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"userId": 6311841400778391638}} 
+
+[2017-09-08 16:41:37 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:44:19 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '80', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:41:37 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/register/mobile 
+
+[2017-09-08 16:41:37 excuting case_no: listen] request json: 13000000018 
+
+[2017-09-08 16:41:37 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"userId": 6311841404381298775}} 
+
+[2017-09-08 16:41:38 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:44:19 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '80', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:41:38 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/register/mobile 
+
+[2017-09-08 16:41:38 excuting case_no: listen] request json: 13000000019 
+
+[2017-09-08 16:41:38 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"userId": 6311841405249519704}} 
+
+[2017-09-08 16:41:38 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:44:19 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '80', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:41:38 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/register/mobile 
+
+[2017-09-08 16:41:38 excuting case_no: listen] request json: 13000000020 
+
+[2017-09-08 16:41:38 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"userId": 6311841406159683673}} 
+
+[2017-09-08 16:46:24 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:49:05 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '67', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:46:24 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/listen/6299163298503852033/6306024483828269062 
+
+[2017-09-08 16:46:24 excuting case_no: listen] request json: {'opusid': 6306024483828269062L, 'userid': 6299163298503852033L, 'param': {'listenDuration': 10}} 
+
+[2017-09-08 16:46:24 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"listenCount": 2}} 
+
+[2017-09-08 16:46:24 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:49:06 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '66', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:46:24 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/share/6299163298503852033/6306024483828269062 
+
+[2017-09-08 16:46:24 excuting case_no: listen] request json: {'opusid': '6306024483828269062', 'userid': '6299163298503852033', 'param': {'content': u'\u7ad9\u5185\u5206\u4eab', 'app': 1}} 
+
+[2017-09-08 16:46:24 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"shareCount": 1}} 
+
+[2017-09-08 16:46:25 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:49:06 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '143', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:46:25 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/comment/6298120536261519455/opus/song/6302790102099689473 
+
+[2017-09-08 16:46:25 excuting case_no: listen] request json: {'opusid': 6302790102099689473L, 'userid': 6298120536261519455L, 'param': {'content': u'\u53d1\u5e03\u6b4c\u66f2\u8bc4\u8bba\u6b63\u5411\u9a8c\u8bc1'}} 
+
+[2017-09-08 16:46:25 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"commentCount": 75, "commentId": 6311842609786519614, "commentTime": "2017-09-08 16:49:06"}} 
+
+[2017-09-08 16:47:17 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:49:58 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '67', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:47:17 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/listen/6299163298503852033/6306024483828269062 
+
+[2017-09-08 16:47:17 excuting case_no: listen] request json: {'opusid': 6306024483828269062L, 'userid': 6299163298503852033L, 'param': {'listenDuration': 10}} 
+
+[2017-09-08 16:47:17 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"listenCount": 3}} 
+
+[2017-09-08 16:47:17 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:49:58 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '66', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:47:17 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/share/6299163298503852033/6306026139596881928 
+
+[2017-09-08 16:47:17 excuting case_no: listen] request json: {'opusid': '6306026139596881928', 'userid': '6299163298503852033', 'param': {'content': u'\u7ad9\u5185\u5206\u4eab', 'app': 1}} 
+
+[2017-09-08 16:47:17 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"shareCount": 1}} 
+
+[2017-09-08 16:47:18 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:49:59 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '142', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:47:18 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/comment/6299163298503852033/opus/song/6306024483828269062 
+
+[2017-09-08 16:47:18 excuting case_no: listen] request json: {'opusid': 6306024483828269062L, 'userid': 6299163298503852033L, 'param': {'content': u'\u53d1\u5e03\u6b4c\u66f2\u8bc4\u8bba\u6b63\u5411\u9a8c\u8bc1'}} 
+
+[2017-09-08 16:47:18 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"commentCount": 1, "commentId": 6311842830956363839, "commentTime": "2017-09-08 16:49:59"}} 
+
+[2017-09-08 16:47:18 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:49:59 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '70', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:47:18 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/following/6305941543911948337 
+
+[2017-09-08 16:47:18 excuting case_no: listen] request json: 6305941543911948337 
+
+[2017-09-08 16:47:18 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"followersCount": 1}} 
+
+[2017-09-08 16:47:18 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:50:00 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '65', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:47:18 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/comment/like/6298120536261519455/opus/song/6302790102099689473/6310853490025431073 
+
+[2017-09-08 16:47:18 excuting case_no: listen] request json: {'opusid': 6302790102099689473L, 'commentid': 6310853490025431073L, 'userid': 6298120536261519455L} 
+
+[2017-09-08 16:47:18 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"likeCount": 1}} 
+
+[2017-09-08 16:47:19 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:50:00 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '65', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:47:19 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/like/6298101404421974110/6301615211627413530 
+
+[2017-09-08 16:47:19 excuting case_no: listen] request json: {'opusid': 6301615211627413530L, 'userid': 6298101404421974110L} 
+
+[2017-09-08 16:47:19 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"likeCount": 1}} 
+
+[2017-09-08 16:49:01 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:51:42 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '68', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:01 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/listen/6299163298503852033/6306024489196978183 
+
+[2017-09-08 16:49:01 excuting case_no: listen] request json: {'opusid': 6306024489196978183L, 'userid': 6299163298503852033L, 'param': {'listenDuration': 10}} 
+
+[2017-09-08 16:49:01 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"listenCount": 10}} 
+
+[2017-09-08 16:49:01 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:51:42 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '66', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:01 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/share/6299163298503852033/6306026328571248649 
+
+[2017-09-08 16:49:01 excuting case_no: listen] request json: {'opusid': '6306026328571248649', 'userid': '6299163298503852033', 'param': {'content': u'\u7ad9\u5185\u5206\u4eab', 'app': 1}} 
+
+[2017-09-08 16:49:01 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"shareCount": 1}} 
+
+[2017-09-08 16:49:01 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:51:43 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '142', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:01 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/comment/6299163298503852033/opus/song/6306026328571248649 
+
+[2017-09-08 16:49:01 excuting case_no: listen] request json: {'opusid': 6306026328571248649L, 'userid': 6299163298503852033L, 'param': {'content': u'\u53d1\u5e03\u6b4c\u66f2\u8bc4\u8bba\u6b63\u5411\u9a8c\u8bc1'}} 
+
+[2017-09-08 16:49:01 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"commentCount": 1, "commentId": 6311843266035712064, "commentTime": "2017-09-08 16:51:43"}} 
+
+[2017-09-08 16:49:02 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:51:43 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '70', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:02 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/following/6311841404381298775 
+
+[2017-09-08 16:49:02 excuting case_no: listen] request json: 6311841404381298775 
+
+[2017-09-08 16:49:02 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"followersCount": 1}} 
+
+[2017-09-08 16:49:02 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:51:43 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '65', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:02 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/comment/like/6298120536261519455/opus/song/6302790102099689473/6303513879892721667 
+
+[2017-09-08 16:49:02 excuting case_no: listen] request json: {'opusid': 6302790102099689473L, 'commentid': 6303513879892721667L, 'userid': 6298120536261519455L} 
+
+[2017-09-08 16:49:02 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"likeCount": 3}} 
+
+[2017-09-08 16:49:02 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:51:44 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '65', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:02 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/like/6298101404421974110/6301614196219969560 
+
+[2017-09-08 16:49:02 excuting case_no: listen] request json: {'opusid': 6301614196219969560L, 'userid': 6298101404421974110L} 
+
+[2017-09-08 16:49:02 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"likeCount": 1}} 
+
+[2017-09-08 16:49:03 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:51:44 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '68', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:03 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/collect/6299163298503852033/6306024483828269062 
+
+[2017-09-08 16:49:03 excuting case_no: listen] request json: {'opusid': 6306024483828269062L, 'userid': 6299163298503852033L} 
+
+[2017-09-08 16:49:03 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"collectCount": 1}} 
+
+[2017-09-08 16:49:03 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:51:44 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '67', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:03 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/listen/6299163298503852033/6306026139596881928 
+
+[2017-09-08 16:49:03 excuting case_no: listen] request json: {'opusid': 6306026139596881928L, 'userid': 6299163298503852033L, 'param': {'listenDuration': 10}} 
+
+[2017-09-08 16:49:03 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"listenCount": 5}} 
+
+[2017-09-08 16:49:04 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:51:45 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '66', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:04 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/share/6299163298503852033/6306024483828269062 
+
+[2017-09-08 16:49:04 excuting case_no: listen] request json: {'opusid': '6306024483828269062', 'userid': '6299163298503852033', 'param': {'content': u'\u7ad9\u5185\u5206\u4eab', 'app': 1}} 
+
+[2017-09-08 16:49:04 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"shareCount": 2}} 
+
+[2017-09-08 16:49:04 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:51:45 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '143', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:04 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/comment/6299163298503852033/opus/song/6306024489196978183 
+
+[2017-09-08 16:49:04 excuting case_no: listen] request json: {'opusid': 6306024489196978183L, 'userid': 6299163298503852033L, 'param': {'content': u'\u53d1\u5e03\u6b4c\u66f2\u8bc4\u8bba\u6b63\u5411\u9a8c\u8bc1'}} 
+
+[2017-09-08 16:49:04 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"commentCount": 13, "commentId": 6311843277175783489, "commentTime": "2017-09-08 16:51:45"}} 
+
+[2017-09-08 16:49:04 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:51:46 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '70', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:04 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/following/6305590864659873836 
+
+[2017-09-08 16:49:04 excuting case_no: listen] request json: 6305590864659873836 
+
+[2017-09-08 16:49:04 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"followersCount": 1}} 
+
+[2017-09-08 16:49:05 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:51:46 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '65', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:05 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/comment/like/6299163298503852033/opus/song/6302790102099689473/6308202890850729991 
+
+[2017-09-08 16:49:05 excuting case_no: listen] request json: {'opusid': 6302790102099689473L, 'commentid': 6308202890850729991L, 'userid': 6299163298503852033L} 
+
+[2017-09-08 16:49:05 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"likeCount": 1}} 
+
+[2017-09-08 16:49:05 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:51:46 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '65', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:05 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/like/6298120536261519455/6302790102099689473 
+
+[2017-09-08 16:49:05 excuting case_no: listen] request json: {'opusid': 6302790102099689473L, 'userid': 6298120536261519455L} 
+
+[2017-09-08 16:49:05 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"likeCount": 2}} 
+
+[2017-09-08 16:49:05 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:51:47 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '68', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:05 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/collect/6299163298503852033/6306024489196978183 
+
+[2017-09-08 16:49:05 excuting case_no: listen] request json: {'opusid': 6306024489196978183L, 'userid': 6299163298503852033L} 
+
+[2017-09-08 16:49:05 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"collectCount": 2}} 
+
+[2017-09-08 16:49:06 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:51:47 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '67', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:06 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/listen/6298120536261519455/6302790102099689473 
+
+[2017-09-08 16:49:06 excuting case_no: listen] request json: {'opusid': 6302790102099689473L, 'userid': 6298120536261519455L, 'param': {'listenDuration': 10}} 
+
+[2017-09-08 16:49:06 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"listenCount": 6}} 
+
+[2017-09-08 16:49:06 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:51:47 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '66', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:06 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/share/6299163298503852033/6306026328571248649 
+
+[2017-09-08 16:49:06 excuting case_no: listen] request json: {'opusid': '6306026328571248649', 'userid': '6299163298503852033', 'param': {'content': u'\u7ad9\u5185\u5206\u4eab', 'app': 1}} 
+
+[2017-09-08 16:49:06 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"shareCount": 2}} 
+
+[2017-09-08 16:49:07 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:51:48 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '83', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:07 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/comment/6299163298503852033/opus/song/6306011148227444741 
+
+[2017-09-08 16:49:07 excuting case_no: listen] request json: {'opusid': 6306011148227444741L, 'userid': 6299163298503852033L, 'param': {'content': u'\u53d1\u5e03\u6b4c\u66f2\u8bc4\u8bba\u6b63\u5411\u9a8c\u8bc1'}} 
+
+[2017-09-08 16:49:07 excuting case_no: listen] response data: {"errorCode": 200701, "message": "歌曲已被删除，不能评论", "data": {}} 
+
+[2017-09-08 16:49:07 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:51:48 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '70', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:07 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/following/6308948116129185852 
+
+[2017-09-08 16:49:07 excuting case_no: listen] request json: 6308948116129185852 
+
+[2017-09-08 16:49:07 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"followersCount": 1}} 
+
+[2017-09-08 16:49:07 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:51:49 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '65', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:07 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/comment/like/6299163298503852033/opus/song/6302790102099689473/6308599668070678585 
+
+[2017-09-08 16:49:07 excuting case_no: listen] request json: {'opusid': 6302790102099689473L, 'commentid': 6308599668070678585L, 'userid': 6299163298503852033L} 
+
+[2017-09-08 16:49:07 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"likeCount": 1}} 
+
+[2017-09-08 16:49:08 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:51:49 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '65', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:08 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/like/6298120536261519455/6302790102099689473 
+
+[2017-09-08 16:49:08 excuting case_no: listen] request json: {'opusid': 6302790102099689473L, 'userid': 6298120536261519455L} 
+
+[2017-09-08 16:49:08 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"likeCount": 3}} 
+
+[2017-09-08 16:49:08 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:51:49 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '68', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:08 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/collect/6299163298503852033/6306026328571248649 
+
+[2017-09-08 16:49:08 excuting case_no: listen] request json: {'opusid': 6306026328571248649L, 'userid': 6299163298503852033L} 
+
+[2017-09-08 16:49:08 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"collectCount": 1}} 
+
+[2017-09-08 16:49:08 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:51:50 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '67', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:08 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/listen/6299163298503852033/6306024483828269062 
+
+[2017-09-08 16:49:08 excuting case_no: listen] request json: {'opusid': 6306024483828269062L, 'userid': 6299163298503852033L, 'param': {'listenDuration': 10}} 
+
+[2017-09-08 16:49:08 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"listenCount": 4}} 
+
+[2017-09-08 16:49:09 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:51:50 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '66', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:09 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/share/6299163298503852033/6306024483828269062 
+
+[2017-09-08 16:49:09 excuting case_no: listen] request json: {'opusid': '6306024483828269062', 'userid': '6299163298503852033', 'param': {'content': u'\u7ad9\u5185\u5206\u4eab', 'app': 1}} 
+
+[2017-09-08 16:49:09 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"shareCount": 3}} 
+
+[2017-09-08 16:49:09 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:51:50 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '142', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:09 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/comment/6299163298503852033/opus/song/6306026139596881928 
+
+[2017-09-08 16:49:09 excuting case_no: listen] request json: {'opusid': 6306026139596881928L, 'userid': 6299163298503852033L, 'param': {'content': u'\u53d1\u5e03\u6b4c\u66f2\u8bc4\u8bba\u6b63\u5411\u9a8c\u8bc1'}} 
+
+[2017-09-08 16:49:09 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"commentCount": 1, "commentId": 6311843299007135810, "commentTime": "2017-09-08 16:51:50"}} 
+
+[2017-09-08 16:49:10 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:51:51 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '70', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:10 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/following/6302688019367329802 
+
+[2017-09-08 16:49:10 excuting case_no: listen] request json: 6302688019367329802 
+
+[2017-09-08 16:49:10 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"followersCount": 1}} 
+
+[2017-09-08 16:49:10 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:51:51 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '65', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:10 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/comment/like/6299163298503852033/opus/song/6302790102099689473/6308599661401735223 
+
+[2017-09-08 16:49:10 excuting case_no: listen] request json: {'opusid': 6302790102099689473L, 'commentid': 6308599661401735223L, 'userid': 6299163298503852033L} 
+
+[2017-09-08 16:49:10 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"likeCount": 1}} 
+
+[2017-09-08 16:49:10 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:51:52 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '65', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:10 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/like/6298120536261519455/6311077702094815237 
+
+[2017-09-08 16:49:10 excuting case_no: listen] request json: {'opusid': 6311077702094815237L, 'userid': 6298120536261519455L} 
+
+[2017-09-08 16:49:10 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"likeCount": 1}} 
+
+[2017-09-08 16:49:11 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:51:52 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '68', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:11 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/collect/6299163298503852033/6306026139596881928 
+
+[2017-09-08 16:49:11 excuting case_no: listen] request json: {'opusid': 6306026139596881928L, 'userid': 6299163298503852033L} 
+
+[2017-09-08 16:49:11 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"collectCount": 1}} 
+
+[2017-09-08 16:49:11 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:51:52 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '67', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:11 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/listen/6298120536261519455/6302790102099689473 
+
+[2017-09-08 16:49:11 excuting case_no: listen] request json: {'opusid': 6302790102099689473L, 'userid': 6298120536261519455L, 'param': {'listenDuration': 10}} 
+
+[2017-09-08 16:49:11 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"listenCount": 7}} 
+
+[2017-09-08 16:49:11 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:51:53 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '66', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:11 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/share/6299163298503852033/6306026328571248649 
+
+[2017-09-08 16:49:11 excuting case_no: listen] request json: {'opusid': '6306026328571248649', 'userid': '6299163298503852033', 'param': {'content': u'\u7ad9\u5185\u5206\u4eab', 'app': 1}} 
+
+[2017-09-08 16:49:11 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"shareCount": 3}} 
+
+[2017-09-08 16:49:12 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:51:53 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '142', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:12 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/comment/6299163298503852033/opus/song/6306026139596881928 
+
+[2017-09-08 16:49:12 excuting case_no: listen] request json: {'opusid': 6306026139596881928L, 'userid': 6299163298503852033L, 'param': {'content': u'\u53d1\u5e03\u6b4c\u66f2\u8bc4\u8bba\u6b63\u5411\u9a8c\u8bc1'}} 
+
+[2017-09-08 16:49:12 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"commentCount": 2, "commentId": 6311843310273036355, "commentTime": "2017-09-08 16:51:53"}} 
+
+[2017-09-08 16:49:12 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:51:53 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '70', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:12 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/following/6305569518647246888 
+
+[2017-09-08 16:49:12 excuting case_no: listen] request json: 6305569518647246888 
+
+[2017-09-08 16:49:12 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"followersCount": 1}} 
+
+[2017-09-08 16:49:13 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:51:54 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '65', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:13 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/comment/like/6311841389579599945/opus/song/6306026139596881928/6311843310273036355 
+
+[2017-09-08 16:49:13 excuting case_no: listen] request json: {'opusid': 6306026139596881928L, 'commentid': 6311843310273036355L, 'userid': 6311841389579599945L} 
+
+[2017-09-08 16:49:13 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"likeCount": 1}} 
+
+[2017-09-08 16:49:13 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:51:54 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '65', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:13 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/like/6298101404421974110/6301612159738576918 
+
+[2017-09-08 16:49:13 excuting case_no: listen] request json: {'opusid': 6301612159738576918L, 'userid': 6298101404421974110L} 
+
+[2017-09-08 16:49:13 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"likeCount": 1}} 
+
+[2017-09-08 16:49:13 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:51:55 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '68', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:13 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/collect/6299163298503852033/6306026328571248649 
+
+[2017-09-08 16:49:13 excuting case_no: listen] request json: {'opusid': 6306026328571248649L, 'userid': 6299163298503852033L} 
+
+[2017-09-08 16:49:13 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"collectCount": 2}} 
+
+[2017-09-08 16:49:14 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:51:55 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '67', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:14 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/listen/6299163298503852033/6306026328571248649 
+
+[2017-09-08 16:49:14 excuting case_no: listen] request json: {'opusid': 6306026328571248649L, 'userid': 6299163298503852033L, 'param': {'listenDuration': 10}} 
+
+[2017-09-08 16:49:14 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"listenCount": 1}} 
+
+[2017-09-08 16:49:14 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:51:55 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '66', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:14 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/share/6299163298503852033/6306024483828269062 
+
+[2017-09-08 16:49:14 excuting case_no: listen] request json: {'opusid': '6306024483828269062', 'userid': '6299163298503852033', 'param': {'content': u'\u7ad9\u5185\u5206\u4eab', 'app': 1}} 
+
+[2017-09-08 16:49:14 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"shareCount": 4}} 
+
+[2017-09-08 16:49:14 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:51:56 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '142', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:14 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/comment/6299163298503852033/opus/song/6306024483828269062 
+
+[2017-09-08 16:49:14 excuting case_no: listen] request json: {'opusid': 6306024483828269062L, 'userid': 6299163298503852033L, 'param': {'content': u'\u53d1\u5e03\u6b4c\u66f2\u8bc4\u8bba\u6b63\u5411\u9a8c\u8bc1'}} 
+
+[2017-09-08 16:49:14 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"commentCount": 2, "commentId": 6311843321274695748, "commentTime": "2017-09-08 16:51:56"}} 
+
+[2017-09-08 16:49:15 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:51:56 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '70', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:15 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/following/6305302153707651110 
+
+[2017-09-08 16:49:15 excuting case_no: listen] request json: 6305302153707651110 
+
+[2017-09-08 16:49:15 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"followersCount": 1}} 
+
+[2017-09-08 16:49:15 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:51:56 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '65', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:15 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/comment/like/6299163298503852033/opus/song/6306024489196978183/6308599644804874290 
+
+[2017-09-08 16:49:15 excuting case_no: listen] request json: {'opusid': 6306024489196978183L, 'commentid': 6308599644804874290L, 'userid': 6299163298503852033L} 
+
+[2017-09-08 16:49:15 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"likeCount": 1}} 
+
+[2017-09-08 16:49:16 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:51:57 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '65', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:16 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/like/6299163298503852033/6306026328571248649 
+
+[2017-09-08 16:49:16 excuting case_no: listen] request json: {'opusid': 6306026328571248649L, 'userid': 6299163298503852033L} 
+
+[2017-09-08 16:49:16 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"likeCount": 2}} 
+
+[2017-09-08 16:49:16 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:51:57 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '68', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:16 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/collect/6298120536261519455/6302790102099689473 
+
+[2017-09-08 16:49:16 excuting case_no: listen] request json: {'opusid': 6302790102099689473L, 'userid': 6298120536261519455L} 
+
+[2017-09-08 16:49:16 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"collectCount": 2}} 
+
+[2017-09-08 16:49:16 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:51:58 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '68', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:16 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/listen/6299163298503852033/6306024489196978183 
+
+[2017-09-08 16:49:16 excuting case_no: listen] request json: {'opusid': 6306024489196978183L, 'userid': 6299163298503852033L, 'param': {'listenDuration': 10}} 
+
+[2017-09-08 16:49:16 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"listenCount": 11}} 
+
+[2017-09-08 16:49:17 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:51:58 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '67', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:17 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/share/6298120536261519455/6302790102099689473 
+
+[2017-09-08 16:49:17 excuting case_no: listen] request json: {'opusid': '6302790102099689473', 'userid': '6298120536261519455', 'param': {'content': u'\u7ad9\u5185\u5206\u4eab', 'app': 1}} 
+
+[2017-09-08 16:49:17 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"shareCount": 10}} 
+
+[2017-09-08 16:49:17 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:51:58 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '143', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:17 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/comment/6299163298503852033/opus/song/6306024489196978183 
+
+[2017-09-08 16:49:17 excuting case_no: listen] request json: {'opusid': 6306024489196978183L, 'userid': 6299163298503852033L, 'param': {'content': u'\u53d1\u5e03\u6b4c\u66f2\u8bc4\u8bba\u6b63\u5411\u9a8c\u8bc1'}} 
+
+[2017-09-08 16:49:17 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"commentCount": 14, "commentId": 6311843332079222853, "commentTime": "2017-09-08 16:51:58"}} 
+
+[2017-09-08 16:49:17 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:51:59 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '70', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:17 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/following/6308193051567194164 
+
+[2017-09-08 16:49:17 excuting case_no: listen] request json: 6308193051567194164 
+
+[2017-09-08 16:49:17 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"followersCount": 1}} 
+
+[2017-09-08 16:49:18 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:51:59 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '65', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:18 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/comment/like/6311841385649537093/opus/song/6306024483828269062/6311842830956363839 
+
+[2017-09-08 16:49:18 excuting case_no: listen] request json: {'opusid': 6306024483828269062L, 'commentid': 6311842830956363839L, 'userid': 6311841385649537093L} 
+
+[2017-09-08 16:49:18 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"likeCount": 1}} 
+
+[2017-09-08 16:49:18 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:51:59 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '65', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:18 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/like/6298101404421974110/6301615211627413530 
+
+[2017-09-08 16:49:18 excuting case_no: listen] request json: {'opusid': 6301615211627413530L, 'userid': 6298101404421974110L} 
+
+[2017-09-08 16:49:18 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"likeCount": 2}} 
+
+[2017-09-08 16:49:18 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:00 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '68', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:18 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/collect/6299163298503852033/6306024489196978183 
+
+[2017-09-08 16:49:18 excuting case_no: listen] request json: {'opusid': 6306024489196978183L, 'userid': 6299163298503852033L} 
+
+[2017-09-08 16:49:18 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"collectCount": 3}} 
+
+[2017-09-08 16:49:19 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:00 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '67', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:19 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/listen/6298120536261519455/6302790102099689473 
+
+[2017-09-08 16:49:19 excuting case_no: listen] request json: {'opusid': 6302790102099689473L, 'userid': 6298120536261519455L, 'param': {'listenDuration': 10}} 
+
+[2017-09-08 16:49:19 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"listenCount": 8}} 
+
+[2017-09-08 16:49:19 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:00 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '66', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:19 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/share/6299163298503852033/6306011148227444741 
+
+[2017-09-08 16:49:19 excuting case_no: listen] request json: {'opusid': '6306011148227444741', 'userid': '6299163298503852033', 'param': {'content': u'\u7ad9\u5185\u5206\u4eab', 'app': 1}} 
+
+[2017-09-08 16:49:19 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"shareCount": 1}} 
+
+[2017-09-08 16:49:20 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:01 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '142', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:20 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/comment/6299163298503852033/opus/song/6306024483828269062 
+
+[2017-09-08 16:49:20 excuting case_no: listen] request json: {'opusid': 6306024483828269062L, 'userid': 6299163298503852033L, 'param': {'content': u'\u53d1\u5e03\u6b4c\u66f2\u8bc4\u8bba\u6b63\u5411\u9a8c\u8bc1'}} 
+
+[2017-09-08 16:49:20 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"commentCount": 3, "commentId": 6311843342925692998, "commentTime": "2017-09-08 16:52:01"}} 
+
+[2017-09-08 16:49:20 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:01 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '70', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:20 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/following/6305922750594678830 
+
+[2017-09-08 16:49:20 excuting case_no: listen] request json: 6305922750594678830 
+
+[2017-09-08 16:49:20 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"followersCount": 1}} 
+
+[2017-09-08 16:49:20 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:02 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '65', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:20 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/comment/like/6311841385649537093/opus/song/6306024483828269062/6311842830956363839 
+
+[2017-09-08 16:49:20 excuting case_no: listen] request json: {'opusid': 6306024483828269062L, 'commentid': 6311842830956363839L, 'userid': 6311841385649537093L} 
+
+[2017-09-08 16:49:20 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"likeCount": 2}} 
+
+[2017-09-08 16:49:24 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:05 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '65', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:24 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/like/6298101404421974110/6301606723438247952 
+
+[2017-09-08 16:49:24 excuting case_no: listen] request json: {'opusid': 6301606723438247952L, 'userid': 6298101404421974110L} 
+
+[2017-09-08 16:49:24 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"likeCount": 1}} 
+
+[2017-09-08 16:49:25 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:06 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '68', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:25 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/collect/6299163298503852033/6306024483828269062 
+
+[2017-09-08 16:49:25 excuting case_no: listen] request json: {'opusid': 6306024483828269062L, 'userid': 6299163298503852033L} 
+
+[2017-09-08 16:49:25 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"collectCount": 2}} 
+
+[2017-09-08 16:49:25 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:06 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '67', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:25 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/listen/6298120536261519455/6302790102099689473 
+
+[2017-09-08 16:49:25 excuting case_no: listen] request json: {'opusid': 6302790102099689473L, 'userid': 6298120536261519455L, 'param': {'listenDuration': 10}} 
+
+[2017-09-08 16:49:25 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"listenCount": 9}} 
+
+[2017-09-08 16:49:25 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:07 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '66', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:25 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/share/6299163298503852033/6306024483828269062 
+
+[2017-09-08 16:49:25 excuting case_no: listen] request json: {'opusid': '6306024483828269062', 'userid': '6299163298503852033', 'param': {'content': u'\u7ad9\u5185\u5206\u4eab', 'app': 1}} 
+
+[2017-09-08 16:49:25 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"shareCount": 5}} 
+
+[2017-09-08 16:49:26 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:07 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '143', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:26 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/comment/6299163298503852033/opus/song/6306024489196978183 
+
+[2017-09-08 16:49:26 excuting case_no: listen] request json: {'opusid': 6306024489196978183L, 'userid': 6299163298503852033L, 'param': {'content': u'\u53d1\u5e03\u6b4c\u66f2\u8bc4\u8bba\u6b63\u5411\u9a8c\u8bc1'}} 
+
+[2017-09-08 16:49:26 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"commentCount": 15, "commentId": 6311843368548696135, "commentTime": "2017-09-08 16:52:07"}} 
+
+[2017-09-08 16:49:26 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:07 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '70', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:26 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/following/6311841398165340243 
+
+[2017-09-08 16:49:26 excuting case_no: listen] request json: 6311841398165340243 
+
+[2017-09-08 16:49:26 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"followersCount": 1}} 
+
+[2017-09-08 16:49:26 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:08 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '65', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:26 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/comment/like/6299163298503852033/opus/song/6302790102099689473/6308599661401735223 
+
+[2017-09-08 16:49:26 excuting case_no: listen] request json: {'opusid': 6302790102099689473L, 'commentid': 6308599661401735223L, 'userid': 6299163298503852033L} 
+
+[2017-09-08 16:49:26 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"likeCount": 2}} 
+
+[2017-09-08 16:49:27 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:08 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '65', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:27 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/like/6299163298503852033/6306024489196978183 
+
+[2017-09-08 16:49:27 excuting case_no: listen] request json: {'opusid': 6306024489196978183L, 'userid': 6299163298503852033L} 
+
+[2017-09-08 16:49:27 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"likeCount": 3}} 
+
+[2017-09-08 16:49:27 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:08 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '68', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:27 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/collect/6299163298503852033/6306024483828269062 
+
+[2017-09-08 16:49:27 excuting case_no: listen] request json: {'opusid': 6306024483828269062L, 'userid': 6299163298503852033L} 
+
+[2017-09-08 16:49:27 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"collectCount": 3}} 
+
+[2017-09-08 16:49:28 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:09 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '67', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:28 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/listen/6299163298503852033/6306026139596881928 
+
+[2017-09-08 16:49:28 excuting case_no: listen] request json: {'opusid': 6306026139596881928L, 'userid': 6299163298503852033L, 'param': {'listenDuration': 10}} 
+
+[2017-09-08 16:49:28 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"listenCount": 6}} 
+
+[2017-09-08 16:49:28 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:09 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '66', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:28 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/share/6299163298503852033/6306026139596881928 
+
+[2017-09-08 16:49:28 excuting case_no: listen] request json: {'opusid': '6306026139596881928', 'userid': '6299163298503852033', 'param': {'content': u'\u7ad9\u5185\u5206\u4eab', 'app': 1}} 
+
+[2017-09-08 16:49:28 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"shareCount": 2}} 
+
+[2017-09-08 16:49:28 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:09 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '143', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:28 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/comment/6299163298503852033/opus/song/6306024489196978183 
+
+[2017-09-08 16:49:28 excuting case_no: listen] request json: {'opusid': 6306024489196978183L, 'userid': 6299163298503852033L, 'param': {'content': u'\u53d1\u5e03\u6b4c\u66f2\u8bc4\u8bba\u6b63\u5411\u9a8c\u8bc1'}} 
+
+[2017-09-08 16:49:28 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"commentCount": 16, "commentId": 6311843379135119432, "commentTime": "2017-09-08 16:52:09"}} 
+
+[2017-09-08 16:49:29 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:10 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '70', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:29 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/following/6305302153707651110 
+
+[2017-09-08 16:49:29 excuting case_no: listen] request json: 6305302153707651110 
+
+[2017-09-08 16:49:29 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"followersCount": 2}} 
+
+[2017-09-08 16:49:29 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:10 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '65', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:29 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/comment/like/6299163298503852033/opus/song/6302790102099689473/6308202890850729991 
+
+[2017-09-08 16:49:29 excuting case_no: listen] request json: {'opusid': 6302790102099689473L, 'commentid': 6308202890850729991L, 'userid': 6299163298503852033L} 
+
+[2017-09-08 16:49:29 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"likeCount": 2}} 
+
+[2017-09-08 16:49:29 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:11 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '65', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:29 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/like/6298101404421974110/6301612227149430807 
+
+[2017-09-08 16:49:29 excuting case_no: listen] request json: {'opusid': 6301612227149430807L, 'userid': 6298101404421974110L} 
+
+[2017-09-08 16:49:29 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"likeCount": 1}} 
+
+[2017-09-08 16:49:30 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:11 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '68', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:30 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/collect/6299163298503852033/6306024483828269062 
+
+[2017-09-08 16:49:30 excuting case_no: listen] request json: {'opusid': 6306024483828269062L, 'userid': 6299163298503852033L} 
+
+[2017-09-08 16:49:30 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"collectCount": 4}} 
+
+[2017-09-08 16:49:30 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:11 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '68', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:30 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/listen/6299163298503852033/6306024489196978183 
+
+[2017-09-08 16:49:30 excuting case_no: listen] request json: {'opusid': 6306024489196978183L, 'userid': 6299163298503852033L, 'param': {'listenDuration': 10}} 
+
+[2017-09-08 16:49:30 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"listenCount": 12}} 
+
+[2017-09-08 16:49:31 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:12 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '66', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:31 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/share/6299163298503852033/6306026328571248649 
+
+[2017-09-08 16:49:31 excuting case_no: listen] request json: {'opusid': '6306026328571248649', 'userid': '6299163298503852033', 'param': {'content': u'\u7ad9\u5185\u5206\u4eab', 'app': 1}} 
+
+[2017-09-08 16:49:31 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"shareCount": 4}} 
+
+[2017-09-08 16:49:31 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:12 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '142', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:31 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/comment/6299163298503852033/opus/song/6306026328571248649 
+
+[2017-09-08 16:49:31 excuting case_no: listen] request json: {'opusid': 6306026328571248649L, 'userid': 6299163298503852033L, 'param': {'content': u'\u53d1\u5e03\u6b4c\u66f2\u8bc4\u8bba\u6b63\u5411\u9a8c\u8bc1'}} 
+
+[2017-09-08 16:49:31 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"commentCount": 2, "commentId": 6311843390216470601, "commentTime": "2017-09-08 16:52:12"}} 
+
+[2017-09-08 16:49:31 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:13 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '70', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:31 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/following/6311841386878468166 
+
+[2017-09-08 16:49:31 excuting case_no: listen] request json: 6311841386878468166 
+
+[2017-09-08 16:49:31 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"followersCount": 1}} 
+
+[2017-09-08 16:49:32 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:13 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '65', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:32 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/comment/like/6299163298503852033/opus/song/6306024489196978183/6308599644804874290 
+
+[2017-09-08 16:49:32 excuting case_no: listen] request json: {'opusid': 6306024489196978183L, 'commentid': 6308599644804874290L, 'userid': 6299163298503852033L} 
+
+[2017-09-08 16:49:32 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"likeCount": 2}} 
+
+[2017-09-08 16:49:32 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:13 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '65', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:32 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/like/6298101404421974110/6301615031389782041 
+
+[2017-09-08 16:49:32 excuting case_no: listen] request json: {'opusid': 6301615031389782041L, 'userid': 6298101404421974110L} 
+
+[2017-09-08 16:49:32 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"likeCount": 1}} 
+
+[2017-09-08 16:49:32 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:14 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '68', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:32 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/collect/6299163298503852033/6306024483828269062 
+
+[2017-09-08 16:49:32 excuting case_no: listen] request json: {'opusid': 6306024483828269062L, 'userid': 6299163298503852033L} 
+
+[2017-09-08 16:49:32 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"collectCount": 5}} 
+
+[2017-09-08 16:49:33 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:14 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '67', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:33 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/listen/6299163298503852033/6306026139596881928 
+
+[2017-09-08 16:49:33 excuting case_no: listen] request json: {'opusid': 6306026139596881928L, 'userid': 6299163298503852033L, 'param': {'listenDuration': 10}} 
+
+[2017-09-08 16:49:33 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"listenCount": 7}} 
+
+[2017-09-08 16:49:33 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:14 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '66', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:33 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/share/6299163298503852033/6306026328571248649 
+
+[2017-09-08 16:49:33 excuting case_no: listen] request json: {'opusid': '6306026328571248649', 'userid': '6299163298503852033', 'param': {'content': u'\u7ad9\u5185\u5206\u4eab', 'app': 1}} 
+
+[2017-09-08 16:49:33 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"shareCount": 5}} 
+
+[2017-09-08 16:49:33 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:15 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '142', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:33 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/comment/6299163298503852033/opus/song/6306026328571248649 
+
+[2017-09-08 16:49:33 excuting case_no: listen] request json: {'opusid': 6306026328571248649L, 'userid': 6299163298503852033L, 'param': {'content': u'\u53d1\u5e03\u6b4c\u66f2\u8bc4\u8bba\u6b63\u5411\u9a8c\u8bc1'}} 
+
+[2017-09-08 16:49:33 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"commentCount": 3, "commentId": 6311843400953888842, "commentTime": "2017-09-08 16:52:15"}} 
+
+[2017-09-08 16:49:34 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:15 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '70', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:34 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/following/6311841393841012814 
+
+[2017-09-08 16:49:34 excuting case_no: listen] request json: 6311841393841012814 
+
+[2017-09-08 16:49:34 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"followersCount": 1}} 
+
+[2017-09-08 16:49:34 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:15 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '65', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:34 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/comment/like/6299163298503852033/opus/song/6306024489196978183/6308202035242074117 
+
+[2017-09-08 16:49:34 excuting case_no: listen] request json: {'opusid': 6306024489196978183L, 'commentid': 6308202035242074117L, 'userid': 6299163298503852033L} 
+
+[2017-09-08 16:49:34 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"likeCount": 1}} 
+
+[2017-09-08 16:49:35 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:16 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '65', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:35 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/like/6298120536261519455/6302790102099689473 
+
+[2017-09-08 16:49:35 excuting case_no: listen] request json: {'opusid': 6302790102099689473L, 'userid': 6298120536261519455L} 
+
+[2017-09-08 16:49:35 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"likeCount": 4}} 
+
+[2017-09-08 16:49:35 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:16 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '68', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:35 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/collect/6299163298503852033/6306026328571248649 
+
+[2017-09-08 16:49:35 excuting case_no: listen] request json: {'opusid': 6306026328571248649L, 'userid': 6299163298503852033L} 
+
+[2017-09-08 16:49:35 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"collectCount": 3}} 
+
+[2017-09-08 16:49:35 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:17 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '68', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:35 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/listen/6298120536261519455/6302790102099689473 
+
+[2017-09-08 16:49:35 excuting case_no: listen] request json: {'opusid': 6302790102099689473L, 'userid': 6298120536261519455L, 'param': {'listenDuration': 10}} 
+
+[2017-09-08 16:49:35 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"listenCount": 10}} 
+
+[2017-09-08 16:49:36 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:17 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '67', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:36 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/share/6299163298503852033/6306024489196978183 
+
+[2017-09-08 16:49:36 excuting case_no: listen] request json: {'opusid': '6306024489196978183', 'userid': '6299163298503852033', 'param': {'content': u'\u7ad9\u5185\u5206\u4eab', 'app': 1}} 
+
+[2017-09-08 16:49:36 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"shareCount": 11}} 
+
+[2017-09-08 16:49:36 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:17 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '142', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:36 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/comment/6299163298503852033/opus/song/6306026139596881928 
+
+[2017-09-08 16:49:36 excuting case_no: listen] request json: {'opusid': 6306026139596881928L, 'userid': 6299163298503852033L, 'param': {'content': u'\u53d1\u5e03\u6b4c\u66f2\u8bc4\u8bba\u6b63\u5411\u9a8c\u8bc1'}} 
+
+[2017-09-08 16:49:36 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"commentCount": 3, "commentId": 6311843411829719115, "commentTime": "2017-09-08 16:52:17"}} 
+
+[2017-09-08 16:49:36 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:18 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '70', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:36 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/following/6311841405249519704 
+
+[2017-09-08 16:49:36 excuting case_no: listen] request json: 6311841405249519704 
+
+[2017-09-08 16:49:36 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"followersCount": 1}} 
+
+[2017-09-08 16:49:37 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:18 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '65', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:37 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/comment/like/6299163298503852033/opus/song/6302790102099689473/6308180498686410755 
+
+[2017-09-08 16:49:37 excuting case_no: listen] request json: {'opusid': 6302790102099689473L, 'commentid': 6308180498686410755L, 'userid': 6299163298503852033L} 
+
+[2017-09-08 16:49:37 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"likeCount": 1}} 
+
+[2017-09-08 16:49:37 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:18 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '65', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:37 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/like/6298101404421974110/6301615031389782041 
+
+[2017-09-08 16:49:37 excuting case_no: listen] request json: {'opusid': 6301615031389782041L, 'userid': 6298101404421974110L} 
+
+[2017-09-08 16:49:37 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"likeCount": 2}} 
+
+[2017-09-08 16:49:37 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:19 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '68', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:37 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/collect/6299163298503852033/6306024489196978183 
+
+[2017-09-08 16:49:37 excuting case_no: listen] request json: {'opusid': 6306024489196978183L, 'userid': 6299163298503852033L} 
+
+[2017-09-08 16:49:37 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"collectCount": 4}} 
+
+[2017-09-08 16:49:38 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:19 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '68', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:38 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/listen/6299163298503852033/6306024489196978183 
+
+[2017-09-08 16:49:38 excuting case_no: listen] request json: {'opusid': 6306024489196978183L, 'userid': 6299163298503852033L, 'param': {'listenDuration': 10}} 
+
+[2017-09-08 16:49:38 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"listenCount": 13}} 
+
+[2017-09-08 16:49:38 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:19 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '66', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:38 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/share/6299163298503852033/6306026328571248649 
+
+[2017-09-08 16:49:38 excuting case_no: listen] request json: {'opusid': '6306026328571248649', 'userid': '6299163298503852033', 'param': {'content': u'\u7ad9\u5185\u5206\u4eab', 'app': 1}} 
+
+[2017-09-08 16:49:38 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"shareCount": 6}} 
+
+[2017-09-08 16:49:39 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:20 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '142', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:39 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/comment/6299163298503852033/opus/song/6306026328571248649 
+
+[2017-09-08 16:49:39 excuting case_no: listen] request json: {'opusid': 6306026328571248649L, 'userid': 6299163298503852033L, 'param': {'content': u'\u53d1\u5e03\u6b4c\u66f2\u8bc4\u8bba\u6b63\u5411\u9a8c\u8bc1'}} 
+
+[2017-09-08 16:49:39 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"commentCount": 4, "commentId": 6311843422386782284, "commentTime": "2017-09-08 16:52:20"}} 
+
+[2017-09-08 16:49:39 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:20 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '70', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:39 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/following/6298120536261519455 
+
+[2017-09-08 16:49:39 excuting case_no: listen] request json: 6298120536261519455 
+
+[2017-09-08 16:49:39 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"followersCount": 2}} 
+
+[2017-09-08 16:49:39 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:21 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '65', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:39 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/comment/like/6298120536261519455/opus/song/6302790102099689473/6310853490025431073 
+
+[2017-09-08 16:49:39 excuting case_no: listen] request json: {'opusid': 6302790102099689473L, 'commentid': 6310853490025431073L, 'userid': 6298120536261519455L} 
+
+[2017-09-08 16:49:39 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"likeCount": 2}} 
+
+[2017-09-08 16:49:40 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:21 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '65', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:40 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/like/6298101404421974110/6301612159738576918 
+
+[2017-09-08 16:49:40 excuting case_no: listen] request json: {'opusid': 6301612159738576918L, 'userid': 6298101404421974110L} 
+
+[2017-09-08 16:49:40 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"likeCount": 2}} 
+
+[2017-09-08 16:49:40 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:21 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '68', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:40 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/collect/6299163298503852033/6306026139596881928 
+
+[2017-09-08 16:49:40 excuting case_no: listen] request json: {'opusid': 6306026139596881928L, 'userid': 6299163298503852033L} 
+
+[2017-09-08 16:49:40 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"collectCount": 2}} 
+
+[2017-09-08 16:49:40 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:22 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '67', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:40 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/listen/6299163298503852033/6306024483828269062 
+
+[2017-09-08 16:49:40 excuting case_no: listen] request json: {'opusid': 6306024483828269062L, 'userid': 6299163298503852033L, 'param': {'listenDuration': 10}} 
+
+[2017-09-08 16:49:40 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"listenCount": 5}} 
+
+[2017-09-08 16:49:41 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:22 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '66', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:41 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/share/6299163298503852033/6306024483828269062 
+
+[2017-09-08 16:49:41 excuting case_no: listen] request json: {'opusid': '6306024483828269062', 'userid': '6299163298503852033', 'param': {'content': u'\u7ad9\u5185\u5206\u4eab', 'app': 1}} 
+
+[2017-09-08 16:49:41 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"shareCount": 6}} 
+
+[2017-09-08 16:49:41 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:22 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '142', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:41 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/comment/6299163298503852033/opus/song/6306026328571248649 
+
+[2017-09-08 16:49:41 excuting case_no: listen] request json: {'opusid': 6306026328571248649L, 'userid': 6299163298503852033L, 'param': {'content': u'\u53d1\u5e03\u6b4c\u66f2\u8bc4\u8bba\u6b63\u5411\u9a8c\u8bc1'}} 
+
+[2017-09-08 16:49:41 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"commentCount": 5, "commentId": 6311843433002565709, "commentTime": "2017-09-08 16:52:22"}} 
+
+[2017-09-08 16:49:41 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:23 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '70', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:41 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/following/6308984827987099710 
+
+[2017-09-08 16:49:41 excuting case_no: listen] request json: 6308984827987099710 
+
+[2017-09-08 16:49:41 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"followersCount": 1}} 
+
+[2017-09-08 16:49:42 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:23 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '65', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:42 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/comment/like/6311841386878468166/opus/song/6306024489196978183/6311843277175783489 
+
+[2017-09-08 16:49:42 excuting case_no: listen] request json: {'opusid': 6306024489196978183L, 'commentid': 6311843277175783489L, 'userid': 6311841386878468166L} 
+
+[2017-09-08 16:49:42 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"likeCount": 1}} 
+
+[2017-09-08 16:49:42 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:23 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '65', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:42 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/like/6299163298503852033/6306011148227444741 
+
+[2017-09-08 16:49:42 excuting case_no: listen] request json: {'opusid': 6306011148227444741L, 'userid': 6299163298503852033L} 
+
+[2017-09-08 16:49:42 excuting case_no: listen] response data: {"errorCode": 200702, "message": "歌曲已删除", "data": {}} 
+
+[2017-09-08 16:49:42 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:24 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '68', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:42 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/collect/6299163298503852033/6306026328571248649 
+
+[2017-09-08 16:49:42 excuting case_no: listen] request json: {'opusid': 6306026328571248649L, 'userid': 6299163298503852033L} 
+
+[2017-09-08 16:49:42 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"collectCount": 4}} 
+
+[2017-09-08 16:49:43 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:24 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '68', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:43 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/listen/6299163298503852033/6306024489196978183 
+
+[2017-09-08 16:49:43 excuting case_no: listen] request json: {'opusid': 6306024489196978183L, 'userid': 6299163298503852033L, 'param': {'listenDuration': 10}} 
+
+[2017-09-08 16:49:43 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"listenCount": 14}} 
+
+[2017-09-08 16:49:43 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:25 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '67', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:43 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/share/6298120536261519455/6302790102099689473 
+
+[2017-09-08 16:49:43 excuting case_no: listen] request json: {'opusid': '6302790102099689473', 'userid': '6298120536261519455', 'param': {'content': u'\u7ad9\u5185\u5206\u4eab', 'app': 1}} 
+
+[2017-09-08 16:49:43 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"shareCount": 11}} 
+
+[2017-09-08 16:49:44 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:25 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '143', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:44 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/comment/6298120536261519455/opus/song/6302790102099689473 
+
+[2017-09-08 16:49:44 excuting case_no: listen] request json: {'opusid': 6302790102099689473L, 'userid': 6298120536261519455L, 'param': {'content': u'\u53d1\u5e03\u6b4c\u66f2\u8bc4\u8bba\u6b63\u5411\u9a8c\u8bc1'}} 
+
+[2017-09-08 16:49:44 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"commentCount": 76, "commentId": 6311843443568017486, "commentTime": "2017-09-08 16:52:25"}} 
+
+[2017-09-08 16:49:44 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:25 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '70', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:44 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/following/6298121459171977313 
+
+[2017-09-08 16:49:44 excuting case_no: listen] request json: 6298121459171977313 
+
+[2017-09-08 16:49:44 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"followersCount": 1}} 
+
+[2017-09-08 16:49:44 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:26 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '65', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:44 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/comment/like/6311841394713428047/opus/song/6306026328571248649/6311843390216470601 
+
+[2017-09-08 16:49:44 excuting case_no: listen] request json: {'opusid': 6306026328571248649L, 'commentid': 6311843390216470601L, 'userid': 6311841394713428047L} 
+
+[2017-09-08 16:49:44 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"likeCount": 1}} 
+
+[2017-09-08 16:49:45 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:26 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '65', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:45 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/like/6298120536261519455/6311077702094815237 
+
+[2017-09-08 16:49:45 excuting case_no: listen] request json: {'opusid': 6311077702094815237L, 'userid': 6298120536261519455L} 
+
+[2017-09-08 16:49:45 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"likeCount": 2}} 
+
+[2017-09-08 16:49:45 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:26 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '68', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:45 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/collect/6299163298503852033/6306026328571248649 
+
+[2017-09-08 16:49:45 excuting case_no: listen] request json: {'opusid': 6306026328571248649L, 'userid': 6299163298503852033L} 
+
+[2017-09-08 16:49:45 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"collectCount": 5}} 
+
+[2017-09-08 16:49:45 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:27 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '68', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:45 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/listen/6299163298503852033/6306024489196978183 
+
+[2017-09-08 16:49:45 excuting case_no: listen] request json: {'opusid': 6306024489196978183L, 'userid': 6299163298503852033L, 'param': {'listenDuration': 10}} 
+
+[2017-09-08 16:49:45 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"listenCount": 15}} 
+
+[2017-09-08 16:49:46 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:27 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '66', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:46 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/share/6299163298503852033/6306026139596881928 
+
+[2017-09-08 16:49:46 excuting case_no: listen] request json: {'opusid': '6306026139596881928', 'userid': '6299163298503852033', 'param': {'content': u'\u7ad9\u5185\u5206\u4eab', 'app': 1}} 
+
+[2017-09-08 16:49:46 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"shareCount": 3}} 
+
+[2017-09-08 16:49:46 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:27 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '142', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:46 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/comment/6299163298503852033/opus/song/6306026328571248649 
+
+[2017-09-08 16:49:46 excuting case_no: listen] request json: {'opusid': 6306026328571248649L, 'userid': 6299163298503852033L, 'param': {'content': u'\u53d1\u5e03\u6b4c\u66f2\u8bc4\u8bba\u6b63\u5411\u9a8c\u8bc1'}} 
+
+[2017-09-08 16:49:46 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"commentCount": 6, "commentId": 6311843454469013583, "commentTime": "2017-09-08 16:52:27"}} 
+
+[2017-09-08 16:49:47 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:28 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '70', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:47 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/following/6308965654439395389 
+
+[2017-09-08 16:49:47 excuting case_no: listen] request json: 6308965654439395389 
+
+[2017-09-08 16:49:47 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"followersCount": 1}} 
+
+[2017-09-08 16:49:47 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:28 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '65', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:47 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/comment/like/6299163298503852033/opus/song/6306024489196978183/6308597877224505392 
+
+[2017-09-08 16:49:47 excuting case_no: listen] request json: {'opusid': 6306024489196978183L, 'commentid': 6308597877224505392L, 'userid': 6299163298503852033L} 
+
+[2017-09-08 16:49:47 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"likeCount": 1}} 
+
+[2017-09-08 16:49:47 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:29 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '65', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:47 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/like/6299163298503852033/6306011148227444741 
+
+[2017-09-08 16:49:47 excuting case_no: listen] request json: {'opusid': 6306011148227444741L, 'userid': 6299163298503852033L} 
+
+[2017-09-08 16:49:47 excuting case_no: listen] response data: {"errorCode": 200702, "message": "歌曲已删除", "data": {}} 
+
+[2017-09-08 16:49:48 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:29 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '68', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:48 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/collect/6299163298503852033/6306024489196978183 
+
+[2017-09-08 16:49:48 excuting case_no: listen] request json: {'opusid': 6306024489196978183L, 'userid': 6299163298503852033L} 
+
+[2017-09-08 16:49:48 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"collectCount": 5}} 
+
+[2017-09-08 16:49:48 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:29 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '68', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:48 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/listen/6298120536261519455/6302790102099689473 
+
+[2017-09-08 16:49:48 excuting case_no: listen] request json: {'opusid': 6302790102099689473L, 'userid': 6298120536261519455L, 'param': {'listenDuration': 10}} 
+
+[2017-09-08 16:49:48 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"listenCount": 11}} 
+
+[2017-09-08 16:49:48 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:30 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '67', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:48 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/share/6299163298503852033/6306024489196978183 
+
+[2017-09-08 16:49:48 excuting case_no: listen] request json: {'opusid': '6306024489196978183', 'userid': '6299163298503852033', 'param': {'content': u'\u7ad9\u5185\u5206\u4eab', 'app': 1}} 
+
+[2017-09-08 16:49:48 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"shareCount": 12}} 
+
+[2017-09-08 16:49:49 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:30 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '83', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:49 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/comment/6299163298503852033/opus/song/6306011148227444741 
+
+[2017-09-08 16:49:49 excuting case_no: listen] request json: {'opusid': 6306011148227444741L, 'userid': 6299163298503852033L, 'param': {'content': u'\u53d1\u5e03\u6b4c\u66f2\u8bc4\u8bba\u6b63\u5411\u9a8c\u8bc1'}} 
+
+[2017-09-08 16:49:49 excuting case_no: listen] response data: {"errorCode": 200701, "message": "歌曲已被删除，不能评论", "data": {}} 
+
+[2017-09-08 16:49:49 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:30 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '70', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:49 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/following/6305335366677168167 
+
+[2017-09-08 16:49:49 excuting case_no: listen] request json: 6305335366677168167 
+
+[2017-09-08 16:49:49 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"followersCount": 1}} 
+
+[2017-09-08 16:49:49 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:31 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '65', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:49 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/comment/like/6311841389579599945/opus/song/6306026139596881928/6311843310273036355 
+
+[2017-09-08 16:49:49 excuting case_no: listen] request json: {'opusid': 6306026139596881928L, 'commentid': 6311843310273036355L, 'userid': 6311841389579599945L} 
+
+[2017-09-08 16:49:49 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"likeCount": 2}} 
+
+[2017-09-08 16:49:50 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:31 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '65', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:50 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/like/6298101404421974110/6301606723438247952 
+
+[2017-09-08 16:49:50 excuting case_no: listen] request json: {'opusid': 6301606723438247952L, 'userid': 6298101404421974110L} 
+
+[2017-09-08 16:49:50 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"likeCount": 2}} 
+
+[2017-09-08 16:49:50 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:31 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '68', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:50 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/collect/6299163298503852033/6306026139596881928 
+
+[2017-09-08 16:49:50 excuting case_no: listen] request json: {'opusid': 6306026139596881928L, 'userid': 6299163298503852033L} 
+
+[2017-09-08 16:49:50 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"collectCount": 3}} 
+
+[2017-09-08 16:49:51 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:32 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '67', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:51 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/listen/6299163298503852033/6306026139596881928 
+
+[2017-09-08 16:49:51 excuting case_no: listen] request json: {'opusid': 6306026139596881928L, 'userid': 6299163298503852033L, 'param': {'listenDuration': 10}} 
+
+[2017-09-08 16:49:51 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"listenCount": 8}} 
+
+[2017-09-08 16:49:51 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:32 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '66', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:51 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/share/6299163298503852033/6306026139596881928 
+
+[2017-09-08 16:49:51 excuting case_no: listen] request json: {'opusid': '6306026139596881928', 'userid': '6299163298503852033', 'param': {'content': u'\u7ad9\u5185\u5206\u4eab', 'app': 1}} 
+
+[2017-09-08 16:49:51 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"shareCount": 4}} 
+
+[2017-09-08 16:49:51 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:33 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '142', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:51 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/comment/6299163298503852033/opus/song/6306026139596881928 
+
+[2017-09-08 16:49:51 excuting case_no: listen] request json: {'opusid': 6306026139596881928L, 'userid': 6299163298503852033L, 'param': {'content': u'\u53d1\u5e03\u6b4c\u66f2\u8bc4\u8bba\u6b63\u5411\u9a8c\u8bc1'}} 
+
+[2017-09-08 16:49:51 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"commentCount": 4, "commentId": 6311843476690436176, "commentTime": "2017-09-08 16:52:33"}} 
+
+[2017-09-08 16:49:52 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:33 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '70', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:52 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/following/6311841405249519704 
+
+[2017-09-08 16:49:52 excuting case_no: listen] request json: 6311841405249519704 
+
+[2017-09-08 16:49:52 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"followersCount": 2}} 
+
+[2017-09-08 16:49:52 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:33 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '65', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:52 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/comment/like/6299163298503852033/opus/song/6306024489196978183/6308599665352769592 
+
+[2017-09-08 16:49:52 excuting case_no: listen] request json: {'opusid': 6306024489196978183L, 'commentid': 6308599665352769592L, 'userid': 6299163298503852033L} 
+
+[2017-09-08 16:49:52 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"likeCount": 2}} 
+
+[2017-09-08 16:49:53 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:34 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '65', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:53 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/like/6298101404421974110/6301615031389782041 
+
+[2017-09-08 16:49:53 excuting case_no: listen] request json: {'opusid': 6301615031389782041L, 'userid': 6298101404421974110L} 
+
+[2017-09-08 16:49:53 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"likeCount": 3}} 
+
+[2017-09-08 16:49:53 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:34 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '68', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:53 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/collect/6299163298503852033/6306026139596881928 
+
+[2017-09-08 16:49:53 excuting case_no: listen] request json: {'opusid': 6306026139596881928L, 'userid': 6299163298503852033L} 
+
+[2017-09-08 16:49:53 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"collectCount": 4}} 
+
+[2017-09-08 16:49:53 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:35 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '67', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:53 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/listen/6299163298503852033/6306026328571248649 
+
+[2017-09-08 16:49:53 excuting case_no: listen] request json: {'opusid': 6306026328571248649L, 'userid': 6299163298503852033L, 'param': {'listenDuration': 10}} 
+
+[2017-09-08 16:49:53 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"listenCount": 2}} 
+
+[2017-09-08 16:49:54 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:35 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '66', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:54 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/share/6299163298503852033/6306024483828269062 
+
+[2017-09-08 16:49:54 excuting case_no: listen] request json: {'opusid': '6306024483828269062', 'userid': '6299163298503852033', 'param': {'content': u'\u7ad9\u5185\u5206\u4eab', 'app': 1}} 
+
+[2017-09-08 16:49:54 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"shareCount": 7}} 
+
+[2017-09-08 16:49:54 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:35 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '143', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:54 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/comment/6299163298503852033/opus/song/6306024489196978183 
+
+[2017-09-08 16:49:54 excuting case_no: listen] request json: {'opusid': 6306024489196978183L, 'userid': 6299163298503852033L, 'param': {'content': u'\u53d1\u5e03\u6b4c\u66f2\u8bc4\u8bba\u6b63\u5411\u9a8c\u8bc1'}} 
+
+[2017-09-08 16:49:54 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"commentCount": 17, "commentId": 6311843487423660113, "commentTime": "2017-09-08 16:52:35"}} 
+
+[2017-09-08 16:49:54 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:36 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '70', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:54 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/following/6305922750594678830 
+
+[2017-09-08 16:49:54 excuting case_no: listen] request json: 6305922750594678830 
+
+[2017-09-08 16:49:54 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"followersCount": 2}} 
+
+[2017-09-08 16:49:55 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:36 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '65', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:55 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/comment/like/6311841394713428047/opus/song/6306026328571248649/6311843390216470601 
+
+[2017-09-08 16:49:55 excuting case_no: listen] request json: {'opusid': 6306026328571248649L, 'commentid': 6311843390216470601L, 'userid': 6311841394713428047L} 
+
+[2017-09-08 16:49:55 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"likeCount": 2}} 
+
+[2017-09-08 16:49:55 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:36 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '65', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:55 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/like/6299163298503852033/6306026139596881928 
+
+[2017-09-08 16:49:55 excuting case_no: listen] request json: {'opusid': 6306026139596881928L, 'userid': 6299163298503852033L} 
+
+[2017-09-08 16:49:55 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"likeCount": 1}} 
+
+[2017-09-08 16:49:55 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:37 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '68', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:55 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/collect/6299163298503852033/6306026139596881928 
+
+[2017-09-08 16:49:55 excuting case_no: listen] request json: {'opusid': 6306026139596881928L, 'userid': 6299163298503852033L} 
+
+[2017-09-08 16:49:55 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"collectCount": 5}} 
+
+[2017-09-08 16:49:56 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:37 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '67', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:56 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/listen/6299163298503852033/6306026328571248649 
+
+[2017-09-08 16:49:56 excuting case_no: listen] request json: {'opusid': 6306026328571248649L, 'userid': 6299163298503852033L, 'param': {'listenDuration': 10}} 
+
+[2017-09-08 16:49:56 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"listenCount": 3}} 
+
+[2017-09-08 16:49:56 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:38 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '66', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:56 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/share/6299163298503852033/6306024483828269062 
+
+[2017-09-08 16:49:56 excuting case_no: listen] request json: {'opusid': '6306024483828269062', 'userid': '6299163298503852033', 'param': {'content': u'\u7ad9\u5185\u5206\u4eab', 'app': 1}} 
+
+[2017-09-08 16:49:56 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"shareCount": 8}} 
+
+[2017-09-08 16:49:57 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:38 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '142', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:57 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/comment/6299163298503852033/opus/song/6306026139596881928 
+
+[2017-09-08 16:49:57 excuting case_no: listen] request json: {'opusid': 6306026139596881928L, 'userid': 6299163298503852033L, 'param': {'content': u'\u53d1\u5e03\u6b4c\u66f2\u8bc4\u8bba\u6b63\u5411\u9a8c\u8bc1'}} 
+
+[2017-09-08 16:49:57 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"commentCount": 5, "commentId": 6311843499226431570, "commentTime": "2017-09-08 16:52:38"}} 
+
+[2017-09-08 16:49:57 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:39 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '70', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:57 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/following/6308625437777985594 
+
+[2017-09-08 16:49:57 excuting case_no: listen] request json: 6308625437777985594 
+
+[2017-09-08 16:49:57 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"followersCount": 1}} 
+
+[2017-09-08 16:49:58 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:39 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '65', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:58 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/comment/like/6299163298503852033/opus/song/6302790102099689473/6308202842536542214 
+
+[2017-09-08 16:49:58 excuting case_no: listen] request json: {'opusid': 6302790102099689473L, 'commentid': 6308202842536542214L, 'userid': 6299163298503852033L} 
+
+[2017-09-08 16:49:58 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"likeCount": 1}} 
+
+[2017-09-08 16:49:58 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:39 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '65', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:58 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/like/6298101404421974110/6301606723438247952 
+
+[2017-09-08 16:49:58 excuting case_no: listen] request json: {'opusid': 6301606723438247952L, 'userid': 6298101404421974110L} 
+
+[2017-09-08 16:49:58 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"likeCount": 3}} 
+
+[2017-09-08 16:49:58 excuting case_no: listen] header： {'Date': 'Fri, 08 Sep 2017 08:52:40 GMT', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '68', 'X-Application-Context': 'HeiPaServer:test:8080'} 
+
+[2017-09-08 16:49:58 excuting case_no: listen] request url: http://139.224.68.41:8080/api/v2.0/user/collect/6299163298503852033/6306024489196978183 
+
+[2017-09-08 16:49:58 excuting case_no: listen] request json: {'opusid': 6306024489196978183L, 'userid': 6299163298503852033L} 
+
+[2017-09-08 16:49:58 excuting case_no: listen] response data: {"errorCode": 0, "message": "OK", "data": {"collectCount": 6}} 
+

@@ -17,10 +17,16 @@ class login_case():
         self.api = API2()
         self.casedb = DBManual()
         self.t = tool()
-        self.login_param = {"phoneNumber": "18782943850", "password": "888888", "platform": "iOS",
-                            "clientVersion": "2.0", "machineId": 100001}
+        self.login_param = {
+            "phoneNumber": "18782943850",
+            "password": "888888",
+            "platform": "iOS",
+            "clientVersion": "2.0",
+            "machineId": 100001
+        }
         self.deviceId = "34e7a55f-8fb9-4511-b1b7-55d6148fa9bb"
-        self.sql = """update login_case set response=%s,result=%s,test_time=%s WHERE case_no = %s"""
+        self.t.get_login_header(self.api, self.deviceId, self.login_param)
+        self.sql = """update login_case set args=%s, response=%s,result=%s,test_time=%s WHERE case_no = %s"""
 
     def test_01_login_mobile(self):
         case_no = 1
@@ -88,7 +94,7 @@ class login_case():
         case_no = 6
         cur = self.casedb.connect_casedb()
         header = self.api.get_header(deviceId="34e7a55f-8fb9-4511-b1b7-55d6148fa9bb")
-        param = {"thirdAuthToken": "weixintoken", "thirdPlatformType": "weixin", "platform": "iOS",
+        param = {"thirdAuthToken": "weixin_token2", "thirdPlatformType": "weixin", "platform": "iOS",
                  "clientVersion": "2.0", "machineId": 100001}
         response = self.api.third_login('weixin', param, header)
         assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
@@ -318,10 +324,10 @@ class login_case():
         # 数据库取数据
         cur = self.casedb.connect_casedb()
 
-        header = self.t.get_login_header(self.api, self.deviceId, self.login_param)
+        header = self.t.get_header
         param = {"platform": "iOS"}
         response = self.api.login_out(param, header)
-        assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
+        assert response.status_code == 500, u"http响应错误，错误码 %s" % response.status_code
         t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
 
         self.t.error_handle(cur, case_no, response, t, self.sql, 100105, param)
@@ -330,13 +336,13 @@ class login_case():
     def test_23_logout_machineid_wrong(self):
         case_no = 23
         cur = self.casedb.connect_casedb()
-        header = self.t.get_login_header(self.api, self.deviceId, self.login_param)
+        header = self.t.get_header
 
         param = {"platform": "iOS", "machineId": 1000100}
         response = self.api.login_out(param, header)
         assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
         t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-        self.t.error_handle(cur, case_no, response, t, self.sql, 100202, param)
+        self.t.error_handle(cur, case_no, response, t, self.sql, 100209, param)
         self.casedb.closeDB(cur)
 
     def test_24_logout_unlogin(self):
@@ -434,6 +440,7 @@ class login_case():
             "platform": "iOS",
             "clientVersion": "2.0",
             "retrievalPasswordSmsCode": "0000",
+            "retrievalPasswordSmsCode": "0000",
             "retrievalPasswordSmsId": ""
         }
         pwd_param['retrievalPasswordSmsId'] = data['data']['retrievalPasswordSmsId']
@@ -453,7 +460,7 @@ class login_case():
             "machineId": "100001"
         }
         cur = self.casedb.connect_casedb()
-        header = self.t.get_login_header(self.api, self.deviceId, param)
+        header = self.t.get_header()
 
         response = self.api.password_back_sms({"phoneNumber": "18782943700"}, header)
         assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
@@ -468,6 +475,7 @@ if __name__ == "__main__":
     test = login_case()
     test.test_23_logout_machineid_wrong()
     test.test_22_logout_lack_args()
+    # test.test_06_login_weixin()
 
 
 

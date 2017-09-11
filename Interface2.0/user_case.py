@@ -6,12 +6,13 @@ from API2 import API2
 import unittest, time
 from dbManual import DBManual
 from tool import tool
+from errorCodeConst import errorCodeConst
 
 class user_case():
     def __init__(self):
         self.api = API2()
         self.casedb = DBManual()
-        self.sql = """update user_case set response=%s,result=%s,test_time=%s WHERE case_no = %s"""
+        self.sql = """update user_case set args=%s, response= %s,result= %s,test_time= %s WHERE case_no = %s"""
         self.t = tool()
         self.deviceid = "34e7a55f-8fb9-4511-b1b7-55d6148fa9bb"
         self.login_param = {
@@ -21,6 +22,8 @@ class user_case():
             "clientVersion": "2.0",
             "machineId": 100001
         }
+        self.t.get_login_header(self.api, self.deviceid, self.login_param)
+        self.ecode = errorCodeConst()
 
     def test_01_user_info(self):    # 获取用户信息
         case_no = 1
@@ -134,12 +137,12 @@ class user_case():
         cur = self.casedb.connect_casedb()
         uid = '6301346050607153160'
 
-        header = self.t.get_login_header(self.api, self.deviceid, self.login_param)
+        header = self.t.get_header
 
         response = self.api.op_focus('put', uid, header=header)
         assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
         t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-        self.t.error_handle(cur, case_no, response, t, self.sql)
+        self.t.error_handle(cur, case_no, response, t, self.sql, 0)
         self.casedb.closeDB(cur)
 
     def test_10_focus_list(self):    # 关注用户列表
@@ -222,12 +225,12 @@ class user_case():
         cur = self.casedb.connect_casedb()
         uid = '6301346050607153160'
 
-        header = self.t.get_login_header(self.api, self.deviceid, self.login_param)
+        header = self.t.get_header
 
         response = self.api.op_blacklist('put', header, uid)
         assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
         t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-        self.t.error_handle(cur, case_no, response, t, self.sql)
+        self.t.error_handle(cur, case_no, response, t, self.sql, 0, uid)
         # cur.close()
         self.casedb.closeDB(cur)
 
@@ -236,12 +239,12 @@ class user_case():
         cur = self.casedb.connect_casedb()
         uid = '6301346050607153160'
 
-        header = self.t.get_login_header(self.api, self.deviceid, self.login_param)
+        header = self.t.get_header
 
         response = self.api.op_blacklist('put', header, uid)
         assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
         t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-        self.t.error_handle(cur, case_no, response, t, self.sql)
+        self.t.error_handle(cur, case_no, response, t, self.sql, self.ecode.ALREADY_IN_BLACKLIST, uid)
         self.casedb.closeDB(cur)
 
     def test_17_blacklist_list(self):
@@ -249,7 +252,7 @@ class user_case():
         cur = self.casedb.connect_casedb()
         # uid = '6301346050607153160'
 
-        header = self.t.get_login_header(self.api, self.deviceid, self.login_param)
+        header = self.t.get_header
 
         response = self.api.op_blacklist('get', header=header)
         assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
@@ -268,7 +271,7 @@ class user_case():
         cur = self.casedb.connect_casedb()
         uid = '6301346050607153160'
 
-        header = self.t.get_login_header(self.api, self.deviceid, self.login_param)
+        header = self.t.get_header
 
         response = self.api.op_blacklist('delete', header, uid)
         assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
@@ -352,8 +355,8 @@ class user_case():
         case_no = 29
         cur = self.casedb.connect_casedb()
 
-        header = self.t.get_login_header(self.api, self.deviceid, self.login_param)
-        param = {"phoneNumber":"18782943888"}
+        header = self.t.get_header
+        param = {"userName": "qiuwjPhone"}
         response = self.api.modify_my_info(param, header)
         assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
         t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
@@ -569,7 +572,7 @@ class user_case():
         cur = self.casedb.connect_casedb()
         # uid = '6301346050607153160'
 
-        header = self.t.get_login_header(self.api, self.deviceid, self.login_param)
+        header = self.t.get_header
 
         response = self.api.op_focus('put', '6299163298503852033', header=header)
         assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
@@ -608,6 +611,10 @@ class user_case():
 if __name__ == "__main__":
     # unittest.main()
     user_test = user_case()
+    # user_test.test_15_blacklist()
+    # user_test.test_29_modify_my_info()
+    user_test.test_16_blacklist_again()
+    user_test.test_09_focus()
     # user_test.test_32_focus_self()
     # user_test.test_35_blacklist_self()
     # user_test.test_30_modify_sex_2()

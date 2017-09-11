@@ -272,7 +272,7 @@ class register_case():
             "phoneNumber": "18782943852",
             "password": "888888",
             "platform": "iOS",
-            "clientVersion":"2.0",
+            "clientVersion": "2.0",
             "registerSmsCode": "0000",
             "registerSmsId": ""
         }
@@ -329,7 +329,7 @@ class register_case():
         self.t.error_handle(cur, case_no, response, t, self.sql, 100103, sms_param)
         self.casedb.closeDB(cur)
 
-    def test_mobile_register_wrong_veryfy_code(self):  # 验证码错误
+    def test_mobile_register_wrong_verify_code(self):  # 验证码错误
         case_no = 16  # 手机接口的id case_no:16
         cur = self.casedb.connect_casedb()
         s = "select response from register_case where case_no = 1"
@@ -509,6 +509,7 @@ class register_case():
 
 if __name__ == "__main__":
     register_test = register_case()
+    register_test.test_mobile_register()
     # register_test.test_mobile_register_phone_length_shorter()
     # register_test.test_mobile_register_wrong_number()
 

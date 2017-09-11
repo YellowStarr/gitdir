@@ -14,5 +14,5 @@ class RunConfig:
     def get_base_url(self):
         return self.url
 
-    def get_db(self):
-        return self.db
+    # def get_db(self):
+        # return self.db
