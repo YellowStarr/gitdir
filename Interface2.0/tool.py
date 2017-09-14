@@ -73,6 +73,13 @@ class tool:
             data = response.text
             cur.execute(sql, (ps, data[:1000], "fail", test_time, case_no))
 
+    def data_error(self, cur, case_no, expectdata, actualdata, sql):
+
+        self.mylog(case_no, 'database data ：%s', expectdata)
+        self.mylog(case_no, 'response data：%s', actualdata)
+        if expectdata != actualdata:
+            cur.execute(sql, ("fail", case_no))
+
     def insertCase(self, tablename, params):
         """
         批量插入用例case
@@ -86,7 +93,7 @@ class tool:
     def insert(self, sql, params):
       
         # sql = "update "+tablename+" (case_no,args,url) values (%s,%s,%s)"
-        self.cxe.executemany(sql,params)
+        self.cxe.executemany(sql, params)
         
     def select_result(self, tablename):
         """
@@ -188,29 +195,30 @@ class tool:
 
 if __name__ == "__main__":
     t = tool()
-    r = {}
+    '''r = {}
 
-    index_data = t.select_result('shown_case')
-    index_result = t.trans_list(index_data)
-    # login_data = t.select_result('login_case')
-    # login_result = t.trans_list(login_data)
-    r['index'] = index_result
-    # r['login'] = login_result
-    # user_data = t.select_result("user_case")
-    # user_result = t.trans_list(user_data)
-    # r['user'] = user_result
-    t.write_to_excel(r)
-    t.cls()
-    # 读取excel中用例内容，将用例写入数据库
-    '''h = HandleExcel('casedir\\testcase.xls')
-    l = h.read_testcase('index')
+index_data = t.select_result('shown_case')
+index_result = t.trans_list(index_data)
+# login_data = t.select_result('login_case')
+# login_result = t.trans_list(login_data)
+r['index'] = index_result
+# r['login'] = login_result
+# user_data = t.select_result("user_case")
+# user_result = t.trans_list(user_data)
+# r['user'] = user_result
+t.write_to_excel(r)
+t.cls()'''
+
+    h = HandleExcel('casedir\\testcase.xls')
+    l = h.read_testcase('notice')
     param = []
-    sql = """insert into shown_case (case_no, desciption, args, url) values (%s,%s,%s,%s)"""
+    sql = """insert into notice_case (case_no, interface, case_title, args, url, method) values (%s,%s,%s,%s,%s,%s)"""
     for i in range(len(l)):
-        param.append((l[i]['CASE_NO'], l[i]['CASE_TITLE'], l[i]['REQUEST'], l[i]['URL']))
+        param.append((l[i]['CASE_NO'], l[i]['INTERFACE'], l[i]['CASE_TITLE'], l[i]['REQUEST'], l[i]['URL'], l[i]['METHOD']))
 
     t.insert(sql, param)
-    t.cls()'''
+    t.cls()
+
 
    
 

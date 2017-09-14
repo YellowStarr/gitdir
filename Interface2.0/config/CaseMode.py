@@ -22,7 +22,7 @@ class CaseConfig:
     def get_excel_config(self):
         excel_Dict = {
             'CASE_NO': int(self.casecfg.get('excel_config', 'CASE_NO')),
-            'INTERFACE_NAME': int(self.casecfg.get('excel_config', 'INTERFACE_NAME')),
+            'INTERFACE': int(self.casecfg.get('excel_config', 'INTERFACE_NAME')),
             'CASE_TITLE': int(self.casecfg.get('excel_config', 'CASE_TITLE')),
             'URL': int(self.casecfg.get('excel_config', 'URL')),
             'METHOD': int(self.casecfg.get('excel_config', 'METHOD')),

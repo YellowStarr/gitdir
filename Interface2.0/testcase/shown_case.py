@@ -838,7 +838,7 @@ class shown_case():
         response = self.api.violate_feedback(0, header, kw)
         assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
         t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-        self.t.error_handle(cur, case_no, response, t, self.sql, self.ecode.ARGS_VALUE_ERROR, kw)
+        self.t.error_handle(cur, case_no, response, t, self.sql, self.ecode.ARG_ERROR, kw)
 
         self.casedb.closeDB(cur)
 
@@ -1027,6 +1027,12 @@ class shown_case():
         self.t.error_handle(cur, case_no, response, t, self.sql, 0, kw)
 
         self.casedb.closeDB(cur)
+
+        remote_cur = self.casedb.connect_remotedb()
+        sql = """SELECT count(*) FROM opus_comment WHERE opus_id=%s AND id = opus_comment_id"""
+        remote_cur.execute(sql, kw['opusid'])
+        comments_tuple = remote_cur.fetchone()
+
 
     def test_48_opus_detail_comment(self):
         case_no = 48
@@ -1255,7 +1261,7 @@ class shown_case():
 
         self.casedb.closeDB(cur)
 
-if __name__ == "__main__":
+'''if __name__ == "__main__":
     s = shown_case()
     # s.test_recomend_unlogin()
     # s.test_01_recommend()
@@ -1313,4 +1319,4 @@ if __name__ == "__main__":
     # s.test_53_voilate_comment()
     # s.test_55_hot_word()
     # s.test_56_search_user_english_partial()
-    # s.test_57_hot_search_opus_english_partial()
+    # s.test_57_hot_search_opus_english_partial()'''

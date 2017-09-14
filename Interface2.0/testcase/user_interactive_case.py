@@ -1157,7 +1157,7 @@ class user_interactive_case():
         uid = self.t.get_login_id
 
         remote_cur = self.casedb.connect_remotedb()
-        sql = """select id from song_basic where user_id = %s and creative_status = 5 and public_status = 0"""
+        sql = """select id from song_basic where user_id = %s and creative_status = 1 and public_status = 0"""
         n = remote_cur.execute(sql, uid)
         result = remote_cur.fetchmany(n)
         songid_tuple = random.choice(result)

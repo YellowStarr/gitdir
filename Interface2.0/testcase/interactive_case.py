@@ -32,6 +32,16 @@ class interactive_case():
         self.t.get_login_header(self.api, self.deviceid, login_param)
         self.ecode = errorCodeConst()
 
+    # 取数据库中args
+    @staticmethod
+    def select_args(cursor, case_no):
+        _get_arg = 'select args from interactive_case where case_no = %s'
+        cursor.execute(_get_arg, case_no)
+        arg = cursor.fetchone()
+        if arg[0] == '':
+            return {}
+        return eval(arg[0])
+
     def test_01_song_comment(self):
         case_no = 1
         remote_cur = self.casedb.connect_remotedb()
@@ -1047,7 +1057,7 @@ class interactive_case():
         self.casedb.closeDB(cur)
 
     def test_31_listen_without_attach(self):
-        case_no = 30
+        case_no = 31
         r_list = []
         e_list = []
         expect_data = {
@@ -1068,6 +1078,8 @@ class interactive_case():
         kw['param'] = {
             'listenDuration': 5
         }
+        remote_cur.execute("select listen_count from song_attach where id = %s", opus[0])
+        listen_count = remote_cur.fetchone()  # 获取原始
         self.casedb.closeDB(remote_cur)
 
         header = self.t.get_header
@@ -1080,7 +1092,8 @@ class interactive_case():
         res = self.t.list_dict_keys(response.json(), r_list)
         exp = self.t.list_dict_keys(expect_data, e_list)
         self.t.cmpkeys(case_no, res, exp)
-
+        r = response.json()
+        assert listen_count[0]+1 == r['data']['listenCount'], "The origin listen_count is:%s" % listen_count[0]
         self.casedb.closeDB(cur)
 
     def test_32_listen_without_attach_uncount(self):
@@ -1111,8 +1124,7 @@ class interactive_case():
         self.t.error_handle(cur, case_no, response, t, self.sql, 0, kw)
 
         r = response.json()
-        if listen_count[0]+1 == r['data']['listenCount']:
-            print "wrongd"
+        assert listen_count[0] == r['data']['listenCount'], "'listen' data count wrong"
         self.casedb.closeDB(cur)
 
     def test_33_listen_format_error(self):
@@ -1890,34 +1902,149 @@ class interactive_case():
         self.t.error_handle(cur, case_no, response, t, self.sql, self.ecode.ARGS_VALUE_ERROR, kw)
         self.casedb.closeDB(cur)
 
-    def test_60_give_mark_score_out_of_range(self):
-        case_no = 60
+    def test_25_song_detail(self):
+        case_no = 25
 
-        uid = self.t.get_login_id
-        kw = {}
-        remote_cur = self.casedb.connect_remotedb()
-        n = remote_cur.execute(
-            "select id, user_id from song_basic where creative_status=5 and public_status=1 and delete_status = 0 and user_id != %s", uid)
-        result = remote_cur.fetchmany(n)
-        opus = random.choice(result)
-        kw['userid'] = opus[1]
-        kw['opusid'] = opus[0]
-
-        kw['param'] = {
-            'score': 12
-        }
-        self.casedb.closeDB(remote_cur)
-
-        self.t.get_login_header(self.api, self.deviceid, self.login_param2)
         header = self.t.get_header
-        response = self.api.opus_score(header, kw)
         cur = self.casedb.connect_casedb()
+        kw = self.select_args(cur, case_no)
+        response = self.api.get_song_detail(0, header, kw)
         assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
         t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-        self.t.error_handle(cur, case_no, response, t, self.sql, self.ecode.ARGS_VALUE_ERROR, kw)
+        self.t.error_handle(cur, case_no, response, t, self.sql, 0, kw)
         self.casedb.closeDB(cur)
 
-if __name__ == "__main__":
+        rm = self.casedb.connect_remotedb()
+        sql = """SELECT count(*) FROM opus_comment WHERE opus_id=%s"""
+        rm.execute(sql, kw['opusid'])
+        comments_tuple = rm.fetchone()
+        self.casedb.closeDB(rm)
+
+        r = response.json()
+        if comments_tuple[0] != r['data']['opus']['commentCount']:
+            print "commentCount not equal"
+
+    def test_60_song_detail(self):
+        case_no = 60
+
+        header = self.t.get_header
+        cur = self.casedb.connect_casedb()
+        kw = self.select_args(cur, case_no)
+        response = self.api.get_song_detail(0, header, kw)
+        assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
+        t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+        self.t.error_handle(cur, case_no, response, t, self.sql, 0, kw)
+        self.casedb.closeDB(cur)
+
+        rm = self.casedb.connect_remotedb()
+        sql = """SELECT create_time, public_time FROM song_basic WHERE id=%s"""
+        rm.execute(sql, kw['opusid'])
+        time_tuple = rm.fetchone()
+        self.casedb.closeDB(rm)
+
+        r = response.json()
+        if time_tuple[0] != r['data']['opus']['createTime'] and time_tuple[1] != r['data']['opus']['publishTime']:
+            print "time not equal"
+            print "create time is %s , publish time is %s" % (time_tuple[0], time_tuple[1])
+
+    def test_61_song_detail(self):
+        case_no = 61
+
+        header = self.t.get_header
+        cur = self.casedb.connect_casedb()
+        kw = self.select_args(cur, case_no)
+        response = self.api.get_song_detail(0, header, kw)
+        assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
+        t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+        self.t.error_handle(cur, case_no, response, t, self.sql, 0, kw)
+
+        rm = self.casedb.connect_remotedb()
+        sql = """SELECT is_talent_share FROM opus_share WHERE opus_id=%s"""
+        rm.execute(sql, kw['opusid'])
+        is_talent_tuple = rm.fetchmany()
+        self.casedb.closeDB(rm)
+        istalent = 0
+        r = response.json()
+        for i in range(len(is_talent_tuple[0])):
+            if is_talent_tuple[0][i] == 1:
+                istalent = 1
+                break
+        cur = self.casedb.connect_casedb()
+        sql = """update interactive_case set result=%s WHERE case_no = %s """
+        self.t.data_error(cur, case_no, istalent, r['data']['opus']['isTalentShare'], sql)
+
+        self.casedb.closeDB(cur)
+
+    def test_62_song_detail(self):
+        case_no = 62
+
+        header = self.t.get_header
+        uid = self.t.get_login_id
+        cur = self.casedb.connect_casedb()
+        kw = self.select_args(cur, case_no)
+        response = self.api.get_song_detail(0, header, kw)
+        assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
+        t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+        self.t.error_handle(cur, case_no, response, t, self.sql, 0, kw)
+        self.casedb.closeDB(cur)
+
+        rm = self.casedb.connect_remotedb()
+        sql = """SELECT count(*) FROM opus_thumbs_up WHERE opus_id=%s and user_id=%s"""
+        rm.execute(sql, (kw['opusid'], uid))
+        liked_tuple = rm.fetchone()
+        self.casedb.closeDB(rm)
+
+        r = response.json()
+        if liked_tuple[0] != r['data']['opus']['isLiked']:
+            print "isLiked share not equal"
+
+    def test_63_song_detail(self):
+        case_no = 63
+
+        header = self.t.get_header
+        uid = self.t.get_login_id
+        cur = self.casedb.connect_casedb()
+        kw = self.select_args(cur, case_no)
+        response = self.api.get_song_detail(0, header, kw)
+        assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
+        t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+        self.t.error_handle(cur, case_no, response, t, self.sql, 0, kw)
+        self.casedb.closeDB(cur)
+
+        rm = self.casedb.connect_remotedb()
+        sql = """SELECT count(*) FROM opus_collect WHERE opus_id=%s and user_id=%s"""
+        rm.execute(sql, (kw['opusid'], uid))
+        collected_tuple = rm.fetchone()
+        self.casedb.closeDB(rm)
+
+        r = response.json()
+        if collected_tuple[0] != r['data']['opus']['isLiked']:
+            print "isLiked share not equal"
+
+    def test_65_song_detail(self):
+        case_no = 65
+
+        header = self.t.get_header
+        uid = self.t.get_login_id
+        cur = self.casedb.connect_casedb()
+        kw = self.select_args(cur, case_no)
+        response = self.api.get_song_detail(0, header, kw)
+        assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
+        t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+        self.t.error_handle(cur, case_no, response, t, self.sql, 0, kw)
+        self.casedb.closeDB(cur)
+
+        rm = self.casedb.connect_remotedb()
+        sql = """SELECT listen_count, collect_count, share_count, thumbs_up_count FROM song_attach WHERE id=%s"""
+        rm.execute(sql, kw['opusid'])
+        countz_tuple = rm.fetchone()
+        self.casedb.closeDB(rm)
+
+        r = response.json()
+        if countz_tuple[0] != r['data']['opus']['listenCount'] and countz_tuple[1] != r['data']['opus']['collectCount'] \
+                and countz_tuple[2] != r['data']['opus']['shareCount'] and countz_tuple[3] != r['data']['opus']['likeCount']:
+            print countz_tuple[0]
+'''if __name__ == "__main__":
     case = interactive_case()
 
     case.test_01_song_comment()
@@ -1977,6 +2104,6 @@ if __name__ == "__main__":
     # case.test_57_give_mark()
     # case.test_58_give_mark_again()
     # case.test_59_give_mark_score_negative()
-    # case.test_60_give_mark_score_out_of_range()
+    # case.test_60_give_mark_score_out_of_range()'''
 
 

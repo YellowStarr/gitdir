@@ -42,6 +42,7 @@ class HandleExcel:
             case = {}
             print 'reading testcase %s' % _table.cell_value(row, 0)
             case['CASE_NO'] = _table.cell_value(row, self._excel['CASE_NO'])
+            case['INTERFACE'] = _table.cell_value(row, self._excel['INTERFACE'])
             case['CASE_TITLE'] = _table.cell_value(row, self._excel['CASE_TITLE'])
             case['URL'] = _table.cell_value(row, self._excel['URL'])
             case['METHOD'] = _table.cell_value(row, self._excel['METHOD'])

@@ -498,7 +498,7 @@ class API2:
             else:
                 r = requests.get(url, headers=header)
         elif method == 'delete':
-            url = self.get_baseurl + '/opus/song/%s/participant/%s' % (kwargs['opusid'],kwargs['participantid'])
+            url = self.get_baseurl + '/opus/song/%s/participant/%s' % (kwargs['opusid'], kwargs['participantid'])
             r = requests.delete(url, headers=header)
         return r
 
@@ -634,6 +634,26 @@ class API2:
     #
     #     popularity = share * 3 + collect * 2 + listen * 3 + praise + comment * 2
     #     return popularity
+
+    def ranking_friend_fans(self, key, header, param={}):    # 好友排行及忠粉排行
+        url_dict = {
+            'friend': '/ranking/friend',
+            'fans': '/ranking/follower'
+        }
+        url = self.get_baseurl + url_dict[key]
+        if param:
+            r = requests.get(url, params=param, headers=header)
+        else:
+            r = requests.get(url, headers=header)
+        return r
+
+    def scout_list(self, header, param={}):
+        url = self.get_baseurl + '/opus/%s/scout' % param['opusid']
+        if 'param' in param.keys():
+            r = requests.get(url, params=param['param'], headers=header)
+        else:
+            r = requests.get(url, headers=header)
+        return r
 
 
 

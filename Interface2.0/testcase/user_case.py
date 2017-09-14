@@ -29,28 +29,30 @@ class user_case():
         case_no = 1
         cur = self.casedb.connect_casedb()
 
-        header = self.t.get_login_header(self.api, self.deviceid, self.login_param)
+        header = self.t.get_header
         response = self.api.get_user_info('6301346050607153160', header)
         assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
         t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
         self.t.error_handle(cur, case_no, response, t, self.sql, 0)
         self.casedb.closeDB(cur)
 
-    def test_28_user_info_unlogin(self):  # 获取用户信息
+
+
+    def test_28_user_info_unlogin(self):
         case_no = 28
         cur = self.casedb.connect_casedb()
         header = self.api.get_header(deviceId="34e7a55f-8fb9-4511-b1b7-55d6148fa9bb")
         response = self.api.get_user_info('6301346050607153160', header)
         assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
         t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-        self.t.error_handle(cur, case_no, response, t, self.sql, 100201)
+        self.t.error_handle(cur, case_no, response, t, self.sql, self.ecode.ACCESS_TOKEN_LOST)
         self.casedb.closeDB(cur)
 
     def test_02_my_info(self):    # 获取用户信息
         case_no = 2
         cur = self.casedb.connect_casedb()
 
-        header = self.t.get_login_header(self.api, self.deviceid, self.login_param)
+        header = self.t.get_header
         response = self.api.get_my_info(header)
         assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
         t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
@@ -72,33 +74,42 @@ class user_case():
         case_no = 4
         cur = self.casedb.connect_casedb()
 
-        header = self.t.get_login_header(self.api, self.deviceid, self.login_param)
-        param = {"userName": "yaokun", "avatar": "", "email": "qiuwenjing@tuyabeat.com", "sex": 1,"birthday": "1990-09-11",
-                 "emotionStatus": 2, "personalProfile": "","backgroundImageUrl": "http://www.baidu.com"}
+        header = self.t.get_header
+        param = {
+            "userName": "yaokun",
+            "avatar": "", "email":
+            "qiuwenjing@tuyabeat.com",
+            "sex": 1,
+            "birthday": "1990-09-11",
+            "emotionStatus": 2,
+            "personalProfile": "",
+            "backgroundImageUrl": "http://www.baidu.com"
+        }
         response = self.api.modify_my_info(param, header)
         assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
         t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-        self.t.error_handle(cur, case_no, response, t, self.sql)
+        self.t.error_handle(cur, case_no, response, t, self.sql, 0, param)
         self.casedb.closeDB(cur)
 
-    def test_05_modify_setting(self):    # 获取用户信息
+    def test_05_modify_setting(self):
         case_no = 5
         cur = self.casedb.connect_casedb()
 
-        header = self.t.get_login_header(self.api, self.deviceid, self.login_param)
+        header = self.t.get_header
 
         param = {"commentBoardPrivacySettings": 1, "pushLikeNoticeSettings": 1}
+
         response = self.api.op_settings('patch', header, params=param)
         assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
         t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-        self.t.error_handle(cur, case_no, response, t, self.sql)
+        self.t.error_handle(cur, case_no, response, t, self.sql, 0, param)
         self.casedb.closeDB(cur)
 
     def test_06_modify_setting_wrong_value(self):    # 获取用户信息
         case_no = 6
         cur = self.casedb.connect_casedb()
 
-        header = self.t.get_login_header(self.api, self.deviceid, self.login_param)
+        header = self.t.get_header
 
         param = {"commentBoardPrivacySettings": 2, "pushSystemNoticeSettings": 0}
         response = self.api.op_settings('patch', header, params=param)
@@ -111,7 +122,7 @@ class user_case():
         case_no = 7
         cur = self.casedb.connect_casedb()
 
-        header = self.t.get_login_header(self.api, self.deviceid, self.login_param)
+        header = self.t.get_header
 
         param = {"commentBoardPrivacySettings": "a"}
         response = self.api.op_settings('patch', header, params=param)
@@ -124,12 +135,12 @@ class user_case():
         case_no = 8
         cur = self.casedb.connect_casedb()
 
-        header = self.t.get_login_header(self.api, self.deviceid, self.login_param)
+        header = self.t.get_header
 
         response = self.api.op_settings('get', header=header)
         assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
         t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-        self.t.error_handle(cur, case_no, response, t, self.sql)
+        self.t.error_handle(cur, case_no, response, t, self.sql, 0)
         self.casedb.closeDB(cur)
 
     def test_09_focus(self):    # 关注用户
@@ -142,7 +153,7 @@ class user_case():
         response = self.api.op_focus('put', uid, header=header)
         assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
         t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-        self.t.error_handle(cur, case_no, response, t, self.sql, 0)
+        self.t.error_handle(cur, case_no, response, t, self.sql, 0, uid)
         self.casedb.closeDB(cur)
 
     def test_10_focus_list(self):    # 关注用户列表
@@ -150,12 +161,12 @@ class user_case():
         cur = self.casedb.connect_casedb()
         uid = '6302709656942805004'
 
-        header = self.t.get_login_header(self.api, self.deviceid, self.login_param)
+        header = self.t.get_header
 
         response = self.api.op_focus('get', uid, header=header)
         assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
         t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-        self.t.error_handle(cur, case_no, response, t, self.sql)
+        self.t.error_handle(cur, case_no, response, t, self.sql, 0, uid)
         # cur.close()
         self.casedb.closeDB(cur)
 
@@ -168,7 +179,7 @@ class user_case():
         cur = self.casedb.connect_casedb()
         uid = '6301346050607153160'
 
-        header = self.t.get_login_header(self.api, self.deviceid, self.login_param)
+        header = self.t.get_header
 
         response = self.api.op_focus('put', uid, header=header)
         assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
@@ -181,7 +192,7 @@ class user_case():
         cur = self.casedb.connect_casedb()
         uid = '6301346050607153160'
 
-        header = self.t.get_login_header(self.api, self.deviceid, self.login_param)
+        header = self.t.get_header
 
         response = self.api.get_fans_list(uid, header=header)
         assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
@@ -194,7 +205,7 @@ class user_case():
         cur = self.casedb.connect_casedb()
         uid = '6301346050607153160'
 
-        header = self.t.get_login_header(self.api, self.deviceid, self.login_param)
+        header = self.t.get_header
 
         response = self.api.op_focus('delete', uid, header=header)
         assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
@@ -211,7 +222,7 @@ class user_case():
         cur = self.casedb.connect_casedb()
         uid = '6301346047952158727'
 
-        header = self.t.get_login_header(self.api, self.deviceid, self.login_param)
+        header = self.t.get_header
 
         response = self.api.op_focus('delete', uid, header=header)
         assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
@@ -316,7 +327,7 @@ class user_case():
         assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
         t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
 
-        self.t.error_handle(cur, case_no, response, t, self.sql, 100401)
+        self.t.error_handle(cur, case_no, response, t, self.sql, 100401, third_param)
         self.casedb.closeDB(cur)
 
     def test_27_banding_weibo_again(self):
@@ -372,12 +383,12 @@ class user_case():
         cur = self.casedb.connect_casedb()
         uid = '6301346050607153161'
 
-        header = self.t.get_login_header(self.api, self.deviceid, self.login_param)
+        header = self.t.get_header
 
         response = self.api.op_blacklist('put', header, uid)
         assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
         t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-        self.t.error_handle(cur, case_no, response, t, self.sql, 100408)
+        self.t.error_handle(cur, case_no, response, t, self.sql, 100408, uid)
         # cur.close()
         self.casedb.closeDB(cur)
 
@@ -397,7 +408,7 @@ class user_case():
         assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
         t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
 
-        self.t.error_handle(cur, case_no, response, t, self.sql, 100103)
+        self.t.error_handle(cur, case_no, response, t, self.sql, 100103, third_param)
         self.casedb.closeDB(cur)
 
     def test_22_banding_phone_longer(self):
@@ -412,7 +423,7 @@ class user_case():
         assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
         t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
 
-        self.t.error_handle(cur, case_no, response, t, self.sql, 100103)
+        self.t.error_handle(cur, case_no, response, t, self.sql, 100103, third_param)
         self.casedb.closeDB(cur)
 
     def test_23_banding_phone(self):
@@ -440,10 +451,9 @@ class user_case():
             "platform": "iOS",
             "clientVersion": "2.0",
             "bindingPhoneNumberSmsCode": "0000",
-            "bindingPhoneNumberSmsId": ""
+            "bindingPhoneNumberSmsId": data['data']['bindingPhoneNumberSmsId']
         }
 
-        param['bindingPhoneNumberSmsId'] = data['data']['bindingPhoneNumberSmsId']
         response = self.api.bind_phone(param, header)
         t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
 
@@ -453,9 +463,13 @@ class user_case():
     def test_24_banding_phone_again(self):
         case_no = 24
         cur = self.casedb.connect_casedb()
-        third_param = {"thirdAuthToken": "weixintoken", "thirdPlatformType": "weixin", "platform": "iOS",
-                       "clientVersion": "2.0",
-                       "machineId": 100001}
+        third_param = {
+            "thirdAuthToken": "weixintoken",
+            "thirdPlatformType": "weixin",
+            "platform": "iOS",
+            "clientVersion": "2.0",
+            "machineId": 100001
+        }
         header = self.t.get_login_header(self.api, self.deviceid, third_param)
 
         re = self.api.bind_phone_sms({"phoneNumber":"13036582901"}, header=header)
@@ -468,11 +482,10 @@ class user_case():
             "platform": "iOS",
             "clientVersion": "2.0",
             "bindingPhoneNumberSmsCode": "0000",
-            "bindingPhoneNumberSmsId": ""
+            "bindingPhoneNumberSmsId": data['data']['bindingPhoneNumberSmsId']
 
         }
 
-        param['bindingPhoneNumberSmsId'] = data['data']['bindingPhoneNumberSmsId']
         response = self.api.bind_phone(param, header)
         t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
 
@@ -492,12 +505,12 @@ class user_case():
         header = self.t.get_login_header(self.api, self.deviceid, phone_param)
 
         param = {
-            "thirdAuthToken":"banding3857",
-            "thirdAccountName":"weibo3857",
-            "avatarUrl":"http://imgsrc.baidu.com/imgad/pic/item/267f9e2f07082838b5168c32b299a9014c08f1f9.jpg",
-            "thirdPlatformType":"weibo",
-            "platform":"iOS",
-            "clientVersion":"2.0",
+            "thirdAuthToken": "banding3857",
+            "thirdAccountName": "weibo3857",
+            "avatarUrl": "http://imgsrc.baidu.com/imgad/pic/item/267f9e2f07082838b5168c32b299a9014c08f1f9.jpg",
+            "thirdPlatformType": "weibo",
+            "platform": "iOS",
+            "clientVersion": "2.0",
             "machineId": 100001
         }
         response = self.api.bind_third('weibo', param, header=header)
@@ -543,7 +556,7 @@ class user_case():
         case_no = 30
         cur = self.casedb.connect_casedb()
 
-        header = self.t.get_login_header(self.api, self.deviceid, self.login_param)
+        header = self.t.get_header
         param = {"sex": 3}
         response = self.api.modify_my_info(param, header)
         assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
@@ -557,7 +570,7 @@ class user_case():
 
         header = self.api.get_header(deviceId="34e7a55f-8fb9-4511-b1b7-55d6148fa9bb")
         param = {"commentBoardPrivacySettings": 1, "pushLikeNoticeSettings": 1}
-        response = self.api.op_settings('patch', param, header)
+        response = self.api.op_settings('patch', header, params=param)
         assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
         t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
         self.t.error_handle(cur, case_no, response, t, self.sql, 100201, param)
@@ -570,7 +583,6 @@ class user_case():
         """
         case_no = 32
         cur = self.casedb.connect_casedb()
-        # uid = '6301346050607153160'
 
         header = self.t.get_header
 
@@ -591,20 +603,19 @@ class user_case():
         assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
         t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
         self.t.error_handle(cur, case_no, response, t, self.sql, 100201)
-        # cur.close()
         self.casedb.closeDB(cur)
 
     def test_35_blacklist_self(self):
         case_no = 35
         cur = self.casedb.connect_casedb()
-        uid = '6299163298503852033'
+        uid = self.t.get_login_id
 
-        header = self.t.get_login_header(self.api, self.deviceid, self.login_param)
+        header = self.t.get_header
 
         response = self.api.op_blacklist('put', header, uid)
         assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
         t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-        self.t.error_handle(cur, case_no, response, t, self.sql, 200605)
+        self.t.error_handle(cur, case_no, response, t, self.sql, 200605, uid)
         # cur.close()
         self.casedb.closeDB(cur)
 
@@ -613,13 +624,14 @@ if __name__ == "__main__":
     user_test = user_case()
     # user_test.test_15_blacklist()
     # user_test.test_29_modify_my_info()
-    user_test.test_16_blacklist_again()
-    user_test.test_09_focus()
+    # user_test.test_16_blacklist_again()
+    # user_test.test_09_focus()
     # user_test.test_32_focus_self()
     # user_test.test_35_blacklist_self()
     # user_test.test_30_modify_sex_2()
     # user_test.test_21_banding_phone_wrong_format()
     # user_test.test_22_banding_phone_longer()
+    user_test.test_05_modify_setting()
 
 
 
