@@ -6,21 +6,16 @@ from dbManual import DBManual
 from tool import tool
 import random
 from errorCodeConst import errorCodeConst
+from config import runconfig
 
-class interactive_case():
-    def __init__(self):
-        self.api = API2()
-        self.casedb = DBManual()
+
+class interactive_case:
+    def __init__(self, islocal=0):
+        self.api = API2(islocal)
+        self.casedb = DBManual(islocal)
         self.sql = """update interactive_case set args=%s,response=%s,result=%s,test_time=%s WHERE case_no = %s"""
         self.t = tool()
-        self.deviceid = "34e7a55f-8fb9-4511-b1b7-55d6148fa9bb"
-        login_param = {
-            "phoneNumber": "18782943850",
-            "password": "888888",
-            "platform": "iOS",
-            "clientVersion": "2.0",
-            "machineId": 100001
-        }
+        self.login_param, self.deviceid = runconfig.RunConfig().get_login(islocal)
 
         self.login_param2 = {
             "phoneNumber": "18782943852",
@@ -29,7 +24,7 @@ class interactive_case():
             "clientVersion": "2.0",
             "machineId": 100001
         }
-        self.t.get_login_header(self.api, self.deviceid, login_param)
+        self.t.get_login_header(self.api, self.deviceid, self.login_param)
         self.ecode = errorCodeConst()
 
     # 取数据库中args
@@ -45,7 +40,7 @@ class interactive_case():
     def test_01_song_comment(self):
         case_no = 1
         remote_cur = self.casedb.connect_remotedb()
-        n = remote_cur.execute("select id, user_id from song_basic where creative_status=5 and public_status=1")
+        n = remote_cur.execute("select id, user_id from song_basic where creative_status=1 and public_status=1")
         result = remote_cur.fetchmany(n)
         opus = random.choice(result)
         kw = {}
@@ -83,7 +78,7 @@ class interactive_case():
     def test_02_song_comment_with_pic(self):
         case_no = 2
         remote_cur = self.casedb.connect_remotedb()
-        remote_cur.execute("select id, user_id from song_basic where creative_status=5 and public_status=1")
+        remote_cur.execute("select id, user_id from song_basic where creative_status=1 and public_status=1 AND delete_status=0")
         result = remote_cur.fetchone()
         kw = {}
         r_list = []
@@ -99,7 +94,16 @@ class interactive_case():
         kw['opusid'] = result[0]
         kw['userid'] = result[1]
         kw['param'] = {
-            # 'content': u'发布歌曲评论正向验证'
+            "content": "进图",
+            "res":[
+                {
+                    "backgroundUrl":"",
+                    "content":"",
+                    "title":"",
+                    "type":"image",
+                    "url":"http://img1.3lian.com/2015/a2/53/d/24.jpg"
+                }
+            ]
         }
         self.casedb.closeDB(remote_cur)
 
@@ -179,7 +183,7 @@ class interactive_case():
     def test_05_song_comment_null(self):
         case_no = 5
         remote_cur = self.casedb.connect_remotedb()
-        remote_cur.execute("select id, user_id from song_basic where creative_status=5 and public_status=1")
+        remote_cur.execute("select id, user_id from song_basic where creative_status=1 and public_status=1 AND delete_status=0")
         result = remote_cur.fetchone()
         kw = {}
 
@@ -191,7 +195,7 @@ class interactive_case():
         self.casedb.closeDB(remote_cur)
 
         cur = self.casedb.connect_casedb()
-        header = self.api.get_header()
+        header = self.t.get_header
         response = self.api.op_comment('song', 'post', header, kwargs=kw)   # A评论B
         assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
         t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
@@ -201,7 +205,7 @@ class interactive_case():
     def test_06_song_comment_overflow(self):
         case_no = 6
         remote_cur = self.casedb.connect_remotedb()
-        remote_cur.execute("select id, user_id from song_basic where creative_status=5 and public_status=1")
+        remote_cur.execute("select id, user_id from song_basic where creative_status=1 and public_status=1")
         result = remote_cur.fetchone()
         kw = {}
 
@@ -213,17 +217,17 @@ class interactive_case():
         self.casedb.closeDB(remote_cur)
 
         cur = self.casedb.connect_casedb()
-        header = self.api.get_header()
+        header = self.t.get_header
         response = self.api.op_comment('song', 'post', header, kwargs=kw)   # A评论B
         assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
         t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-        self.t.error_handle(cur, case_no, response, t, self.sql, self.ecode.ARG_LENGTH_ERROR, kw)
+        self.t.error_handle(cur, case_no, response, t, self.sql, self.ecode.ARG_ERROR, kw)
         self.casedb.closeDB(cur)
 
     def test_07_song_comment_opusid_unexist(self):
         case_no = 7
         remote_cur = self.casedb.connect_remotedb()
-        remote_cur.execute("select user_id from song_basic where creative_status=5 and public_status=1")
+        remote_cur.execute("select user_id from song_basic where creative_status=1 and public_status=1")
         result = remote_cur.fetchone()
         kw = {}
 
@@ -239,7 +243,7 @@ class interactive_case():
         response = self.api.op_comment('song', 'post', header, kwargs=kw)
         assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
         t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-        self.t.error_handle(cur, case_no, response, t, self.sql, 0, kw)
+        self.t.error_handle(cur, case_no, response, t, self.sql, self.ecode.RECORD_UNEXIST, kw)
 
         self.casedb.closeDB(cur)
 
@@ -423,11 +427,12 @@ class interactive_case():
         remote_cur.execute("select id from song_basic where creative_status=5 and public_status=1 "
                            "and user_id = 6299163298503852033")
         result = remote_cur.fetchone()
-        kw = {}
-        kw['opusid'] = result[0]
-        kw['userid'] = '6299163298503852033'
-        kw['param'] = {
-            'content': u'解除拉黑，用户可回复评论歌曲'
+        kw = {
+            'opusid': result[0],
+            'userid': '6299163298503852033',
+            'param': {
+                'content': u'解除拉黑，用户可回复评论歌曲'
+            }
         }
         self.casedb.closeDB(remote_cur)
 
@@ -444,7 +449,7 @@ class interactive_case():
         self.t.get_login_header(self.api, self.deviceid, blackuser_login)  # A登录
         cur = self.casedb.connect_casedb()
         header = self.t.get_header
-        response = self.api.op_comment('comment', 'post', header, kwargs=kw)  # A评论B
+        response = self.api.op_comment('song', 'post', header, kwargs=kw)  # A评论B
         assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
         t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
         self.t.error_handle(cur, case_no, response, t, self.sql, 0, kw)
@@ -466,9 +471,11 @@ class interactive_case():
         remote_cur = self.casedb.connect_remotedb()
         remote_cur.execute("select opus_id, id from opus_comment where delete_status = 0 and user_id= %s", uid)
         result = remote_cur.fetchone()
-        kw = {}
-        kw['opusid'] = result[0]
-        kw['commentid'] = result[1]
+        kw = {
+            'opusid': result[0],
+            'commentid': result[1],
+            'userid': ''
+        }
         remote_cur.execute("select user_id from song_basic where id = %s", result[0])
         owner_id = remote_cur.fetchone()
         kw['userid'] = owner_id[0]
@@ -567,9 +574,9 @@ class interactive_case():
         kw = {}
         kw['opusid'] = result[0]
         kw['userid'] = uid
-        # remote_cur.execute("select id from opus_comment where delete_status = 0 and opus_id= %s", result[0])
-        # owner_id = remote_cur.fetchone()
-        kw['commentid'] = '635699998989855895'
+        remote_cur.execute("select id from opus_comment where delete_status = 0 and opus_id= %s", result[0])
+        owner_id = remote_cur.fetchone()
+        kw['commentid'] = owner_id[0]
         self.casedb.closeDB(remote_cur)
 
         header = self.t.get_header
@@ -592,7 +599,6 @@ class interactive_case():
                 "commentTime": ""
             }
         }
-        #
         kw = {}
         remote_cur = self.casedb.connect_remotedb()
         n = remote_cur.execute("select id, opus_id, user_id from opus_comment where delete_status=0 GROUP BY (opus_comment_id)")
@@ -688,7 +694,7 @@ class interactive_case():
 
         kw = {}
         remote_cur = self.casedb.connect_remotedb()
-        n = remote_cur.execute("select opus_id, opus_comment_id, user_id from opus_comment where delete_status=0 and reply_comment_id !=''")
+        n = remote_cur.execute("select opus_id, opus_comment_id, user_id from opus_comment where delete_status=0 and reply_comment_id !='' limit 10")
         result = remote_cur.fetchmany(n)
         opus = random.choice(result)
         kw['opusid'] = opus[0]
@@ -1038,8 +1044,8 @@ class interactive_case():
             }
         }
         param = {
-            'page': 1,
-            'size': 5
+            'page': 1
+
         }
         # self.casedb.closeDB(remote_cur)
 
@@ -1069,7 +1075,7 @@ class interactive_case():
         kw = {}
         remote_cur = self.casedb.connect_remotedb()
         n = remote_cur.execute(
-            "select id, user_id from song_basic where creative_status=5 and public_status=1 and delete_status = 0")
+            "select id, user_id from song_basic where creative_status=1 and public_status=1 and delete_status = 0")
         result = remote_cur.fetchmany(n)
         opus = random.choice(result)
         kw['userid'] = opus[1]
@@ -1149,7 +1155,7 @@ class interactive_case():
         response = self.api.listen(header, kwargs=kw)
         assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
         t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-        self.t.error_handle(cur, case_no, response, t, self.sql, self.ecode.ARGS_VALUE_ERROR, kw)
+        self.t.error_handle(cur, case_no, response, t, self.sql, 0, kw)
 
         self.casedb.closeDB(cur)
 
@@ -1484,7 +1490,7 @@ class interactive_case():
         header = self.t.get_header
         userid = self.t.get_login_id
         remote_cur = self.casedb.connect_remotedb()
-        n = remote_cur.execute("select id from song_basic where user_id = %s and delete_status=0 and creative_status= 5 and public_status=0", userid)
+        n = remote_cur.execute("select id from song_basic where user_id = %s and delete_status=0 and creative_status= 1 and public_status=0", userid)
         result = remote_cur.fetchmany(n)
         opus = random.choice(result)
         self.casedb.closeDB(remote_cur)
@@ -1513,7 +1519,7 @@ class interactive_case():
         header = self.t.get_header
         userid = self.t.get_login_id
         remote_cur = self.casedb.connect_remotedb()
-        n = remote_cur.execute("select id from song_basic where user_id = %s and delete_status=0 and creative_status= 5 and public_status=0", userid)
+        n = remote_cur.execute("select id from song_basic where user_id = %s and delete_status=0 and creative_status= 1 and public_status=0", userid)
         result = remote_cur.fetchmany(n)
         opus = random.choice(result)
         self.casedb.closeDB(remote_cur)
@@ -1539,7 +1545,7 @@ class interactive_case():
         header = self.t.get_header
         userid = self.t.get_login_id
         remote_cur = self.casedb.connect_remotedb()
-        n = remote_cur.execute("select id from song_basic where user_id = %s and delete_status=0 and creative_status= 5 and public_status=0", userid)
+        n = remote_cur.execute("select id from song_basic where user_id = %s and delete_status=0 and creative_status= 1 and public_status=0", userid)
         result = remote_cur.fetchmany(n)
         opus = random.choice(result)
         self.casedb.closeDB(remote_cur)
@@ -1564,7 +1570,7 @@ class interactive_case():
         header = self.t.get_header
         userid = self.t.get_login_id
         remote_cur = self.casedb.connect_remotedb()
-        n = remote_cur.execute("select id from song_basic where user_id = %s and delete_status=0 and creative_status= 5 and public_status=0", userid)
+        n = remote_cur.execute("select id from song_basic where user_id = %s and delete_status=0 and creative_status= 1 and public_status=0", userid)
         result = remote_cur.fetchmany(n)
         opus = random.choice(result)
         self.casedb.closeDB(remote_cur)
@@ -1589,7 +1595,7 @@ class interactive_case():
         header = self.t.get_header
         userid = self.t.get_login_id
         remote_cur = self.casedb.connect_remotedb()
-        n = remote_cur.execute("select id from song_basic where user_id = %s and delete_status=0 and creative_status= 5 and public_status = 1", userid)
+        n = remote_cur.execute("select id from song_basic where user_id = %s and delete_status=0 and creative_status= 1 and public_status = 1", userid)
         result = remote_cur.fetchmany(n)
         opus = random.choice(result)
         self.casedb.closeDB(remote_cur)
@@ -1615,23 +1621,23 @@ class interactive_case():
 
         header = self.t.get_header
         userid = self.t.get_login_id
-        remote_cur = self.casedb.connect_remotedb()
-        n = remote_cur.execute("select id from song_basic where user_id = %s and delete_status=0 and creative_status= 5 and public_status=1", userid)
-        result = remote_cur.fetchmany(n)
-        opus = random.choice(result)
-        self.casedb.closeDB(remote_cur)
-
+        # remote_cur = self.casedb.connect_remotedb()
+        # n = remote_cur.execute("select id from song_basic where user_id = %s and delete_status=0 and creative_status= 1 and public_status=1", userid)
+        # result = remote_cur.fetchmany(n)
+        # opus = random.choice(result)
+        # self.casedb.closeDB(remote_cur)
+        opus = ['6324851533502480876']
         response = self.api.delete_opus(header, opus[0])
 
-        cur = self.casedb.connect_casedb()
+        # cur = self.casedb.connect_casedb()
         assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
         t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-        self.t.error_handle(cur, case_no, response, t, self.sql, 0)
+        # self.t.error_handle(cur, case_no, response, t, self.sql, 0)
 
-        res = self.t.list_dict_keys(response.json(), r_list)
-        exp = self.t.list_dict_keys(expect_data, e_list)
-        self.t.cmpkeys(case_no, res, exp)
-        self.casedb.closeDB(cur)
+        # res = self.t.list_dict_keys(response.json(), r_list)
+        # exp = self.t.list_dict_keys(expect_data, e_list)
+        # self.t.cmpkeys(case_no, res, exp)
+        # self.casedb.closeDB(cur)
 
     def test_50_delete_unpublish_opus(self):
         case_no = 50
@@ -1756,7 +1762,7 @@ class interactive_case():
         cur = self.casedb.connect_casedb()
         assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
         t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-        self.t.error_handle(cur, case_no, response, t, self.sql, self.ecode.ARGS_NULL, param)
+        self.t.error_handle(cur, case_no, response, t, self.sql, self.ecode.ARG_ERROR, param)
         self.casedb.closeDB(cur)
 
     def test_55_get_oss_audio_name_null(self):
@@ -1777,7 +1783,7 @@ class interactive_case():
         cur = self.casedb.connect_casedb()
         assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
         t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-        self.t.error_handle(cur, case_no, response, t, self.sql, self.ecode.ARGS_NULL, param)
+        self.t.error_handle(cur, case_no, response, t, self.sql, self.ecode.ARG_ERROR, param)
         self.casedb.closeDB(cur)
 
     def test_56_get_oss_audio_name_null(self):
@@ -1798,7 +1804,7 @@ class interactive_case():
         cur = self.casedb.connect_casedb()
         assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
         t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-        self.t.error_handle(cur, case_no, response, t, self.sql, self.ecode.ARGS_NULL, param)
+        self.t.error_handle(cur, case_no, response, t, self.sql, self.ecode.ARG_ERROR, param)
         self.casedb.closeDB(cur)
 
     def test_57_give_mark(self):
@@ -1820,7 +1826,7 @@ class interactive_case():
         opusids = remote_cur.execute("select opus_id from opus_score where user_id=%s", uid)
         score_list = remote_cur.fetchmany(opusids)    # 获取当前登陆用户id已评分的作品id列表
         n = remote_cur.execute(
-            "select id, user_id from song_basic where creative_status=5 and public_status=1 and delete_status = 0")
+            "select id, user_id from song_basic where creative_status=1 and public_status=1 and delete_status = 0")
         result = remote_cur.fetchmany(n)
         # 将已评分过得作品剔除
         for i in score_list:
@@ -1832,7 +1838,7 @@ class interactive_case():
         kw['userid'] = opus[1]
         kw['opusid'] = opus[0]
         kw['param'] = {
-            'score': 5
+            'score': 6
         }
         self.casedb.closeDB(remote_cur)
 
@@ -1932,6 +1938,7 @@ class interactive_case():
         kw = self.select_args(cur, case_no)
         response = self.api.get_song_detail(0, header, kw)
         assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
+        # print response.text
         t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
         self.t.error_handle(cur, case_no, response, t, self.sql, 0, kw)
         self.casedb.closeDB(cur)
@@ -1959,7 +1966,7 @@ class interactive_case():
         self.t.error_handle(cur, case_no, response, t, self.sql, 0, kw)
 
         rm = self.casedb.connect_remotedb()
-        sql = """SELECT is_talent_share FROM opus_share WHERE opus_id=%s"""
+        sql = """SELECT is_talent_share FROM opus_share_record WHERE opus_id=%s"""
         rm.execute(sql, kw['opusid'])
         is_talent_tuple = rm.fetchmany()
         self.casedb.closeDB(rm)
@@ -1977,7 +1984,6 @@ class interactive_case():
 
     def test_62_song_detail(self):
         case_no = 62
-
         header = self.t.get_header
         uid = self.t.get_login_id
         cur = self.casedb.connect_casedb()

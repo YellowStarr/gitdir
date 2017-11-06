@@ -303,7 +303,7 @@ class errorCodeConst:
         拉黑不能关注
         :return:
         """
-        return 200602
+        return 200707
 
     @property
     def CAN_NOT_BLACKLIST(self):

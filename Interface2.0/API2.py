@@ -2,14 +2,16 @@
 
 import requests
 from config import runconfig
-import logging
 
 
 class API2:
+    def __init__(self, islocal=0):
+        self.islocal = islocal
 
     @property
     def get_baseurl(self):
-        return runconfig.RunConfig().get_base_url()
+
+        return runconfig.RunConfig().get_base_url(self.islocal)
 
     def get_header(self, **kwargs):
         """
@@ -85,7 +87,7 @@ class API2:
         :return:
         """
         url = self.get_baseurl+"/login"
-        r =requests.post(url, json=params, headers=header)
+        r = requests.post(url, json=params, headers=header)
         return r
 
     def third_register(self, third, params, header):
@@ -121,6 +123,11 @@ class API2:
         r = requests.put(url, json=params, headers=header)
         return r
 
+    def delete_bind(self, type, header):
+        url = self.get_baseurl + "/user/account/binding/%s" % type
+        r = requests.delete(url, headers=header)
+        return r
+
     def bind_phone(self, params, header):
         """
         绑定手机，需要获取验证码,需先调用bind_phone_sms（）
@@ -129,7 +136,12 @@ class API2:
         :return:
         """
         url = self.get_baseurl+"/user/account/binding/phoneNumber"
-        r = requests.put(url, params=params, headers=header)
+        r = requests.put(url, json=params, headers=header)
+        return r
+
+    def bind_list(self, header):
+        url = self.get_baseurl + "/user/account/binding"
+        r = requests.get(url, headers=header)
         return r
 
     def bind_phone_sms(self, params, header):
@@ -285,7 +297,7 @@ class API2:
                     r = requests.put(url, json={"attach": attach}, headers=header)
                 else:
                     url = self.get_baseurl + '/user/collect/%s/%s' % (userid, opusid)
-                    r = requests.delete(url,params=attach, headers=header)
+                    r = requests.delete(url, params=attach, headers=header)
             else:
                 url = self.get_baseurl + "/user/collect/%s/%s" % (userid, opusid)
                 if method == 'put':
@@ -531,7 +543,8 @@ class API2:
             'recommend': '/page/recommend',
             'hot': '/page/popular',
             'newest': '/page/release',
-            'ranking': '/page/ranking',
+            'dayranking': '/ranking/opus/day',
+            'weekranking': '/ranking/opus/week',
             'musician': '/ranking/user/musician',
             'scout': '/ranking/user/scout'
         }
@@ -604,7 +617,7 @@ class API2:
             if 'lastReadAt' in param.keys():
                 r = requests.put(url, json=param, headers=header)
             else:
-                r = requests.put(url, headers=header)
+                r = requests.put(url, json={}, headers=header)
         elif method == 'delete':    # 清空通知列表
                 r = requests.delete(url, headers=header)
         else:

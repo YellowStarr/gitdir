@@ -6,21 +6,17 @@ from dbManual import DBManual
 from tool import tool
 import random, json
 from errorCodeConst import errorCodeConst
+from config import runconfig
 
-class shown_case():
-    def __init__(self):
-        self.api = API2()
+
+class shown_case:
+
+    def __init__(self, islocal=0):
+        self.api = API2(islocal)
         self.casedb = DBManual()
         self.sql = """update shown_case set args=%s,response=%s,result=%s,test_time=%s WHERE case_no = %s"""
         self.t = tool()
-        self.deviceid = "34e7a55f-8fb9-4511-b1b7-55d6148fa9bb"
-        login_param = {
-            "phoneNumber": "18782943850",
-            "password": "888888",
-            "platform": "iOS",
-            "clientVersion": "2.0",
-            "machineId": 100001
-        }
+        self.login_param, self.deviceid = runconfig.RunConfig().get_login(islocal)
 
         self.login_param2 = {
             "phoneNumber": "18782943852",
@@ -29,7 +25,7 @@ class shown_case():
             "clientVersion": "2.0",
             "machineId": 100001
         }
-        self.t.get_login_header(self.api, self.deviceid, login_param)
+        self.t.get_login_header(self.api, self.deviceid, self.login_param)
         self.ecode = errorCodeConst()
 
     # 取数据库中args
@@ -138,7 +134,7 @@ class shown_case():
         cur = self.casedb.connect_casedb()
         args = self.select_args(cur, case_no)
         response = self.api.shown_page('recommend', header, args)
-        assert response.status_code == 500, u"http响应错误，错误码 %s" % response.status_code
+        assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
         t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
         self.t.error_handle(cur, case_no, response, t, self.sql, self.ecode.UNKNOWN_ERROR, args)
 
@@ -302,7 +298,8 @@ class shown_case():
         cur = self.casedb.connect_casedb()
         kw = self.select_args(cur, case_no)
         response = self.api.shown_page('hot', header, kw)
-        assert response.status_code == 500, u"http响应错误，错误码 %s" % response.status_code
+        if response.status_code == 200:
+            print u"http响应错误，错误码 %s" % response.status_code
         t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
         self.t.error_handle(cur, case_no, response, t, self.sql, self.ecode.UNKNOWN_ERROR, kw)
 
@@ -316,7 +313,7 @@ class shown_case():
         cur = self.casedb.connect_casedb()
         kw = self.select_args(cur, case_no)
         response = self.api.shown_page('hot', header, kw)
-        assert response.status_code == 500, u"http响应错误，错误码 %s" % response.status_code
+        assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
         t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
         self.t.error_handle(cur, case_no, response, t, self.sql, self.ecode.UNKNOWN_ERROR, kw)
 
@@ -568,7 +565,8 @@ class shown_case():
         cur = self.casedb.connect_casedb()
         kw = self.select_args(cur, case_no)
         response = self.api.shown_page('ranking', header, kw)
-        assert response.status_code == 500, u"http响应错误，错误码 %s" % response.status_code
+        if response.status_code == 200:
+            print u"http响应错误，错误码 %s" % response.status_code
         t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
         self.t.error_handle(cur, case_no, response, t, self.sql, self.ecode.UNKNOWN_ERROR, kw)
 
@@ -582,7 +580,7 @@ class shown_case():
         cur = self.casedb.connect_casedb()
         kw = self.select_args(cur, case_no)
         response = self.api.shown_page('ranking', header, kw)
-        assert response.status_code == 500, u"http响应错误，错误码 %s" % response.status_code
+        assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
         t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
         self.t.error_handle(cur, case_no, response, t, self.sql, self.ecode.UNKNOWN_ERROR, kw)
 
@@ -602,7 +600,7 @@ class shown_case():
 
         self.casedb.closeDB(cur)
 
-    def test_23_musician(self):
+    def test_23_scout(self):
         case_no = 23
         r_list = []
         e_list = []
@@ -629,7 +627,7 @@ class shown_case():
 
         cur = self.casedb.connect_casedb()
         kw = self.select_args(cur, case_no)
-        response = self.api.shown_page('musician', header, kw)
+        response = self.api.shown_page('scout', header, kw)
         assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
         t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
         self.t.error_handle(cur, case_no, response, t, self.sql, 0, kw)
@@ -690,7 +688,7 @@ class shown_case():
         cur = self.casedb.connect_casedb()
         kw = self.select_args(cur, case_no)
         response = self.api.shown_page('musician', header, kw)
-        assert response.status_code == 500, u"http响应错误，错误码 %s" % response.status_code
+        assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
         t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
         self.t.error_handle(cur, case_no, response, t, self.sql, self.ecode.UNKNOWN_ERROR, kw)
 
@@ -816,7 +814,16 @@ class shown_case():
         header = self.t.get_header
 
         cur = self.casedb.connect_casedb()
-        kw = self.select_args(cur, case_no)
+        # kw = self.select_args(cur, case_no)
+        kw = {
+            "text": "举报",
+            "violateType": "r",
+            "target": {
+                "id": 6315799816953660810,
+                "type": "user"
+            },
+            "contact": ""
+        }
         response = self.api.violate_feedback(0, header, kw)
         assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
         t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
@@ -852,7 +859,7 @@ class shown_case():
         response = self.api.violate_feedback(0, header, kw)
         assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
         t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-        self.t.error_handle(cur, case_no, response, t, self.sql, self.ecode.ARGS_NULL, kw)
+        self.t.error_handle(cur, case_no, response, t, self.sql, self.ecode.ARG_ERROR, kw)
 
         self.casedb.closeDB(cur)
 
@@ -879,7 +886,7 @@ class shown_case():
         response = self.api.violate_feedback(0, header, kw)
         assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
         t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-        self.t.error_handle(cur, case_no, response, t, self.sql, self.ecode.ARGS_NULL, kw)
+        self.t.error_handle(cur, case_no, response, t, self.sql, self.ecode.ARG_ERROR, kw)
 
         self.casedb.closeDB(cur)
 
@@ -919,7 +926,7 @@ class shown_case():
         response = self.api.violate_feedback(1, header, kw)
         assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
         t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-        self.t.error_handle(cur, case_no, response, t, self.sql, self.ecode.ARGS_NULL, kw)
+        self.t.error_handle(cur, case_no, response, t, self.sql, self.ecode.ARG_ERROR, kw)
 
         self.casedb.closeDB(cur)
 
@@ -1033,7 +1040,6 @@ class shown_case():
         remote_cur.execute(sql, kw['opusid'])
         comments_tuple = remote_cur.fetchone()
 
-
     def test_48_opus_detail_comment(self):
         case_no = 48
 
@@ -1086,7 +1092,7 @@ class shown_case():
         response = self.api.get_song_detail(1, header, kw)
         # assert response.status_code == 500, u"http响应错误，错误码 %s" % response.status_code
         t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-        self.t.error_handle(cur, case_no, response, t, self.sql, self.ecode.UNKNOWN_ERROR, kw)
+        self.t.error_handle(cur, case_no, response, t, self.sql, self.ecode.ARGS_VALUE_ERROR, kw)
 
         self.casedb.closeDB(cur)
 
@@ -1258,6 +1264,66 @@ class shown_case():
         assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
         t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
         self.t.error_handle(cur, case_no, response, t, self.sql, 0, kw)
+
+        self.casedb.closeDB(cur)
+
+    def test_58_recommend_page(self):
+        """page=2,不带"next"必填项"""
+        case_no = 58
+
+        header = self.t.get_header
+
+        cur = self.casedb.connect_casedb()
+        args = self.select_args(cur, case_no)
+        response = self.api.shown_page('recommend', header, args)
+        assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
+        t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+        self.t.error_handle(cur, case_no, response, t, self.sql, self.ecode.ARGS_NULL, args)
+
+        self.casedb.closeDB(cur)
+
+    def test_59_recommend_page(self):
+        """page=2，带上next但不传值，应该传值为空的错"""
+
+        # print type(sys._getframe().f_code.co_name)
+        case_no = 59
+        header = self.t.get_header
+        cur = self.casedb.connect_casedb()
+        args = self.select_args(cur, case_no)
+        response = self.api.shown_page('recommend', header, args)
+        assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
+        t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+        self.t.error_handle(cur, case_no, response, t, self.sql, self.ecode.ARGS_NULL, args)
+
+        self.casedb.closeDB(cur)
+
+    def test_60_recommend_page(self):
+        """page=2，带上next，但传值不是返回的next字段值，报传值错误"""
+        case_no = 60
+
+        header = self.t.get_header
+
+        cur = self.casedb.connect_casedb()
+        args = self.select_args(cur, case_no)
+        response = self.api.shown_page('recommend', header, args)
+        assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
+        t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+        self.t.error_handle(cur, case_no, response, t, self.sql, self.ecode.ARGS_VALUE_ERROR, args)
+
+        self.casedb.closeDB(cur)
+
+    def test_61_recommend_page(self):
+        """page=2，next=：next"""
+        case_no = 61
+
+        header = self.t.get_header
+
+        cur = self.casedb.connect_casedb()
+        args = self.select_args(cur, case_no)
+        response = self.api.shown_page('recommend', header, args)
+        assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
+        t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+        self.t.error_handle(cur, case_no, response, t, self.sql, 0, args)
 
         self.casedb.closeDB(cur)
 

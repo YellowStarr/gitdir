@@ -7,14 +7,16 @@ import random
 import json
 from errorCodeConst import errorCodeConst
 import base64
+from config import runconfig
 
-class mix_case():
-    def __init__(self):
-        self.api = API2()
+
+class mix_case:
+    def __init__(self, islocal=0):
+        self.api = API2(islocal)
         self.casedb = DBManual()
         # self.sql = """update user_interactive_case set args=%s,response=%s,result=%s,test_time=%s WHERE case_no = %s"""
         self.t = tool()
-        self.deviceid = "34e7a55f-8fb9-4511-b1b7-55d6148fa9bb"
+        self.login_param, self.deviceid = runconfig.RunConfig().get_login(islocal)
 
         self.ecode = errorCodeConst()
         self.pwd = base64.b64encode("888888")

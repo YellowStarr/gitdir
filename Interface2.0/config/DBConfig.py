@@ -1,4 +1,4 @@
-#coding = utf-8
+# coding = utf-8
 from ConfigParser import ConfigParser
 import os
 
@@ -24,12 +24,19 @@ class DBConfig:
               }
         return db
 
-    def get_remotedb(self):
-        host = self.httpcfg.get('remoutdb', 'HOST')
-        port = self.httpcfg.get('remoutdb', 'PORT')
-        user = self.httpcfg.get('remoutdb', 'USER')
-        pwd = self.httpcfg.get('remoutdb', 'PASSWD')
-        db = self.httpcfg.get('remoutdb', 'DB')
+    def get_remotedb(self, islocal=0):
+        if islocal == 0:
+            host = self.httpcfg.get('remoutdb', 'HOST')
+            port = self.httpcfg.get('remoutdb', 'PORT')
+            user = self.httpcfg.get('remoutdb', 'USER')
+            pwd = self.httpcfg.get('remoutdb', 'PASSWD')
+            db = self.httpcfg.get('remoutdb', 'DB')
+        elif islocal == 1:
+            host = self.httpcfg.get('jmeterdb', 'HOST')
+            port = self.httpcfg.get('jmeterdb', 'PORT')
+            user = self.httpcfg.get('jmeterdb', 'USER')
+            pwd = self.httpcfg.get('jmeterdb', 'PASSWD')
+            db = self.httpcfg.get('jmeterdb', 'DB')
         db = {'host': host,
               'port': port,
               'user': user,

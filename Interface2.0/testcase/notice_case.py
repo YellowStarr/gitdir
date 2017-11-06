@@ -6,22 +6,16 @@ from dbManual import DBManual
 from tool import tool
 import random
 from errorCodeConst import errorCodeConst
+from config import runconfig
 
 
-class notice_case():
-    def __init__(self):
-        self.api = API2()
+class notice_case:
+    def __init__(self, islocal=0):
+        self.api = API2(islocal)
         self.casedb = DBManual()
         self.sql = """update notice_case set args=%s,response=%s,result=%s,test_time=%s WHERE case_no = %s"""
         self.t = tool()
-        self.deviceid = "34e7a55f-8fb9-4511-b1b7-55d6148fa9bb"
-        login_param = {
-            "phoneNumber": "18782943850",
-            "password": "888888",
-            "platform": "iOS",
-            "clientVersion": "2.0",
-            "machineId": 100001
-        }
+        self.login_param, self.deviceid = runconfig.RunConfig().get_login(islocal)
 
         self.login_param2 = {
             "phoneNumber": "18782943852",
@@ -30,7 +24,7 @@ class notice_case():
             "clientVersion": "2.0",
             "machineId": 100001
         }
-        self.t.get_login_header(self.api, self.deviceid, login_param)
+        self.t.get_login_header(self.api, self.deviceid, self.login_param)
         self.ecode = errorCodeConst()
 
     # 取数据库中args
@@ -94,7 +88,6 @@ class notice_case():
                 "lastReadAt": "2017-07-27 14:49:00"
             }
         }
-
         header = self.t.get_header
 
         cur = self.casedb.connect_casedb()
@@ -204,7 +197,7 @@ class notice_case():
     def test_10_flag_like(self):
         case_no = 10
 
-        header = self.t.get_header
+        header = self.api.get_header()
 
         cur = self.casedb.connect_casedb()
         kw = self.select_args(cur, case_no)
@@ -270,7 +263,7 @@ class notice_case():
     def test_14_flag_comment(self):
         case_no = 14
 
-        header = self.t.get_header
+        header = self.api.get_header()
 
         cur = self.casedb.connect_casedb()
         kw = self.select_args(cur, case_no)
@@ -376,7 +369,7 @@ class notice_case():
         e_list = []
         expect_data = {
             "data": {
-                "udpateTime": ""
+                "updateTime": ""
             }
         }
 

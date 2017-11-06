@@ -6,21 +6,16 @@ from dbManual import DBManual
 from tool import tool
 import random
 from errorCodeConst import errorCodeConst
+from config import runconfig
 
-class user_interactive_case():
-    def __init__(self):
-        self.api = API2()
+
+class user_interactive_case:
+    def __init__(self, islocal=0):
+        self.api = API2(islocal)
         self.casedb = DBManual()
         self.sql = """update user_interactive_case set args=%s,response=%s,result=%s,test_time=%s WHERE case_no = %s"""
         self.t = tool()
-        self.deviceid = "34e7a55f-8fb9-4511-b1b7-55d6148fa9bb"
-        self.login_param = {
-            "phoneNumber": "18782943850",
-            "password": "888888",
-            "platform": "iOS",
-            "clientVersion": "2.0",
-            "machineId": 100001
-        }
+        self.login_param, self.deviceid = runconfig.RunConfig().get_login(islocal)
         self.t.get_login_header(self.api, self.deviceid, self.login_param)
         self.ecode = errorCodeConst()
 
@@ -28,9 +23,10 @@ class user_interactive_case():
         id = cid
 
         cur = self.casedb.connect_casedb()
-        cur.execute('select args from user_interactive_case where id = %s', id)
-        result = cur.fetchone()
-        kw = eval(result[0])[0]
+        # cur.execute('select args from user_interactive_case where id = %s', id)
+        # result = cur.fetchone()
+        uid = self.t.get_login_id
+        kw = {"opusid":6313293039443902520,"userid":uid}
 
         header = self.t.get_header
         sql = """update user_interactive_case set args=%s,response=%s,result=%s,test_time=%s WHERE id = %s"""
@@ -134,15 +130,15 @@ class user_interactive_case():
 
         header = self.t.get_header
         uid = self.t.get_login_id
-        sql = """select opus_id from opus_collect where user_id = %s  """
-        remote_cur = self.casedb.connect_remotedb()
-        n = remote_cur.execute(sql, uid)
-        result = remote_cur.fetchmany(n)
-        arg = random.choice(result)
-        self.casedb.closeDB(remote_cur)
+        # sql = """select opus_id from opus_collect where user_id = %s  """
+        # remote_cur = self.casedb.connect_remotedb()
+        # n = remote_cur.execute(sql, uid)
+        # result = remote_cur.fetchmany(n)
+        # arg = random.choice(result)
+        # self.casedb.closeDB(remote_cur)
 
         cur = self.casedb.connect_casedb()
-        kw = {'userid': str(uid), 'opusid': str(arg[0])}
+        kw = {'userid': uid, 'opusid': str(6301612159738576918)}
         response = self.api.op_collect('delete', header, kwargs=kw)
         assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
         t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
@@ -374,7 +370,7 @@ class user_interactive_case():
             },
             "singer": {
                 "male": {
-                    "id": 1,
+                    "id": 2,
                 }
             },
             "pos": {
@@ -594,7 +590,7 @@ class user_interactive_case():
         response = self.api.create_virtual_singer('virtual', param, header)
         assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
         t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-        self.t.error_handle(cur, case_no, response, t, self.sql, self.ecode.ARGS_VALUE_ERROR, param)
+        self.t.error_handle(cur, case_no, response, t, self.sql, self.ecode.ARG_ERROR, param)
         self.casedb.closeDB(cur)
 
     def test_30_create_free_nomix(self):
@@ -621,23 +617,24 @@ class user_interactive_case():
         }
 
         param = {
-            "songName": "自由说唱",
+            "songName": "test2",
             "genre": "rap",
             "lyric": "吱吱吱，呦呦呦",
-            "songUrl": "http://free.song.com",
+            "songUrl": "http://heipa2-test.oss-cn-shanghai.aliyuncs.com/uploadTest/11111?Expires=1505130279&OSSAccessKeyId=LTAIGRaPkDvqQIFg&Signature=5qAggwhw%2FhOPsetKQpDQbUVCgCI%3D",
             "songDuration": 30,
             "isNeedMix": 0,
             "accom": {
-                "id": 1,
-                "url": "http://xxx",
-                "name": u"测试伴奏1",
-                "type": u"测试伴奏分类1"
+                "id": 4,
+                "url": "http://heipa-storage.oss-cn-shanghai.aliyuncs.com/music/10_Ne-Yo_-_Closer_cut.mp3",
+                "name": "Ne Yo Closer",
+                "type": "测试伴奏分类1"
             },
             "pos": {
-            "longitude": 150.0,
-            "latitude": 0.0
+                "longitude": 0.0,
+                "latitude": 0.0
             }
         }
+
         cur = self.casedb.connect_casedb()
         header = self.t.get_header
         response = self.api.create_virtual_singer('free', param, header)
@@ -733,7 +730,7 @@ class user_interactive_case():
         self.t.error_handle(cur, case_no, response, t, self.sql, 0, param)
         self.casedb.closeDB(cur)
 
-    '''def test_33_create_free_accomid_unexist(self):
+    def test_33_create_free_accomid_unexist(self):
         case_no = 33
         param = {
             "songName": "自由说唱",
@@ -758,7 +755,7 @@ class user_interactive_case():
         response = self.api.create_virtual_singer('free', param, header)
         assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
         t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-        self.t.error_handle(cur, case_no, response, t, self.sql, self.ecode.ARGS_VALUE_ERROR, param)
+        self.t.error_handle(cur, case_no, response, t, self.sql, self.ecode.RECORD_UNEXIST, param)
         self.casedb.closeDB(cur)
 
     def test_34_create_free_accomtype_unexist(self):
@@ -787,7 +784,7 @@ class user_interactive_case():
         assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
         t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
         self.t.error_handle(cur, case_no, response, t, self.sql, self.ecode.ARGS_VALUE_ERROR, param)
-        self.casedb.closeDB(cur)'''
+        self.casedb.closeDB(cur)
 
     def test_35_create_free_lyric_null(self):
         case_no = 35
@@ -1046,7 +1043,7 @@ class user_interactive_case():
         uid = self.t.get_login_id
 
         remote_cur = self.casedb.connect_remotedb()
-        sql = """select id from song_basic where user_id = %s and creative_status = 5 and public_status = 0"""
+        sql = """select id from song_basic where user_id = %s and creative_status = 1 and public_status = 0"""
         n = remote_cur.execute(sql, uid)
         result = remote_cur.fetchmany(n)
         songid_tuple = random.choice(result)
@@ -1097,7 +1094,7 @@ class user_interactive_case():
 
         re = self.t.list_dict_keys(response.json(), reslist)
         exp = self.t.list_dict_keys(expect_data, explist)
-        self.t.cmpkeys(re, exp)
+        self.t.cmpkeys(case_no, re, exp)
 
     def test_43_modify_published_song_info(self):
         case_no = 43
@@ -1131,7 +1128,7 @@ class user_interactive_case():
         uid = self.t.get_login_id
 
         remote_cur = self.casedb.connect_remotedb()
-        sql = """select id from song_basic where user_id = %s and creative_status = 5 and public_status = 0"""
+        sql = """select id from song_basic where user_id = %s and creative_status = 1 and public_status = 0"""
         n = remote_cur.execute(sql, uid)
         result = remote_cur.fetchmany(n)
         songid_tuple = random.choice(result)
@@ -1184,23 +1181,36 @@ class user_interactive_case():
             "data": {
                 "link": [
                     {
-                        "type": "weibo",
+                        "shareId": 0,
+                        "type": "weixin",
                         "url": ""
                     },
                     {
+                        "shareId": 0,
+                        "type": "weixinMoments",
+                        "url": ""
+                    },
+                    {
+                        "shareId": 0,
                         "type": "qq",
                         "url": ""
                     },
                     {
-                        "type": "weixin",
+                        "shareId": 0,
+                        "type": "Qzone",
                         "url": ""
-                    }
+                    },
+                    {
+                        "shareId": 0,
+                        "type": "weibo",
+                        "url": ""
+                    },
                 ]
             }
         }
 
         remote_cur = self.casedb.connect_remotedb()
-        sql = """select id from song_basic where creative_status = 5 and public_status = 1"""
+        sql = """select id from song_basic where creative_status = 1 and public_status = 1"""
         n = remote_cur.execute(sql)
         result = remote_cur.fetchmany(n)
         songid_tuple = random.choice(result)
@@ -1238,12 +1248,12 @@ class user_interactive_case():
         self.t.error_handle(cur, case_no, response, t, self.sql, self.ecode.STATE_ERROR, songid)
         self.casedb.closeDB(cur)
 
-    def test_48_share_inner(self):
+    def test_48_share(self):
         case_no = 48
         header = self.t.get_header
 
         remote_cur = self.casedb.connect_remotedb()
-        sql = """select id, user_id from song_basic where creative_status = 5 and public_status = 1"""
+        sql = """select id, user_id from song_basic where creative_status = 1 and public_status = 1"""
         n = remote_cur.execute(sql)
         result = remote_cur.fetchmany(n)
         song_tuple = random.choice(result)
@@ -1251,10 +1261,18 @@ class user_interactive_case():
         userid = song_tuple[1]
         self.casedb.closeDB(remote_cur)
 
-        p ={
-            "param": {"content": u"站内分享", "app": 1},
-            "userid": str(userid),
-            "opusid": str(songid)
+        response = self.api.get_share_link(songid, header)
+        sharelink_json = response.json()
+        sharelink_data = sharelink_json['data']
+        p = {
+                'opusid': songid,
+                'userid': userid,
+                'param': {
+                    'shareId': sharelink_data['link'][0]['shareId'],
+                    "content": "分享到微信",
+                    "targetChannel": sharelink_data['link'][0]['type'],
+                    'targetUrl': sharelink_data['link'][0]['url']
+                }
         }
 
         cur = self.casedb.connect_casedb()
@@ -1264,12 +1282,12 @@ class user_interactive_case():
         # self.t.error_handle(cur, case_no, response, t, self.sql, 0, p)
         self.casedb.closeDB(cur)
 
-    def test_49_share_outter(self):
+    def test_49_share(self):
         case_no = 49
         header = self.t.get_header
 
         remote_cur = self.casedb.connect_remotedb()
-        sql = """select id, user_id from song_basic where creative_status = 5 and public_status = 1"""
+        sql = """select id, user_id from song_basic where creative_status = 1 and public_status = 1"""
         n = remote_cur.execute(sql)
         result = remote_cur.fetchmany(n)
         song_tuple = random.choice(result)
@@ -1277,10 +1295,19 @@ class user_interactive_case():
         userid = song_tuple[1]
         self.casedb.closeDB(remote_cur)
 
+        response = self.api.get_share_link(songid, header)
+        sharelink_json = response.json()
+        sharelink_data = sharelink_json['data']
+
         p = {
-            "param": {"content": u"站外分享", "app": 0, "outside": [{"type": "weixin", "url": "http://xxxxxxxxxxx"}]},
-            "userid": str(userid),
-            "opusid": str(songid)
+            'opusid': songid,
+            'userid': userid,
+            'param': {
+                'shareId': sharelink_data['link'][1]['shareId'],
+                "content": "分享到微信朋友圈",
+                "targetChannel": sharelink_data['link'][1]['type'],
+                'targetUrl': sharelink_data['link'][1]['url']
+            }
         }
 
         cur = self.casedb.connect_casedb()
@@ -1290,12 +1317,12 @@ class user_interactive_case():
         self.t.error_handle(cur, case_no, response, t, self.sql, 0, p)
         self.casedb.closeDB(cur)
 
-    def test_50_share_inner_attach(self):
+    def test_50_share(self):
         case_no = 50
         header = self.t.get_header
 
         remote_cur = self.casedb.connect_remotedb()
-        sql = """select id, user_id from song_basic where creative_status = 5 and public_status = 1"""
+        sql = """select id, user_id from song_basic where creative_status = 1 and public_status = 1"""
         n = remote_cur.execute(sql)
         result = remote_cur.fetchmany(n)
         song_tuple = random.choice(result)
@@ -1303,10 +1330,19 @@ class user_interactive_case():
         userid = song_tuple[1]
         self.casedb.closeDB(remote_cur)
 
+        response = self.api.get_share_link(songid, header)
+        sharelink_json = response.json()
+        sharelink_data = sharelink_json['data']
+
         p = {
-            "param": {"attach": "eyJzaGFyZUlkIjo2MzA2MzY5MzQ2MzA2MzEwMTQ2LCJzaGFyZU1hcmtlcklkIjo2Mjk5MTYzMjk4NTAzODUyMDMzfQ==", "content": "站内分享带attach", "app": 0, "outside": [{"type": "weixin", "url": "http://xxxxxxxxxxx"}]},
-            "userid": '6302790102099689473',
-            "opusid": '6298120536261519455'
+            'opusid': songid,
+            'userid': userid,
+            'param': {
+                'shareId': sharelink_data['link'][2]['shareId'],
+                "content": "分享到qq",
+                "targetChannel": sharelink_data['link'][2]['type'],
+                'targetUrl': sharelink_data['link'][2]['url']
+            }
         }
 
         cur = self.casedb.connect_casedb()
@@ -1316,7 +1352,7 @@ class user_interactive_case():
         self.t.error_handle(cur, case_no, response, t, self.sql, 0, p)
         self.casedb.closeDB(cur)
 
-    def test_51_share_outter_attach(self):
+    def test_51_share(self):
         case_no = 51
         header = self.t.get_header
 
@@ -1329,10 +1365,19 @@ class user_interactive_case():
         userid = song_tuple[1]
         self.casedb.closeDB(remote_cur)
 
+        response = self.api.get_share_link(songid, header)
+        sharelink_json = response.json()
+        sharelink_data = sharelink_json['data']
+
         p = {
-            "param": {"attach": "xxx", "content": u"站外分享", "app": 0, "outside": [{"type": "weixin", "url": "http://xxxxxxxxxxx"}]},
-            "userid": str(userid),
-            "opusid": str(songid)
+            'opusid': songid,
+            'userid': userid,
+            'param': {
+                'shareId': sharelink_data['link'][3]['shareId'],
+                "content": "分享到qq",
+                "targetChannel": sharelink_data['link'][3]['type'],
+                'targetUrl': sharelink_data['link'][3]['url']
+            }
         }
 
         cur = self.casedb.connect_casedb()
@@ -1342,19 +1387,12 @@ class user_interactive_case():
         self.t.error_handle(cur, case_no, response, t, self.sql, 0, p)
         self.casedb.closeDB(cur)
 
-    def test_52_share_inner_content_null(self):
+    def test_52_share(self):
         case_no = 52
         header = self.t.get_header
-        r_list = []
-        e_list = []
-        expect_data = {
-            "data": {
-                "shareCount": 0
-            }
-        }
 
         remote_cur = self.casedb.connect_remotedb()
-        sql = """select id, user_id from song_basic where creative_status = 5 and public_status = 1"""
+        sql = """select id, user_id from song_basic where creative_status =  and public_status = 1"""
         n = remote_cur.execute(sql)
         result = remote_cur.fetchmany(n)
         song_tuple = random.choice(result)
@@ -1362,38 +1400,33 @@ class user_interactive_case():
         userid = song_tuple[1]
         self.casedb.closeDB(remote_cur)
 
-        p = {
-            "param": {"content": "", "app": 1},
-            "userid": str(userid),
-            "opusid": str(songid)
-        }
+        response = self.api.get_share_link(songid, header)
+        sharelink_json = response.json()
+        sharelink_data = sharelink_json['data']
 
+        p = {
+            'opusid': songid,
+            'userid': userid,
+            'param': {
+                'shareId': sharelink_data['link'][4]['shareId'],
+                "content": "分享到qq",
+                "targetChannel": sharelink_data['link'][4]['type'],
+                'targetUrl': sharelink_data['link'][4]['url']
+            }
+        }
         cur = self.casedb.connect_casedb()
         response = self.api.op_share('put', header, kwargs=p)
         assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
         t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
         self.t.error_handle(cur, case_no, response, t, self.sql, 0, p)
-
-        res = self.t.list_dict_keys(response.json(), r_list)
-        exp = self.t.list_dict_keys(expect_data, e_list)
-        self.t.cmpkeys(case_no, res, exp)
-
         self.casedb.closeDB(cur)
 
-    def test_53_share_outter_content_null(self):
+    def test_53_share(self):
         case_no = 53
         header = self.t.get_header
 
-        r_list = []
-        e_list = []
-        expect_data = {
-            "data": {
-                "shareCount": 0
-            }
-        }
-
         remote_cur = self.casedb.connect_remotedb()
-        sql = """select id, user_id from song_basic where creative_status = 5 and public_status = 1"""
+        sql = """select id, user_id from song_basic where creative_status = 1 and public_status = 1"""
         n = remote_cur.execute(sql)
         result = remote_cur.fetchmany(n)
         song_tuple = random.choice(result)
@@ -1401,22 +1434,26 @@ class user_interactive_case():
         userid = song_tuple[1]
         self.casedb.closeDB(remote_cur)
 
+        response = self.api.get_share_link(songid, header)
+        sharelink_json = response.json()
+        sharelink_data = sharelink_json['data']
+
         p = {
-            "param": {"content":"","app": 0, "outside": [{"type": "weixin", "url": "http://xxxxxxxxxxx"}]},
-            "userid": str(userid),
-            "opusid": str(songid)
+            'opusid': songid,
+            'userid': userid,
+            'param': {
+                'shareId': sharelink_data['link'][2]['shareId'],
+                "content": "",
+                "targetChannel": sharelink_data['link'][2]['type'],
+                'targetUrl': sharelink_data['link'][2]['url']
+            }
         }
 
         cur = self.casedb.connect_casedb()
         response = self.api.op_share('put', header, kwargs=p)
         assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
         t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-        self.t.error_handle(cur, case_no, response, t, self.sql, 0, p)
-
-        res = self.t.list_dict_keys(response.json(), r_list)
-        exp = self.t.list_dict_keys(expect_data, e_list)
-        self.t.cmpkeys(case_no, res, exp)
-
+        self.t.error_handle(cur, case_no, response, t, self.sql, self.ecode.ARGS_NULL, p)
         self.casedb.closeDB(cur)
 
     def test_54_share_list(self):
@@ -1457,15 +1494,10 @@ class user_interactive_case():
                         },
                         "shareTime": "",
                         "share": {
-                            "shareId": 0,
-                            "content": "",
-                            "app": 0,
-                            "outside": [
-                                {
-                                    "type": "",
-                                    "url": ""
-                                }
-                            ]
+                            "content": "分享到qq",
+                            "targetUrl": "",
+                            "shareId": 6316185798349687330,
+                            "targetChannel": "qqq"
                         },
                         "isTalentShare": 0
                     }]
@@ -1586,7 +1618,7 @@ class user_interactive_case():
         }
 
         remote_cur = self.casedb.connect_remotedb()
-        sql = """select id from opus_share where user_id = %s """
+        sql = """select id from opus_share_record where user_id = %s """
         n = remote_cur.execute(sql, uid)
         if not n:
             self.casedb.closeDB(remote_cur)
@@ -1750,63 +1782,76 @@ class user_interactive_case():
         self.t.error_handle(cur, case_no, response, t, self.sql, 0)
         self.casedb.closeDB(cur)
 
-if __name__ == "__main__":
-    case = user_interactive_case()
-    case.test_01_collect(1)
-    # case.test_05_collect_unlogin()
-    # case.test_06_collect_opus_unexist()
-    # case.test_07_collect_duplicate()
-    # case.test_08_collect_delete_unlogin()
-    # case.test_10_collect_delete_no_attach()
-    # case.test_12_collect_delete_uncollect()
-    # case.test_13_collect_list()
-    # case.test_14_collect_list_with_param()
-    # case.test_15_collect_list_unlogin()
-    # case.test_16_collect_list_arg_type_error()
-    # case.test_17_praise_opuse_without_attach()
-    # case.test_19_praise_opuse_duplicate()
-    # case.test_20_praise_unlogin()
-    # case.test_21_praise_unexist()
-    # case.test_22_praise_unexist_user()
-    # case.test_23_create_virtual()
-    # case.test_24_create_virtual_without_singer()
-    # case.test_25_create_virtual_without_songname()
-    # case.test_26_create_virtual_lyric_length_overflow()
-    # case.test_27_create_virtual_without_comurl()
-    # case.test_28_create_virtual_lyric_english()
-    # case.test_04_collect_self()
-    # case.publish()
-    # case.test_29_create_virtual_singer_zero()
-    # case.test_30_create_free_nomix()
-    # case.test_31_create_free_mix()
-    # case.test_32_create_free_songduration_type_wrong()
+    def test_65_share(self):
+        case_no = 65
+        header = self.t.get_header
 
-    # case.test_35_create_free_lyric_null()
-    # case.test_36_create_intel()
-    # case.test_37_create_intel_songduration_negtive()
-    # case.test_38_create_intel_latitude_over()
-    # case.test_39_create_medley()
-    # case.test_40_create_medley_max_zero()
-    # case.test_41_create_medley_description_null()
-    # case.test_42_modify_song_info()
-    # case.test_43_modify_published_song_info()
-    # case.test_44_modify_info_null()
-    # case.test_45_modify_songname_overflow()
-    # case.test_46_share_link()
-    # case.test_47_share_link_unpublished_opusid()
-    case.test_48_share_inner()
-    # case.test_49_share_outter()
-    # case.test_50_share_inner_attach()
-    # case.test_52_share_inner_content_null()
-    # case.test_53_share_outter_content_null()
-    # case.test_54_share_list()
-    # case.test_55_share_list_default()
-    # case.test_56_share_list_sort_hot()
-    # case.test_57_share_delete()
-    # case.test_60_share_delete_unexist()
-    # case.test_61_get_version_ios()
-    # case.test_62_get_version_andriod()
-    # case.test_63_get_version_platform_error()
+        remote_cur = self.casedb.connect_remotedb()
+        sql = """select id, user_id from song_basic where creative_status =1  and public_status = 1"""
+        n = remote_cur.execute(sql)
+        result = remote_cur.fetchmany(n)
+        song_tuple = random.choice(result)
+        songid = song_tuple[0]
+        userid = song_tuple[1]
+        self.casedb.closeDB(remote_cur)
+
+        response = self.api.get_share_link(songid, header)
+        sharelink_json = response.json()
+        sharelink_data = sharelink_json['data']
+
+        p = {
+            'opusid': songid,
+            'userid': userid,
+            'param': {
+                'shareId': sharelink_data['link'][4]['shareId'],
+                "content": u"分享到qq",
+                "targetChannel": 'qqq',
+                'targetUrl': sharelink_data['link'][4]['url']
+            }
+        }
+        cur = self.casedb.connect_casedb()
+        response = self.api.op_share('put', header, kwargs=p)
+        assert response.status_code == 200, u"http响应错误，错误码 %s" % response.status_code
+        t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+        self.t.error_handle(cur, case_no, response, t, self.sql, 0, p)
+        self.casedb.closeDB(cur)
+
+    def test_66_share(self):
+        case_no = 52
+        header = self.t.get_header
+
+        remote_cur = self.casedb.connect_remotedb()
+        sql = """select id, user_id from song_basic where creative_status =1  and public_status = 1"""
+        n = remote_cur.execute(sql)
+        result = remote_cur.fetchmany(n)
+        song_tuple = random.choice(result)
+        songid = song_tuple[0]
+        userid = song_tuple[1]
+        self.casedb.closeDB(remote_cur)
+
+        response = self.api.get_share_link(songid, header)
+        sharelink_json = response.json()
+        sharelink_data = sharelink_json['data']
+
+        p = {
+            'opusid': songid,
+            'userid': userid,
+            'param': {
+                'shareId': '111596555969886555',
+                "content": "分享到qq",
+                "targetChannel": sharelink_data['link'][4]['type'],
+                'targetUrl': sharelink_data['link'][4]['url']
+            }
+        }
+        cur = self.casedb.connect_casedb()
+        response = self.api.op_share('put', header, kwargs=p)
+        if response.status_code == 500:
+            print u"http响应错误，错误码 %s" % response.status_code
+        t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+        self.t.error_handle(cur, case_no, response, t, self.sql, self.ecode.DATABASE_OPERATION_ERROR, p)
+        self.casedb.closeDB(cur)
+
+
 
 
 

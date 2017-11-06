@@ -1,6 +1,7 @@
 #coding = utf-8
 from ConfigParser import ConfigParser
 import os
+import time
 
 class CaseConfig:
     def __init__(self):
@@ -16,7 +17,13 @@ class CaseConfig:
         casefile = self.casecfg.get('case_list', 'casefile')
         return casefile
 
+    def set_result_file(self):
+        now_time = time.strftime("%Y-%m-%d", time.localtime())
+        filename = 'casedir\\result-%s.xls' % now_time
+        self.casecfg.set('case_list', 'resultfile', filename)
+
     def get_result_file(self):
+        self.set_result_file()
         return self.casecfg.get('case_list', 'resultfile')
 
     def get_excel_config(self):

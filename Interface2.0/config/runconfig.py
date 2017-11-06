@@ -7,12 +7,33 @@ class RunConfig:
         path = os.getcwd()
         file = os.path.join(path, 'config')
         filename = os.path.join(file, 'httpconfig.conf')
-        httpcfg = ConfigParser()
-        httpcfg.read(filename)
-        self.url = httpcfg.get('baseurl', 'url')
+        self.httpcfg = ConfigParser()
+        self.httpcfg.read(filename)
 
-    def get_base_url(self):
-        return self.url
+    def get_base_url(self, islocal=0):
+        if islocal == 1:
+            title = 'baseurl_local'
+        else:
+            title = 'baseurl'
+        url = self.httpcfg.get(title, 'url')
+        return url
 
-    # def get_db(self):
-        # return self.db
+    def get_login(self, islocal=0):
+        if islocal == 1:
+            title = 'login_local'
+        else:
+            title = 'login'
+        phoneNumber = self.httpcfg.get(title, 'phoneNumber')
+        password = self.httpcfg.get(title, 'password')
+        platform = self.httpcfg.get(title, 'platform')
+        clientVersion = self.httpcfg.get(title, 'clientVersion')
+        machineId = self.httpcfg.get(title, 'machineId')
+        deviceId = self.httpcfg.get(title, 'deviceId')
+        login = {
+            "phoneNumber": phoneNumber,
+            "password": password,
+            "platform": platform,
+            "clientVersion": clientVersion,
+            "machineId": machineId
+        }
+        return login, deviceId

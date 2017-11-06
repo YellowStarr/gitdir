@@ -1,29 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/testcase/shown_case.py" line="913" />
+    <bookmark url="file://$PROJECT_DIR$/testcase/shown_case.py" line="920" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="62c0323a-ccb1-4756-a140-8c2514231f80" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcase/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcase/other_case.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/casedir/result-2017-09-15.xls" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/acom_case.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcase/business_check.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/casedir/register_result.xls" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/casedir/testcase.xls" afterPath="$PROJECT_DIR$/casedir/testcase.xls" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/API2.py" afterPath="$PROJECT_DIR$/API2.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/CaseMode.py" afterPath="$PROJECT_DIR$/config/CaseMode.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/DBConfig.py" afterPath="$PROJECT_DIR$/config/DBConfig.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/dbconfig.conf" afterPath="$PROJECT_DIR$/config/dbconfig.conf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/httpconfig.conf" afterPath="$PROJECT_DIR$/config/httpconfig.conf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/runconfig.py" afterPath="$PROJECT_DIR$/config/runconfig.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dbManual.py" afterPath="$PROJECT_DIR$/dbManual.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/errorCodeConst.py" afterPath="$PROJECT_DIR$/errorCodeConst.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/handleExcel.py" afterPath="$PROJECT_DIR$/handleExcel.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/log.txt" afterPath="$PROJECT_DIR$/log/log.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/run_case.py" afterPath="$PROJECT_DIR$/run_case.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcase/__init__.py" afterPath="$PROJECT_DIR$/testcase/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcase/interactive_case.py" afterPath="$PROJECT_DIR$/testcase/interactive_case.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcase/login_test.py" afterPath="$PROJECT_DIR$/testcase/login_test.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcase/mix_test.py" afterPath="$PROJECT_DIR$/testcase/mix_test.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcase/notice_case.py" afterPath="$PROJECT_DIR$/testcase/notice_case.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcase/other_case.py" afterPath="$PROJECT_DIR$/testcase/other_case.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcase/register_case.py" afterPath="$PROJECT_DIR$/testcase/register_case.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcase/shown_case.py" afterPath="$PROJECT_DIR$/testcase/shown_case.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcase/user_case.py" afterPath="$PROJECT_DIR$/testcase/user_case.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcase/user_interactive_case.py" afterPath="$PROJECT_DIR$/testcase/user_interactive_case.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tool.py" afterPath="$PROJECT_DIR$/tool.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/interactive_case.py" afterPath="$PROJECT_DIR$/testcase/interactive_case.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/login_test.py" afterPath="$PROJECT_DIR$/testcase/login_test.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mix_test.py" afterPath="$PROJECT_DIR$/testcase/mix_test.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/notice_case.py" afterPath="$PROJECT_DIR$/testcase/notice_case.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/register_case.py" afterPath="$PROJECT_DIR$/testcase/register_case.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/shown_case.py" afterPath="$PROJECT_DIR$/testcase/shown_case.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/user_case.py" afterPath="$PROJECT_DIR$/testcase/user_case.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/user_interactive_case.py" afterPath="$PROJECT_DIR$/testcase/user_interactive_case.py" />
     </list>
     <ignored path="Interface2.0.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,10 +45,12 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/Interface2.0$mix_test.coverage" NAME="mix_test Coverage Results" MODIFIED="1504860540139" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Interface2.0$tool.coverage" NAME="tool Coverage Results" MODIFIED="1505359362780" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Interface2.0$run_case.coverage" NAME="run_case Coverage Results" MODIFIED="1505372530643" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Interface2.0$tool.coverage" NAME="tool Coverage Results" MODIFIED="1506419079720" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Interface2.0$acom_case__1_.coverage" NAME="acom_case (1) Coverage Results" MODIFIED="1509686566304" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Interface2.0$run_case.coverage" NAME="run_case Coverage Results" MODIFIED="1509615008422" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Interface2.0$demo.coverage" NAME="demo Coverage Results" MODIFIED="1503650276277" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/Desktop/CodeFactory" />
     <SUITE FILE_PATH="coverage/Interface2.0$other_case.coverage" NAME="other_case Coverage Results" MODIFIED="1505203210312" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
+    <SUITE FILE_PATH="coverage/Interface2.0$acom_case.coverage" NAME="acom_case Coverage Results" MODIFIED="1509528836576" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
     <SUITE FILE_PATH="coverage/Interface2.0$user_interactive_case.coverage" NAME="user_interactive_case Coverage Results" MODIFIED="1504165204138" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Interface2.0$register_case.coverage" NAME="register_case Coverage Results" MODIFIED="1503044363743" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Interface2.0$interactive_case.coverage" NAME="interactive_case Coverage Results" MODIFIED="1504505067412" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -48,6 +58,7 @@
     <SUITE FILE_PATH="coverage/Interface2.0$shown_case.coverage" NAME="shown_case Coverage Results" MODIFIED="1505203227465" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Interface2.0$insertTestcase.coverage" NAME="insertTestcase Coverage Results" MODIFIED="1502681539179" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Interface2.0$testSuit.coverage" NAME="testSuit Coverage Results" MODIFIED="1502270795014" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Interface2.0$business_check.coverage" NAME="business_check Coverage Results" MODIFIED="1507878354430" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
     <SUITE FILE_PATH="coverage/Interface2.0$user_case.coverage" NAME="user_case Coverage Results" MODIFIED="1505182217685" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
@@ -59,245 +70,46 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="API2.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/API2.py">
+      <file leaf-file-name="acom_case.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/acom_case.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="486" column="8" selection-start-line="486" selection-start-column="8" selection-end-line="486" selection-end-column="8" />
+            <state relative-caret-position="20">
+              <caret line="312" column="28" selection-start-line="312" selection-start-column="28" selection-end-line="312" selection-end-column="28" />
               <folding>
-                <element signature="e#146#189#0" expanded="false" />
-                <element signature="e#235#994#0" expanded="false" />
-                <element signature="e#1043#1331#0" expanded="false" />
-                <element signature="e#1377#1612#0" expanded="false" />
-                <element signature="e#1669#1916#0" expanded="false" />
-                <element signature="e#1968#2200#0" expanded="false" />
-                <element signature="e#2254#2512#0" expanded="false" />
-                <element signature="e#2575#2836#0" expanded="false" />
-                <element signature="e#2896#3153#0" expanded="false" />
-                <element signature="e#3212#3448#0" expanded="false" />
-                <element signature="e#3500#3765#0" expanded="false" />
-                <element signature="e#3821#4054#0" expanded="false" />
-                <element signature="e#4113#4361#0" expanded="false" />
-                <element signature="e#4416#4657#0" expanded="false" />
-                <element signature="e#4708#4854#0" expanded="false" />
-                <element signature="e#4910#5032#0" expanded="false" />
-                <element signature="e#5085#5187#0" expanded="false" />
-                <element signature="e#5233#5326#0" expanded="false" />
-                <element signature="e#5382#5489#0" expanded="false" />
-                <element signature="e#5553#5895#0" expanded="false" />
-                <element signature="e#5960#6901#0" expanded="false" />
-                <element signature="e#6963#7205#0" expanded="false" />
-                <element signature="e#7265#7929#0" expanded="false" />
-                <element signature="e#7991#9508#0" expanded="false" />
-                <element signature="e#9567#10538#0" expanded="false" />
-                <element signature="e#11393#11641#0" expanded="false" />
-                <element signature="e#11701#12821#0" expanded="false" />
-                <element signature="e#12876#13004#0" expanded="false" />
-                <element signature="e#13060#13184#0" expanded="false" />
-                <element signature="e#13256#13389#0" expanded="false" />
-                <element signature="e#13457#15578#0" expanded="false" />
-                <element signature="e#15679#16443#0" expanded="false" />
-                <element signature="e#16493#16719#0" expanded="false" />
-                <element signature="e#17594#17706#0" expanded="false" />
-                <element signature="e#17758#17873#0" expanded="false" />
-                <element signature="e#17925#18090#0" expanded="false" />
-                <element signature="e#18146#18721#0" expanded="false" />
-                <element signature="e#18795#19088#0" expanded="false" />
-                <element signature="e#19636#19982#0" expanded="false" />
-                <element signature="e#21135#21674#0" expanded="false" />
-                <element signature="e#21135#21289#1" expanded="false" />
-                <element signature="e#21908#22221#0" expanded="false" />
+                <element signature="e#38#59#0" expanded="true" />
+                <element signature="e#291#535#0" expanded="false" />
+                <element signature="e#541#3865#1" expanded="false" />
+                <element signature="e#3911#5364#0" expanded="false" />
+                <element signature="e#3993#4290#0" expanded="false" />
+                <marker date="1509686556059" expanded="false" signature="1601:2265" ph="..." />
+                <marker date="1509686556059" expanded="false" signature="6664:7304" ph="..." />
+                <marker date="1509686556059" expanded="false" signature="7342:8155" ph="..." />
+                <marker date="1509686556059" expanded="false" signature="8198:9106" ph="..." />
+                <marker date="1509686556059" expanded="false" signature="9151:10681" ph="..." />
+                <marker date="1509686556059" expanded="true" signature="10725:12166" ph="..." />
+                <marker date="1509686556059" expanded="false" signature="12220:13574" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="run_case.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="run_case.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/run_case.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="148" column="44" selection-start-line="148" selection-start-column="44" selection-end-line="148" selection-end-column="44" />
+            <state relative-caret-position="2020">
+              <caret line="218" column="35" selection-start-line="218" selection-start-column="35" selection-end-line="218" selection-end-column="35" />
               <folding>
-                <element signature="e#60#78#0" expanded="true" />
-                <element signature="e#539#5012#1" expanded="false" />
-                <element signature="e#5015#5226#1" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="interactive_case.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testcase/interactive_case.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="566">
-              <caret line="1250" column="32" selection-start-line="1250" selection-start-column="32" selection-end-line="1250" selection-end-column="32" />
-              <folding>
-                <element signature="e#1092#1306#0" expanded="false" />
-                <element signature="e#1352#2579#0" expanded="false" />
-                <element signature="e#2634#3824#0" expanded="false" />
-                <element signature="e#3880#5397#0" expanded="false" />
-                <element signature="e#5451#6305#0" expanded="false" />
-                <element signature="e#6356#7191#0" expanded="false" />
-                <element signature="e#7246#8246#0" expanded="false" />
-                <element signature="e#8307#9128#0" expanded="false" />
-                <element signature="e#9180#10831#0" expanded="false" />
-                <element signature="e#10879#12505#0" expanded="false" />
-                <element signature="e#12554#14152#0" expanded="false" />
-                <element signature="e#14203#15786#0" expanded="false" />
-                <element signature="e#15839#17198#0" expanded="false" />
-                <element signature="e#17251#18507#0" expanded="false" />
-                <element signature="e#18562#19533#0" expanded="false" />
-                <element signature="e#19590#21135#0" expanded="false" />
-                <element signature="e#21200#22172#0" expanded="false" />
-                <element signature="e#22224#23471#0" expanded="false" />
-                <element signature="e#23527#24471#0" expanded="false" />
-                <element signature="e#24516#26641#0" expanded="false" />
-                <element signature="e#26702#27891#0" expanded="false" />
-                <element signature="e#27897#30847#1" expanded="false" />
-                <element signature="e#30900#32020#0" expanded="false" />
-                <element signature="e#32079#33067#0" expanded="false" />
-                <element signature="e#33116#34281#0" expanded="false" />
-                <element signature="e#34335#35794#0" expanded="false" />
-                <element signature="e#35852#37392#0" expanded="false" />
-                <element signature="e#37448#39428#0" expanded="false" />
-                <element signature="e#39483#40935#0" expanded="false" />
-                <element signature="e#40998#42126#0" expanded="false" />
-                <element signature="e#42179#43074#0" expanded="false" />
-                <element signature="e#43130#44029#0" expanded="false" />
-                <element signature="e#44082#44980#0" expanded="false" />
-                <element signature="e#46531#47825#0" expanded="false" />
-                <element signature="e#47875#48938#0" expanded="false" />
-                <element signature="e#48991#49967#0" expanded="false" />
-                <element signature="e#50019#51972#0" expanded="false" />
-                <element signature="e#52031#53901#0" expanded="false" />
-                <element signature="e#53942#55204#0" expanded="false" />
-                <element signature="e#55255#56222#0" expanded="false" />
-                <element signature="e#56274#57226#0" expanded="false" />
-                <element signature="e#57281#58252#0" expanded="false" />
-                <element signature="e#58311#59293#0" expanded="false" />
-                <element signature="e#59348#60412#0" expanded="false" />
-                <element signature="e#60467#61202#0" expanded="false" />
-                <element signature="e#61250#62185#0" expanded="false" />
-                <element signature="e#62232#63453#0" expanded="false" />
-                <element signature="e#63500#64168#0" expanded="false" />
-                <element signature="e#64224#64892#0" expanded="false" />
-                <element signature="e#64949#65631#0" expanded="false" />
-                <element signature="e#65688#66372#0" expanded="false" />
-                <element signature="e#66415#68022#0" expanded="false" />
-                <element signature="e#68071#69044#0" expanded="false" />
-                <element signature="e#69102#70039#0" expanded="false" />
-                <element signature="e#73978#74846#0" expanded="false" />
-                <element signature="e#74891#75952#0" expanded="false" />
-                <element signature="e#75953#78368#1" expanded="false" />
-                <marker date="1505371928916" expanded="true" signature="297:386" ph="update inter... " />
-                <marker date="1505371928916" expanded="true" signature="1104:1156" ph="select args other_case" />
-                <marker date="1505371928916" expanded="true" signature="1448:1526" ph="select id, u... song_basic" />
-                <marker date="1505371928916" expanded="true" signature="2726:2804" ph="select id, u... song_basic" />
-                <marker date="1505371928916" expanded="true" signature="3972:4105" ph="select id fr... song_basic" />
-                <marker date="1505371928916" expanded="true" signature="5543:5621" ph="select id, u... song_basic" />
-                <marker date="1505371928916" expanded="true" signature="6448:6526" ph="select id, u... song_basic" />
-                <marker date="1505371928916" expanded="true" signature="7338:7416" ph="select id, u... song_basic" />
-                <marker date="1505371928916" expanded="true" signature="8399:8473" ph="select user_... song_basic" />
-                <marker date="1505371928916" expanded="true" signature="9272:9350" ph="select id, u... song_basic" />
-                <marker date="1505371928916" expanded="true" signature="10971:11049" ph="select id, u... song_basic" />
-                <marker date="1505371928916" expanded="true" signature="12647:12780" ph="select id fr... song_basic" />
-                <marker date="1505371928916" expanded="true" signature="12945:13027" ph="select opus_... opus_comment" />
-                <marker date="1505371928916" expanded="true" signature="14296:14429" ph="select id fr... song_basic" />
-                <marker date="1505371928916" expanded="true" signature="14594:14676" ph="select opus_... opus_comment" />
-                <marker date="1505371928916" expanded="true" signature="15932:16065" ph="select id fr... song_basic" />
-                <marker date="1505371928916" expanded="true" signature="17524:17600" ph="select opus_... opus_comment" />
-                <marker date="1505371928916" expanded="true" signature="17760:17804" ph="select user_... song_basic" />
-                <marker date="1505371928916" expanded="true" signature="18690:18768" ph="select opus_... opus_comment" />
-                <marker date="1505371928916" expanded="true" signature="18928:18972" ph="select user_... song_basic" />
-                <marker date="1505371928916" expanded="true" signature="19867:19911" ph="select id fr... song_basic" />
-                <marker date="1505371928916" expanded="true" signature="20140:20216" ph="select id, u... opus_comment" />
-                <marker date="1505371928916" expanded="true" signature="21328:21372" ph="select id fr... song_basic" />
-                <marker date="1505371928916" expanded="true" signature="22524:22618" ph="select id, o... opus_comment" />
-                <marker date="1505371928916" expanded="true" signature="23654:23748" ph="select id, o... opus_comment" />
-                <marker date="1505371928916" expanded="true" signature="25746:25852" ph="select opus_... opus_comment" />
-                <marker date="1505371928916" expanded="true" signature="26975:27120" ph="select opus_... opus_comment" />
-                <marker date="1505371928916" expanded="true" signature="31155:31249" ph="select id, o... opus_comment" />
-                <marker date="1505371928916" expanded="true" signature="32226:32293" ph="select comme... opus_comment_like" />
-                <marker date="1505371928916" expanded="true" signature="32464:32508" ph="select user_... song_basic" />
-                <marker date="1505371928916" expanded="true" signature="33242:33336" ph="select id, o... opus_comment" />
-                <marker date="1505371928916" expanded="true" signature="33476:33535" ph="select count... opus_comment" />
-                <marker date="1505371928916" expanded="true" signature="34461:34555" ph="select id, o... opus_comment" />
-                <marker date="1505371928916" expanded="true" signature="34695:34754" ph="select count... opus_comment" />
-                <marker date="1505371928916" expanded="true" signature="39753:39853" ph="select id, u... song_basic" />
-                <marker date="1505371928916" expanded="true" signature="40091:40141" ph="select liste... song_attach" />
-                <marker date="1505371928916" expanded="true" signature="41125:41225" ph="select id, u... song_basic" />
-                <marker date="1505371928916" expanded="true" signature="41463:41513" ph="select liste... song_attach" />
-                <marker date="1505371928916" expanded="true" signature="42306:42406" ph="select id, u... song_basic" />
-                <marker date="1505371928916" expanded="true" signature="43257:43357" ph="select id, u... song_basic" />
-                <marker date="1505371928916" expanded="true" signature="44209:44309" ph="select id, u... song_basic" />
-                <marker date="1505371928916" expanded="true" signature="45405:45563" ph="select id fr... song_basic" />
-                <marker date="1505371928916" expanded="true" signature="46658:46816" ph="select id fr... song_basic" />
-                <marker date="1505371928916" expanded="true" signature="48002:48160" ph="select id fr... song_basic" />
-                <marker date="1505371928916" expanded="true" signature="49118:49189" ph="select id fr... song_basic" />
-                <marker date="1505371928916" expanded="true" signature="50949:51042" ph="select id fr... song_basic" />
-                <marker date="1505371928916" expanded="true" signature="52961:53098" ph="select id fr... song_basic" />
-                <marker date="1505371928916" expanded="true" signature="54439:54546" ph="select id fr... song_basic" />
-                <marker date="1505371928916" expanded="true" signature="55598:55705" ph="select id fr... song_basic" />
-                <marker date="1505371928916" expanded="true" signature="56603:56710" ph="select id fr... song_basic" />
-                <marker date="1505371928916" expanded="true" signature="57629:57736" ph="select id fr... song_basic" />
-                <marker date="1505371928916" expanded="true" signature="58666:58775" ph="select id fr... song_basic" />
-                <marker date="1505371928916" expanded="true" signature="59662:59769" ph="select id fr... song_basic" />
-                <marker date="1505371928916" expanded="true" signature="60636:60720" ph="select id fr... song_basic" />
-                <marker date="1505371928916" expanded="true" signature="61602:61666" ph="select id fr... song_basic" />
-                <marker date="1505371928916" expanded="true" signature="66839:66886" ph="select opus_... opus_score" />
-                <marker date="1505371928916" expanded="true" signature="67016:67116" ph="select id, u... song_basic" />
-                <marker date="1505371928916" expanded="true" signature="68232:68350" ph="select id, u... song_basic" />
-                <marker date="1505371928916" expanded="true" signature="69263:69381" ph="select id, u... song_basic" />
-                <marker date="1505371928916" expanded="true" signature="70597:70647" ph="SELECT count... opus_comment" />
-                <marker date="1505371928916" expanded="true" signature="71456:71515" ph="SELECT count... opus_comment" />
-                <marker date="1505371928916" expanded="true" signature="72419:72474" ph="SELECT , pub... " />
-                <marker date="1505371928916" expanded="true" signature="72841:72897" ph="update inter... " />
-                <marker date="1505371928916" expanded="true" signature="73618:73670" ph="SELECT is_ta... opus_share" />
-                <marker date="1505371928916" expanded="true" signature="73618:73685" ph="SELECT count... opus_thumbs_up" />
-                <marker date="1505371928916" expanded="true" signature="74525:74590" ph="SELECT count... opus_collect" />
-                <marker date="1505371928916" expanded="true" signature="75438:75531" ph="SELECT count... opus_collect" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="other_case.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testcase/other_case.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="458" column="39" selection-start-line="458" selection-start-column="39" selection-end-line="458" selection-end-column="39" />
-              <folding>
-                <element signature="e#23#44#0" expanded="true" />
-                <element signature="e#485#671#0" expanded="false" />
-                <element signature="e#701#888#0" expanded="false" />
-                <element signature="e#1333#1867#0" expanded="false" />
-                <element signature="e#1915#2928#0" expanded="false" />
-                <element signature="e#1990#2316#0" expanded="false" />
-                <element signature="e#2976#3444#0" expanded="false" />
-                <element signature="e#3492#3979#0" expanded="false" />
-                <element signature="e#4027#4518#0" expanded="false" />
-                <element signature="e#4566#5034#0" expanded="false" />
-                <element signature="e#5082#5550#0" expanded="false" />
-                <element signature="e#5598#6106#0" expanded="false" />
-                <element signature="e#6154#6648#0" expanded="false" />
-                <element signature="e#6694#7705#0" expanded="false" />
-                <element signature="e#6769#7095#0" expanded="false" />
-                <element signature="e#7751#8218#0" expanded="false" />
-                <element signature="e#8264#8750#0" expanded="false" />
-                <element signature="e#8796#9286#0" expanded="false" />
-                <element signature="e#9332#9799#0" expanded="false" />
-                <element signature="e#9845#10312#0" expanded="false" />
-                <element signature="e#10358#10851#0" expanded="false" />
-                <element signature="e#10897#11390#0" expanded="false" />
-                <element signature="e#12396#12840#0" expanded="false" />
-                <element signature="e#12884#13347#0" expanded="false" />
-                <element signature="e#13391#13874#0" expanded="false" />
-                <element signature="e#13918#14362#0" expanded="false" />
-                <element signature="e#14406#14850#0" expanded="false" />
-                <element signature="e#14894#15364#0" expanded="false" />
-                <element signature="e#15408#15878#0" expanded="false" />
-                <marker date="1505371472433" expanded="true" signature="289:372" ph="update shown... " />
-                <marker date="1505371472433" expanded="true" signature="1090:1136" ph="select args other_case" />
+                <element signature="e#756#3251#1" expanded="false" />
+                <element signature="e#3380#3698#1" expanded="false" />
+                <element signature="e#3704#3739#0" expanded="false" />
+                <element signature="e#4424#5229#1" expanded="false" />
+                <element signature="e#7177#7500#1" expanded="false" />
+                <element signature="e#7505#7529#0" expanded="false" />
+                <element signature="e#7727#9158#1" expanded="false" />
+                <element signature="e#9559#11677#1" expanded="false" />
+                <element signature="e#11814#12319#1" expanded="false" />
+                <element signature="e#12356#12879#1" expanded="false" />
+                <element signature="e#12977#13648#1" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -318,38 +130,46 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/config/httpconfig.conf" />
         <option value="$PROJECT_DIR$/casedir/API2.py" />
-        <option value="$PROJECT_DIR$/config/dbconfig.conf" />
-        <option value="$PROJECT_DIR$/config/DBConfig.py" />
         <option value="$PROJECT_DIR$/testSuit.py" />
-        <option value="$PROJECT_DIR$/dbManual.py" />
         <option value="$PROJECT_DIR$/insertTestcase.py" />
         <option value="$PROJECT_DIR$/commonFunc.py" />
         <option value="$USER_HOME$/Desktop/CodeFactory/demo.py" />
         <option value="$PROJECT_DIR$/login_test.py" />
         <option value="$PROJECT_DIR$/notice_case.py" />
-        <option value="$PROJECT_DIR$/config/runconfig.py" />
         <option value="$PROJECT_DIR$/config/case_list.conf" />
         <option value="$PROJECT_DIR$/interactive_case.py" />
         <option value="$PROJECT_DIR$/user_interactive_case.py" />
         <option value="$PROJECT_DIR$/register_case.py" />
-        <option value="$PROJECT_DIR$/log/log.txt" />
         <option value="$PROJECT_DIR$/mix_test.py" />
         <option value="$PROJECT_DIR$/user_case.py" />
         <option value="$PROJECT_DIR$/shown_case.py" />
         <option value="$PROJECT_DIR$/handleExcel.py" />
         <option value="$PROJECT_DIR$/config/CaseMode.py" />
-        <option value="$PROJECT_DIR$/testcase/__init__.py" />
-        <option value="$PROJECT_DIR$/errorCodeConst.py" />
-        <option value="$PROJECT_DIR$/testcase/shown_case.py" />
-        <option value="$PROJECT_DIR$/testcase/user_interactive_case.py" />
-        <option value="$PROJECT_DIR$/tool.py" />
-        <option value="$PROJECT_DIR$/testcase/notice_case.py" />
-        <option value="$PROJECT_DIR$/API2.py" />
+        <option value="$PROJECT_DIR$/config/runconfig.py" />
+        <option value="$PROJECT_DIR$/log/machineId.txt" />
+        <option value="$PROJECT_DIR$/testcase/login_test.py" />
+        <option value="$PROJECT_DIR$/testcase/mix_test.py" />
         <option value="$PROJECT_DIR$/testcase/other_case.py" />
+        <option value="$PROJECT_DIR$/testcase/register_case.py" />
+        <option value="$PROJECT_DIR$/errorCodeConst.py" />
+        <option value="$PROJECT_DIR$/testcase/user_case.py" />
+        <option value="$PROJECT_DIR$/testcase/notice_case.py" />
+        <option value="$PROJECT_DIR$/testcase/shown_case.py" />
+        <option value="$PROJECT_DIR$/log/log.txt" />
+        <option value="$PROJECT_DIR$/config/DBConfig.py" />
+        <option value="$PROJECT_DIR$/API2.py" />
+        <option value="$PROJECT_DIR$/testcase/business_check.py" />
         <option value="$PROJECT_DIR$/testcase/interactive_case.py" />
+        <option value="$PROJECT_DIR$/tool.py" />
+        <option value="$PROJECT_DIR$/dbManual.py" />
+        <option value="$PROJECT_DIR$/testcase/__init__.py" />
+        <option value="$PROJECT_DIR$/config/dbconfig.conf" />
+        <option value="$PROJECT_DIR$/testcase/acom_case.py" />
+        <option value="$PROJECT_DIR$/config/httpconfig.conf" />
         <option value="$PROJECT_DIR$/run_case.py" />
+        <option value="$PROJECT_DIR$/testcase/user_interactive_case.py" />
+        <option value="$PROJECT_DIR$/acom_case.py" />
       </list>
     </option>
   </component>
@@ -360,9 +180,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-14" />
-    <option name="width" value="1516" />
-    <option name="height" value="1056" />
+    <option name="x" value="14" />
+    <option name="width" value="1719" />
+    <option name="height" value="1065" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -390,7 +210,6 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -433,44 +252,34 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="log" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Interface2.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Interface2.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="casedir" />
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="D:\software\Nodejs\node.exe" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../InterFace_Test_Demo" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="G:\workspace\GitDir\Interface2.0\testcase" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="G:\workspace\GitDir\Interface2.0\" />
       <recent name="G:\workspace\GitDir\Interface2.0\testcase" />
       <recent name="G:\workspace\GitDir\Interface2.0" />
       <recent name="G:\workspace\GitDir\Interface2.0\casedir" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\workspace\GitDir\Interface2.0\testcase" />
+    </key>
   </component>
-  <component name="RunManager" selected="Python.run_case">
+  <component name="RunManager" selected="Python.acom_case (1)">
     <configuration default="false" name="tool" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -489,60 +298,6 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="shown_case" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Interface2.0" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="G:\workspace\GitDir\Interface2.0\testcase\shown_case.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="user_case" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Interface2.0" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="G:\workspace\GitDir\Interface2.0\testcase\user_case.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="other_case" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcase" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Interface2.0" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcase/other_case.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
     <configuration default="false" name="run_case" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -557,6 +312,60 @@
       <module name="Interface2.0" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/run_case.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="business_check" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcase" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Interface2.0" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcase/business_check.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="acom_case" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcase" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Interface2.0" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="G:\workspace\GitDir\Interface2.0\acom_case.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="acom_case (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Interface2.0" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/acom_case.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -771,18 +580,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.tool" />
-      <item index="1" class="java.lang.String" itemvalue="Python.shown_case" />
-      <item index="2" class="java.lang.String" itemvalue="Python.user_case" />
-      <item index="3" class="java.lang.String" itemvalue="Python.other_case" />
-      <item index="4" class="java.lang.String" itemvalue="Python.run_case" />
+      <item index="1" class="java.lang.String" itemvalue="Python.run_case" />
+      <item index="2" class="java.lang.String" itemvalue="Python.business_check" />
+      <item index="3" class="java.lang.String" itemvalue="Python.acom_case" />
+      <item index="4" class="java.lang.String" itemvalue="Python.acom_case (1)" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.run_case" />
-        <item index="1" class="java.lang.String" itemvalue="Python.tool" />
-        <item index="2" class="java.lang.String" itemvalue="Python.shown_case" />
-        <item index="3" class="java.lang.String" itemvalue="Python.other_case" />
-        <item index="4" class="java.lang.String" itemvalue="Python.user_case" />
+        <item index="0" class="java.lang.String" itemvalue="Python.acom_case (1)" />
+        <item index="1" class="java.lang.String" itemvalue="Python.run_case" />
+        <item index="2" class="java.lang.String" itemvalue="Python.acom_case" />
+        <item index="3" class="java.lang.String" itemvalue="Python.business_check" />
+        <item index="4" class="java.lang.String" itemvalue="Python.tool" />
       </list>
     </recent_temporary>
   </component>
@@ -803,26 +612,26 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-14" y="0" width="1516" height="1056" extended-state="0" />
+    <frame x="14" y="0" width="1719" height="1065" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14133333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11567821" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32910052" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5618449" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25185186" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24318658" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32914045" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -865,66 +674,31 @@
           <line>89</line>
           <option name="timeStamp" value="68" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/testcase/interactive_case.py</url>
+          <line>698</line>
+          <option name="timeStamp" value="174" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/testcase/interactive_case.py</url>
+          <line>603</line>
+          <option name="timeStamp" value="175" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint suspend="NONE" type="python-exception">
           <properties exception="BaseException" />
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="164" />
+      <option name="time" value="181" />
     </breakpoint-manager>
-    <watches-manager />
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="params" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/config/case_list.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python27/Lib/site-packages/xlrd/compdoc.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="85" column="0" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python27/Lib/site-packages/xlrd/book.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="86" column="0" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python27/Lib/site-packages/xlrd/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="440" column="0" selection-start-line="440" selection-start-column="0" selection-end-line="440" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python27/Lib/httplib.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1901">
-          <caret line="359" column="0" selection-start-line="359" selection-start-column="0" selection-end-line="359" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python27/Lib/site-packages/chardet/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python27/Lib/site-packages/xlwt/BIFFRecords.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="23" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Python27/Lib/site-packages/xlwt/Workbook.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="212">
@@ -936,20 +710,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="222">
           <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/httpconfig.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="1" column="39" selection-start-line="1" selection-start-column="39" selection-end-line="1" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/dbconfig.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -997,13 +757,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/insertTestcase.py" />
     <entry file="file://$PROJECT_DIR$/commonFunc.py" />
-    <entry file="file://C:/Python27/Lib/site-packages/requests-2.13.0-py2.7.egg/requests/api.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-95">
-          <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Desktop/CodeFactory/demo.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="560">
@@ -1019,38 +772,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Python27/Lib/ntpath.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="115" column="0" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Python27/Lib/random.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5080">
           <caret line="260" column="0" selection-start-line="260" selection-start-column="0" selection-end-line="260" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="963" column="0" selection-start-line="963" selection-start-column="0" selection-end-line="963" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/runconfig.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/case_list.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="1" column="31" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -1068,41 +793,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testcase/login_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2556">
-          <caret line="451" column="55" selection-start-line="451" selection-start-column="55" selection-end-line="451" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcase/register_case.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="345" column="35" selection-start-line="345" selection-start-column="35" selection-end-line="345" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcase/mix_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/CaseMode.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="24" column="22" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python27/Lib/ConfigParser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11120">
-          <caret line="556" column="0" selection-start-line="556" selection-start-column="0" selection-end-line="556" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1110,473 +800,414 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testcase/__init__.py">
+    <entry file="file://$PROJECT_DIR$/config/case_list.conf">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        <state relative-caret-position="40">
+          <caret line="2" column="10" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/log/log.txt">
+    <entry file="file://$PROJECT_DIR$/config/CaseMode.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3968">
-          <caret line="1817" column="121" selection-start-line="1817" selection-start-column="121" selection-end-line="1817" selection-end-column="121" />
+        <state relative-caret-position="860">
+          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Python27/Lib/site-packages/MySQLdb/cursors.py">
+    <entry file="file://$USER_HOME$/.PyCharm2016.2/system/python_stubs/-762174762/sys.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="217" column="55" selection-start-line="217" selection-start-column="55" selection-end-line="217" selection-end-column="55" />
+        <state relative-caret-position="7260">
+          <caret line="363" column="4" selection-start-line="363" selection-start-column="4" selection-end-line="363" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/DBConfig.py">
+    <entry file="file://C:/Python27/Lib/site-packages/twisted/python/failure.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        <state relative-caret-position="-114">
+          <caret line="141" column="13" selection-start-line="141" selection-start-column="13" selection-end-line="141" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testcase/user_case.py">
+    <entry file="file://$USER_HOME$/.PyCharm2016.2/system/python_stubs/-762174762/nt.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="512">
-          <caret line="633" column="38" selection-start-line="633" selection-start-column="38" selection-end-line="633" selection-end-column="38" />
+        <state relative-caret-position="193">
+          <caret line="168" column="4" selection-start-line="168" selection-start-column="4" selection-end-line="168" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dbManual.py">
+    <entry file="file://$PROJECT_DIR$/log/machineId.txt" />
+    <entry file="file://$PROJECT_DIR$/testcase/login_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2000">
-          <caret line="104" column="0" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
-          <folding>
-            <marker date="1502444964979" expanded="true" signature="2693:2716" ph="insert into table... " />
-          </folding>
+        <state relative-caret-position="280">
+          <caret line="21" column="81" selection-start-line="21" selection-start-column="81" selection-end-line="21" selection-end-column="81" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/errorCodeConst.py">
+    <entry file="file://$PROJECT_DIR$/testcase/mix_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="68" column="17" selection-start-line="68" selection-start-column="8" selection-end-line="68" selection-end-column="17" />
-          <folding />
+        <state relative-caret-position="220">
+          <caret line="18" column="81" selection-start-line="18" selection-start-column="81" selection-end-line="18" selection-end-column="81" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tool.py">
+    <entry file="file://$PROJECT_DIR$/testcase/register_case.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="212" column="31" selection-start-line="212" selection-start-column="31" selection-end-line="212" selection-end-column="31" />
-          <folding>
-            <element signature="e#62#91#0" expanded="true" />
-            <element signature="e#3048#3286#0" expanded="false" />
-            <element signature="e#4523#4548#0" expanded="false" />
-            <element signature="e#5190#5995#0" expanded="false" />
-            <element signature="e#6065#6697#0" expanded="false" />
-            <marker date="1505359243019" expanded="true" signature="7229:7331" ph="insert into interactive_case... " />
-          </folding>
+        <state relative-caret-position="220">
+          <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/handleExcel.py">
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="53">
-          <caret line="34" column="8" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
-          <folding />
+        <state relative-caret-position="228">
+          <caret line="963" column="0" selection-start-line="963" selection-start-column="0" selection-end-line="963" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testcase/user_interactive_case.py">
+    <entry file="file://C:/Python27/Lib/site-packages/requests-2.13.0-py2.7.egg/requests/api.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="1153" column="0" selection-start-line="1153" selection-start-column="0" selection-end-line="1153" selection-end-column="0" />
-          <folding>
-            <element signature="e#43694#44605#0" expanded="false" />
-            <marker date="1505355549626" expanded="true" signature="302:396" ph="update user_... " />
-            <marker date="1505355549626" expanded="true" signature="933:985" ph="select args user_interactive_case" />
-            <marker date="1505355549626" expanded="true" signature="1109:1198" ph="update user_... " />
-            <marker date="1505355549626" expanded="true" signature="2455:2519" ph="select id fr... song_basic" />
-            <marker date="1505355549626" expanded="true" signature="3280:3360" ph="select id,us... song_basic" />
-            <marker date="1505355549626" expanded="true" signature="5885:5936" ph="select opus_... opus_collect" />
-            <marker date="1505355549626" expanded="true" signature="10806:10886" ph="select id,us... song_basic" />
-            <marker date="1505355549626" expanded="true" signature="11682:11735" ph="select opus_... opus_thumbs_up" />
-            <marker date="1505355549626" expanded="true" signature="11875:11919" ph="select user_... song_basic" />
-            <marker date="1505355549626" expanded="true" signature="12603:12660" ph="select id,us... song_basic" />
-            <marker date="1505355549626" expanded="true" signature="23041:23108" ph="select id fr... song_basic" />
-            <marker date="1505355549626" expanded="true" signature="39635:39725" ph="select id fr... song_basic" />
-            <marker date="1505355549626" expanded="true" signature="41751:41841" ph="select id fr... song_basic" />
-            <marker date="1505355549626" expanded="true" signature="42817:42907" ph="select id fr... song_basic" />
-            <marker date="1505355549626" expanded="true" signature="43846:43936" ph="select id fr... song_basic" />
-            <marker date="1505355549626" expanded="true" signature="45279:45352" ph="select id fr... song_basic" />
-            <marker date="1505355549626" expanded="true" signature="46256:46329" ph="select id fr... song_basic" />
-            <marker date="1505355549626" expanded="true" signature="47074:47156" ph="select id, u... song_basic" />
-            <marker date="1505355549626" expanded="true" signature="48054:48136" ph="select id, u... song_basic" />
-            <marker date="1505355549626" expanded="true" signature="49101:49183" ph="select id, u... song_basic" />
-            <marker date="1505355549626" expanded="true" signature="50281:50363" ph="select id, u... song_basic" />
-            <marker date="1505355549626" expanded="true" signature="51493:51575" ph="select id, u... song_basic" />
-            <marker date="1505355549626" expanded="true" signature="52785:52867" ph="select id, u... song_basic" />
-            <marker date="1505355549626" expanded="true" signature="59350:59394" ph="select id fr... opus_share" />
-          </folding>
+        <state relative-caret-position="200">
+          <caret line="111" column="0" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testcase/shown_case.py">
+    <entry file="file://C:/Python27/Lib/site-packages/requests-2.13.0-py2.7.egg/requests/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="498">
-          <caret line="42" column="27" selection-start-line="34" selection-start-column="4" selection-end-line="42" selection-end-column="27" />
-          <folding>
-            <element signature="e#493#679#0" expanded="false" />
-            <element signature="e#709#896#0" expanded="false" />
-            <element signature="e#1341#1875#0" expanded="false" />
-            <element signature="e#1993#3975#0" expanded="false" />
-            <element signature="e#6164#6611#0" expanded="false" />
-            <element signature="e#6655#7102#0" expanded="false" />
-            <element signature="e#7158#7605#0" expanded="false" />
-            <element signature="e#7720#9620#0" expanded="false" />
-            <element signature="e#10261#10711#0" expanded="false" />
-            <element signature="e#10753#11227#0" expanded="false" />
-            <element signature="e#11269#11743#0" expanded="false" />
-            <element signature="e#11785#12236#0" expanded="false" />
-            <element signature="e#12276#14854#0" expanded="false" />
-            <element signature="e#12351#14251#0" expanded="false" />
-            <element signature="e#14894#15348#0" expanded="false" />
-            <element signature="e#15388#15867#0" expanded="false" />
-            <element signature="e#15907#16386#0" expanded="false" />
-            <element signature="e#16426#16880#0" expanded="false" />
-            <element signature="e#16918#20428#0" expanded="false" />
-            <element signature="e#16993#19824#0" expanded="false" />
-            <element signature="e#20466#20921#0" expanded="false" />
-            <element signature="e#20959#21437#0" expanded="false" />
-            <element signature="e#21475#21953#0" expanded="false" />
-            <element signature="e#21991#22446#0" expanded="false" />
-            <element signature="e#22488#23699#0" expanded="false" />
-            <element signature="e#22563#23094#0" expanded="false" />
-            <element signature="e#23741#24197#0" expanded="false" />
-            <element signature="e#24239#24695#0" expanded="false" />
-            <element signature="e#24737#25193#0" expanded="false" />
-            <element signature="e#25235#25714#0" expanded="false" />
-            <element signature="e#25756#26212#0" expanded="false" />
-            <element signature="e#26254#26736#0" expanded="false" />
-            <element signature="e#26778#27259#0" expanded="false" />
-            <element signature="e#27301#27783#0" expanded="false" />
-            <element signature="e#27825#28304#0" expanded="false" />
-            <element signature="e#28310#29507#1" expanded="false" />
-            <element signature="e#29548#30303#0" expanded="false" />
-            <element signature="e#30355#30827#0" expanded="false" />
-            <element signature="e#30878#31350#0" expanded="false" />
-            <element signature="e#31400#31876#0" expanded="false" />
-            <element signature="e#31934#32406#0" expanded="false" />
-            <element signature="e#32448#32900#0" expanded="false" />
-            <element signature="e#32950#33403#0" expanded="false" />
-            <element signature="e#33458#33929#0" expanded="false" />
-            <element signature="e#33974#34973#0" expanded="false" />
-            <element signature="e#34050#34376#0" expanded="false" />
-            <element signature="e#35026#35497#0" expanded="false" />
-            <element signature="e#35550#36004#0" expanded="false" />
-            <element signature="e#36057#36511#0" expanded="false" />
-            <element signature="e#36564#37041#0" expanded="false" />
-            <element signature="e#37094#37790#0" expanded="false" />
-            <element signature="e#37844#38324#0" expanded="false" />
-            <element signature="e#38377#38854#0" expanded="false" />
-            <element signature="e#38907#39361#0" expanded="false" />
-            <element signature="e#39414#39891#0" expanded="false" />
-            <element signature="e#39937#40692#0" expanded="false" />
-            <element signature="e#40741#41496#0" expanded="false" />
-            <element signature="e#41538#42381#0" expanded="false" />
-            <element signature="e#42434#44615#0" expanded="false" />
-            <element signature="e#42510#44016#0" expanded="false" />
-            <element signature="e#44680#45128#0" expanded="false" />
-            <element signature="e#45189#45637#0" expanded="false" />
-            <element signature="e#45639#47475#1" expanded="false" />
-            <marker date="1505354155545" expanded="true" signature="297:380" ph="update inter... " />
-            <marker date="1505354155545" expanded="true" signature="1098:1144" ph="select args shown_case" />
-            <marker date="1505354155545" expanded="true" signature="37619:37694" ph="SELECT count... opus_comment" />
-            <marker date="1505354155545" expanded="false" signature="45694:46327" ph="..." />
-          </folding>
+        <state relative-caret-position="242">
+          <caret line="302" column="0" selection-start-line="302" selection-start-column="0" selection-end-line="302" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/testcase/notice_case.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="395" column="33" selection-start-line="395" selection-start-column="33" selection-end-line="395" selection-end-column="33" />
-          <folding>
-            <element signature="e#220#1001#0" expanded="false" />
-            <element signature="e#1083#1292#0" expanded="false" />
-            <element signature="e#1346#2193#0" expanded="false" />
-            <element signature="e#2247#2679#0" expanded="false" />
-            <element signature="e#2724#3500#0" expanded="false" />
-            <element signature="e#3545#3947#0" expanded="false" />
-            <element signature="e#3992#4472#0" expanded="false" />
-            <element signature="e#4517#5002#0" expanded="false" />
-            <element signature="e#5045#5820#0" expanded="false" />
-            <element signature="e#5863#6268#0" expanded="false" />
-            <element signature="e#6311#6794#0" expanded="false" />
-            <element signature="e#6837#7322#0" expanded="false" />
-            <element signature="e#7368#8151#0" expanded="false" />
-            <element signature="e#8197#8652#0" expanded="false" />
-            <element signature="e#8698#9185#0" expanded="false" />
-            <element signature="e#9231#9719#0" expanded="false" />
-            <element signature="e#9763#10544#0" expanded="false" />
-            <element signature="e#10588#11041#0" expanded="false" />
-            <element signature="e#11085#11566#0" expanded="false" />
-            <element signature="e#11610#12096#0" expanded="false" />
-            <element signature="e#12142#12851#0" expanded="false" />
-            <element signature="e#12898#13613#0" expanded="false" />
-            <element signature="e#13657#14369#0" expanded="false" />
-            <element signature="e#15172#15930#0" expanded="false" />
-            <element signature="e#15975#16449#0" expanded="false" />
-            <element signature="e#16494#16945#0" expanded="false" />
-            <element signature="e#16990#17460#0" expanded="false" />
-            <element signature="e#17505#17982#0" expanded="false" />
-            <element signature="e#18027#18478#0" expanded="false" />
-            <element signature="e#18523#19005#0" expanded="false" />
-            <element signature="e#19050#19526#0" expanded="false" />
-            <element signature="e#19572#20501#0" expanded="false" />
-            <element signature="e#20544#21470#0" expanded="false" />
-            <element signature="e#21514#22441#0" expanded="false" />
-            <element signature="e#22483#23184#0" expanded="false" />
-            <element signature="e#23232#23939#0" expanded="false" />
-            <element signature="e#23984#24688#0" expanded="false" />
-            <element signature="e#24734#25439#0" expanded="false" />
-            <marker date="1505362101873" expanded="true" signature="293:377" ph="update notic... " />
-            <marker date="1505362101873" expanded="true" signature="1095:1142" ph="select args notice_case" />
-          </folding>
+        <state relative-caret-position="14420">
+          <caret line="727" column="0" selection-start-line="727" selection-start-column="0" selection-end-line="727" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/API2.py">
+    <entry file="file://$PROJECT_DIR$/handleExcel.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="486" column="8" selection-start-line="486" selection-start-column="8" selection-end-line="486" selection-end-column="8" />
-          <folding>
-            <element signature="e#146#189#0" expanded="false" />
-            <element signature="e#235#994#0" expanded="false" />
-            <element signature="e#1043#1331#0" expanded="false" />
-            <element signature="e#1377#1612#0" expanded="false" />
-            <element signature="e#1669#1916#0" expanded="false" />
-            <element signature="e#1968#2200#0" expanded="false" />
-            <element signature="e#2254#2512#0" expanded="false" />
-            <element signature="e#2575#2836#0" expanded="false" />
-            <element signature="e#2896#3153#0" expanded="false" />
-            <element signature="e#3212#3448#0" expanded="false" />
-            <element signature="e#3500#3765#0" expanded="false" />
-            <element signature="e#3821#4054#0" expanded="false" />
-            <element signature="e#4113#4361#0" expanded="false" />
-            <element signature="e#4416#4657#0" expanded="false" />
-            <element signature="e#4708#4854#0" expanded="false" />
-            <element signature="e#4910#5032#0" expanded="false" />
-            <element signature="e#5085#5187#0" expanded="false" />
-            <element signature="e#5233#5326#0" expanded="false" />
-            <element signature="e#5382#5489#0" expanded="false" />
-            <element signature="e#5553#5895#0" expanded="false" />
-            <element signature="e#5960#6901#0" expanded="false" />
-            <element signature="e#6963#7205#0" expanded="false" />
-            <element signature="e#7265#7929#0" expanded="false" />
-            <element signature="e#7991#9508#0" expanded="false" />
-            <element signature="e#9567#10538#0" expanded="false" />
-            <element signature="e#11393#11641#0" expanded="false" />
-            <element signature="e#11701#12821#0" expanded="false" />
-            <element signature="e#12876#13004#0" expanded="false" />
-            <element signature="e#13060#13184#0" expanded="false" />
-            <element signature="e#13256#13389#0" expanded="false" />
-            <element signature="e#13457#15578#0" expanded="false" />
-            <element signature="e#15679#16443#0" expanded="false" />
-            <element signature="e#16493#16719#0" expanded="false" />
-            <element signature="e#17594#17706#0" expanded="false" />
-            <element signature="e#17758#17873#0" expanded="false" />
-            <element signature="e#17925#18090#0" expanded="false" />
-            <element signature="e#18146#18721#0" expanded="false" />
-            <element signature="e#18795#19088#0" expanded="false" />
-            <element signature="e#19636#19982#0" expanded="false" />
-            <element signature="e#21135#21674#0" expanded="false" />
-            <element signature="e#21135#21289#1" expanded="false" />
-            <element signature="e#21908#22221#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="860">
+          <caret line="50" column="56" selection-start-line="50" selection-start-column="56" selection-end-line="50" selection-end-column="56" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testcase/interactive_case.py">
+    <entry file="file://$PROJECT_DIR$/log/log.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="566">
-          <caret line="1250" column="32" selection-start-line="1250" selection-start-column="32" selection-end-line="1250" selection-end-column="32" />
-          <folding>
-            <element signature="e#1092#1306#0" expanded="false" />
-            <element signature="e#1352#2579#0" expanded="false" />
-            <element signature="e#2634#3824#0" expanded="false" />
-            <element signature="e#3880#5397#0" expanded="false" />
-            <element signature="e#5451#6305#0" expanded="false" />
-            <element signature="e#6356#7191#0" expanded="false" />
-            <element signature="e#7246#8246#0" expanded="false" />
-            <element signature="e#8307#9128#0" expanded="false" />
-            <element signature="e#9180#10831#0" expanded="false" />
-            <element signature="e#10879#12505#0" expanded="false" />
-            <element signature="e#12554#14152#0" expanded="false" />
-            <element signature="e#14203#15786#0" expanded="false" />
-            <element signature="e#15839#17198#0" expanded="false" />
-            <element signature="e#17251#18507#0" expanded="false" />
-            <element signature="e#18562#19533#0" expanded="false" />
-            <element signature="e#19590#21135#0" expanded="false" />
-            <element signature="e#21200#22172#0" expanded="false" />
-            <element signature="e#22224#23471#0" expanded="false" />
-            <element signature="e#23527#24471#0" expanded="false" />
-            <element signature="e#24516#26641#0" expanded="false" />
-            <element signature="e#26702#27891#0" expanded="false" />
-            <element signature="e#27897#30847#1" expanded="false" />
-            <element signature="e#30900#32020#0" expanded="false" />
-            <element signature="e#32079#33067#0" expanded="false" />
-            <element signature="e#33116#34281#0" expanded="false" />
-            <element signature="e#34335#35794#0" expanded="false" />
-            <element signature="e#35852#37392#0" expanded="false" />
-            <element signature="e#37448#39428#0" expanded="false" />
-            <element signature="e#39483#40935#0" expanded="false" />
-            <element signature="e#40998#42126#0" expanded="false" />
-            <element signature="e#42179#43074#0" expanded="false" />
-            <element signature="e#43130#44029#0" expanded="false" />
-            <element signature="e#44082#44980#0" expanded="false" />
-            <element signature="e#46531#47825#0" expanded="false" />
-            <element signature="e#47875#48938#0" expanded="false" />
-            <element signature="e#48991#49967#0" expanded="false" />
-            <element signature="e#50019#51972#0" expanded="false" />
-            <element signature="e#52031#53901#0" expanded="false" />
-            <element signature="e#53942#55204#0" expanded="false" />
-            <element signature="e#55255#56222#0" expanded="false" />
-            <element signature="e#56274#57226#0" expanded="false" />
-            <element signature="e#57281#58252#0" expanded="false" />
-            <element signature="e#58311#59293#0" expanded="false" />
-            <element signature="e#59348#60412#0" expanded="false" />
-            <element signature="e#60467#61202#0" expanded="false" />
-            <element signature="e#61250#62185#0" expanded="false" />
-            <element signature="e#62232#63453#0" expanded="false" />
-            <element signature="e#63500#64168#0" expanded="false" />
-            <element signature="e#64224#64892#0" expanded="false" />
-            <element signature="e#64949#65631#0" expanded="false" />
-            <element signature="e#65688#66372#0" expanded="false" />
-            <element signature="e#66415#68022#0" expanded="false" />
-            <element signature="e#68071#69044#0" expanded="false" />
-            <element signature="e#69102#70039#0" expanded="false" />
-            <element signature="e#73978#74846#0" expanded="false" />
-            <element signature="e#74891#75952#0" expanded="false" />
-            <element signature="e#75953#78368#1" expanded="false" />
-            <marker date="1505371928916" expanded="true" signature="297:386" ph="update inter... " />
-            <marker date="1505371928916" expanded="true" signature="1104:1156" ph="select args other_case" />
-            <marker date="1505371928916" expanded="true" signature="1448:1526" ph="select id, u... song_basic" />
-            <marker date="1505371928916" expanded="true" signature="2726:2804" ph="select id, u... song_basic" />
-            <marker date="1505371928916" expanded="true" signature="3972:4105" ph="select id fr... song_basic" />
-            <marker date="1505371928916" expanded="true" signature="5543:5621" ph="select id, u... song_basic" />
-            <marker date="1505371928916" expanded="true" signature="6448:6526" ph="select id, u... song_basic" />
-            <marker date="1505371928916" expanded="true" signature="7338:7416" ph="select id, u... song_basic" />
-            <marker date="1505371928916" expanded="true" signature="8399:8473" ph="select user_... song_basic" />
-            <marker date="1505371928916" expanded="true" signature="9272:9350" ph="select id, u... song_basic" />
-            <marker date="1505371928916" expanded="true" signature="10971:11049" ph="select id, u... song_basic" />
-            <marker date="1505371928916" expanded="true" signature="12647:12780" ph="select id fr... song_basic" />
-            <marker date="1505371928916" expanded="true" signature="12945:13027" ph="select opus_... opus_comment" />
-            <marker date="1505371928916" expanded="true" signature="14296:14429" ph="select id fr... song_basic" />
-            <marker date="1505371928916" expanded="true" signature="14594:14676" ph="select opus_... opus_comment" />
-            <marker date="1505371928916" expanded="true" signature="15932:16065" ph="select id fr... song_basic" />
-            <marker date="1505371928916" expanded="true" signature="17524:17600" ph="select opus_... opus_comment" />
-            <marker date="1505371928916" expanded="true" signature="17760:17804" ph="select user_... song_basic" />
-            <marker date="1505371928916" expanded="true" signature="18690:18768" ph="select opus_... opus_comment" />
-            <marker date="1505371928916" expanded="true" signature="18928:18972" ph="select user_... song_basic" />
-            <marker date="1505371928916" expanded="true" signature="19867:19911" ph="select id fr... song_basic" />
-            <marker date="1505371928916" expanded="true" signature="20140:20216" ph="select id, u... opus_comment" />
-            <marker date="1505371928916" expanded="true" signature="21328:21372" ph="select id fr... song_basic" />
-            <marker date="1505371928916" expanded="true" signature="22524:22618" ph="select id, o... opus_comment" />
-            <marker date="1505371928916" expanded="true" signature="23654:23748" ph="select id, o... opus_comment" />
-            <marker date="1505371928916" expanded="true" signature="25746:25852" ph="select opus_... opus_comment" />
-            <marker date="1505371928916" expanded="true" signature="26975:27120" ph="select opus_... opus_comment" />
-            <marker date="1505371928916" expanded="true" signature="31155:31249" ph="select id, o... opus_comment" />
-            <marker date="1505371928916" expanded="true" signature="32226:32293" ph="select comme... opus_comment_like" />
-            <marker date="1505371928916" expanded="true" signature="32464:32508" ph="select user_... song_basic" />
-            <marker date="1505371928916" expanded="true" signature="33242:33336" ph="select id, o... opus_comment" />
-            <marker date="1505371928916" expanded="true" signature="33476:33535" ph="select count... opus_comment" />
-            <marker date="1505371928916" expanded="true" signature="34461:34555" ph="select id, o... opus_comment" />
-            <marker date="1505371928916" expanded="true" signature="34695:34754" ph="select count... opus_comment" />
-            <marker date="1505371928916" expanded="true" signature="39753:39853" ph="select id, u... song_basic" />
-            <marker date="1505371928916" expanded="true" signature="40091:40141" ph="select liste... song_attach" />
-            <marker date="1505371928916" expanded="true" signature="41125:41225" ph="select id, u... song_basic" />
-            <marker date="1505371928916" expanded="true" signature="41463:41513" ph="select liste... song_attach" />
-            <marker date="1505371928916" expanded="true" signature="42306:42406" ph="select id, u... song_basic" />
-            <marker date="1505371928916" expanded="true" signature="43257:43357" ph="select id, u... song_basic" />
-            <marker date="1505371928916" expanded="true" signature="44209:44309" ph="select id, u... song_basic" />
-            <marker date="1505371928916" expanded="true" signature="45405:45563" ph="select id fr... song_basic" />
-            <marker date="1505371928916" expanded="true" signature="46658:46816" ph="select id fr... song_basic" />
-            <marker date="1505371928916" expanded="true" signature="48002:48160" ph="select id fr... song_basic" />
-            <marker date="1505371928916" expanded="true" signature="49118:49189" ph="select id fr... song_basic" />
-            <marker date="1505371928916" expanded="true" signature="50949:51042" ph="select id fr... song_basic" />
-            <marker date="1505371928916" expanded="true" signature="52961:53098" ph="select id fr... song_basic" />
-            <marker date="1505371928916" expanded="true" signature="54439:54546" ph="select id fr... song_basic" />
-            <marker date="1505371928916" expanded="true" signature="55598:55705" ph="select id fr... song_basic" />
-            <marker date="1505371928916" expanded="true" signature="56603:56710" ph="select id fr... song_basic" />
-            <marker date="1505371928916" expanded="true" signature="57629:57736" ph="select id fr... song_basic" />
-            <marker date="1505371928916" expanded="true" signature="58666:58775" ph="select id fr... song_basic" />
-            <marker date="1505371928916" expanded="true" signature="59662:59769" ph="select id fr... song_basic" />
-            <marker date="1505371928916" expanded="true" signature="60636:60720" ph="select id fr... song_basic" />
-            <marker date="1505371928916" expanded="true" signature="61602:61666" ph="select id fr... song_basic" />
-            <marker date="1505371928916" expanded="true" signature="66839:66886" ph="select opus_... opus_score" />
-            <marker date="1505371928916" expanded="true" signature="67016:67116" ph="select id, u... song_basic" />
-            <marker date="1505371928916" expanded="true" signature="68232:68350" ph="select id, u... song_basic" />
-            <marker date="1505371928916" expanded="true" signature="69263:69381" ph="select id, u... song_basic" />
-            <marker date="1505371928916" expanded="true" signature="70597:70647" ph="SELECT count... opus_comment" />
-            <marker date="1505371928916" expanded="true" signature="71456:71515" ph="SELECT count... opus_comment" />
-            <marker date="1505371928916" expanded="true" signature="72419:72474" ph="SELECT , pub... " />
-            <marker date="1505371928916" expanded="true" signature="72841:72897" ph="update inter... " />
-            <marker date="1505371928916" expanded="true" signature="73618:73670" ph="SELECT is_ta... opus_share" />
-            <marker date="1505371928916" expanded="true" signature="73618:73685" ph="SELECT count... opus_thumbs_up" />
-            <marker date="1505371928916" expanded="true" signature="74525:74590" ph="SELECT count... opus_collect" />
-            <marker date="1505371928916" expanded="true" signature="75438:75531" ph="SELECT count... opus_collect" />
-          </folding>
+        <state relative-caret-position="460">
+          <caret line="62" column="19" selection-start-line="62" selection-start-column="19" selection-end-line="62" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/errorCodeConst.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="652">
+          <caret line="316" column="22" selection-start-line="316" selection-start-column="8" selection-end-line="316" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/MySQLdb/cursors.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2320">
+          <caret line="118" column="0" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/testcase/other_case.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="458" column="39" selection-start-line="458" selection-start-column="39" selection-end-line="458" selection-end-column="39" />
+        <state relative-caret-position="6900">
+          <caret line="351" column="32" selection-start-line="351" selection-start-column="32" selection-end-line="351" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/ConfigParser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="556" column="0" selection-start-line="556" selection-start-column="0" selection-end-line="556" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcase/business_check.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/ntpath.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="115" column="0" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/API2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="740">
+          <caret line="56" column="59" selection-start-line="56" selection-start-column="12" selection-end-line="56" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcase/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcase/shown_case.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1540">
+          <caret line="397" column="41" selection-start-line="395" selection-start-column="8" selection-end-line="397" selection-end-column="41" />
           <folding>
-            <element signature="e#23#44#0" expanded="true" />
-            <element signature="e#485#671#0" expanded="false" />
-            <element signature="e#701#888#0" expanded="false" />
-            <element signature="e#1333#1867#0" expanded="false" />
-            <element signature="e#1915#2928#0" expanded="false" />
-            <element signature="e#1990#2316#0" expanded="false" />
-            <element signature="e#2976#3444#0" expanded="false" />
-            <element signature="e#3492#3979#0" expanded="false" />
-            <element signature="e#4027#4518#0" expanded="false" />
-            <element signature="e#4566#5034#0" expanded="false" />
-            <element signature="e#5082#5550#0" expanded="false" />
-            <element signature="e#5598#6106#0" expanded="false" />
-            <element signature="e#6154#6648#0" expanded="false" />
-            <element signature="e#6694#7705#0" expanded="false" />
-            <element signature="e#6769#7095#0" expanded="false" />
-            <element signature="e#7751#8218#0" expanded="false" />
-            <element signature="e#8264#8750#0" expanded="false" />
-            <element signature="e#8796#9286#0" expanded="false" />
-            <element signature="e#9332#9799#0" expanded="false" />
-            <element signature="e#9845#10312#0" expanded="false" />
-            <element signature="e#10358#10851#0" expanded="false" />
-            <element signature="e#10897#11390#0" expanded="false" />
-            <element signature="e#12396#12840#0" expanded="false" />
-            <element signature="e#12884#13347#0" expanded="false" />
-            <element signature="e#13391#13874#0" expanded="false" />
-            <element signature="e#13918#14362#0" expanded="false" />
-            <element signature="e#14406#14850#0" expanded="false" />
-            <element signature="e#14894#15364#0" expanded="false" />
-            <element signature="e#15408#15878#0" expanded="false" />
-            <marker date="1505371472433" expanded="true" signature="289:372" ph="update shown... " />
-            <marker date="1505371472433" expanded="true" signature="1090:1136" ph="select args other_case" />
+            <element signature="e#567#754#0" expanded="false" />
+            <element signature="e#949#1157#0" expanded="false" />
+            <element signature="e#1204#1738#0" expanded="false" />
+            <element signature="e#1781#4444#0" expanded="false" />
+            <element signature="e#1856#3838#0" expanded="false" />
+            <element signature="e#5028#5484#0" expanded="false" />
+            <element signature="e#5528#5975#0" expanded="false" />
+            <element signature="e#6027#6474#0" expanded="false" />
+            <element signature="e#6518#6965#0" expanded="false" />
+            <element signature="e#7021#7468#0" expanded="false" />
+            <element signature="e#7509#10083#0" expanded="false" />
+            <element signature="e#7583#9483#0" expanded="false" />
+            <element signature="e#10124#10574#0" expanded="false" />
+            <element signature="e#10616#11104#0" expanded="false" />
+            <element signature="e#11146#11620#0" expanded="false" />
+            <element signature="e#11662#12113#0" expanded="false" />
+            <element signature="e#12228#14128#0" expanded="false" />
+            <element signature="e#14771#15225#0" expanded="false" />
+            <element signature="e#15265#15744#0" expanded="false" />
+            <element signature="e#15784#16263#0" expanded="false" />
+            <element signature="e#16303#16757#0" expanded="false" />
+            <element signature="e#16795#20305#0" expanded="false" />
+            <element signature="e#16870#19701#0" expanded="false" />
+            <element signature="e#20343#20798#0" expanded="false" />
+            <element signature="e#20836#21328#0" expanded="false" />
+            <element signature="e#21366#21844#0" expanded="false" />
+            <element signature="e#21882#22337#0" expanded="false" />
+            <element signature="e#22451#22982#0" expanded="false" />
+            <element signature="e#23626#24082#0" expanded="false" />
+            <element signature="e#24124#24580#0" expanded="false" />
+            <element signature="e#24622#25078#0" expanded="false" />
+            <element signature="e#25120#25599#0" expanded="false" />
+            <element signature="e#25641#26097#0" expanded="false" />
+            <element signature="e#26139#26621#0" expanded="false" />
+            <element signature="e#26663#27144#0" expanded="false" />
+            <element signature="e#27186#27668#0" expanded="false" />
+            <element signature="e#27710#28189#0" expanded="false" />
+            <element signature="e#28195#29392#1" expanded="false" />
+            <element signature="e#29433#30412#0" expanded="false" />
+            <element signature="e#30464#30936#0" expanded="false" />
+            <element signature="e#30987#31459#0" expanded="false" />
+            <element signature="e#31509#31985#0" expanded="false" />
+            <element signature="e#32043#32515#0" expanded="false" />
+            <element signature="e#32557#33009#0" expanded="false" />
+            <element signature="e#33059#33512#0" expanded="false" />
+            <element signature="e#33567#34038#0" expanded="false" />
+            <element signature="e#34083#35082#0" expanded="false" />
+            <element signature="e#34159#34485#0" expanded="false" />
+            <element signature="e#35135#35606#0" expanded="false" />
+            <element signature="e#35659#36113#0" expanded="false" />
+            <element signature="e#36166#36620#0" expanded="false" />
+            <element signature="e#36673#37150#0" expanded="false" />
+            <element signature="e#37203#37899#0" expanded="false" />
+            <element signature="e#37952#38432#0" expanded="false" />
+            <element signature="e#38485#38962#0" expanded="false" />
+            <element signature="e#39015#39469#0" expanded="false" />
+            <element signature="e#39522#40002#0" expanded="false" />
+            <element signature="e#40048#40803#0" expanded="false" />
+            <element signature="e#40852#41607#0" expanded="false" />
+            <element signature="e#41649#42492#0" expanded="false" />
+            <element signature="e#42545#44726#0" expanded="false" />
+            <element signature="e#42621#44127#0" expanded="false" />
+            <element signature="e#44791#45239#0" expanded="false" />
+            <element signature="e#45300#45748#0" expanded="false" />
+            <element signature="e#45796#46311#0" expanded="false" />
+            <element signature="e#46359#46934#0" expanded="false" />
+            <element signature="e#46982#47521#0" expanded="false" />
+            <element signature="e#47569#48064#0" expanded="false" />
+            <marker date="1506751565814" expanded="true" signature="344:427" ph="update inter... " />
+            <marker date="1506751565814" expanded="true" signature="961:1007" ph="select args shown_case" />
+            <marker date="1506751565814" expanded="true" signature="37728:37803" ph="SELECT count... opus_comment" />
+            <marker date="1506751565814" expanded="false" signature="48121:48754" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dbManual.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/DBConfig.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/dbconfig.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/httpconfig.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="13" column="14" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/runconfig.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcase/interactive_case.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="1968" column="41" selection-start-line="1968" selection-start-column="40" selection-end-line="1968" selection-end-column="41" />
+          <folding>
+            <element signature="e#24805#25858#0" expanded="false" />
+            <marker date="1508479408017" expanded="true" signature="350:439" ph="update inter... " />
+            <marker date="1508479408017" expanded="true" signature="973:1025" ph="select args interactive_case" />
+            <marker date="1508479408017" expanded="true" signature="1317:1395" ph="select id, u... song_basic" />
+            <marker date="1508479408017" expanded="true" signature="2595:2693" ph="select id, u... song_basic" />
+            <marker date="1508479408017" expanded="true" signature="4133:4266" ph="select id fr... song_basic" />
+            <marker date="1508479408017" expanded="true" signature="5704:5782" ph="select id, u... song_basic" />
+            <marker date="1508479408017" expanded="true" signature="6609:6707" ph="select id, u... song_basic" />
+            <marker date="1508479408017" expanded="true" signature="7515:7593" ph="select id, u... song_basic" />
+            <marker date="1508479408017" expanded="true" signature="8565:8639" ph="select user_... song_basic" />
+            <marker date="1508479408017" expanded="true" signature="9462:9540" ph="select id, u... song_basic" />
+            <marker date="1508479408017" expanded="true" signature="11161:11239" ph="select id, u... song_basic" />
+            <marker date="1508479408017" expanded="true" signature="12837:12970" ph="select id fr... song_basic" />
+            <marker date="1508479408017" expanded="true" signature="13135:13217" ph="select opus_... opus_comment" />
+            <marker date="1508479408017" expanded="true" signature="14486:14619" ph="select id fr... song_basic" />
+            <marker date="1508479408017" expanded="true" signature="14784:14866" ph="select opus_... opus_comment" />
+            <marker date="1508479408017" expanded="true" signature="16122:16255" ph="select id fr... song_basic" />
+            <marker date="1508479408017" expanded="true" signature="17727:17803" ph="select opus_... opus_comment" />
+            <marker date="1508479408017" expanded="true" signature="17997:18041" ph="select user_... song_basic" />
+            <marker date="1508479408017" expanded="true" signature="18927:19005" ph="select opus_... opus_comment" />
+            <marker date="1508479408017" expanded="true" signature="19165:19209" ph="select user_... song_basic" />
+            <marker date="1508479408017" expanded="true" signature="20104:20148" ph="select id fr... song_basic" />
+            <marker date="1508479408017" expanded="true" signature="20377:20453" ph="select id, u... opus_comment" />
+            <marker date="1508479408017" expanded="true" signature="21565:21609" ph="select id fr... song_basic" />
+            <marker date="1508479408017" expanded="true" signature="21760:21827" ph="select id fr... opus_comment" />
+            <marker date="1508479408017" expanded="true" signature="22738:22832" ph="select id, o... opus_comment" />
+            <marker date="1508479408017" expanded="true" signature="23868:23962" ph="select id, o... opus_comment" />
+            <marker date="1508479408017" expanded="true" signature="25960:26066" ph="select opus_... opus_comment" />
+            <marker date="1508479408017" expanded="true" signature="25960:26075" ph="select opus_... opus_comment" />
+            <marker date="1508479408017" expanded="true" signature="27198:27343" ph="select opus_... opus_comment" />
+            <marker date="1508479408017" expanded="true" signature="31378:31472" ph="select id, o... opus_comment" />
+            <marker date="1508479408017" expanded="true" signature="32449:32516" ph="select comme... opus_comment_like" />
+            <marker date="1508479408017" expanded="true" signature="32687:32731" ph="select user_... song_basic" />
+            <marker date="1508479408017" expanded="true" signature="33465:33559" ph="select id, o... opus_comment" />
+            <marker date="1508479408017" expanded="true" signature="33699:33758" ph="select count... opus_comment" />
+            <marker date="1508479408017" expanded="true" signature="34684:34778" ph="select id, o... opus_comment" />
+            <marker date="1508479408017" expanded="true" signature="34918:34977" ph="select count... opus_comment" />
+            <marker date="1508479408017" expanded="true" signature="39954:40054" ph="select id, u... song_basic" />
+            <marker date="1508479408017" expanded="true" signature="40292:40342" ph="select liste... song_attach" />
+            <marker date="1508479408017" expanded="true" signature="41326:41426" ph="select id, u... song_basic" />
+            <marker date="1508479408017" expanded="true" signature="41664:41714" ph="select liste... song_attach" />
+            <marker date="1508479408017" expanded="true" signature="42507:42607" ph="select id, u... song_basic" />
+            <marker date="1508479408017" expanded="true" signature="43432:43532" ph="select id, u... song_basic" />
+            <marker date="1508479408017" expanded="true" signature="44384:44484" ph="select id, u... song_basic" />
+            <marker date="1508479408017" expanded="true" signature="45580:45738" ph="select id fr... song_basic" />
+            <marker date="1508479408017" expanded="true" signature="46833:46991" ph="select id fr... song_basic" />
+            <marker date="1508479408017" expanded="true" signature="48177:48335" ph="select id fr... song_basic" />
+            <marker date="1508479408017" expanded="true" signature="49293:49364" ph="select id fr... song_basic" />
+            <marker date="1508479408017" expanded="true" signature="51124:51217" ph="select id fr... song_basic" />
+            <marker date="1508479408017" expanded="true" signature="53136:53273" ph="select id fr... song_basic" />
+            <marker date="1508479408017" expanded="true" signature="54614:54721" ph="select id fr... song_basic" />
+            <marker date="1508479408017" expanded="true" signature="55773:55880" ph="select id fr... song_basic" />
+            <marker date="1508479408017" expanded="true" signature="56778:56885" ph="select id fr... song_basic" />
+            <marker date="1508479408017" expanded="true" signature="57804:57911" ph="select id fr... song_basic" />
+            <marker date="1508479408017" expanded="true" signature="58841:58950" ph="select id fr... song_basic" />
+            <marker date="1508479408017" expanded="true" signature="59841:59948" ph="select id fr... song_basic" />
+            <marker date="1508479408017" expanded="true" signature="60871:60955" ph="select id fr... song_basic" />
+            <marker date="1508479408017" expanded="true" signature="61837:61901" ph="select id fr... song_basic" />
+            <marker date="1508479408017" expanded="true" signature="67074:67121" ph="select opus_... opus_score" />
+            <marker date="1508479408017" expanded="true" signature="67251:67351" ph="select id, u... song_basic" />
+            <marker date="1508479408017" expanded="true" signature="68467:68585" ph="select id, u... song_basic" />
+            <marker date="1508479408017" expanded="true" signature="69498:69616" ph="select id, u... song_basic" />
+            <marker date="1508479408017" expanded="true" signature="70832:70882" ph="SELECT count... opus_comment" />
+            <marker date="1508479408017" expanded="true" signature="71721:71780" ph="SELECT creat... song_basic" />
+            <marker date="1508479408017" expanded="true" signature="72684:72746" ph="SELECT is_ta... opus_share_record" />
+            <marker date="1508479408017" expanded="true" signature="73113:73169" ph="update inter... " />
+            <marker date="1508479408017" expanded="true" signature="73889:73956" ph="SELECT count... opus_thumbs_up" />
+            <marker date="1508479408017" expanded="true" signature="74796:74861" ph="SELECT count... opus_collect" />
+            <marker date="1508479408017" expanded="true" signature="75709:75802" ph="SELECT liste... song_attach" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tool.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="61" column="66" selection-start-line="61" selection-start-column="20" selection-end-line="61" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcase/user_case.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="4" column="2" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcase/user_interactive_case.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="592" column="22" selection-start-line="592" selection-start-column="22" selection-end-line="592" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/run_case.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="148" column="44" selection-start-line="148" selection-start-column="44" selection-end-line="148" selection-end-column="44" />
+        <state relative-caret-position="2020">
+          <caret line="218" column="35" selection-start-line="218" selection-start-column="35" selection-end-line="218" selection-end-column="35" />
           <folding>
-            <element signature="e#60#78#0" expanded="true" />
-            <element signature="e#539#5012#1" expanded="false" />
-            <element signature="e#5015#5226#1" expanded="false" />
+            <element signature="e#756#3251#1" expanded="false" />
+            <element signature="e#3380#3698#1" expanded="false" />
+            <element signature="e#3704#3739#0" expanded="false" />
+            <element signature="e#4424#5229#1" expanded="false" />
+            <element signature="e#7177#7500#1" expanded="false" />
+            <element signature="e#7505#7529#0" expanded="false" />
+            <element signature="e#7727#9158#1" expanded="false" />
+            <element signature="e#9559#11677#1" expanded="false" />
+            <element signature="e#11814#12319#1" expanded="false" />
+            <element signature="e#12356#12879#1" expanded="false" />
+            <element signature="e#12977#13648#1" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/acom_case.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="312" column="28" selection-start-line="312" selection-start-column="28" selection-end-line="312" selection-end-column="28" />
+          <folding>
+            <element signature="e#38#59#0" expanded="true" />
+            <element signature="e#291#535#0" expanded="false" />
+            <element signature="e#541#3865#1" expanded="false" />
+            <element signature="e#3911#5364#0" expanded="false" />
+            <element signature="e#3993#4290#0" expanded="false" />
+            <marker date="1509686556059" expanded="false" signature="1601:2265" ph="..." />
+            <marker date="1509686556059" expanded="false" signature="6664:7304" ph="..." />
+            <marker date="1509686556059" expanded="false" signature="7342:8155" ph="..." />
+            <marker date="1509686556059" expanded="false" signature="8198:9106" ph="..." />
+            <marker date="1509686556059" expanded="false" signature="9151:10681" ph="..." />
+            <marker date="1509686556059" expanded="true" signature="10725:12166" ph="..." />
+            <marker date="1509686556059" expanded="false" signature="12220:13574" ph="..." />
           </folding>
         </state>
       </provider>

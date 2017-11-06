@@ -6,23 +6,17 @@ from dbManual import DBManual
 from tool import tool
 import json
 from errorCodeConst import errorCodeConst
+from config import runconfig
 
 
 class other_Case:
 
-    def __init__(self):
-        self.api = API2()
+    def __init__(self, islocal=0):
+        self.api = API2(islocal)
         self.casedb = DBManual()
         self.sql = """update other_case set args=%s,response=%s,result=%s,test_time=%s WHERE case_no = %s"""
         self.t = tool()
-        self.deviceid = "34e7a55f-8fb9-4511-b1b7-55d6148fa9bb"
-        login_param = {
-            "phoneNumber": "18782943850",
-            "password": "888888",
-            "platform": "iOS",
-            "clientVersion": "2.0",
-            "machineId": 100001
-        }
+        self.login_param, self.deviceid = runconfig.RunConfig().get_login(islocal)
 
         self.login_param2 = {
             "phoneNumber": "18782943852",
@@ -31,7 +25,7 @@ class other_Case:
             "clientVersion": "2.0",
             "machineId": 100001
         }
-        self.t.get_login_header(self.api, self.deviceid, login_param)
+        self.t.get_login_header(self.api, self.deviceid, self.login_param)
         self.ecode = errorCodeConst()
 
     # 取数据库中args

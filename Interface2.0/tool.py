@@ -1,10 +1,12 @@
 # -*-coding:utf-8 -*-
+# __author__ = "qiuwenjing"
 """包含功能：插入本地数据库测试用例，拉取数据库测试结果写入excel"""
 from dbManual import DBManual
 from handleExcel import HandleExcel
 from config import CaseMode
 import time,os
 import json,MySQLdb,base64
+
 
 class tool:
 
@@ -42,6 +44,7 @@ class tool:
     def get_header(self):
         return self.h
 
+    # 比较期望响应码是否等于实际响应码，将pass or fail 写入数据库
     def error_handle(self, cur, case_no, response, test_time, sql, errorCode=0, *param):
         ps = ''
         if param:
@@ -51,19 +54,21 @@ class tool:
                     p = str(param[i])
                     ps = ps + p
                 else:
-                    ps = ps + param[i]
+                    ps = ps + str(param[i])
+        # _data = json.dumps(eval(ps), ensure_ascii=False, indent=1)
         try:
             data = response.json()
             try:
-                d = json.dumps(data, ensure_ascii=False)
+                d = json.dumps(data, ensure_ascii=False, indent=1)
                 self.mylog(case_no, 'header：', response.headers)
                 self.mylog(case_no, 'request url:', response.url)
                 self.mylog(case_no, 'request json:', ps)
-                self.mylog(case_no, 'response data:', d)
+                self.mylog(case_no, 'response data: \n', d)
+                print "\n"
                 assert data["errorCode"] == errorCode, u"错误信息: %s" % data['message']
                 try:
                     cur.execute(sql, (ps, d[:4999], "pass", test_time, case_no))
-                    print type(d)
+                    # print type(d)
                 except MySQLdb.Error, e:
                     print "manual database error:%s" % e
                     cur.execute(sql, (ps, d[:1000], "pass", test_time, case_no))
@@ -74,34 +79,33 @@ class tool:
             cur.execute(sql, (ps, data[:1000], "fail", test_time, case_no))
 
     def data_error(self, cur, case_no, expectdata, actualdata, sql):
-
         self.mylog(case_no, 'database data ：%s', expectdata)
         self.mylog(case_no, 'response data：%s', actualdata)
         if expectdata != actualdata:
             cur.execute(sql, ("fail", case_no))
 
-    def insertCase(self, tablename, params):
+    # 重新定义错误处理函数，包含响应码比较，返回数据比较，日志记录
+    # 需要重新写个处理mysql数据库的类函数 1）数据库连接 2）创建数据表 3）插入用例 4）更新用例 5）
+    # 重新整理处理Excel的函数 1）读取excel；2）写回excel
+    # 日志中包含执行的函数名，用例标题（从excel中读取），尝试将数据格式化 用json.dumps(obj, indent=1)
+    def newErrorHandler(self, func_name, status_code, response, test_time, error_code=0, *param):
         """
-        批量插入用例case
-        :param tablename: 表名
-        :param params: 用例case，必须是数组类
-        :return:
+        思路： 先比较服务器返回的status_code，之后再比较errorCode；
+        如果errorCode相等，继续比较响应数据,响应中要比较字段及特定的某些值；如果errorCode不相等，则终止比较，数据库写fail。
+        日志要添加function_name， case_title, response_data。打印到控制台的数据，需要格式化
         """
-        sql = "insert into "+tablename+" (case_no,args,url) values (%s,%s,%s)"
+        pass
+
+    def executeSQL(self, sql, params):
         self.cxe.executemany(sql, params)
 
-    def insert(self, sql, params):
-      
-        # sql = "update "+tablename+" (case_no,args,url) values (%s,%s,%s)"
-        self.cxe.executemany(sql, params)
-        
     def select_result(self, tablename):
         """
         获取测试结果
         :param tablename: 表名
         :return: 返回data
         """
-        sql = "select case_no,response,result,test_time from "+ tablename
+        sql = "select case_no,response,result,test_time from " + tablename
         n = self.cxe.execute(sql)
         data = self.cxe.fetchmany(n)
         return data
@@ -136,15 +140,14 @@ class tool:
 
     def mylog(self, func, *args):
         logname = os.path.join(self.logpth, 'log.txt')
-        t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+        nowtime = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
         f = open(logname, 'a+')
-
         if len(args) > 1:
-            print "[ %s excuting case_no: %s ] %s %s" % (t, func, args[0], args[1])
-            f.write("[%s excuting case_no: %s] %s %s " % (t, func, args[0], args[1]) + '\n')
+            print "[ %s excuting case_no: %s ] %s %s" % (nowtime, func, args[0], args[1])
+            f.write("[%s excuting case_no: %s] %s %s " % (nowtime, func, args[0], args[1]) + '\n')
         else:
-            print "[ %s excuting case_no: %s ] %s" % (t, func, args)
-            f.write("[%s excuting case_no: %s] %s" % (t, func, args) + '\n')
+            print "[ %s excuting case_no: %s ] %s" % (nowtime, func, args)
+            f.write("[%s excuting case_no: %s] %s" % (nowtime, func, args) + '\n')
         f.write('\n')
         f.close()
 
@@ -192,32 +195,33 @@ class tool:
             return diffrence
         return False
 
-
 if __name__ == "__main__":
     t = tool()
-    '''r = {}
-
-index_data = t.select_result('shown_case')
-index_result = t.trans_list(index_data)
-# login_data = t.select_result('login_case')
-# login_result = t.trans_list(login_data)
-r['index'] = index_result
-# r['login'] = login_result
-# user_data = t.select_result("user_case")
-# user_result = t.trans_list(user_data)
-# r['user'] = user_result
-t.write_to_excel(r)
-t.cls()'''
-
-    h = HandleExcel('casedir\\testcase.xls')
-    l = h.read_testcase('notice')
-    param = []
-    sql = """insert into notice_case (case_no, interface, case_title, args, url, method) values (%s,%s,%s,%s,%s,%s)"""
-    for i in range(len(l)):
-        param.append((l[i]['CASE_NO'], l[i]['INTERFACE'], l[i]['CASE_TITLE'], l[i]['REQUEST'], l[i]['URL'], l[i]['METHOD']))
-
-    t.insert(sql, param)
+    r = {}
+    data_tables = {'register_case': 'register',
+                   'login_case': 'login',
+                   'user_case': 'user',
+                   'user_interactive_case': 'user_interactive',
+                   'shown_case': 'shown',
+                   'other_case': 'other',
+                   'interactive_case': 'interactive',
+                   'notice_case': 'notice'}
+    for i in data_tables:
+        index_data = t.select_result(i)
+        index_result = t.trans_list(index_data)
+        r[data_tables[i]] = index_result
+    t.write_to_excel(r)
     t.cls()
+    '''
+    h = HandleExcel('casedir\\testcase.xls')
+    l = h.read_testcase('user_interactive')
+    param = []
+    sql = """insert into user_interactive_case (case_no,interface,url,case_title,method,args) VALUES (%s,%s,%s,%s,%s,%s)"""
+    for i in range(63, len(l)):
+        param.append((l[i]['CASE_NO'], l[i]['INTERFACE'], l[i]['URL'], l[i]['CASE_TITLE'], l[i]['METHOD'], l[i]['REQUEST']))
+
+    t.executeSQL(sql, param)
+    t.cls()'''
 
 
    

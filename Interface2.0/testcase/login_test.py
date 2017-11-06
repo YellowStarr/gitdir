@@ -11,20 +11,15 @@ import json, sys
 from dbManual import DBManual
 from tool import tool
 import base64
+from config import runconfig
 
-class login_case():
-    def __init__(self):
-        self.api = API2()
+
+class login_case:
+    def __init__(self, islocal=0):
+        self.api = API2(islocal)
         self.casedb = DBManual()
         self.t = tool()
-        self.login_param = {
-            "phoneNumber": "18782943850",
-            "password": "888888",
-            "platform": "iOS",
-            "clientVersion": "2.0",
-            "machineId": 100001
-        }
-        self.deviceId = "34e7a55f-8fb9-4511-b1b7-55d6148fa9bb"
+        self.login_param, self.deviceid = runconfig.RunConfig().get_login(islocal)
         self.t.get_login_header(self.api, self.deviceId, self.login_param)
         self.sql = """update login_case set args=%s, response=%s,result=%s,test_time=%s WHERE case_no = %s"""
 
@@ -441,9 +436,9 @@ class login_case():
             "clientVersion": "2.0",
             "retrievalPasswordSmsCode": "0000",
             "retrievalPasswordSmsCode": "0000",
-            "retrievalPasswordSmsId": ""
+            "retrievalPasswordSmsId": data['data']['retrievalPasswordSmsId']
         }
-        pwd_param['retrievalPasswordSmsId'] = data['data']['retrievalPasswordSmsId']
+
         response = self.api.password_back(pwd_param, header)
         sql = """update login_case set response=%s,result=%s,test_time=%s WHERE case_no = %s"""
         self.t.error_handle(cur, case_no, response, t, sql, 0, pwd_param)

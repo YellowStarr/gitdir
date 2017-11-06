@@ -1,24 +1,26 @@
 # coding=utf-8
-#!/usr/bin/python
-#导入os模块
+# !/usr/bin/python
+# 导入os模块
 import os
 #导入时间模块
 import time
 #导入sys模块
 import sys
-#追加mysql的bin目录到环境变量
+# 追加mysql的bin目录到环境变量
 sys.path.append(r'G:\MySQL\mysql-5.6.35-winx64\bin')
 import MySQLdb
 from config.DBConfig import DBConfig
 
 class DBManual:
+    def __init__(self, islocal=0):
+        self.islocal = islocal
     def connect_remotedb(self):
-        remotedb = DBConfig().get_remotedb()
+        remotedb = DBConfig().get_remotedb(self.islocal)
         self.conn = MySQLdb.connect(host=remotedb['host'],
-                               port=int(remotedb['port']),
-                               user=remotedb['user'],
-                               passwd=remotedb['pwd'],
-                               db=remotedb['db'])
+                                    port=int(remotedb['port']),
+                                    user=remotedb['user'],
+                                    passwd=remotedb['pwd'],
+                                    db=remotedb['db'])
         cur = self.conn.cursor()
         return cur
 
@@ -29,7 +31,7 @@ class DBManual:
                                     user=casedb['user'],
                                     passwd=casedb['pwd'],
                                     db=casedb['db'],
-                                    charset='utf8')    #写入数据库时解决 latin-1的问题
+                                    charset='utf8')    # 写入数据库时解决 latin-1的问题
         cur = self.conn.cursor()
         return cur
 
